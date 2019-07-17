@@ -1,2 +1,3 @@
-# legendary-guacamole
-Keep Simple, Make Fun.
+# Keep Simple, Make Fun.
+
+Personal blog.
