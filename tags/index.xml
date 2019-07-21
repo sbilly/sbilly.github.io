@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Keep Simple, Make Fun.</title>
+    <link>https://sbilly.github.io/tags/</link>
+    <description>Recent content in Tags on Keep Simple, Make Fun.</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>zh</language>
+    <copyright>{year} &amp;copy;</copyright>
+    <lastBuildDate>Sun, 21 Jul 2019 12:28:28 +0800</lastBuildDate>
+    
+	    <atom:link href="https://sbilly.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cybersecurity</title>
+      <link>https://sbilly.github.io/tags/cybersecurity/</link>
+      <pubDate>Sun, 21 Jul 2019 12:28:28 +0800</pubDate>
+      
+      <guid>https://sbilly.github.io/tags/cybersecurity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DISA</title>
+      <link>https://sbilly.github.io/tags/disa/</link>
+      <pubDate>Sun, 21 Jul 2019 12:28:28 +0800</pubDate>
+      
+      <guid>https://sbilly.github.io/tags/disa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DoD</title>
+      <link>https://sbilly.github.io/tags/dod/</link>
+      <pubDate>Sun, 21 Jul 2019 12:28:28 +0800</pubDate>
+      
+      <guid>https://sbilly.github.io/tags/dod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>美军</title>
+      <link>https://sbilly.github.io/tags/%E7%BE%8E%E5%86%9B/</link>
+      <pubDate>Sun, 21 Jul 2019 12:28:28 +0800</pubDate>
+      
+      <guid>https://sbilly.github.io/tags/%E7%BE%8E%E5%86%9B/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
