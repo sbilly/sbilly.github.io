@@ -26,12 +26,6 @@
 
 &lt;p&gt;下面将介绍如何从源码编译并启动 bootstrap 节点。go-ipfs 还在积极开发中，在 2019 年  7 月 26 日是可以正常完成的。如果发现有问题，可以在评论中反馈。&lt;/p&gt;
 
-&lt;hr /&gt;
-
-&lt;p&gt;[TOC]&lt;/p&gt;
-
-&lt;hr /&gt;
-
 &lt;h2 id=&#34;准备-ipfs-环境&#34;&gt;准备 ipfs 环境&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 创建 ipfs 的运行时目录
