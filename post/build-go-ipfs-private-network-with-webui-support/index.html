@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="蓝星最强军事力量发布了自己的数字现代化战略，特别重视网络空间安全，期望把 IT 变得更加敏捷。">
+  <meta name="description" content="go-ipfs 是一个分布式基于区块链技术的分布式文件系统，文档可以查看 官方文档 。本文主要记录和介绍如何使用 go-ipfs 搭建与公有网络隔离的私有网络。">
 
   
-  <link rel="alternate" hreflang="zh" href="https://sbilly.github.io/post/dod-and-disa-released-2019-2023-strategic-plan/">
+  <link rel="alternate" hreflang="zh" href="https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/">
 
   
 
@@ -110,7 +110,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://sbilly.github.io/post/dod-and-disa-released-2019-2023-strategic-plan/">
+  <link rel="canonical" href="https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/">
 
   
   
@@ -125,26 +125,26 @@
   <meta property="twitter:creator" content="@sbilly">
   
   <meta property="og:site_name" content="Keep Simple, Make Fun.">
-  <meta property="og:url" content="https://sbilly.github.io/post/dod-and-disa-released-2019-2023-strategic-plan/">
-  <meta property="og:title" content="美国国防部发布 2019-2023 年数字现代化战略 | Keep Simple, Make Fun.">
-  <meta property="og:description" content="蓝星最强军事力量发布了自己的数字现代化战略，特别重视网络空间安全，期望把 IT 变得更加敏捷。"><meta property="og:image" content="https://sbilly.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/">
+  <meta property="og:title" content="构建包含 WEB 管理界面的 go-ipfs 的私有网络 | Keep Simple, Make Fun.">
+  <meta property="og:description" content="go-ipfs 是一个分布式基于区块链技术的分布式文件系统，文档可以查看 官方文档 。本文主要记录和介绍如何使用 go-ipfs 搭建与公有网络隔离的私有网络。"><meta property="og:image" content="https://sbilly.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://sbilly.github.io/img/icon-192.png"><meta property="og:locale" content="zh">
   
-  <meta property="article:published_time" content="2019-07-21T12:28:28&#43;08:00">
+  <meta property="article:published_time" content="2019-07-26T15:04:45&#43;08:00">
   
-  <meta property="article:modified_time" content="2019-07-21T12:28:28&#43;08:00">
+  <meta property="article:modified_time" content="2019-07-26T15:04:45&#43;08:00">
   
-
-  
-
 
   
 
 
+  
 
 
 
-  <title>美国国防部发布 2019-2023 年数字现代化战略 | Keep Simple, Make Fun.</title>
+
+
+  <title>构建包含 WEB 管理界面的 go-ipfs 的私有网络 | Keep Simple, Make Fun.</title>
 
 </head>
 
@@ -339,7 +339,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">美国国防部发布 2019-2023 年数字现代化战略</h1>
+  <h1 itemprop="name">构建包含 WEB 管理界面的 go-ipfs 的私有网络</h1>
 
   
 
@@ -348,8 +348,8 @@
 
 
 
-<meta content="2019-07-21 12:28:28 &#43;0800 CST" itemprop="datePublished">
-<meta content="2019-07-21 12:28:28 &#43;0800 CST" itemprop="dateModified">
+<meta content="2019-07-26 15:04:45 &#43;0800 CST" itemprop="datePublished">
+<meta content="2019-07-26 15:04:45 &#43;0800 CST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -374,7 +374,7 @@
     
       
     
-    <time>2019-07-21</time>
+    <time>2019-07-26</time>
   </span>
   
 
@@ -383,7 +383,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    6 min read
+    2 min read
   </span>
   
 
@@ -391,7 +391,7 @@
   
   
   <span class="middot-divider"></span>
-  <a href="/post/dod-and-disa-released-2019-2023-strategic-plan/#disqus_thread"></a>
+  <a href="/post/build-go-ipfs-private-network-with-webui-support/#disqus_thread"></a>
   <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
   
 
@@ -399,7 +399,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="">安全产业</a></span>
+    <i class="fas fa-folder mr-1"></i><a href="">学习笔记</a></span>
   
 
   
@@ -415,7 +415,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://sbilly.github.io/post/dod-and-disa-released-2019-2023-strategic-plan/&amp;text=%e7%be%8e%e5%9b%bd%e5%9b%bd%e9%98%b2%e9%83%a8%e5%8f%91%e5%b8%83%202019-2023%20%e5%b9%b4%e6%95%b0%e5%ad%97%e7%8e%b0%e4%bb%a3%e5%8c%96%e6%88%98%e7%95%a5" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/&amp;text=%e6%9e%84%e5%bb%ba%e5%8c%85%e5%90%ab%20WEB%20%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e7%9a%84%20go-ipfs%20%e7%9a%84%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -428,7 +428,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://sbilly.github.io/post/dod-and-disa-released-2019-2023-strategic-plan/&amp;t=%e7%be%8e%e5%9b%bd%e5%9b%bd%e9%98%b2%e9%83%a8%e5%8f%91%e5%b8%83%202019-2023%20%e5%b9%b4%e6%95%b0%e5%ad%97%e7%8e%b0%e4%bb%a3%e5%8c%96%e6%88%98%e7%95%a5" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/&amp;t=%e6%9e%84%e5%bb%ba%e5%8c%85%e5%90%ab%20WEB%20%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e7%9a%84%20go-ipfs%20%e7%9a%84%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -441,7 +441,7 @@
       
       
       <li>
-        <a href="mailto:?subject=%e7%be%8e%e5%9b%bd%e5%9b%bd%e9%98%b2%e9%83%a8%e5%8f%91%e5%b8%83%202019-2023%20%e5%b9%b4%e6%95%b0%e5%ad%97%e7%8e%b0%e4%bb%a3%e5%8c%96%e6%88%98%e7%95%a5&amp;body=https://sbilly.github.io/post/dod-and-disa-released-2019-2023-strategic-plan/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=%e6%9e%84%e5%bb%ba%e5%8c%85%e5%90%ab%20WEB%20%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e7%9a%84%20go-ipfs%20%e7%9a%84%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c&amp;body=https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -454,7 +454,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://sbilly.github.io/post/dod-and-disa-released-2019-2023-strategic-plan/&amp;title=%e7%be%8e%e5%9b%bd%e5%9b%bd%e9%98%b2%e9%83%a8%e5%8f%91%e5%b8%83%202019-2023%20%e5%b9%b4%e6%95%b0%e5%ad%97%e7%8e%b0%e4%bb%a3%e5%8c%96%e6%88%98%e7%95%a5" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/&amp;title=%e6%9e%84%e5%bb%ba%e5%8c%85%e5%90%ab%20WEB%20%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e7%9a%84%20go-ipfs%20%e7%9a%84%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -467,7 +467,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=%e7%be%8e%e5%9b%bd%e5%9b%bd%e9%98%b2%e9%83%a8%e5%8f%91%e5%b8%83%202019-2023%20%e5%b9%b4%e6%95%b0%e5%ad%97%e7%8e%b0%e4%bb%a3%e5%8c%96%e6%88%98%e7%95%a5%20https://sbilly.github.io/post/dod-and-disa-released-2019-2023-strategic-plan/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=%e6%9e%84%e5%bb%ba%e5%8c%85%e5%90%ab%20WEB%20%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e7%9a%84%20go-ipfs%20%e7%9a%84%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c%20https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -480,7 +480,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://sbilly.github.io/post/dod-and-disa-released-2019-2023-strategic-plan/&amp;title=%e7%be%8e%e5%9b%bd%e5%9b%bd%e9%98%b2%e9%83%a8%e5%8f%91%e5%b8%83%202019-2023%20%e5%b9%b4%e6%95%b0%e5%ad%97%e7%8e%b0%e4%bb%a3%e5%8c%96%e6%88%98%e7%95%a5" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/&amp;title=%e6%9e%84%e5%bb%ba%e5%8c%85%e5%90%ab%20WEB%20%e7%ae%a1%e7%90%86%e7%95%8c%e9%9d%a2%e7%9a%84%20go-ipfs%20%e7%9a%84%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -518,128 +518,136 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p><img src="media/15635269100634/DoD.Logo.png" alt="-w600" /></p>
+<p><img src="media/15641153824612/15641250270855.jpg" alt="!-w800" /></p>
 
-<p>作为蓝星上最强的军事力量，美军的信息化水平也一直是让蓝星上各家所仰望的。先让我们通过数字来感受一下蓝星最强军事力量所面对的 IT 复杂度：</p>
+<p><a href="https://ipfs.io/" target="_blank">go-ipfs</a> 是一个分布式基于区块链技术的分布式文件系统，文档可以查看 <a href="https://docs.ipfs.io/" target="_blank">官方文档</a> 。本文主要记录和介绍如何使用 go-ipfs 搭建与公有网络隔离的私有网络。</p>
+
+<p>下面将介绍如何从源码编译并启动 bootstrap 节点。go-ipfs 还在积极开发中，在 2019 年  7 月 26 日是可以正常完成的。如果发现有问题，可以在评论中反馈。</p>
+
+<hr />
+
+<p>[TOC]</p>
+
+<hr />
+
+<h2 id="准备-ipfs-环境">准备 ipfs 环境</h2>
+
+<pre><code class="language-bash"># 创建 ipfs 的运行时目录
+mkdir -p ./ipfs
+
+# 获取 go-ipfs-swarm-key-gen
+git clone https://github.com/Kubuxu/go-ipfs-swarm-key-gen
+
+# 创建 swarm.key
+# 所有的私有网络节点都需要这个 swarm.key 才能正常加入私有网络
+cd go-ipfs-swarm-key-gen
+IPFS_PATH=./ipfs go run ipfs-swarm-key-gen/main.go &gt; $IPFS_PATH/swarm.key
+cd ../
+
+# 获取最新的 go-ipfs 源码
+git clone https://github.com/ipfs/go-ipfs.git
+
+# 编译 go-ipfs
+cd go-ipfs
+make build
+cd ../
+
+# 初始化 ipfs 的运行时目录
+# 初始化时会创建 ipfs 的 peer identity，这个 peer identity 会在后续配置过程中使用到。peer identity 类似于下面这种形式：
+# peer identity: QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL
+# IPFS_PATH=./ipfs 指定 ./ipfs 为运行时目录
+# LIBP2P_FORCE_PNET=1 要求 ipfs 运行在私有网络模式
+IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs init
+
+# 删除公开网络的所有 bootstrap 节点
+IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs bootstrap rm --all
+
+# 把本机作为 bootstrap 节点
+# 其中 QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL 要修改为实际的 peer identity
+IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs bootstrap add /ip4/127.0.0.1/tcp/4001/ipfs/QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL
+
+# 启动 ipfs
+IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs daemon
+</code></pre>
+
+<h2 id="编译并启用-ipfs-webui">编译并启用 ipfs-webui</h2>
+
+<p>如果你希望像公网那样使用 ipfs 官方自带的管理界面 <a href="https://github.com/ipfs-shipyard/ipfs-webui" target="_blank">ipfs-weibui</a> 需要通过以下步骤使用最新的 ipfs-webui 。</p>
+
+<pre><code class="language-bash"># 获取最新的 ipfs-webui 代码
+git clone https://github.com/ipfs-shipyard/ipfs-webui.git
+
+# 编译 ipfs-webui
+# 需要 python2 支持，需要使用 npm 而不要使用 cnpm
+# 编译后的文件在 build
+cd ipfs-webui
+npm install
+npm run build
+
+# 把编译得到的 ipfs-webui 添加到 ipfs 文件系统私有网络中
+# 下面的命令执行后会返回类似的响应，返回的 build 目录对应的 hash 在需要添加到 go-ipfs 代码中
+# added QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh build
+IPFS_PATH=../ipfs LIBP2P_FORCE_PNET=1 ../go-ipfs/cmd/ipfs/ipfs add -r ./build
+</code></pre>
+
+<h2 id="修改并重新编译-go-ipfs">修改并重新编译 go-ipfs</h2>
+
+<p>修改文件把刚才编译的 ipfs-webui 加到 ipfs 中，需要修改 <code>go-ipfs/core/corehttp/webui.go</code> 把 webui 对应的 hash 值替换成刚才添加到 ipfs 时的返回的 hash ，例如：</p>
+
+<pre><code class="language-go">package corehttp
+
+// TODO: move to IPNS
+// 把 const WebUIPath 替换成私有网络中 webUI 的 PATH
+const WebUIPath = &quot;/ipfs/QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh&quot;
+
+// this is a list of all past webUI paths.
+// 原来公开网络的 webUI 路径保存在这个列表中
+var WebUIPaths = []string{
+        WebUIPath,
+        &quot;/ipfs/QmQNHd1suZTktPRhP7DD4nKWG46ZRSxkwHocycHVrK3dYW&quot;, 
+        &quot;/ipfs/QmfQkD8pBSBCBxWEwFSu4XaDVSWK6bjnNuaWZjMyQbyDub&quot;,
+        &quot;/ipfs/QmXc9raDM1M5G5fpBnVyQ71vR4gbnskwnB9iMEzBuLgvoZ&quot;,
+        &quot;/ipfs/QmenEBWcAk3tN94fSKpKFtUMwty1qNwSYw3DMDFV6cPBXA&quot;,
+        &quot;/ipfs/QmUnXcWZC5Ve21gUseouJsH5mLAyz5JPp8aHsg8qVUUK8e&quot;,
+        &quot;/ipfs/QmSDgpiHco5yXdyVTfhKxr3aiJ82ynz8V14QcGKicM3rVh&quot;,
+        &quot;/ipfs/QmRuvWJz1Fc8B9cTsAYANHTXqGmKR9DVfY5nvMD1uA2WQ8&quot;,
+        &quot;/ipfs/QmQLXHs7K98JNQdWrBB2cQLJahPhmupbDjRuH1b9ibmwVa&quot;,
+        &quot;/ipfs/QmXX7YRpU7nNBKfw75VG7Y1c3GwpSAGHRev67XVPgZFv9R&quot;,
+        &quot;/ipfs/QmXdu7HWdV6CUaUabd9q2ZeA4iHZLVyDRj3Gi4dsJsWjbr&quot;,
+        &quot;/ipfs/QmaaqrHyAQm7gALkRW8DcfGX3u8q9rWKnxEMmf7m9z515w&quot;,
+        &quot;/ipfs/QmSHDxWsMPuJQKWmVA1rB5a3NX2Eme5fPqNb63qwaqiqSp&quot;,
+        &quot;/ipfs/QmctngrQAt9fjpQUZr7Bx3BsXUcif52eZGTizWhvcShsjz&quot;,
+        &quot;/ipfs/QmS2HL9v5YeKgQkkWMvs1EMnFtUowTEdFfSSeMT4pos1e6&quot;,
+        &quot;/ipfs/QmR9MzChjp1MdFWik7NjEjqKQMzVmBkdK3dz14A6B5Cupm&quot;,
+        &quot;/ipfs/QmRyWyKWmphamkMRnJVjUTzSFSAAZowYP4rnbgnfMXC9Mr&quot;,
+        &quot;/ipfs/QmU3o9bvfenhTKhxUakbYrLDnZU7HezAVxPM6Ehjw9Xjqy&quot;,
+        &quot;/ipfs/QmPhnvn747LqwPYMJmQVorMaGbMSgA7mRRoyyZYz3DoZRQ&quot;,
+}
+
+var WebUIOption = RedirectOption(&quot;webui&quot;, WebUIPath)
+</code></pre>
+
+<p>重新编译 go-ipfs，启动后缺省可以通过 <code>http://127.0.0.1:5001/webui</code> 访问到 ipfs 的管理界面。</p>
+
+<pre><code class="language-bash"># 编译 go-ipfs
+cd go-ipfs
+make build
+cd ../
+
+# 启动 ipfs
+IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs deamon
+</code></pre>
+
+<h2 id="启动其他节点">启动其他节点</h2>
+
+<p>把 <a href="#toc_1">准备 ipfs 环境</a> 中创建的 <code>swarm.key</code> 复制到合理位置，并且按照 <a href="#toc_1">准备 ipfs 环境</a> 编译 go-ipfs、修改 bootstrap 节点、启动 ipfs 即可。如果一切正常，就可以在 bootstrap 节点上可以看到连接上来的 peer 节点。</p>
+
+<p><img src="media/15641153824612/15641244880502.jpg" alt="-w600" /></p>
+
+<h2 id="参考">参考</h2>
 
 <ul>
-<li>年度预算 464 亿美元</li>
-<li>运行了近万个系统，部署数千个数据中心、数万台服务器，连接了上百万的计算机和 IT 设备、10 万多商业移动设备</li>
-<li>支持 130 万服役人员、74.2 万平民、82.6 万国民警卫队和后备力量</li>
-<li>基础设施遍布全球 5000 个地点、3000 多万亩的土体、数十万建筑物</li>
-</ul>
-
-<p>作为蓝星上信息化程度最高的美军认为自己的 IT 环境存在一些问题：</p>
-
-<ul>
-<li>数据中心和网络太多，投资分散，效率低下</li>
-<li>互操作性不足，影响了信息共享和任务协作</li>
-<li>快速发展的设备对新技术的需求日益增加</li>
-<li>IT 计划平均需要 81 个月，完全无法满足作战人员的需求</li>
-<li>网络安全漏洞威胁到机密信息的利用，也危及国家安全</li>
-<li>IT 交付流程阻碍了商业技术的应用</li>
-</ul>
-
-<p>这些年来，美帝一直说自己的民生基础设施投资不足嚷嚷着更新基础设施，政客们吵来吵去嗨没什么实质性的动静，讲究执行力的美军却从来没有放过更新基础设施的机会。于是美军从总统发布的国家安全战略（National Security Strategy）逐层解读和分解形成了国防部数字现代化战略（DoD Digital Modernization Strategy），并制定了网络空间风险战略（Cyber Risk Strategy）、人工智能战略（Artificial Intelligence Strategy）、云战略（Cloud Strategy）、信息技术重构战略（IT Refor Strategy）、命令控制和通信现代化战略（C3 Modernization Strat）。作为国防部战略落地的重要承接部门，国防部信息系统局（DISA）也推出了自己的 2019-2022 年战略计划。</p>
-
-<p><img src="media/15635269100634/15635312952266.jpg" alt="-w600" /></p>
-
-<p><img src="media/15635269100634/15636399006124.jpg" alt="-w600" /></p>
-
-<p>国防部数字现代化战略（DoD Digital Modernization Strategy）就是美国国防部的信息化资源管理战略计划，目的是明确资源投资的方向和优先级，提出了国防部数字现代化战略的 4 大目的和 27 个目标。</p>
-
-<ul>
-<li>目的一：为竞争优势而创新</li>
-<li>目的二：为效率和能力改进而优化</li>
-<li>目的三：为实现敏捷和弹性防御态势而改进网络安全</li>
-<li>目的四：为数字化人才就绪而培养</li>
-</ul>
-
-<p><img src="media/15635269100634/15636024579261.jpg" alt="-w600" /></p>
-
-<p><img src="media/15635269100634/15635314162252.jpg" alt="-w600" /></p>
-
-<p>为了确保战略目的落地，美军的 IT 现代化会优先四大方向：</p>
-
-<ul>
-<li>网络空间安全</li>
-<li>人工智能</li>
-<li>云</li>
-<li>命令、控制、通信</li>
-</ul>
-
-<p>会重点关注人工智能、大数据分析、绿色 IT、DevSecOps、超融合、无服务器架构（或事件驱动计算架构）、软件定义网络（SDN）、区块链、现代密码学、量子计算、物联网（IoT）、5G、IPv6、无源光纤网络（PON）、零信任安全架构、微电子学这几个方面。DISA 作为主要的战略承接单位计划通过 3 个方面 7 个目标来进行落地，并且制定了技术路线图。</p>
-
-<ul>
-<li>防御与运营
-
-<ul>
-<li>1.1. 对基础设施进行现代化更新</li>
-<li>1.2. 增强运营</li>
-</ul></li>
-<li>采用、购买和创建解决方案
-
-<ul>
-<li>2.1. 优化企业</li>
-<li>2.2. 增强网络空间安全</li>
-<li>2.3. 驱动创新</li>
-</ul></li>
-<li>使能人员并进行机构改革
-
-<ul>
-<li>3.1. 使能人员</li>
-<li>3.2. 机构改革</li>
-</ul></li>
-</ul>
-
-<p><img src="media/15635269100634/15636405376149.jpg" alt="-w600" /></p>
-
-<p><img src="media/15635269100634/15636406563566.jpg" alt="-w600" /></p>
-
-<h2 id="网络空间安全">网络空间安全</h2>
-
-<p>在网络空间安全方面，国防部在战略层面已经把 IT 环境视为一个整体，并且提出了“<strong>每个网络、系统、应用程序和企业服务都必须通过设计实现安全（must be secure by design），在整个获取生命周期内对网络安全进行管理</strong>”的要求。特别是在网络空间安全方面明确提出了：</p>
-
-<ul>
-<li>改革国防部网络安全体系以提高灵活性和增强弹性</li>
-<li>部署端到端的标识、凭据和访问管理（ICAM）基础设施</li>
-<li>保护国防部敏感信息以及国防工业基地的非机密网络和信息系统的关键程序和技术</li>
-<li>改革国防部网络安全风险管理策略和行动</li>
-</ul>
-
-<p>至少到 2022 年之前，美军还会<strong>继续大力推行云计算并缩减数据中心的数量，进一步加强端到端基于密码学的访问控制管理，重点改进军工业的安全防护体系，并且通过 DevSecOps 和广泛使用云计算、软件定义网络技术来使 IT 变得更加敏捷和富有弹性</strong>。而在国防部信息系统局（DISA）的 2019-2022 年度计划：</p>
-
-<ul>
-<li>在敏捷、智能和虚拟化的下一代信息技术体系架构中通过下一代身份和管理解决方案、合规连接技术和软件定义企业来构建<strong>设计实现安全（must be secure by design）</strong>下一代网络空间体系架构</li>
-<li>建设防御性网络运营内部防御度量（DCO-IDM），实现快速识别新的漏洞、消除已知的漏洞、部署新的能力进行纵深防御和事件的响应与分析</li>
-<li>除了军队自身以外，加强对军工行业、关键基础设施和其他任务保证相关的基础设施的安全防护</li>
-<li>退役老旧系统，使用新系统，增强网络空间安全</li>
-<li>加强防御架构，重点是防御外部和内部攻击，检测横向移动，并在同步和标准化的防御实现中充分纳入更强大的端点能力。这种标准化和集中化的安全基础结构支持主动配置管理，同时也具有足够的弹性和灵活性来支持被动和主动缓解措施</li>
-<li>实施人工智能（AI）和机器学习（ML），通过自动分析网络传感器、威胁指标和系统输出，协助网络维护者识别恶意行为者</li>
-<li>通过实施 DevSecOps 提高自动化水平，使安全更敏捷，也使安全嵌入到系统全生命周期</li>
-</ul>
-
-<p>在技术方面，美国国防部重点关注的 16 项技术除绿色 IT、无服务器架构（或事件驱动计算架构）、物联网（IoT）、5G、IPv6、无源光纤网络（PON）几项和安全没有直接关系以外，其他 10 项都和安全有直接关联：</p>
-
-<ul>
-<li>人工智能：国防部信息管理局（DISA）准备在网络入侵分析方面使用人工智能和机器学习</li>
-<li>大数据分析：国防部计划通过大数据分析增强态势感知能力</li>
-<li>DevSecOps：国防部计划通过 DevSecOps 把安全嵌入到业务系统全生命周期中，实现敏捷和<strong>设计实现安全（must be secure by design）</strong></li>
-<li>软件定义网络（SDN）、超融合：实现能更敏捷的部署、能够快速的部署新的纵深防御能力、提高事件响应和分析能力</li>
-<li>区块链：国防部直接称之为“区块链网络空间安全盾牌”（Block Chain Cybersecurity Shield）。主要方向是国防高级研究计划局（DARPA）正在利用区块链技术开发安全的信息传递平台，并在尝试开发一种无法破解的代码，区块链技术为可以提供“谁入侵了安全数据库”的相关信息（从 DISA 的技术路线图中可以看到是积极发展的）</li>
-<li>现代密码学：更新密码算法库，更新相关基础设施（国防部采用的现有身份证书等不符合政府采用的标准）</li>
-<li>量子计算：利用量子的特点实现长距离的安全通信，以及利用量子计算来解决传统计算机不擅长的问题（例如，密码学中常见的大数分解的问题）</li>
-<li>零信任安全架构：国防部首席信息官正在和国防部信息管理局（DISA）、美国网络司令部（USCYBERCOM）、美国国家安全局（NSA）共同在进行探索。希望通过零信任安全架构实现一个相对当前安全架构而言，更加简单、高效的安全架构。</li>
-<li>微电子学：改善供应链安全，增加军工行业的安全标准要求，提供安全能力增强和信息共享机制</li>
-</ul>
-
-<p>从 DoD 和 DISA 发布的内容来看，美国军方和政府都关注的美国军工企业被入侵、供应链安全、高级威胁等都做了回应，近年来业界发展比较快的现代密码学、人工智能、机器学习、大数据分析、区块链技术、零信任架构等等都有关注。对比 2014-2018 年美国国防部资源管理战略计划来看，美国国防部一直都在对身份和访问控制进行投资（这方面和国内有显著差异）；另外， 2019-2023 年的计划中对安全的重视大大提高，大量内容都是应对当下的美军遇到的安全问题，而且提出的解决方案也相当接地气。</p>
-
-<h2 id="资料链接">资料链接</h2>
-
-<ul>
-<li>资料链接: <a href="https://pan.baidu.com/s/1ViGuMVu38p-ke4F_LJkasw" target="_blank">https://pan.baidu.com/s/1ViGuMVu38p-ke4F_LJkasw</a></li>
-<li>提取码: yfup</li>
+<li><a href="https://github.com/ahester57/ipfs-private-swarm" target="_blank">IPFS Private Swarm</a></li>
 </ul>
 
     </div>
@@ -651,13 +659,11 @@
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="">美军</a>
+  <a class="badge badge-light" href="/tags/ipfs/">ipfs</a>
   
-  <a class="badge badge-light" href="/tags/dod/">DoD</a>
+  <a class="badge badge-light" href="/tags/private-network/">Private Network</a>
   
-  <a class="badge badge-light" href="/tags/disa/">DISA</a>
-  
-  <a class="badge badge-light" href="/tags/cybersecurity/">Cybersecurity</a>
+  <a class="badge badge-light" href="/tags/p2p/">p2p</a>
   
 </div>
 

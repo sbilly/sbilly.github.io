@@ -4,19 +4,65 @@
   
   <url>
     <loc>https://sbilly.github.io/authors/sbilly/</loc>
-    <lastmod>2019-07-23T00:03:20+08:00</lastmod>
+    <lastmod>2019-07-26T15:04:45+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://sbilly.github.io/authors/</loc>
-    <lastmod>2019-07-23T00:03:20+08:00</lastmod>
+    <lastmod>2019-07-26T15:04:45+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sbilly.github.io/categories/</loc>
-    <lastmod>2019-07-23T00:03:20+08:00</lastmod>
+    <lastmod>2019-07-26T15:04:45+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/</loc>
+    <lastmod>2019-07-26T15:04:45+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/post/</loc>
+    <lastmod>2019-07-26T15:04:45+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/private-network/</loc>
+    <lastmod>2019-07-26T15:04:45+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/</loc>
+    <lastmod>2019-07-26T15:04:45+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/ipfs/</loc>
+    <lastmod>2019-07-26T15:04:45+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/p2p/</loc>
+    <lastmod>2019-07-26T15:04:45+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2019-07-26T15:04:45+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/</loc>
+    <lastmod>2019-07-26T15:04:45+08:00</lastmod>
   </url>
   
   <url>
@@ -45,23 +91,6 @@
   
   <url>
     <loc>https://sbilly.github.io/tags/jie/</loc>
-    <lastmod>2019-07-23T00:03:20+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sbilly.github.io/</loc>
-    <lastmod>2019-07-23T00:03:20+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sbilly.github.io/post/</loc>
-    <lastmod>2019-07-23T00:03:20+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sbilly.github.io/tags/</loc>
     <lastmod>2019-07-23T00:03:20+08:00</lastmod>
     <priority>0</priority>
   </url>
