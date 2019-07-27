@@ -84,6 +84,9 @@ npm run build
 # 下面的命令执行后会返回类似的响应，返回的 build 目录对应的 hash 在需要添加到 go-ipfs 代码中
 # added QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh build
 IPFS_PATH=../ipfs LIBP2P_FORCE_PNET=1 ../go-ipfs/cmd/ipfs/ipfs add -r ./build
+
+# 在 bootstrap 上强制存储 ipfs-webui
+IPFS_PATH=../ipfs LIBP2P_FORCE_PNET=1 ../go-ipfs/cmd/ipfs/ipfs pin add QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;修改并重新编译-go-ipfs&#34;&gt;修改并重新编译 go-ipfs&lt;/h2&gt;
