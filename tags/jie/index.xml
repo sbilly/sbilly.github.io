@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JIE on Keep Simple, Make Fun.</title>
+    <title>JIE | Keep Simple, Make Fun.</title>
     <link>https://sbilly.github.io/tags/jie/</link>
-    <description>Recent content in JIE on Keep Simple, Make Fun.</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh</language>
-    <copyright>{year} &amp;copy;</copyright>
-    <lastBuildDate>Tue, 23 Jul 2019 00:03:20 +0800</lastBuildDate>
-    
-	    <atom:link href="https://sbilly.github.io/tags/jie/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://sbilly.github.io/tags/jie/index.xml" rel="self" type="application/rss+xml" />
+    <description>JIE</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Tue, 23 Jul 2019 00:03:20 +0800</lastBuildDate>
+    <image>
+      <url>https://sbilly.github.io/img/icon-192.png</url>
+      <title>JIE</title>
+      <link>https://sbilly.github.io/tags/jie/</link>
+    </image>
     
     <item>
       <title>【转】美军联合信息环境解析</title>
       <link>https://sbilly.github.io/post/dod-joint-information-environment-enterprise-architecture-by-zhiyuan/</link>
       <pubDate>Tue, 23 Jul 2019 00:03:20 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/post/dod-joint-information-environment-enterprise-architecture-by-zhiyuan/</guid>
       <description>
 

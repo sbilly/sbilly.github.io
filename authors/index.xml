@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authors on Keep Simple, Make Fun.</title>
+    <title>Authors | Keep Simple, Make Fun.</title>
     <link>https://sbilly.github.io/authors/</link>
-    <description>Recent content in Authors on Keep Simple, Make Fun.</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh</language>
-    <copyright>{year} &amp;copy;</copyright>
-    <lastBuildDate>Fri, 26 Jul 2019 15:04:45 +0800</lastBuildDate>
-    
-	    <atom:link href="https://sbilly.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://sbilly.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Fri, 26 Jul 2019 15:04:45 +0800</lastBuildDate>
+    <image>
+      <url>https://sbilly.github.io/img/icon-192.png</url>
+      <title>Authors</title>
+      <link>https://sbilly.github.io/authors/</link>
+    </image>
     
     <item>
       <title></title>
       <link>https://sbilly.github.io/authors/sbilly/</link>
       <pubDate>Fri, 26 Jul 2019 15:04:45 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/authors/sbilly/</guid>
       <description>&lt;p&gt;我很懒，以至于什么都没写。&lt;/p&gt;
 </description>
@@ -26,7 +25,6 @@
       <title></title>
       <link>https://sbilly.github.io/authors/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://sbilly.github.io/authors/admin/</guid>
       <description>&lt;p&gt;Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.&lt;/p&gt;
 

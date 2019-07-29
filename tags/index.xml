@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Keep Simple, Make Fun.</title>
+    <title>Tags | Keep Simple, Make Fun.</title>
     <link>https://sbilly.github.io/tags/</link>
-    <description>Recent content in Tags on Keep Simple, Make Fun.</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh</language>
-    <copyright>{year} &amp;copy;</copyright>
-    <lastBuildDate>Fri, 26 Jul 2019 15:04:45 +0800</lastBuildDate>
-    
-	    <atom:link href="https://sbilly.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://sbilly.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Fri, 26 Jul 2019 15:04:45 +0800</lastBuildDate>
+    <image>
+      <url>https://sbilly.github.io/img/icon-192.png</url>
+      <title>Tags</title>
+      <link>https://sbilly.github.io/tags/</link>
+    </image>
     
     <item>
       <title>Private Network</title>
       <link>https://sbilly.github.io/tags/private-network/</link>
       <pubDate>Fri, 26 Jul 2019 15:04:45 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/tags/private-network/</guid>
       <description></description>
     </item>
@@ -25,7 +24,6 @@
       <title>ipfs</title>
       <link>https://sbilly.github.io/tags/ipfs/</link>
       <pubDate>Fri, 26 Jul 2019 15:04:45 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/tags/ipfs/</guid>
       <description></description>
     </item>
@@ -34,7 +32,6 @@
       <title>p2p</title>
       <link>https://sbilly.github.io/tags/p2p/</link>
       <pubDate>Fri, 26 Jul 2019 15:04:45 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/tags/p2p/</guid>
       <description></description>
     </item>
@@ -43,7 +40,6 @@
       <title>Cybersecurity</title>
       <link>https://sbilly.github.io/tags/cybersecurity/</link>
       <pubDate>Tue, 23 Jul 2019 00:03:20 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/tags/cybersecurity/</guid>
       <description></description>
     </item>
@@ -52,7 +48,6 @@
       <title>DISA</title>
       <link>https://sbilly.github.io/tags/disa/</link>
       <pubDate>Tue, 23 Jul 2019 00:03:20 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/tags/disa/</guid>
       <description></description>
     </item>
@@ -61,7 +56,6 @@
       <title>DoD</title>
       <link>https://sbilly.github.io/tags/dod/</link>
       <pubDate>Tue, 23 Jul 2019 00:03:20 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/tags/dod/</guid>
       <description></description>
     </item>
@@ -70,7 +64,6 @@
       <title>Enterprise Architecture</title>
       <link>https://sbilly.github.io/tags/enterprise-architecture/</link>
       <pubDate>Tue, 23 Jul 2019 00:03:20 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/tags/enterprise-architecture/</guid>
       <description></description>
     </item>
@@ -79,7 +72,6 @@
       <title>JIE</title>
       <link>https://sbilly.github.io/tags/jie/</link>
       <pubDate>Tue, 23 Jul 2019 00:03:20 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/tags/jie/</guid>
       <description></description>
     </item>
@@ -88,7 +80,6 @@
       <title>美军</title>
       <link>https://sbilly.github.io/tags/%E7%BE%8E%E5%86%9B/</link>
       <pubDate>Tue, 23 Jul 2019 00:03:20 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/tags/%E7%BE%8E%E5%86%9B/</guid>
       <description></description>
     </item>

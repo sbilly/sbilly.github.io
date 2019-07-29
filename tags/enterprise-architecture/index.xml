@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Enterprise Architecture on Keep Simple, Make Fun.</title>
+    <title>Enterprise Architecture | Keep Simple, Make Fun.</title>
     <link>https://sbilly.github.io/tags/enterprise-architecture/</link>
-    <description>Recent content in Enterprise Architecture on Keep Simple, Make Fun.</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh</language>
-    <copyright>{year} &amp;copy;</copyright>
-    <lastBuildDate>Tue, 23 Jul 2019 00:03:20 +0800</lastBuildDate>
-    
-	    <atom:link href="https://sbilly.github.io/tags/enterprise-architecture/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://sbilly.github.io/tags/enterprise-architecture/index.xml" rel="self" type="application/rss+xml" />
+    <description>Enterprise Architecture</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Tue, 23 Jul 2019 00:03:20 +0800</lastBuildDate>
+    <image>
+      <url>https://sbilly.github.io/img/icon-192.png</url>
+      <title>Enterprise Architecture</title>
+      <link>https://sbilly.github.io/tags/enterprise-architecture/</link>
+    </image>
     
     <item>
       <title>【转】美军联合信息环境解析</title>
       <link>https://sbilly.github.io/post/dod-joint-information-environment-enterprise-architecture-by-zhiyuan/</link>
       <pubDate>Tue, 23 Jul 2019 00:03:20 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/post/dod-joint-information-environment-enterprise-architecture-by-zhiyuan/</guid>
       <description>
 

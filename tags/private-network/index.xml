@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Private Network on Keep Simple, Make Fun.</title>
+    <title>Private Network | Keep Simple, Make Fun.</title>
     <link>https://sbilly.github.io/tags/private-network/</link>
-    <description>Recent content in Private Network on Keep Simple, Make Fun.</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh</language>
-    <copyright>{year} &amp;copy;</copyright>
-    <lastBuildDate>Fri, 26 Jul 2019 15:04:45 +0800</lastBuildDate>
-    
-	    <atom:link href="https://sbilly.github.io/tags/private-network/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://sbilly.github.io/tags/private-network/index.xml" rel="self" type="application/rss+xml" />
+    <description>Private Network</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Fri, 26 Jul 2019 15:04:45 +0800</lastBuildDate>
+    <image>
+      <url>https://sbilly.github.io/img/icon-192.png</url>
+      <title>Private Network</title>
+      <link>https://sbilly.github.io/tags/private-network/</link>
+    </image>
     
     <item>
       <title>构建包含 WEB 管理界面的 go-ipfs 的私有网络</title>
       <link>https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/</link>
       <pubDate>Fri, 26 Jul 2019 15:04:45 +0800</pubDate>
-      
       <guid>https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;media/15641153824612/15641250270855.jpg&#34; alt=&#34;!-w800&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://ipfs.io/&#34; target=&#34;_blank&#34;&gt;go-ipfs&lt;/a&gt; 是一个分布式基于区块链技术的分布式文件系统，文档可以查看 &lt;a href=&#34;https://docs.ipfs.io/&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt; 。本文主要记录和介绍如何使用 go-ipfs 搭建与公有网络隔离的私有网络。&lt;/p&gt;
+
+&lt;p&gt;要点其实也不复杂：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用 swarm.key 确保私有网络不对外开放&lt;/li&gt;
+&lt;li&gt;删除不必要的 bootstrap 节点，并保留自己的私有 bootstrap 节点&lt;/li&gt;
+&lt;li&gt;使得 ipfs-webui 的相关文件在 ipfs 私有网络上是可以访问到的&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;LIBP2P_FORCE_PNET=1&lt;/code&gt; 的环境变量设置 ipfs 运行在私有网络模式中&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;下面将介绍如何从源码编译并启动 bootstrap 节点。go-ipfs 还在积极开发中，在 2019 年  7 月 26 日是可以正常完成的。如果发现有问题，可以在评论中反馈。&lt;/p&gt;
 
@@ -75,13 +83,13 @@ git clone https://github.com/ipfs-shipyard/ipfs-webui.git
 
 # 编译 ipfs-webui
 # 需要 python2 支持，需要使用 npm 而不要使用 cnpm
-# 编译后的文件在 build
+# 编译后的文件在 build 目录
 cd ipfs-webui
 npm install
 npm run build
 
 # 把编译得到的 ipfs-webui 添加到 ipfs 文件系统私有网络中
-# 下面的命令执行后会返回类似的响应，返回的 build 目录对应的 hash 在需要添加到 go-ipfs 代码中
+# 下面的命令执行后会返回类似的响应，返回的 public 目录对应的 hash 在需要添加到 go-ipfs 代码中
 # added QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh build
 IPFS_PATH=../ipfs LIBP2P_FORCE_PNET=1 ../go-ipfs/cmd/ipfs/ipfs add -r ./build
 

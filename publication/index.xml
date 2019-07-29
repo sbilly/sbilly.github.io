@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Keep Simple, Make Fun.</title>
+    <title>Publications | Keep Simple, Make Fun.</title>
     <link>https://sbilly.github.io/publication/</link>
-    <description>Recent content in Publications on Keep Simple, Make Fun.</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh</language>
-    <copyright>{year} &amp;copy;</copyright>
-    
-	    <atom:link href="https://sbilly.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://sbilly.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright>
+    <image>
+      <url>https://sbilly.github.io/img/icon-192.png</url>
+      <title>Publications</title>
+      <link>https://sbilly.github.io/publication/</link>
+    </image>
     
   </channel>
 </rss>

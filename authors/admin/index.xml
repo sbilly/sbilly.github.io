@@ -3,19 +3,19 @@
   <channel>
     <title>Keep Simple, Make Fun.</title>
     <link>https://sbilly.github.io/authors/admin/</link>
-    <description>Recent content on Keep Simple, Make Fun.</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh</language>
-    <copyright>{year} &amp;copy;</copyright>
-    
-	    <atom:link href="https://sbilly.github.io/authors/admin/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://sbilly.github.io/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    <description>Keep Simple, Make Fun.</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright>
+    <image>
+      <url>https://sbilly.github.io/img/icon-192.png</url>
+      <title>Keep Simple, Make Fun.</title>
+      <link>https://sbilly.github.io/authors/admin/</link>
+    </image>
     
     <item>
       <title></title>
       <link>https://sbilly.github.io/authors/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://sbilly.github.io/authors/admin/</guid>
       <description>&lt;p&gt;Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.&lt;/p&gt;
 
