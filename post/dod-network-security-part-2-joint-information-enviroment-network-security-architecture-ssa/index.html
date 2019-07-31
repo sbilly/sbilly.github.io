@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="sbilly">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="JIE 为国防部构建的 6 项关键能力： SSA （单一安全架构）、网络规范化、 IAM （身份与访问管理）、企业服务、云计算、数据中心整合。还提到了 JIE 的 8 个现代化领域：网络现代化、网络安全体系结构、企业运营、计算与存储、企业服务、任务伙伴环境（MPE）、身份和访问管理（IdAM）、移动性。这一篇，就谈 6 项关键能力的第 1 项和 8 个现代化领域的第 2 项 —— JIE 网络安全架构 SSA （单一安全架构）。">
+
+  
+  <link rel="alternate" hreflang="zh" href="https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.dd629241ea9333c62c071f4a25f829ff.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-6223295-2', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@sbilly">
+  <meta property="twitter:creator" content="@sbilly">
+  
+  <meta property="og:site_name" content="Keep Simple, Make Fun.">
+  <meta property="og:url" content="https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/">
+  <meta property="og:title" content="【转】美军网络安全 | 第 2 篇：JIE 网络安全架构 SSA（单一安全架构） | Keep Simple, Make Fun.">
+  <meta property="og:description" content="JIE 为国防部构建的 6 项关键能力： SSA （单一安全架构）、网络规范化、 IAM （身份与访问管理）、企业服务、云计算、数据中心整合。还提到了 JIE 的 8 个现代化领域：网络现代化、网络安全体系结构、企业运营、计算与存储、企业服务、任务伙伴环境（MPE）、身份和访问管理（IdAM）、移动性。这一篇，就谈 6 项关键能力的第 1 项和 8 个现代化领域的第 2 项 —— JIE 网络安全架构 SSA （单一安全架构）。"><meta property="og:image" content="https://sbilly.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://sbilly.github.io/img/icon-192.png"><meta property="og:locale" content="zh">
+  
+    
+      <meta property="article:published_time" content="2019-07-31T12:01:02&#43;08:00">
+    
+    <meta property="article:modified_time" content="2019-07-31T12:01:02&#43;08:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>【转】美军网络安全 | 第 2 篇：JIE 网络安全架构 SSA（单一安全架构） | Keep Simple, Make Fun.</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Keep Simple, Make Fun.</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>文章</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>项目</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>关于</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">【转】美军网络安全 | 第 2 篇：JIE 网络安全架构 SSA（单一安全架构）</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2019-07-31 12:01:02 &#43;0800 CST" itemprop="datePublished">
+<meta content="2019-07-31 12:01:02 &#43;0800 CST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/sbilly/">sbilly</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2019-07-31</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="">安全产业</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/&amp;text=%e3%80%90%e8%bd%ac%e3%80%91%e7%be%8e%e5%86%9b%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%20%7c%20%e7%ac%ac%202%20%e7%af%87%ef%bc%9aJIE%20%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84%20SSA%ef%bc%88%e5%8d%95%e4%b8%80%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84%ef%bc%89" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/&amp;t=%e3%80%90%e8%bd%ac%e3%80%91%e7%be%8e%e5%86%9b%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%20%7c%20%e7%ac%ac%202%20%e7%af%87%ef%bc%9aJIE%20%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84%20SSA%ef%bc%88%e5%8d%95%e4%b8%80%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84%ef%bc%89" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%e3%80%90%e8%bd%ac%e3%80%91%e7%be%8e%e5%86%9b%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%20%7c%20%e7%ac%ac%202%20%e7%af%87%ef%bc%9aJIE%20%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84%20SSA%ef%bc%88%e5%8d%95%e4%b8%80%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84%ef%bc%89&amp;body=https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/&amp;title=%e3%80%90%e8%bd%ac%e3%80%91%e7%be%8e%e5%86%9b%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%20%7c%20%e7%ac%ac%202%20%e7%af%87%ef%bc%9aJIE%20%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84%20SSA%ef%bc%88%e5%8d%95%e4%b8%80%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84%ef%bc%89" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=%e3%80%90%e8%bd%ac%e3%80%91%e7%be%8e%e5%86%9b%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%20%7c%20%e7%ac%ac%202%20%e7%af%87%ef%bc%9aJIE%20%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84%20SSA%ef%bc%88%e5%8d%95%e4%b8%80%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84%ef%bc%89%20https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/&amp;title=%e3%80%90%e8%bd%ac%e3%80%91%e7%be%8e%e5%86%9b%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%20%7c%20%e7%ac%ac%202%20%e7%af%87%ef%bc%9aJIE%20%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84%20SSA%ef%bc%88%e5%8d%95%e4%b8%80%e5%ae%89%e5%85%a8%e6%9e%b6%e6%9e%84%ef%bc%89" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>原文：<a href="https://mp.weixin.qq.com/s/GVcNs7avdB5hEk-ZI7Aq2Q" target="_blank">https://mp.weixin.qq.com/s/GVcNs7avdB5hEk-ZI7Aq2Q</a></p>
+
+<h2 id="一-上期回顾">一、上期回顾</h2>
+
+<p>公众号的上一篇（<a href="/post/dod-network-security-part-1-the-summary-of-joint-information-enviroment/">美军网络安全 | 开篇：JIE（联合信息环境）概述</a>）介绍了美军 <strong>JIE （联合信息环境）</strong>的总体情况。其主要目标是实现“<strong>三个任意</strong>”的愿景——美军作战人员能够基于<strong>任意设备</strong>、在<strong>任意时间</strong>、在全球范围的<strong>任意地方</strong>获取所需信息，以满足联合作战的需求。</p>
+
+<p>同时，提到了 JIE 为国防部构建的 <strong>6 项关键能力</strong>： SSA （单一安全架构）、网络规范化、 IAM （身份与访问管理）、企业服务、云计算、数据中心整合。还提到了 JIE 的 <strong>8 个现代化领域</strong>：网络现代化、网络安全体系结构、企业运营、计算与存储、企业服务、任务伙伴环境（MPE）、身份和访问管理（IdAM）、移动性。</p>
+
+<p>这一篇，就谈 <strong>6 项关键能力</strong>的第 1 项和 <strong>8 个现代化领域</strong>的第 2 项 —— JIE 网络安全架构 <strong>SSA （单一安全架构）</strong>。</p>
+
+<p>注意：<strong>SSA（单一安全架构）</strong> 在最新的文件中可能被称为 <strong>CCA （一致网络安全架构）</strong>。</p>
+
+<h2 id="二-国防部网络安全准则">二、国防部网络安全准则</h2>
+
+<p>根据美国防部 2016 年发布的《国防部网络安全准则实施计划》列出了朴实得不能再朴实的基本安全准则：</p>
+
+<ul>
+<li><strong>努力方向 1 ：强身份验证</strong>：降低对手在国防部信息网络上的机动能力。美国防部将执行更为严格的访问要求并<strong>降低网络的匿名性</strong>。</li>
+<li><strong>努力方向 2 ：设备加固</strong>：减少进入国防部信息网络的内部和外部攻击向量。确保设备正确配置和软件补丁为最新,该项工作还包括禁用电子邮件中的活动链接。</li>
+<li><strong>努力方向 3 ：减少攻击面</strong>：减少进入国防部信息网络的外部攻击载体。指挥官和监察人员必须确保只有<strong>经过授权的设备</strong>可以访问网络、与国防部网络建立信任。此外,减少被攻击面也是 JIE （联合信息环境）的目标之一。 JIE 使用<strong>联合区域安全堆栈（JRSS）</strong>减少安全区域的数量，从 1000 多个网络访同点减少到 50 个。</li>
+<li><strong>努力方向 4：与网络安全/计算机网络防御服务提供商保持一致</strong>：提高对敌方活动的探测和响应能力。监控网络外围，推动网络事件报告方式的标准化，将提高对网络事件的快速检测和快速反应。</li>
+</ul>
+
+<p>从第 3 个努力方向可以看出：<strong>减少攻击面</strong>是其关键原则之一。而 SSA 正是贯彻这一安全原则的产物。</p>
+
+<h2 id="三-设计ssa的背景原因">三、设计SSA的背景原因</h2>
+
+<p><strong>美国防部设计 SSA 的根本原因是 GIG 存在问题</strong>。</p>
+
+<ul>
+<li><strong>GIG 初衷：</strong></li>
+</ul>
+
+<p>GIG 是美军在提出 JIE 之前构建实施的巨大而复杂的通信与服务系统，其网络基础结构由不同的分布式服务单元组成，旨在将美国国防部的所有的信息系统、服务及应用，集成为一个无缝隙的、可靠的和安全的网络。</p>
+
+<ul>
+<li><strong>GIG 结果：</strong></li>
+</ul>
+
+<p>但是随着 GIG 演进工作的不断推进，原有的设计逐步暴露出构建成本高昂、互联能力有限、新技术采用缓慢、事件响应灵活性差等问题，美军构想的信息共享、基础设施建设、系统和服务采办模式、联合训练、通信保障及作战支持等能力并未达到预期目标。</p>
+
+<ul>
+<li><strong>GIG 问题披露：</strong></li>
+</ul>
+
+<p>2012 年，美国网络司令部司令兼国家安全局局长，亚历山大将军，接受联邦新闻电台采访时说：“对于现在的 DoD 体系结构，我认为保护它们真的是非常困难。我们有 15000 个飞地，每个都是<strong>单独管理</strong>的。其结果是，每一个都要被修补，像一个独立的采邑一样运行。负责保护它们的人看不到防火墙以外的东西。基于主机的安全系统有所帮助，但实事求是的讲，态势感知是不存在的。”</p>
+
+<p>2014 年，美军在《陆军网络安全企业参考架构 2.0》中提出，当前网络安全防护手段存在以下缺点：</p>
+
+<ol>
+<li>各军兵种的网络包含重复、冗余的网络安全控制手段，同一数据在到达接收方路径中会被检查多次，造成效率低下、时延增加；</li>
+<li>美海军提出的 CND 2.0（计算机网络防御体系）在实践中被认为没有达到预期效果，功能不完备；</li>
+<li>安全策略的非标准化情况严重，有时甚至造成冲突，导致安全能力降级；</li>
+<li>当前的网络<strong>攻击暴露面</strong>是无法管理的；</li>
+<li>许多 P/C/S （美军不同级别的前线阵地）用户需要同时维护不同网络的<strong>多种边界安全防护设备</strong>；</li>
+<li>缺乏面向最终用户和设备的<strong>态势感知和事件响应能力</strong>。</li>
+</ol>
+
+<ul>
+<li><strong>原因分析：</strong></li>
+</ul>
+
+<p>在 GIG 所代表的传统信息框架下，各军种具备自行设计网络、开展网络防御的<strong>决定权</strong>。</p>
+
+<p>尽管美军国防部在各军种、军事机构中推动和实施了多个网络安全战略性项目，但 GIG 各组成单元间相互脱节的网络安全策略和保护措施<strong>多样化</strong>的实现途径，导致网络安全本质上的整体保障能力存在巨大风险。</p>
+
+<h2 id="四-ssa-的背后思想">四、SSA 的背后思想</h2>
+
+<p>SSA 的设计思想是减少网络攻击面暴露。</p>
+
+<p><img src="media/15645432223609/15645443742807.jpg" alt="-w600" /></p>
+
+<p>由于多种<strong>非标准化安全实现</strong>带来大量的 DoD 网络攻击面暴露，所以 SSA 的基本思想是<strong>标准化安全实现</strong>，以减小网络攻击面。从 SSA 的名称“单一安全体系结构”也可以领会到这一点。</p>
+
+<h2 id="五-ssa-定义-定位">五、SSA 定义&amp;定位</h2>
+
+<ul>
+<li><strong>SSA 定义：</strong></li>
+</ul>
+
+<p>JIE SSA 是一个联合的国防部安全架构，为美军国防部所有军事机构的计算机和网络防御，提供通用方法：</p>
+
+<ol>
+<li>使用<strong>标准化</strong>的安全防护功能集/套件，在<strong>最佳位置</strong>开展防御；</li>
+<li><strong>移除冗余</strong>的不必要的信息保障手段，以提高效能；</li>
+<li>通过集中式计算机网络防御数据库，控制用户数据流动，并向 B/P/C/S 提供<strong>全局态势感知</strong>；</li>
+<li>在服务器、用户资产与骨干网分离时，保护网络飞地；</li>
+<li>在 JIE 指定的美军国防部 <strong>EOC （企业操作中心）</strong>中，提供用于监视和控制所有安全手段的工具集。</li>
+</ol>
+
+<ul>
+<li><strong>SSA 定位：</strong></li>
+</ul>
+
+<p>SSA 的提出体现了美军为扭转安全防护的不利态势，而在 JIE 中做出的<strong>不懈努力</strong>。</p>
+
+<p><strong>SSA 在 JIE 中定位</strong>：SSA 对应于 JIE 关键目标中的“建立整体的企业化安全架构，以确保优化的和同步化的网络、项目和企业化服务、以及联合和联盟作战行动”这一要求。</p>
+
+<p><strong>SSA 与 JRSS 关系</strong>： JRSS 是 SSA 的重要组成部分和贯彻实施形式。</p>
+
+<p><strong>SSA 的主要原理</strong>：降低所需的信息技术设备总量、实现配置标准化，建立企业级的安全共享协议和简化数据路由等。</p>
+
+<ul>
+<li><strong>SSA 目的：</strong></li>
+</ul>
+
+<p><strong>SSA 目的</strong>：打破军兵种间分割和安全防御的各自为战，整合成一个安全集成框架；</p>
+
+<ol>
+<li>将<strong>最佳</strong>的 CC/S/A（作战司令部/军种/机构）的信息保障能力和实践，应用于JIE安全体系结构。</li>
+<li>用户在 SSA 支撑下，能够连接以前从未访问过的外部网络，从而获得更灵活的战术优势。</li>
+<li>SSA 通过<strong>规整网络安全边界</strong>，减少外部攻击面、管理标准化和操作、技术控制，确保在所有任务背景下美军国防部信息资产的保密性、完整性、可用性，同时能够促进快速攻击侦察、诊断、控制、响应能力的实现。</li>
+<li>试图解决在实施任务保障时存在的机构<strong>重叠</strong>、职责不清等问题，消除系统烟囱和网络安全边界，<strong>减少暴露于外部的攻击面</strong>，实现参战单元的信息互通及快速、安全的数据共享，推进安全机制和协议规范的复用，降低已有系统改造和集成的耗费，从而使得信息基础设施管理员们更方便地监控和发现潜在安全威胁，并更迅速地应对。</li>
+</ol>
+
+<h2 id="五-ssa方案和能力分解">五、SSA方案和能力分解</h2>
+
+<ul>
+<li><strong>SSA 方案</strong></li>
+</ul>
+
+<p>美国防部网络区分为 <strong>NIPRNet</strong>（非密网）和 <strong>SIPRNet</strong>（涉密网），对应的 <strong>SSA</strong> 方案有所不同。</p>
+
+<p><strong>NIPRNet</strong> 的 <strong>SSA</strong> 方案如下图：</p>
+
+<p><img src="media/15645432223609/15645448204684.jpg" alt="-w600" /></p>
+
+<p><strong>SIPRNet</strong> 的 <strong>SSA</strong> 方案如下图：</p>
+
+<p><img src="media/15645432223609/15645448423886.jpg" alt="-w600" /></p>
+
+<p>留个作业：请自行对比上面两张图的区别。</p>
+
+<p>看到这两张图，应该会很自然地联想到上一篇的 JIE 整体框架图：</p>
+
+<p><img src="media/15645432223609/15645448687901.jpg" alt="-w600" /></p>
+
+<p>现在，<strong>兑现上期的承诺：给出JIE整体框架的汉化版：</strong></p>
+
+<p><img src="media/15645432223609/15645448917809.jpg" alt="-w600" /></p>
+
+<p>实际上，图中所有深红色标记的安全能力都属于SSA的覆盖范畴，当然标记为SSA和JRSS的那些模块最为直接。</p>
+
+<ul>
+<li><strong>SSA 能力分解</strong></li>
+</ul>
+
+<p>对应地，两种网络中 SSA 的能力也有所不同。</p>
+
+<p>NIPRNet 的 SSA 能力如下图：</p>
+
+<p><img src="media/15645432223609/15645449356228.jpg" alt="-w600" /></p>
+
+<p>SIPRNet 的 SSA 能力如下图：</p>
+
+<p><img src="media/15645432223609/15645449569018.jpg" alt="-w600" /></p>
+
+<p>可以看出， <strong>SSA 覆盖的安全能力</strong>包括：国防部企业<strong>边界</strong>保护、<strong>端点</strong>安全、<strong>移动端点</strong>安全、<strong>数据中心</strong>安全、网络安全<strong>态势感知</strong>分析能力、<strong>身份和访问管理</strong>。可谓面面俱到。</p>
+
+<h2 id="六-总结和预告">六、总结和预告</h2>
+
+<p>这一篇主要介绍了美 JIE 环境的整体安全架构思想 SSA 。</p>
+
+<p>关注于落地实现细节的童鞋，可能会有很多疑问。</p>
+
+<p>是的。SSA 更多的是一种<strong>安全思想</strong>，而其落地实现则会分解到更多的安全能力模块中，比如JRSS（联合区域安全栈）就是SSA的核心实现之一。</p>
+
+<p>若想进一步了解SSA实现细节，<strong>且等</strong>下回分解。</p>
+
+<p>注意是“<strong>且等</strong>”，感兴趣却没有耐心的童鞋，还请自行分析研究，欢迎交流沟通。</p>
+
+    </div>
+
+    
+
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="">美军</a>
+  
+  <a class="badge badge-light" href="/tags/dod/">DoD</a>
+  
+  <a class="badge badge-light" href="/tags/jie/">JIE</a>
+  
+  <a class="badge badge-light" href="/tags/cybersecurity/">Cybersecurity</a>
+  
+  <a class="badge badge-light" href="/tags/joint-information-environment/">Joint Information Environment</a>
+  
+  <a class="badge badge-light" href="/tags/ssa/">SSA</a>
+  
+  <a class="badge badge-light" href="/tags/security-architecture/">Security Architecture</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/sbilly/avatar_hu0e09cc2018de1a599b70958c39834348_240652_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://sbilly.github.io/">sbilly</a></h5>
+      
+      <p class="card-text" itemprop="description">主要关注 信息安全、网络安全、系统架构、计算机、网络、开发、科技、制造等科技领域</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/sbilly" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/sbilly" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://weibo.com/sbilly" target="_blank" rel="noopener">
+              <i class="fab fa-weibo"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/" >
+              <i class="fab fa-weixin"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/post/dod-network-security-part-1-the-summary-of-joint-information-enviroment/">【转】美军网络安全 | 开篇：JIE（联合信息环境）概述</a></li>
+          
+          <li><a href="/post/dod-joint-information-environment-security-architecture-analysis-by-zhouxiaochuan/">【转】美军信息网络安全架构解析</a></li>
+          
+          <li><a href="/post/dod-joint-information-environment-enterprise-architecture-by-zhiyuan/">【转】美军联合信息环境解析</a></li>
+          
+          <li><a href="/post/dod-and-disa-released-2019-2023-strategic-plan/">美国国防部发布 2019-2023 年数字现代化战略</a></li>
+          
+          <li><a href="/post/high-security-military-network-based-on-proactive-protection/">【转】基于主动防御的高安全军事网络防御</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+
+    
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "sbilly" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://sbilly.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    2019 &copy; &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
