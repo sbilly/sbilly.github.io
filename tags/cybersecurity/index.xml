@@ -19,6 +19,8 @@
       <guid>https://sbilly.github.io/post/dod-network-security-part-1-the-summary-of-joint-information-enviroment/</guid>
       <description>
 
+&lt;p&gt;&lt;img src=&#34;media/15645411696534/15645414651034.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/p&gt;
+
 &lt;p&gt;原文：&lt;a href=&#34;https://mp.weixin.qq.com/s/9VK8KFKF_ikSL2NBS8H3Mg&#34; target=&#34;_blank&#34;&gt;https://mp.weixin.qq.com/s/9VK8KFKF_ikSL2NBS8H3Mg&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;按语：久等了。我打算同步编写两个系列：一是“美军网络安全”系列；二是“安全自动化”系列。这是“美军网络安全”系列的第一篇。&lt;/p&gt;
@@ -90,13 +92,10 @@
 &lt;h2 id=&#34;五-jie-联合信息环境-整体框架&#34;&gt;五、JIE（联合信息环境）整体框架&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;JIE 整体框架：&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;JIE 整体框架：
+&lt;img src=&#34;media/15645411696534/15645414651034.jpg&#34; alt=&#34;-w600&#34; /&gt;
+（本系列下一篇将展示汉化版）&lt;/p&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;img src=&#34;media/15645411696534/15645414651034.jpg&#34; alt=&#34;-w600&#34; /&gt;
-（本系列下一篇将展示汉化版）&lt;/p&gt;
-
-&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;JIE现代化领域&lt;/strong&gt;：&lt;/p&gt;
 
 &lt;ol&gt;
