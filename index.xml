@@ -5,436 +5,12 @@
     <link>https://sbilly.github.io/</link>
       <atom:link href="https://sbilly.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Keep Simple, Make Fun.</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Tue, 06 Aug 2019 17:36:13 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Wed, 31 Jul 2019 15:56:57 +0800</lastBuildDate>
     <image>
       <url>https://sbilly.github.io/img/icon-192.png</url>
       <title>Keep Simple, Make Fun.</title>
       <link>https://sbilly.github.io/</link>
     </image>
-    
-    <item>
-      <title>构建 arm64 架构 k8s 集群（phicomm-n1）</title>
-      <link>https://sbilly.github.io/post/howto-setup-kubernetes-cluster-on-armbian-linux-based-on-phicomm-n1-arm64-sbc/</link>
-      <pubDate>Tue, 06 Aug 2019 17:36:13 +0800</pubDate>
-      <guid>https://sbilly.github.io/post/howto-setup-kubernetes-cluster-on-armbian-linux-based-on-phicomm-n1-arm64-sbc/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650825237899.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;树莓派发布了新的主机以后，想买一个来吃灰。搜索了一下，发现斐讯矿难的 phicomm n1 非常便宜（低于人民币 100 元），配置也比树莓派好。同时已经有玩家把 armbian 移植的方法研究出来了，可以跑完整的 arm64 架构的 Ubuntu 系统。性能强、耗电低、无风扇、可以集中供电、这些都非常适合用来建 k8s 集群：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Amlogic S905D 四核 1.5G 的 Cortex-A53 处理器（带 Mali-450 GPU）&lt;/li&gt;
-&lt;li&gt;板载 2GB 的 DDR3 内存&lt;/li&gt;
-&lt;li&gt;板载 8GB 的 eMMC 闪存&lt;/li&gt;
-&lt;li&gt;支持 4K 60Hz 刷新的 HDMI 2.0a 接口&lt;/li&gt;
-&lt;li&gt;1x 千兆以太网（RTL8211F）&lt;/li&gt;
-&lt;li&gt;1x 双频 802.11ac WiFi&lt;/li&gt;
-&lt;li&gt;1x 蓝牙 4.1（和树莓派 3B+ 一样，使用 CYW43455 模块）&lt;/li&gt;
-&lt;li&gt;2x USB 2.0&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;[TOC]&lt;/p&gt;
-
-&lt;h2 id=&#34;要点&#34;&gt;要点&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;部署 master 节点
-
-&lt;ul&gt;
-&lt;li&gt;docker-ce、kubeadm、kubelet、kubectl 版本
-
-&lt;ul&gt;
-&lt;li&gt;20190805 的 armbian 上使用这样的版本是确定可用的：&lt;code&gt;apt-get install -yq kubeadm=1.14.4-00 kubelet=1.14.4-00 kubectl=1.14.4-00 docker-ce=18.06.2~ce~3-0~ubuntu&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;如果想尝鲜，都使用最新版本也可尝试&lt;/li&gt;
-&lt;li&gt;查询可用版本可以使用 &lt;code&gt;apt-cache madison docker-ce&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;ubuntu 系统需要使用 systemd
-
-&lt;ul&gt;
-&lt;li&gt;kubelet 需要编辑 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; ，增加 &lt;code&gt;KUBELET_EXTRA_ARGS=--cgroup-driver=systemd --fail-swap-on=false&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;phicomm N1 的 armbian 系统使用了 zram，需要增加参数是的 swapon 的时候 k8s 相关服务和 docker 都能正常启动
-
-&lt;ul&gt;
-&lt;li&gt;kebelet 需要编辑 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; ， 增加 &lt;code&gt;KUBELET_EXTRA_ARGS=--fail-swap-on=false&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;需要使用 arm64 架构的 docker 镜像&lt;/strong&gt;，必须翻墙或使用镜像拉取
-
-&lt;ul&gt;
-&lt;li&gt;使用 &lt;code&gt;mirrorgooglecontainers&lt;/code&gt; 或者提前拉取正确的镜像&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;kubeadm config images list&lt;/code&gt; 可以看需要的 docker 镜像&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;安装 flannel 的 CNI 插件&lt;/li&gt;
-&lt;li&gt;安装 dashboard&lt;/li&gt;
-&lt;li&gt;安装 helm
-
-&lt;ul&gt;
-&lt;li&gt;需要使用 arm64 的镜像 &lt;a href=&#34;https://hub.docker.com/r/jessestuart/tiller&#34; target=&#34;_blank&#34;&gt;jessestuart/tiller:latest-arm64&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;部署节点
-
-&lt;ul&gt;
-&lt;li&gt;需要修改 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; 和 &lt;code&gt;/etc/docker/daemon.json&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;需要把需要翻墙才能下载的镜像手动部署上去&lt;/li&gt;
-&lt;li&gt;需要 token&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;详细安装步骤&#34;&gt;详细安装步骤&lt;/h2&gt;
-
-&lt;h3 id=&#34;准备环境&#34;&gt;准备环境&lt;/h3&gt;
-
-&lt;p&gt;安装好 armbian 系统，并编辑 &lt;code&gt;/etc/hosts&lt;/code&gt; 增加节点的主机名（非必须）。最好是在本机的 IP 地址前都加上 localhost&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;192.168.31.81	localhost phicomm-n1-peer01
-192.168.31.82	phicomm-n1-peer02
-192.168.31.83	phicomm-n1-peer03
-192.168.31.84	phicomm-n1-peer04
-192.168.31.85	phicomm-n1-peer05
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;安装和配置-docker-ce-kubeadm-kubectl-kubelet&#34;&gt;安装和配置 docker-ce kubeadm kubectl kubelet&lt;/h3&gt;
-
-&lt;p&gt;创建 &lt;code&gt;/etc/docker/daemon.json&lt;/code&gt; &lt;strong&gt;使 docker 的 cgroupdriver 为 systemd&lt;/strong&gt; （&lt;strong&gt;如果 docker 已经启动，需要重新启动 docker&lt;/strong&gt;）&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p /etc/docker
-cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF
-{
-  &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;],
-  &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;,
-  &amp;quot;log-opts&amp;quot;: {
-    &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot;
-  },
-  &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;
-}
-EOF
-
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;创建 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; &lt;strong&gt;让 kubelet 也使用 systemd 作为 cgroup-driver，并启用 &lt;code&gt;--fail-swap-on&lt;/code&gt; 强制在 swap 激活时 kubelet 能正常启动&lt;/strong&gt;。正常 k8s 是不建议使用 swap 的，启动时检查到 swap 处于激活状态时会终止启动。但因为 armbian 使用 zram ，不建议关闭 zram ，因此需要增加额外的启动参数。（&lt;strong&gt;如果 kubelet 已经启动，需要重新启动 kubelet&lt;/strong&gt;）&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cat &amp;gt; /etc/default/kubelet &amp;lt;&amp;lt;EOF
-KUBELET_EXTRA_ARGS=--cgroup-driver=systemd --fail-swap-on=false
-EOF
-
-sudo systemctl daemon-reload
-sudo systemctl restart kubelet
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;安装 docker-ce kubeadm kubectl kubelet&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt update -y; apt upgrade -y; apt autoremove -y; apt clean -y
-apt install -yq docker-ce kubeadm kubelet kubectl
-
-# 也可以先查看有哪些可用版本，再安装指定版本
-# apt-cache madison docker-ce kubeadm kubelet kubectl
-# apt install -yq kubeadm=1.14.4-00 kubelet=1.14.4-00 kubectl=1.14.4-00 docker-ce=18.06.2~ce~3-0~ubuntu
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;获取-docker-镜像&#34;&gt;获取 docker 镜像&lt;/h3&gt;
-
-&lt;p&gt;因为 k8s 缺省使用的 &lt;code&gt;*.gcr.io&lt;/code&gt; &lt;a href=&#34;https://console.cloud.google.com/gcr/images/google-containers/GLOBAL&#34; target=&#34;_blank&#34;&gt;官方镜像&lt;/a&gt;都被墙，因此需要翻墙。另外，Phicomm N1 是 arm64 架构，因此在获取 docker 镜像时必须使用 arm64 架构的。到 2019 年 8 月 6 日为止， aliyun 提供的 &lt;code&gt;registry.aliyuncs.com&lt;/code&gt; 的 &lt;a href=&#34;https://cr.console.aliyun.com/cn-beijing/instances/images&#34; target=&#34;_blank&#34;&gt;google_container&lt;/a&gt; 镜像缺省只提供了 x64/x86 架构的镜像，&lt;strong&gt;只有 &lt;a href=&#34;https://hub.docker.com/u/mirrorgooglecontainers/&#34; target=&#34;_blank&#34;&gt;mirrorgooglecontainers&lt;/a&gt; 提供的镜像才包含了各种架构最新版本&lt;/strong&gt;。&lt;strong&gt;建议用下面的方法手动获取 k8s 所需 arm64 相关镜像&lt;/strong&gt;。首先，查看当前 k8s 使用的最新 docker 镜像列表&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kubeadm config images list
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后，从 mirrorgooglecontainers 和 coredns 下载 docker 镜像，并重新打上 &lt;code&gt;k8s.gcr.io&lt;/code&gt; 的相关 tag，并删除老的 tag&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下载镜像
-docker pull mirrorgooglecontainers/kube-apiserver-arm64:v1.15.2
-docker pull mirrorgooglecontainers/kube-controller-manager-arm64:v1.15.2
-docker pull mirrorgooglecontainers/kube-scheduler-arm64:v1.15.2
-docker pull mirrorgooglecontainers/kube-proxy-arm64:v1.15.2
-docker pull mirrorgooglecontainers/pause-arm64:3.1
-docker pull mirrorgooglecontainers/etcd-arm64:3.3.10
-## coredns 需要从 coredns 官方下载
-docker pull coredns/coredns:coredns-arm64
-
-# 打上 k8s.gcr.io 的 tag
-docker tag mirrorgooglecontainers/kube-apiserver-arm64:v1.15.2 k8s.gcr.io/kube-apiserver:v1.15.2
-docker tag mirrorgooglecontainers/kube-controller-manager-arm64:v1.15.2 k8s.gcr.io/kube-controller-manager:v1.15.2
-docker tag mirrorgooglecontainers/kube-scheduler-arm64:v1.15.2 k8s.gcr.io/kube-scheduler:v1.15.2
-docker tag mirrorgooglecontainers/kube-proxy-arm64:v1.15.2 k8s.gcr.io/kube-proxy:v1.15.2
-docker tag mirrorgooglecontainers/pause-arm64:3.1 k8s.gcr.io/pause:3.1
-docker tag mirrorgooglecontainers/etcd-arm64:3.3.10 k8s.gcr.io/etcd:3.3.10
-docker tag coredns/coredns:coredns-arm64 k8s.gcr.io/coredns:1.3.1
-
-# 删除 mirrorgooglecontainers 的相关 tag
-docker rmi mirrorgooglecontainers/kube-apiserver-arm64:v1.15.2
-docker rmi mirrorgooglecontainers/kube-controller-manager-arm64:v1.15.2
-docker rmi mirrorgooglecontainers/kube-scheduler-arm64:v1.15.2
-docker rmi mirrorgooglecontainers/kube-proxy-arm64:v1.15.2
-docker rmi mirrorgooglecontainers/pause-arm64:3.1
-docker rmi mirrorgooglecontainers/etcd-arm64:3.3.10
-docker rmi coredns/coredns:coredns-arm64
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;初始化-k8s-集群&#34;&gt;初始化 k8s 集群&lt;/h3&gt;
-
-&lt;p&gt;使用 kubeadm 初始化 k8s 集群节点。因为使用了 zram ， 因此需要加上 &lt;code&gt;--ignore-preflight-errors Swap&lt;/code&gt; 的命令行选项。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kubeadm init --ignore-preflight-errors Swap 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;正常可以看到安装成功的提示信息&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Your Kubernetes control-plane has initialized successfully!
-
-To start using your cluster, you need to run the following as a regular user:
-
-  mkdir -p $HOME/.kube
-  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-  sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
-You should now deploy a pod network to the cluster.
-Run &amp;quot;kubectl apply -f [podnetwork].yaml&amp;quot; with one of the options listed at:
-  https://kubernetes.io/docs/concepts/cluster-administration/addons/
-
-Then you can join any number of worker nodes by running the following on each as root:
-
-kubeadm join 192.168.31.81:6443 --token b5it71.ju23p2j3n2qcnty2 \
-    --discovery-token-ca-cert-hash sha256:21539e6ae6e9a8c9cddbb9fc7da5750b780dde203aebb1346298f9c4892bac1f
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;执行相关命令可以正常看到集群信息&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 查看集群信息
-$ kubectl cluster-info
-Kubernetes master is running at https://192.168.31.81:6443
-KubeDNS is running at https://192.168.31.81:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
-
-# 查看集群节点信息
-$ kubectl get nodes
-NAME                STATUS     ROLES    AGE     VERSION
-phicomm-n1-peer01   NotReady   master   3m50s   v1.15.2
-
-# 查看现有 Pod
-$ kubectl get pods --all-namespaces
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;安装-flannel&#34;&gt;安装 flannel&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下载最新的 arm64 架构 flannel 插件
-wget https://github.com/containernetworking/plugins/releases/download/v0.8.1/cni-plugins-linux-arm64-v0.8.1.tgz
-
-# 解压缩 flannel 文件
-sudo mkdir -p /opt/cni/bin &amp;amp;&amp;amp; cd /opt/cni/bin
-sudo tar vfxz cni-plugins-linux-arm64-v0.8.1.tgz -C /opt/cni/bin
-
-# 到 https://quay.io/repository/coreos/flannel 查看最新的 flannel 版本并下载
-docker pull quay.io/coreos/flannel:v0.11.0-arm64
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;为了使 flannel 正常工作，需要修改 &lt;code&gt;/etc/kubernetes/manifests/kube-controller-manager.yaml&lt;/code&gt; 文件 —— 在 &lt;code&gt;spec.containers.command&lt;/code&gt; 中增加 &lt;code&gt;kube-controller-manager&lt;/code&gt; 命令的 &lt;code&gt;--allocate-node-cidrs=true&lt;/code&gt; 和 &lt;code&gt;--cluster-cidr=10.244.0.0/16&lt;/code&gt; 参数（需要根据按照实际情况配置 CIDR 值）。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;spec:
-  containers:
-  - command:
-    - kube-controller-manager
-    - --authentication-kubeconfig=/etc/kubernetes/controller-manager.conf
-    - --authorization-kubeconfig=/etc/kubernetes/controller-manager.conf
-    - --bind-address=127.0.0.1
-    - --client-ca-file=/etc/kubernetes/pki/ca.crt
-    - --cluster-signing-cert-file=/etc/kubernetes/pki/ca.crt
-    - --cluster-signing-key-file=/etc/kubernetes/pki/ca.key
-    - --controllers=*,bootstrapsigner,tokencleaner
-    - --kubeconfig=/etc/kubernetes/controller-manager.conf
-    - --leader-elect=true
-    - --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt
-    - --root-ca-file=/etc/kubernetes/pki/ca.crt
-    - --service-account-private-key-file=/etc/kubernetes/pki/sa.key
-    - --use-service-account-credentials=true
-    - --allocate-node-cidrs=true
-    - --cluster-cidr=10.244.0.0/16
-    image: k8s.gcr.io/kube-controller-manager:v1.15.2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;修改完成后，重新启动 docker 和 k8s&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下载并安装 flannel
-$ curl -Lo kube-flannel.yml https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-$ kubectl apply -f  kube-flannel.yml
-
-# 安装完毕后可以看到 flannel.1 网络接口
-$ ifconfig flannel.1
-
-# 可以看到所有 pods 已经启动
-$ kubectl get pods --all-namespaces -o wide
-
-NAMESPACE     NAME                                        READY   STATUS    RESTARTS   AGE     IP              NODE                NOMINATED NODE   READINESS GATES
-kube-system   coredns-5c98db65d4-dps4b                    1/1     Running   1          7h40m   10.244.0.5      phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   coredns-5c98db65d4-gls5c                    1/1     Running   1          7h40m   10.244.0.4      phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   etcd-phicomm-n1-peer01                      1/1     Running   4          7h39m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   kube-apiserver-phicomm-n1-peer01            1/1     Running   4          7h39m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   kube-controller-manager-phicomm-n1-peer01   1/1     Running   1          6h29m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   kube-flannel-ds-arm64-8nm2s                 1/1     Running   6          6h43m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   kube-proxy-8tbqb                            1/1     Running   4          7h40m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   kube-scheduler-phicomm-n1-peer01            1/1     Running   4          7h39m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;增加集群节点&#34;&gt;增加集群节点&lt;/h3&gt;
-
-&lt;p&gt;在新的子节点按照上述步骤安装 docker-ce kubeadm kubectl kubelet ， 创建 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; 和 &lt;code&gt;/etc/docker/daemon.json&lt;/code&gt; 文件（需要重新启动），拉取 docker 镜像（别忘了 flannel 的镜像），并加入集群（如果忘记了加入集群所需的 token ，可以在 master 节点上使用 &lt;code&gt;kubeadm token generate&lt;/code&gt; 重新生成）。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 加入节点
-kubeadm join 192.168.31.81:6443 --token b5it71.ju23p2j3n2qcnty2 --discovery-token-ca-cert-hash sha256:21539e6ae6e9a8c9cddbb9fc7da5750b780dde203aebb1346298f9c4892bac1f --ignore-preflight-errors Swap
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果一切正常，在 master 节点上执行 &lt;code&gt;kubectl get nodes&lt;/code&gt; 可以看到所有节点； &lt;code&gt;kubectl get pods --all-namespaces&lt;/code&gt; 可以看到当前所有的 pods ；访问 dashboard 可以看到&lt;a href=&#34;https://192.168.31.81:31111/#!/node?namespace=_all&#34; target=&#34;_blank&#34;&gt;当前所有的节点&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650756918552.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;安装-k8s-的-dashboard&#34;&gt;安装 k8s 的 dashboard&lt;/h3&gt;
-
-&lt;p&gt;当前（2019 年 8 月 6 日） k8s 的 dashboard 正在开发新的 2.0 版本，但没有正式发布。因此需要从最新的 tag 上获取相关文件。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard-arm.yaml
-mv kubernetes-dashboard-arm.yaml kubernetes-dashboard-arm64.yaml
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;修改 &lt;code&gt;kubernetes-dashboard-arm64.yaml&lt;/code&gt; 把 &lt;code&gt;spec.template.spec.containers.image&lt;/code&gt; 修改为 &lt;code&gt;k8s.gcr.io/kubernetes-dashboard-arm64:v1.10.1&lt;/code&gt; ， 在&lt;strong&gt;所有节点&lt;/strong&gt;上都拉取镜像。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker pull mirrorgooglecontainers/kubernetes-dashboard-arm64:v1.10.1
-docker tag mirrorgooglecontainers/kubernetes-dashboard-arm64:v1.10.1 k8s.gcr.io/kubernetes-dashboard-arm64:v1.10.1
-docker rmi mirrorgooglecontainers/kubernetes-dashboard-arm64:v1.10.1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;修改 &lt;code&gt;kubernetes-dashboard-arm64.yaml&lt;/code&gt; 文件，在 &lt;code&gt;spec.ports&lt;/code&gt; 中增加 &lt;code&gt;nodePort: 31111&lt;/code&gt; 和 &lt;code&gt;type: NodePort&lt;/code&gt; 配置。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;kind: Service
-apiVersion: v1
-metadata:
-  labels:
-    k8s-app: kubernetes-dashboard
-  name: kubernetes-dashboard
-  namespace: kube-system
-spec:
-  ports:
-    - port: 443
-      targetPort: 8443
-      nodePort: 31111
-  selector:
-    k8s-app: kubernetes-dashboard
-  type: NodePort
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;安装并启动 dashboard&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kubectl apply -f kubernetes-dashboard-arm64.yaml
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;此时可以访问 master 节点的 31111 端口即可访问 dashboard&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650653330388.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;创建-dashboard-用户&#34;&gt;创建 dashboard 用户&lt;/h3&gt;
-
-&lt;p&gt;新建文件 &lt;code&gt;dashboard-account.yaml&lt;/code&gt; ，并通过命令行 &lt;code&gt;kubectl create -f dashboard-account.yaml&lt;/code&gt; 使之生效。成功生效后，可以通过 &lt;code&gt;kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk &#39;{print $1}&#39;)&lt;/code&gt; 查看 token 信息。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Create Service Account
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: admin-user
-  namespace: kube-system
----
-# Create ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: ClusterRoleBinding
-metadata:
-  name: admin-user
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-- kind: ServiceAccount
-  name: admin-user
-  namespace: kube-system
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在 &lt;a href=&#34;https://192.168.31.81:31111/&#34; target=&#34;_blank&#34;&gt;https://192.168.31.81:31111/&lt;/a&gt; 登录界面选择“令牌”，并输入 token ，则可以访问 dashboard 管理集群。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650661463575.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;安装-helm&#34;&gt;安装 helm&lt;/h3&gt;
-
-&lt;p&gt;下载 arm64 版本的 helm &lt;code&gt;https://get.helm.sh/helm-v2.14.3-linux-arm64.tar.gz&lt;/code&gt; 并解压安装。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://get.helm.sh/helm-v2.14.3-linux-arm64.tar.gz
-tar vfxz helm-v2.14.3-linux-arm64.tar.gz
-mv linux-arm64/helm /usr/local/bin/helm
-mv linux-arm64/tiller /usr/local/bin/tiller
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;使用 &lt;code&gt;helm init&lt;/code&gt; 初始化（需要翻墙）。因为官方提供的不是 arm64 平台的，需要在 hub.docker.com 上查找替代。通过 docker search tiller 发现 &lt;a href=&#34;https://hub.docker.com/r/jessestuart/tiller&#34; target=&#34;_blank&#34;&gt;jessestuart/tiller&lt;/a&gt; 是镜像自动更新的多平台镜像。使用 &lt;code&gt;kubectl edit deployment tiller-deploy -n kube-system&lt;/code&gt; 修改 &lt;code&gt;spec.template.spec.image&lt;/code&gt; 为 &lt;code&gt;jessestuart/tiller:latest-arm64&lt;/code&gt; 。&lt;/p&gt;
-
-&lt;p&gt;创建文件 &lt;code&gt;helm-rbac.yaml&lt;/code&gt; 后通过 &lt;code&gt;kubectl create -f helm-rbac.yaml&lt;/code&gt; 使其生效。最后使用 &lt;code&gt;kubectl patch deploy --namespace kube-system tiller-deploy -p &#39;{&amp;quot;spec&amp;quot;:{&amp;quot;template&amp;quot;:{&amp;quot;spec&amp;quot;:{&amp;quot;serviceAccount&amp;quot;:&amp;quot;tiller&amp;quot;}}}}&#39;&lt;/code&gt; 给最开始通过 &lt;code&gt;helm init&lt;/code&gt; 初始化的 tiller 实例打上补丁。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: tiller
-  namespace: kube-system
----
-apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: ClusterRoleBinding
-metadata:
-  name: tiller
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-  - kind: ServiceAccount
-    name: tiller
-    namespace: kube-system
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;配置 helm 使用不用翻墙的镜像&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;helm repo remove stable
-helm repo add stable http://mirror.azure.cn/kubernetes/charts/
-helm repo add incubator http://mirror.azure.cn/kubernetes/charts-incubator/
-helm repo add bitnami https://charts.bitnami.com/bitnami
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;k8s-基本操作&#34;&gt;k8s 基本操作&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 显示所有 pods
-kubectl get pods --all-namespaces
-
-# 显示所有节点
-kubectl get nodes
-
-# 显示某个 pod 的信息
-kubectl describe pod -n kube-system tiller-deploy-75f6c87b87-gbpfv
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://liupeng0518.github.io/2019/03/20/k8s/%E9%83%A8%E7%BD%B2/arm64%E9%83%A8%E7%BD%B2k8s/&#34; target=&#34;_blank&#34;&gt;arm64 部署 k8s&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/liukuan73/article/details/83509901&#34; target=&#34;_blank&#34;&gt;使用 amd64 架构 master 节点管理 arm 架构 kubernetes 集群&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jeremyxu2010.github.io/2018/12/arm64硬件架构支持总结/&#34; target=&#34;_blank&#34;&gt;arm64 硬件架构支持总结&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://pdf.us/2019/01/25/2666.html&#34; target=&#34;_blank&#34;&gt;使用 kubeadm 部署 kubernetes v1.13.2 - 阿里源适合国内网络环境&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/hongdada/p/11250293.htmlean&#34; target=&#34;_blank&#34;&gt;使用 kubeadm 安装 kubernetes 1.15.1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jimmysong.io/kubernetes-handbook/practice/helm.html&#34; target=&#34;_blank&#34;&gt;使用 Helm 管理 kubernetes 应用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.qikqiak.com/post/kubernetes-helm-usage/&#34; target=&#34;_blank&#34;&gt;Helm 的基本使用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/aaronkjones/rpi-k8s-node-prep&#34; target=&#34;_blank&#34;&gt;Kubernetes on Raspbian/Hypriot&lt;/a&gt; based on &lt;a href=&#34;https://github.com/alexellis/k8s-on-raspbian&#34; target=&#34;_blank&#34;&gt;teamserverless/k8s-on-raspbian&lt;/a&gt; &lt;del&gt;&lt;a href=&#34;https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975&#34; target=&#34;_blank&#34;&gt;alexellis/k8s-pi.md&lt;/a&gt;&lt;/del&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/mrlesmithjr/ansible-rpi-k8s-cluster&#34; target=&#34;_blank&#34;&gt;ansible-rpi-k8s-cluster&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://rak8s.io&#34; target=&#34;_blank&#34;&gt;Stand up a Raspberry Pi based Kubernetes cluster with Ansible&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://tobru.ch/kubernetes-on-orangepi-arm64/&#34; target=&#34;_blank&#34;&gt;Kubernetes on OrangePI ARM64&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9&#34; target=&#34;_blank&#34;&gt;Building an ARM Kubernetes Cluster&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://medium.com/@carlosedp/building-a-hybrid-x86-64-and-arm-kubernetes-cluster-e7f94ff6e51d&#34; target=&#34;_blank&#34;&gt;Building a hybrid x86–64 and ARM Kubernetes Cluster&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://containerized.me/arming-kubernetes-with-openebs-1/&#34; target=&#34;_blank&#34;&gt;ARMing Kubernetes with OpenEBS #1&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
     
     <item>
       <title>【转】美军网络安全 | 第 4 篇：跨域解决方案（ CDS ）</title>
@@ -2071,6 +1647,475 @@ draft: false&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;media/15645529542792/15645546919433.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;你在上图中找到了 CDS 吗？&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://sbilly.github.io/post/howto-setup-kubernetes-cluster-on-armbian-linux-based-on-phicomm-n1-arm64-sbc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sbilly.github.io/post/howto-setup-kubernetes-cluster-on-armbian-linux-based-on-phicomm-n1-arm64-sbc/</guid>
+      <description>
+
+&lt;h1 id=&#34;构建-arm64-架构-k8s-集群-phicomm-n1&#34;&gt;构建 arm64 架构 k8s 集群（phicomm-n1）&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;documentation-https-sourcethemes-com-academic-docs-managing-content&#34;&gt;Documentation: &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/&#34; target=&#34;_blank&#34;&gt;https://sourcethemes.com/academic/docs/managing-content/&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;title: &amp;ldquo;构建 arm64 架构 k8s 集群（phicomm-n1）&amp;rdquo;
+subtitle: &amp;ldquo;&amp;rdquo;
+summary: &amp;ldquo;树莓派发布了新的主机以后，想买一个来吃灰。搜索了一下，发现斐讯矿难的 phicomm n1 非常便宜（低于人民币 100 元），配置也比树莓派好。同时已经有玩家把 armbian 移植的方法研究出来了，可以跑完整的 arm64 架构的 Ubuntu 系统。性能强、耗电低、无风扇、可以集中供电、这些都非常适合用来建 k8s 集群。&amp;rdquo;
+authors: [sbilly]
+tags: [&amp;ldquo;kubernetes&amp;rdquo;,&amp;ldquo;docker&amp;rdquo;, &amp;ldquo;arm64&amp;rdquo;, &amp;ldquo;armbian&amp;rdquo;, &amp;ldquo;helm&amp;rdquo;, &amp;ldquo;k8s&amp;rdquo;, &amp;ldquo;phicomm n1&amp;rdquo;]
+categories: [&amp;ldquo;学习笔记&amp;rdquo;]
+date: 2019-08-06T17:36:13+08:00
+lastmod: 2019-08-06T17:36:13+08:00
+featured: false
+draft: false&lt;/p&gt;
+
+&lt;h1 id=&#34;featured-image&#34;&gt;Featured image&lt;/h1&gt;
+
+&lt;h1 id=&#34;to-use-add-an-image-named-featured-jpg-png-to-your-page-s-folder&#34;&gt;To use, add an image named &lt;code&gt;featured.jpg/png&lt;/code&gt; to your page&amp;rsquo;s folder.&lt;/h1&gt;
+
+&lt;h1 id=&#34;focal-points-smart-center-topleft-top-topright-left-right-bottomleft-bottom-bottomright&#34;&gt;Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.&lt;/h1&gt;
+
+&lt;p&gt;image:
+  caption: &amp;ldquo;&amp;rdquo;
+  focal_point: &amp;ldquo;&amp;rdquo;
+  preview_only: false&lt;/p&gt;
+
+&lt;h1 id=&#34;projects-optional&#34;&gt;Projects (optional).&lt;/h1&gt;
+
+&lt;h1 id=&#34;associate-this-post-with-one-or-more-of-your-projects&#34;&gt;Associate this post with one or more of your projects.&lt;/h1&gt;
+
+&lt;h1 id=&#34;simply-enter-your-project-s-folder-or-file-name-without-extension&#34;&gt;Simply enter your project&amp;rsquo;s folder or file name without extension.&lt;/h1&gt;
+
+&lt;h1 id=&#34;e-g-projects-internal-project-references-content-project-deep-learning-index-md&#34;&gt;E.g. &lt;code&gt;projects = [&amp;quot;internal-project&amp;quot;]&lt;/code&gt; references &lt;code&gt;content/project/deep-learning/index.md&lt;/code&gt;.&lt;/h1&gt;
+
+&lt;h1 id=&#34;otherwise-set-projects&#34;&gt;Otherwise, set &lt;code&gt;projects = []&lt;/code&gt;.&lt;/h1&gt;
+
+&lt;h2 id=&#34;projects&#34;&gt;projects: []&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650825237899.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;树莓派发布了新的主机以后，想买一个来吃灰。搜索了一下，发现斐讯矿难的 phicomm n1 非常便宜（低于人民币 100 元），配置也比树莓派好。同时已经有玩家把 armbian 移植的方法研究出来了，可以跑完整的 arm64 架构的 Ubuntu 系统。性能强、耗电低、无风扇、可以集中供电、这些都非常适合用来建 k8s 集群。于是我就用 695 元搞定了一个 5 节点的 arm64 k8s 集群。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;可以为 8 台设备提供 12v 电源的集中式变压器 - 48 元&lt;/li&gt;
+&lt;li&gt;H3C 8 口全千兆交换机 - 130 元&lt;/li&gt;
+&lt;li&gt;x10 网线 - 22 元&lt;/li&gt;
+&lt;li&gt;x5 Phicomm N1 - 495 元
+
+&lt;ul&gt;
+&lt;li&gt;Amlogic S905D 四核 1.5G 的 Cortex-A53 处理器（带 Mali-450 GPU）&lt;/li&gt;
+&lt;li&gt;板载 2GB 的 DDR3 内存&lt;/li&gt;
+&lt;li&gt;板载 8GB 的 eMMC 闪存&lt;/li&gt;
+&lt;li&gt;支持 4K 60Hz 刷新的 HDMI 2.0a 接口&lt;/li&gt;
+&lt;li&gt;1x 千兆以太网（RTL8211F）&lt;/li&gt;
+&lt;li&gt;1x 双频 802.11ac WiFi&lt;/li&gt;
+&lt;li&gt;1x 蓝牙 4.1（和树莓派 3B+ 一样，使用 CYW43455 模块）&lt;/li&gt;
+&lt;li&gt;2x USB 2.0&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;要点&#34;&gt;要点&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;部署 master 节点
+
+&lt;ul&gt;
+&lt;li&gt;docker-ce、kubeadm、kubelet、kubectl 版本
+
+&lt;ul&gt;
+&lt;li&gt;20190805 的 armbian 上使用这样的版本是确定可用的：&lt;code&gt;apt-get install -yq kubeadm=1.14.4-00 kubelet=1.14.4-00 kubectl=1.14.4-00 docker-ce=18.06.2~ce~3-0~ubuntu&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如果想尝鲜，都使用最新版本也可尝试&lt;/li&gt;
+&lt;li&gt;查询可用版本可以使用 &lt;code&gt;apt-cache madison docker-ce&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;ubuntu 系统需要使用 systemd
+
+&lt;ul&gt;
+&lt;li&gt;kubelet 需要编辑 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; ，增加 &lt;code&gt;KUBELET_EXTRA_ARGS=--cgroup-driver=systemd --fail-swap-on=false&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;phicomm N1 的 armbian 系统使用了 zram，需要增加参数是的 swapon 的时候 k8s 相关服务和 docker 都能正常启动
+
+&lt;ul&gt;
+&lt;li&gt;kebelet 需要编辑 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; ， 增加 &lt;code&gt;KUBELET_EXTRA_ARGS=--fail-swap-on=false&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;需要使用 arm64 架构的 docker 镜像&lt;/strong&gt;，必须翻墙或使用镜像拉取
+
+&lt;ul&gt;
+&lt;li&gt;使用 &lt;code&gt;mirrorgooglecontainers&lt;/code&gt; 或者提前拉取正确的镜像&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;kubeadm config images list&lt;/code&gt; 可以看需要的 docker 镜像&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;安装 flannel 的 CNI 插件&lt;/li&gt;
+&lt;li&gt;安装 dashboard&lt;/li&gt;
+&lt;li&gt;安装 helm
+
+&lt;ul&gt;
+&lt;li&gt;需要使用 arm64 的镜像 &lt;a href=&#34;https://hub.docker.com/r/jessestuart/tiller&#34; target=&#34;_blank&#34;&gt;jessestuart/tiller:latest-arm64&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;部署节点
+
+&lt;ul&gt;
+&lt;li&gt;需要修改 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; 和 &lt;code&gt;/etc/docker/daemon.json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;需要把需要翻墙才能下载的镜像手动部署上去&lt;/li&gt;
+&lt;li&gt;需要 token&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;详细安装步骤&#34;&gt;详细安装步骤&lt;/h2&gt;
+
+&lt;h3 id=&#34;准备环境&#34;&gt;准备环境&lt;/h3&gt;
+
+&lt;p&gt;安装好 armbian 系统，并编辑 &lt;code&gt;/etc/hosts&lt;/code&gt; 增加节点的主机名（非必须）。最好是在本机的 IP 地址前都加上 localhost&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;192.168.31.81 localhost phicomm-n1-peer01
+192.168.31.82 phicomm-n1-peer02
+192.168.31.83 phicomm-n1-peer03
+192.168.31.84 phicomm-n1-peer04
+192.168.31.85 phicomm-n1-peer05
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;安装和配置-docker-ce-kubeadm-kubectl-kubelet&#34;&gt;安装和配置 docker-ce kubeadm kubectl kubelet&lt;/h3&gt;
+
+&lt;p&gt;创建 &lt;code&gt;/etc/docker/daemon.json&lt;/code&gt; &lt;strong&gt;使 docker 的 cgroupdriver 为 systemd&lt;/strong&gt; （&lt;strong&gt;如果 docker 已经启动，需要重新启动 docker&lt;/strong&gt;）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p /etc/docker
+cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF
+{
+  &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;],
+  &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;,
+  &amp;quot;log-opts&amp;quot;: {
+    &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot;
+  },
+  &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;
+}
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;创建 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; &lt;strong&gt;让 kubelet 也使用 systemd 作为 cgroup-driver，并启用 &lt;code&gt;--fail-swap-on&lt;/code&gt; 强制在 swap 激活时 kubelet 能正常启动&lt;/strong&gt;。正常 k8s 是不建议使用 swap 的，启动时检查到 swap 处于激活状态时会终止启动。但因为 armbian 使用 zram ，不建议关闭 zram ，因此需要增加额外的启动参数。（&lt;strong&gt;如果 kubelet 已经启动，需要重新启动 kubelet&lt;/strong&gt;）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cat &amp;gt; /etc/default/kubelet &amp;lt;&amp;lt;EOF
+KUBELET_EXTRA_ARGS=--cgroup-driver=systemd --fail-swap-on=false
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl restart kubelet
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装 docker-ce kubeadm kubectl kubelet&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt update -y; apt upgrade -y; apt autoremove -y; apt clean -y
+apt install -yq docker-ce kubeadm kubelet kubectl
+
+# 也可以先查看有哪些可用版本，再安装指定版本
+# apt-cache madison docker-ce kubeadm kubelet kubectl
+# apt install -yq kubeadm=1.14.4-00 kubelet=1.14.4-00 kubectl=1.14.4-00 docker-ce=18.06.2~ce~3-0~ubuntu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;获取-docker-镜像&#34;&gt;获取 docker 镜像&lt;/h3&gt;
+
+&lt;p&gt;因为 k8s 缺省使用的 &lt;code&gt;*.gcr.io&lt;/code&gt; &lt;a href=&#34;https://console.cloud.google.com/gcr/images/google-containers/GLOBAL&#34; target=&#34;_blank&#34;&gt;官方镜像&lt;/a&gt;都被墙，因此需要翻墙。另外，Phicomm N1 是 arm64 架构，因此在获取 docker 镜像时必须使用 arm64 架构的。到 2019 年 8 月 6 日为止， aliyun 提供的 &lt;code&gt;registry.aliyuncs.com&lt;/code&gt; 的 &lt;a href=&#34;https://cr.console.aliyun.com/cn-beijing/instances/images&#34; target=&#34;_blank&#34;&gt;google_container&lt;/a&gt; 镜像缺省只提供了 x64/x86 架构的镜像，&lt;strong&gt;只有 &lt;a href=&#34;https://hub.docker.com/u/mirrorgooglecontainers/&#34; target=&#34;_blank&#34;&gt;mirrorgooglecontainers&lt;/a&gt; 提供的镜像才包含了各种架构最新版本&lt;/strong&gt;。&lt;strong&gt;建议用下面的方法手动获取 k8s 所需 arm64 相关镜像&lt;/strong&gt;。首先，查看当前 k8s 使用的最新 docker 镜像列表&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kubeadm config images list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后，从 mirrorgooglecontainers 和 coredns 下载 docker 镜像，并重新打上 &lt;code&gt;k8s.gcr.io&lt;/code&gt; 的相关 tag，并删除老的 tag&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下载镜像
+docker pull mirrorgooglecontainers/kube-apiserver-arm64:v1.15.2
+docker pull mirrorgooglecontainers/kube-controller-manager-arm64:v1.15.2
+docker pull mirrorgooglecontainers/kube-scheduler-arm64:v1.15.2
+docker pull mirrorgooglecontainers/kube-proxy-arm64:v1.15.2
+docker pull mirrorgooglecontainers/pause-arm64:3.1
+docker pull mirrorgooglecontainers/etcd-arm64:3.3.10
+## coredns 需要从 coredns 官方下载
+docker pull coredns/coredns:coredns-arm64
+
+# 打上 k8s.gcr.io 的 tag
+docker tag mirrorgooglecontainers/kube-apiserver-arm64:v1.15.2 k8s.gcr.io/kube-apiserver:v1.15.2
+docker tag mirrorgooglecontainers/kube-controller-manager-arm64:v1.15.2 k8s.gcr.io/kube-controller-manager:v1.15.2
+docker tag mirrorgooglecontainers/kube-scheduler-arm64:v1.15.2 k8s.gcr.io/kube-scheduler:v1.15.2
+docker tag mirrorgooglecontainers/kube-proxy-arm64:v1.15.2 k8s.gcr.io/kube-proxy:v1.15.2
+docker tag mirrorgooglecontainers/pause-arm64:3.1 k8s.gcr.io/pause:3.1
+docker tag mirrorgooglecontainers/etcd-arm64:3.3.10 k8s.gcr.io/etcd:3.3.10
+docker tag coredns/coredns:coredns-arm64 k8s.gcr.io/coredns:1.3.1
+
+# 删除 mirrorgooglecontainers 的相关 tag
+docker rmi mirrorgooglecontainers/kube-apiserver-arm64:v1.15.2
+docker rmi mirrorgooglecontainers/kube-controller-manager-arm64:v1.15.2
+docker rmi mirrorgooglecontainers/kube-scheduler-arm64:v1.15.2
+docker rmi mirrorgooglecontainers/kube-proxy-arm64:v1.15.2
+docker rmi mirrorgooglecontainers/pause-arm64:3.1
+docker rmi mirrorgooglecontainers/etcd-arm64:3.3.10
+docker rmi coredns/coredns:coredns-arm64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;初始化-k8s-集群&#34;&gt;初始化 k8s 集群&lt;/h3&gt;
+
+&lt;p&gt;使用 kubeadm 初始化 k8s 集群节点。因为使用了 zram ， 因此需要加上 &lt;code&gt;--ignore-preflight-errors Swap&lt;/code&gt; 的命令行选项。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kubeadm init --ignore-preflight-errors Swap 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;正常可以看到安装成功的提示信息&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run &amp;quot;kubectl apply -f [podnetwork].yaml&amp;quot; with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.31.81:6443 --token b5it71.ju23p2j3n2qcnty2 \
+    --discovery-token-ca-cert-hash sha256:21539e6ae6e9a8c9cddbb9fc7da5750b780dde203aebb1346298f9c4892bac1f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;执行相关命令可以正常看到集群信息&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 查看集群信息
+$ kubectl cluster-info
+Kubernetes master is running at https://192.168.31.81:6443
+KubeDNS is running at https://192.168.31.81:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+# 查看集群节点信息
+$ kubectl get nodes
+NAME                STATUS     ROLES    AGE     VERSION
+phicomm-n1-peer01   NotReady   master   3m50s   v1.15.2
+
+# 查看现有 Pod
+$ kubectl get pods --all-namespaces
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;安装-flannel&#34;&gt;安装 flannel&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下载最新的 arm64 架构 flannel 插件
+wget https://github.com/containernetworking/plugins/releases/download/v0.8.1/cni-plugins-linux-arm64-v0.8.1.tgz
+
+# 解压缩 flannel 文件
+sudo mkdir -p /opt/cni/bin &amp;amp;&amp;amp; cd /opt/cni/bin
+sudo tar vfxz cni-plugins-linux-arm64-v0.8.1.tgz -C /opt/cni/bin
+
+# 到 https://quay.io/repository/coreos/flannel 查看最新的 flannel 版本并下载
+docker pull quay.io/coreos/flannel:v0.11.0-arm64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;为了使 flannel 正常工作，需要修改 &lt;code&gt;/etc/kubernetes/manifests/kube-controller-manager.yaml&lt;/code&gt; 文件 —— 在 &lt;code&gt;spec.containers.command&lt;/code&gt; 中增加 &lt;code&gt;kube-controller-manager&lt;/code&gt; 命令的 &lt;code&gt;--allocate-node-cidrs=true&lt;/code&gt; 和 &lt;code&gt;--cluster-cidr=10.244.0.0/16&lt;/code&gt; 参数（需要根据按照实际情况配置 CIDR 值）。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;spec:
+  containers:
+  - command:
+    - kube-controller-manager
+    - --authentication-kubeconfig=/etc/kubernetes/controller-manager.conf
+    - --authorization-kubeconfig=/etc/kubernetes/controller-manager.conf
+    - --bind-address=127.0.0.1
+    - --client-ca-file=/etc/kubernetes/pki/ca.crt
+    - --cluster-signing-cert-file=/etc/kubernetes/pki/ca.crt
+    - --cluster-signing-key-file=/etc/kubernetes/pki/ca.key
+    - --controllers=*,bootstrapsigner,tokencleaner
+    - --kubeconfig=/etc/kubernetes/controller-manager.conf
+    - --leader-elect=true
+    - --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt
+    - --root-ca-file=/etc/kubernetes/pki/ca.crt
+    - --service-account-private-key-file=/etc/kubernetes/pki/sa.key
+    - --use-service-account-credentials=true
+    - --allocate-node-cidrs=true
+    - --cluster-cidr=10.244.0.0/16
+    image: k8s.gcr.io/kube-controller-manager:v1.15.2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;修改完成后，重新启动 docker 和 k8s&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下载并安装 flannel
+$ curl -Lo kube-flannel.yml https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+$ kubectl apply -f  kube-flannel.yml
+
+# 安装完毕后可以看到 flannel.1 网络接口
+$ ifconfig flannel.1
+
+# 可以看到所有 pods 已经启动
+$ kubectl get pods --all-namespaces -o wide
+
+NAMESPACE     NAME                                        READY   STATUS    RESTARTS   AGE     IP              NODE                NOMINATED NODE   READINESS GATES
+kube-system   coredns-5c98db65d4-dps4b                    1/1     Running   1          7h40m   10.244.0.5      phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   coredns-5c98db65d4-gls5c                    1/1     Running   1          7h40m   10.244.0.4      phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   etcd-phicomm-n1-peer01                      1/1     Running   4          7h39m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   kube-apiserver-phicomm-n1-peer01            1/1     Running   4          7h39m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   kube-controller-manager-phicomm-n1-peer01   1/1     Running   1          6h29m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   kube-flannel-ds-arm64-8nm2s                 1/1     Running   6          6h43m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   kube-proxy-8tbqb                            1/1     Running   4          7h40m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   kube-scheduler-phicomm-n1-peer01            1/1     Running   4          7h39m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;增加集群节点&#34;&gt;增加集群节点&lt;/h3&gt;
+
+&lt;p&gt;在新的子节点按照上述步骤安装 docker-ce kubeadm kubectl kubelet ， 创建 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; 和 &lt;code&gt;/etc/docker/daemon.json&lt;/code&gt; 文件（需要重新启动），拉取 docker 镜像（别忘了 flannel 的镜像），并加入集群（如果忘记了加入集群所需的 token ，可以在 master 节点上使用 &lt;code&gt;kubeadm token generate&lt;/code&gt; 重新生成）。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 加入节点
+kubeadm join 192.168.31.81:6443 --token b5it71.ju23p2j3n2qcnty2 --discovery-token-ca-cert-hash sha256:21539e6ae6e9a8c9cddbb9fc7da5750b780dde203aebb1346298f9c4892bac1f --ignore-preflight-errors Swap
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果一切正常，在 master 节点上执行 &lt;code&gt;kubectl get nodes&lt;/code&gt; 可以看到所有节点； &lt;code&gt;kubectl get pods --all-namespaces&lt;/code&gt; 可以看到当前所有的 pods ；访问 dashboard 可以看到&lt;a href=&#34;https://192.168.31.81:31111/#!/node?namespace=_all&#34; target=&#34;_blank&#34;&gt;当前所有的节点&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650756918552.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;安装-k8s-的-dashboard&#34;&gt;安装 k8s 的 dashboard&lt;/h3&gt;
+
+&lt;p&gt;当前（2019 年 8 月 6 日） k8s 的 dashboard 正在开发新的 2.0 版本，但没有正式发布。因此需要从最新的 tag 上获取相关文件。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard-arm.yaml
+mv kubernetes-dashboard-arm.yaml kubernetes-dashboard-arm64.yaml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;修改 &lt;code&gt;kubernetes-dashboard-arm64.yaml&lt;/code&gt; 把 &lt;code&gt;spec.template.spec.containers.image&lt;/code&gt; 修改为 &lt;code&gt;k8s.gcr.io/kubernetes-dashboard-arm64:v1.10.1&lt;/code&gt; ， 在&lt;strong&gt;所有节点&lt;/strong&gt;上都拉取镜像。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker pull mirrorgooglecontainers/kubernetes-dashboard-arm64:v1.10.1
+docker tag mirrorgooglecontainers/kubernetes-dashboard-arm64:v1.10.1 k8s.gcr.io/kubernetes-dashboard-arm64:v1.10.1
+docker rmi mirrorgooglecontainers/kubernetes-dashboard-arm64:v1.10.1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;修改 &lt;code&gt;kubernetes-dashboard-arm64.yaml&lt;/code&gt; 文件，在 &lt;code&gt;spec.ports&lt;/code&gt; 中增加 &lt;code&gt;nodePort: 31111&lt;/code&gt; 和 &lt;code&gt;type: NodePort&lt;/code&gt; 配置。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    k8s-app: kubernetes-dashboard
+  name: kubernetes-dashboard
+  namespace: kube-system
+spec:
+  ports:
+    - port: 443
+      targetPort: 8443
+      nodePort: 31111
+  selector:
+    k8s-app: kubernetes-dashboard
+  type: NodePort
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装并启动 dashboard&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kubectl apply -f kubernetes-dashboard-arm64.yaml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;此时可以访问 master 节点的 31111 端口即可访问 dashboard&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650653330388.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;创建-dashboard-用户&#34;&gt;创建 dashboard 用户&lt;/h3&gt;
+
+&lt;p&gt;新建文件 &lt;code&gt;dashboard-account.yaml&lt;/code&gt; ，并通过命令行 &lt;code&gt;kubectl create -f dashboard-account.yaml&lt;/code&gt; 使之生效。成功生效后，可以通过 &lt;code&gt;kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk &#39;{print $1}&#39;)&lt;/code&gt; 查看 token 信息。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Create Service Account
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kube-system
+---
+# Create ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kube-system
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在 &lt;a href=&#34;https://192.168.31.81:31111/&#34; target=&#34;_blank&#34;&gt;https://192.168.31.81:31111/&lt;/a&gt; 登录界面选择“令牌”，并输入 token ，则可以访问 dashboard 管理集群。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650661463575.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;安装-helm&#34;&gt;安装 helm&lt;/h3&gt;
+
+&lt;p&gt;下载 arm64 版本的 helm &lt;code&gt;https://get.helm.sh/helm-v2.14.3-linux-arm64.tar.gz&lt;/code&gt; 并解压安装。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://get.helm.sh/helm-v2.14.3-linux-arm64.tar.gz
+tar vfxz helm-v2.14.3-linux-arm64.tar.gz
+mv linux-arm64/helm /usr/local/bin/helm
+mv linux-arm64/tiller /usr/local/bin/tiller
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用 &lt;code&gt;helm init&lt;/code&gt; 初始化（需要翻墙）。因为官方提供的不是 arm64 平台的，需要在 hub.docker.com 上查找替代。通过 docker search tiller 发现 &lt;a href=&#34;https://hub.docker.com/r/jessestuart/tiller&#34; target=&#34;_blank&#34;&gt;jessestuart/tiller&lt;/a&gt; 是镜像自动更新的多平台镜像。使用 &lt;code&gt;kubectl edit deployment tiller-deploy -n kube-system&lt;/code&gt; 修改 &lt;code&gt;spec.template.spec.image&lt;/code&gt; 为 &lt;code&gt;jessestuart/tiller:latest-arm64&lt;/code&gt; 。&lt;/p&gt;
+
+&lt;p&gt;创建文件 &lt;code&gt;helm-rbac.yaml&lt;/code&gt; 后通过 &lt;code&gt;kubectl create -f helm-rbac.yaml&lt;/code&gt; 使其生效。最后使用 &lt;code&gt;kubectl patch deploy --namespace kube-system tiller-deploy -p &#39;{&amp;quot;spec&amp;quot;:{&amp;quot;template&amp;quot;:{&amp;quot;spec&amp;quot;:{&amp;quot;serviceAccount&amp;quot;:&amp;quot;tiller&amp;quot;}}}}&#39;&lt;/code&gt; 给最开始通过 &lt;code&gt;helm init&lt;/code&gt; 初始化的 tiller 实例打上补丁。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tiller
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: tiller
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: tiller
+    namespace: kube-system
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;配置 helm 使用不用翻墙的镜像&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;helm repo remove stable
+helm repo add stable http://mirror.azure.cn/kubernetes/charts/
+helm repo add incubator http://mirror.azure.cn/kubernetes/charts-incubator/
+helm repo add bitnami https://charts.bitnami.com/bitnami
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;k8s-基本操作&#34;&gt;k8s 基本操作&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 显示所有 pods
+kubectl get pods --all-namespaces
+
+# 显示所有节点
+kubectl get nodes
+
+# 显示某个 pod 的信息
+kubectl describe pod -n kube-system tiller-deploy-75f6c87b87-gbpfv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://liupeng0518.github.io/2019/03/20/k8s/%E9%83%A8%E7%BD%B2/arm64%E9%83%A8%E7%BD%B2k8s/&#34; target=&#34;_blank&#34;&gt;arm64 部署 k8s&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/liukuan73/article/details/83509901&#34; target=&#34;_blank&#34;&gt;使用 amd64 架构 master 节点管理 arm 架构 kubernetes 集群&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jeremyxu2010.github.io/2018/12/arm64硬件架构支持总结/&#34; target=&#34;_blank&#34;&gt;arm64 硬件架构支持总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pdf.us/2019/01/25/2666.html&#34; target=&#34;_blank&#34;&gt;使用 kubeadm 部署 kubernetes v1.13.2 - 阿里源适合国内网络环境&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/hongdada/p/11250293.htmlean&#34; target=&#34;_blank&#34;&gt;使用 kubeadm 安装 kubernetes 1.15.1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jimmysong.io/kubernetes-handbook/practice/helm.html&#34; target=&#34;_blank&#34;&gt;使用 Helm 管理 kubernetes 应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.qikqiak.com/post/kubernetes-helm-usage/&#34; target=&#34;_blank&#34;&gt;Helm 的基本使用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/aaronkjones/rpi-k8s-node-prep&#34; target=&#34;_blank&#34;&gt;Kubernetes on Raspbian/Hypriot&lt;/a&gt; based on &lt;a href=&#34;https://github.com/alexellis/k8s-on-raspbian&#34; target=&#34;_blank&#34;&gt;teamserverless/k8s-on-raspbian&lt;/a&gt; &lt;del&gt;&lt;a href=&#34;https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975&#34; target=&#34;_blank&#34;&gt;alexellis/k8s-pi.md&lt;/a&gt;&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mrlesmithjr/ansible-rpi-k8s-cluster&#34; target=&#34;_blank&#34;&gt;ansible-rpi-k8s-cluster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rak8s.io&#34; target=&#34;_blank&#34;&gt;Stand up a Raspberry Pi based Kubernetes cluster with Ansible&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tobru.ch/kubernetes-on-orangepi-arm64/&#34; target=&#34;_blank&#34;&gt;Kubernetes on OrangePI ARM64&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9&#34; target=&#34;_blank&#34;&gt;Building an ARM Kubernetes Cluster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@carlosedp/building-a-hybrid-x86-64-and-arm-kubernetes-cluster-e7f94ff6e51d&#34; target=&#34;_blank&#34;&gt;Building a hybrid x86–64 and ARM Kubernetes Cluster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://containerized.me/arming-kubernetes-with-openebs-1/&#34; target=&#34;_blank&#34;&gt;ARMing Kubernetes with OpenEBS #1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

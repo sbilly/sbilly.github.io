@@ -5,68 +5,12 @@
     <link>https://sbilly.github.io/tags/</link>
       <atom:link href="https://sbilly.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Tue, 06 Aug 2019 17:36:13 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Wed, 31 Jul 2019 15:56:57 +0800</lastBuildDate>
     <image>
       <url>https://sbilly.github.io/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://sbilly.github.io/tags/</link>
     </image>
-    
-    <item>
-      <title>arm64</title>
-      <link>https://sbilly.github.io/tags/arm64/</link>
-      <pubDate>Tue, 06 Aug 2019 17:36:13 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/arm64/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>armbian</title>
-      <link>https://sbilly.github.io/tags/armbian/</link>
-      <pubDate>Tue, 06 Aug 2019 17:36:13 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/armbian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://sbilly.github.io/tags/docker/</link>
-      <pubDate>Tue, 06 Aug 2019 17:36:13 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>helm</title>
-      <link>https://sbilly.github.io/tags/helm/</link>
-      <pubDate>Tue, 06 Aug 2019 17:36:13 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/helm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>k8s</title>
-      <link>https://sbilly.github.io/tags/k8s/</link>
-      <pubDate>Tue, 06 Aug 2019 17:36:13 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/k8s/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://sbilly.github.io/tags/kubernetes/</link>
-      <pubDate>Tue, 06 Aug 2019 17:36:13 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>phicomm n1</title>
-      <link>https://sbilly.github.io/tags/phicomm-n1/</link>
-      <pubDate>Tue, 06 Aug 2019 17:36:13 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/phicomm-n1/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>CDS</title>
