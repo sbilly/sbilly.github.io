@@ -21,7 +21,13 @@
 
 &lt;p&gt;&lt;img src=&#34;media/15649931049936/15650825237899.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;树莓派发布了新的主机以后，想买一个来吃灰。搜索了一下，发现斐讯矿难的 phicomm n1 非常便宜（低于人民币 100 元），配置也比树莓派好。同时已经有玩家把 armbian 移植的方法研究出来了，可以跑完整的 arm64 架构的 Ubuntu 系统。性能强、耗电低、无风扇、可以集中供电、这些都非常适合用来建 k8s 集群：&lt;/p&gt;
+&lt;p&gt;树莓派发布了新的主机以后，想买一个来吃灰。搜索了一下，发现斐讯矿难的 phicomm n1 非常便宜（低于人民币 100 元），配置也比树莓派好。同时已经有玩家把 armbian 移植的方法研究出来了，可以跑完整的 arm64 架构的 Ubuntu 系统。性能强、耗电低、无风扇、可以集中供电、这些都非常适合用来建 k8s 集群。于是我就用 695 元搞定了一个 5 节点的 arm64 k8s 集群。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;可以为 8 台设备提供 12v 电源的集中式变压器 - 48 元&lt;/li&gt;
+&lt;li&gt;H3C 8 口全千兆交换机 - 130 元&lt;/li&gt;
+&lt;li&gt;x10 网线 - 22 元&lt;/li&gt;
+&lt;li&gt;x5 Phicomm N1 - 495 元
 
 &lt;ul&gt;
 &lt;li&gt;Amlogic S905D 四核 1.5G 的 Cortex-A53 处理器（带 Mali-450 GPU）&lt;/li&gt;
@@ -32,9 +38,8 @@
 &lt;li&gt;1x 双频 802.11ac WiFi&lt;/li&gt;
 &lt;li&gt;1x 蓝牙 4.1（和树莓派 3B+ 一样，使用 CYW43455 模块）&lt;/li&gt;
 &lt;li&gt;2x USB 2.0&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;[TOC]&lt;/p&gt;
 
 &lt;h2 id=&#34;要点&#34;&gt;要点&lt;/h2&gt;
 
@@ -88,11 +93,11 @@
 
 &lt;p&gt;安装好 armbian 系统，并编辑 &lt;code&gt;/etc/hosts&lt;/code&gt; 增加节点的主机名（非必须）。最好是在本机的 IP 地址前都加上 localhost&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;192.168.31.81	localhost phicomm-n1-peer01
-192.168.31.82	phicomm-n1-peer02
-192.168.31.83	phicomm-n1-peer03
-192.168.31.84	phicomm-n1-peer04
-192.168.31.85	phicomm-n1-peer05
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;192.168.31.81 localhost phicomm-n1-peer01
+192.168.31.82 phicomm-n1-peer02
+192.168.31.83 phicomm-n1-peer03
+192.168.31.84 phicomm-n1-peer04
+192.168.31.85 phicomm-n1-peer05
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;安装和配置-docker-ce-kubeadm-kubectl-kubelet&#34;&gt;安装和配置 docker-ce kubeadm kubectl kubelet&lt;/h3&gt;
@@ -182,7 +187,7 @@ docker rmi coredns/coredns:coredns-arm64
 
 &lt;p&gt;正常可以看到安装成功的提示信息&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Your Kubernetes control-plane has initialized successfully!
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;Your Kubernetes control-plane has initialized successfully!
 
 To start using your cluster, you need to run the following as a regular user:
 
@@ -292,7 +297,7 @@ kubeadm join 192.168.31.81:6443 --token b5it71.ju23p2j3n2qcnty2 --discovery-toke
 
 &lt;p&gt;当前（2019 年 8 月 6 日） k8s 的 dashboard 正在开发新的 2.0 版本，但没有正式发布。因此需要从最新的 tag 上获取相关文件。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard-arm.yaml
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard-arm.yaml
 mv kubernetes-dashboard-arm.yaml kubernetes-dashboard-arm64.yaml
 &lt;/code&gt;&lt;/pre&gt;
 

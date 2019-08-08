@@ -4,23 +4,93 @@
   
   <url>
     <loc>https://sbilly.github.io/authors/sbilly/</loc>
-    <lastmod>2019-07-31T15:56:57+08:00</lastmod>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://sbilly.github.io/authors/</loc>
-    <lastmod>2019-07-31T15:56:57+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sbilly.github.io/tags/cds/</loc>
-    <lastmod>2019-07-31T15:56:57+08:00</lastmod>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sbilly.github.io/categories/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/post/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/arm64/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/armbian/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/docker/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/helm/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/k8s/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/kubernetes/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/phicomm-n1/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/post/howto-setup-kubernetes-cluster-on-armbian-linux-based-on-phicomm-n1-arm64-sbc/</loc>
+    <lastmod>2019-08-06T17:36:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbilly.github.io/tags/cds/</loc>
     <lastmod>2019-07-31T15:56:57+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -51,23 +121,6 @@
   
   <url>
     <loc>https://sbilly.github.io/tags/joint-information-environment/</loc>
-    <lastmod>2019-07-31T15:56:57+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sbilly.github.io/</loc>
-    <lastmod>2019-07-31T15:56:57+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sbilly.github.io/post/</loc>
-    <lastmod>2019-07-31T15:56:57+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sbilly.github.io/tags/</loc>
     <lastmod>2019-07-31T15:56:57+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -170,12 +223,6 @@
   </url>
   
   <url>
-    <loc>https://sbilly.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2019-07-26T15:04:45+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/</loc>
     <lastmod>2019-07-26T15:04:45+08:00</lastmod>
   </url>
@@ -208,11 +255,6 @@
   
   <url>
     <loc>https://sbilly.github.io/post/dod-network-security-part-3-joint-information-enviroment-joint-region-security-stack/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sbilly.github.io/post/howto-setup-kubernetes-cluster-on-armbian-linux-based-on-phicomm-n1-arm64-sbc/</loc>
     <priority>0</priority>
   </url>
   
