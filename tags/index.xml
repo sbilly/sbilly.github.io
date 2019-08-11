@@ -5,28 +5,12 @@
     <link>https://sbilly.github.io/tags/</link>
       <atom:link href="https://sbilly.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Sun, 11 Aug 2019 13:37:25 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Tue, 06 Aug 2019 17:36:13 +0800</lastBuildDate>
     <image>
       <url>https://sbilly.github.io/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://sbilly.github.io/tags/</link>
     </image>
-    
-    <item>
-      <title>blackhat</title>
-      <link>https://sbilly.github.io/tags/blackhat/</link>
-      <pubDate>Sun, 11 Aug 2019 13:37:25 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/blackhat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>笔记</title>
-      <link>https://sbilly.github.io/tags/%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Sun, 11 Aug 2019 13:37:25 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/%E7%AC%94%E8%AE%B0/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>arm64</title>
