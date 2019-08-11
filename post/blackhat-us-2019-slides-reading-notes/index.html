@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="sbilly">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="看完 BlackHat 2019 的这些议题，我个人最强烈的感受就是企业承担的信息安全责任应该是有前提和有边界的，不应该是无前提和无边界的。">
+
+  
+  <link rel="alternate" hreflang="zh" href="https://sbilly.github.io/post/blackhat-us-2019-slides-reading-notes/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.dd629241ea9333c62c071f4a25f829ff.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-6223295-2', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://sbilly.github.io/post/blackhat-us-2019-slides-reading-notes/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@sbilly">
+  <meta property="twitter:creator" content="@sbilly">
+  
+  <meta property="og:site_name" content="Keep Simple, Make Fun.">
+  <meta property="og:url" content="https://sbilly.github.io/post/blackhat-us-2019-slides-reading-notes/">
+  <meta property="og:title" content="BlackHat US-19 笔记 | Keep Simple, Make Fun.">
+  <meta property="og:description" content="看完 BlackHat 2019 的这些议题，我个人最强烈的感受就是企业承担的信息安全责任应该是有前提和有边界的，不应该是无前提和无边界的。"><meta property="og:image" content="https://sbilly.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://sbilly.github.io/img/icon-192.png"><meta property="og:locale" content="zh">
+  
+    
+      <meta property="article:published_time" content="2019-08-11T13:37:25&#43;08:00">
+    
+    <meta property="article:modified_time" content="2019-08-11T13:37:25&#43;08:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>BlackHat US-19 笔记 | Keep Simple, Make Fun.</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Keep Simple, Make Fun.</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>文章</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>项目</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>关于</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">BlackHat US-19 笔记</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2019-08-11 13:37:25 &#43;0800 CST" itemprop="datePublished">
+<meta content="2019-08-11 13:37:25 &#43;0800 CST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/sbilly/">sbilly</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2019-08-11</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/blackhat-us-2019-slides-reading-notes/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="">学习笔记</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://sbilly.github.io/post/blackhat-us-2019-slides-reading-notes/&amp;text=BlackHat%20US-19%20%e7%ac%94%e8%ae%b0" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://sbilly.github.io/post/blackhat-us-2019-slides-reading-notes/&amp;t=BlackHat%20US-19%20%e7%ac%94%e8%ae%b0" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=BlackHat%20US-19%20%e7%ac%94%e8%ae%b0&amp;body=https://sbilly.github.io/post/blackhat-us-2019-slides-reading-notes/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://sbilly.github.io/post/blackhat-us-2019-slides-reading-notes/&amp;title=BlackHat%20US-19%20%e7%ac%94%e8%ae%b0" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=BlackHat%20US-19%20%e7%ac%94%e8%ae%b0%20https://sbilly.github.io/post/blackhat-us-2019-slides-reading-notes/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://sbilly.github.io/post/blackhat-us-2019-slides-reading-notes/&amp;title=BlackHat%20US-19%20%e7%ac%94%e8%ae%b0" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="读后感">读后感</h2>
+
+<p>看完 BlackHat 2019 的这些议题，我个人最强烈的感受就是企业承担的信息安全责任应该是有前提和有边界的，不应该是无前提和无边界的。如果拿消防做类比，在现行的治理框架下如果一个企业因为不可抗力或者被纵火，如果企业本身无过失（合规）的情况下一般只需要承担民事责任而没有刑事责任。美国的治理体系中就有这样的例子 —— FireEye 就获得了 SAFETY Act Certification 认证，<a href="https://www.fireeye.com/company/awards/safety-act-certification-and-fireeye-products.html" target="_blank">FireEye 的用户可以在某种情况下免于被起诉</a>。</p>
+
+<p>在《<a href="us-19-Conti-Operational-Templates-for-State-Level-Attack-and-Collective-Defense-of-Countries.pdf" target="_blank">Operational Templates for State-Level Attack and Collective Defense of Countries</a>》里有几张图也表达了这个意思 —— 商业公司缺乏足够的资源与国家层面的威胁对抗。攻击方可以在各个层面寻找脆弱性来突破。</p>
+
+<p><img src="media/15653591872010/15654181329540.jpg" alt="-w300" /><img src="media/15653591872010/15654196349463.jpg" alt="-w300" /></p>
+
+<p>就像《<a href="us-19-Pavur-GDPArrrrr-Using-Privacy-Laws-To-Steal-Identities.pdf" target="_blank">GDPArrrrr: Using Privacy Laws to Steal Identities</a>》所实践的 —— 连 GPDR 这样的隐私法案都能被利用来窃取隐私。而防守方以 Google Project Zero 这样的实力，也只能聚焦于二进制方向，漏洞挖掘也是以手工挖掘漏洞为主、辅助以半自动化的 Fuzzing 。</p>
+
+<p><img src="media/15653591872010/15654340825160.jpg" alt="-w300" /></p>
+
+<p><img src="media/15653591872010/15654363276071.jpg" alt="-w300" /><img src="media/15653591872010/15654366981174.jpg" alt="-w300" /><img src="media/15653591872010/15654367742188.jpg" alt="-w300" /></p>
+
+<p><img src="media/15653591872010/15654171165908.jpg" alt="-w300" /><img src="media/15653591872010/15654171367327.jpg" alt="-w300" /></p>
+
+<h2 id="blackhat-us19-议题笔记">BlackHat US19 议题笔记</h2>
+
+<ul>
+<li><a href="us-19-Almubayed-Practical-Approach-To-Automate-The-Discovery-And-Eradication-Of-Open-Source-Software-Vulnerabilities-At-Scale.pdf" target="_blank">Practical Approach to Automate the Discovery and Eradication of Open-Source Software Vulnerabilities at Scale</a></li>
+</ul>
+
+<p>国内国外都一样，安全管理员觉得最坑的场景之一就是某一天又爆发一个不得不补的远程执行漏洞。现在的软件生态包依赖关系非常复杂，软件供应链安全也非常复杂。演讲者认为需要遵循这几个原则：可扩展、自动化、高研发效率、关注兼容性。对漏洞的维度进行排序，分清主次才能进行有效的修复。一方面要从多个数据源（开源或商业化）收集漏洞、威胁相关的信息；另一方面，也需要通过自动化构建过程对自己的 IT 环境有足够的了解。</p>
+
+<p><img src="media/15653591872010/15653598646612.jpg" alt="-w800" /></p>
+
+<p><img src="media/15653591872010/15653605758169.jpg" alt="-w800" /></p>
+
+<p><img src="media/15653591872010/15653614862053.jpg" alt="-w300" /><img src="media/15653591872010/15653609908146.jpg" alt="-w300" /><img src="media/15653591872010/15653617912984.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Birch-HostSplit-Exploitable-Antipatterns-In-Unicode-Normalization.pdf" target="_blank">Host/Split: Exploitable Antipatterns in Unicode Normalization</a></li>
+</ul>
+
+<p>主要是描述了一个因为 IDN 支持 unicode 以后带来的安全风险。很多大厂、很多软件、很多语言都受影响。</p>
+
+<p><img src="media/15653591872010/15653647015903.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Bitan-Rogue7-Rogue-Engineering-Station-Attacks-On-S7-Simatic-PLCs.pdf" target="_blank">Rogue7: Rogue Engineering-Station attacks on S7 Simatic PLCs</a></li>
+</ul>
+
+<p>新发现的 PLC 操作系统的漏洞（和 S7 协议相关）。加上 ICS 安全的背景、全貌，以及这个漏洞的技术分析。这个议题在 ICS 方向讲得比较完整。</p>
+
+<p><img src="media/15653591872010/15653650152855.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Brand-WebAuthn-101-Demystifying-WebAuthn.pdf" target="_blank">WebAuthn 101 - Demystifying WebAuthn</a></li>
+</ul>
+
+<p>主要是介绍 WebAuthn 和 FIDO2 的好处。我对这种既改善用户体验、又增强安全性的方案是非常期望看到的。现在各方力量都在联合推动无密码认证的实现，DISA 下一步的现代化计划中也增加了改善用户认证，实现无密码认证的目标。目前，国民电子也在国内推 FIDO2 的相关方案。</p>
+
+<p>除此之外，这里面有不少统计数据是值得看的：</p>
+
+<ul>
+<li>91% 的信息安全事件和钓鱼有关</li>
+<li>80% 的针对商业机构的攻击行动中使用了钓鱼</li>
+<li>2016 年之后，钓鱼在攻击行动中使用超过了 exploit</li>
+<li>76% 的账号安全漏洞与弱密码或密码被窃取有关</li>
+<li>一个设计良好的钓鱼页面有 43% 的成功率</li>
+<li>使用生物特征进行重新验证，98% 的用户可以在 38 秒内完成，而使用用户名密码进行重新验证，98% 的用户要花 150 秒</li>
+</ul>
+
+<p><img src="media/15653591872010/15653653084670.jpg" alt="-w300" /><img src="media/15653591872010/15653653413046.jpg" alt="-w300" />
+<img src="media/15653591872010/15653653801597.jpg" alt="-w300" /></p>
+
+<p><img src="media/15653591872010/15653655934548.jpg" alt="-w300" /><img src="media/15653591872010/15653655326116.jpg" alt="-w300" />
+<img src="media/15653591872010/15653655558021.jpg" alt="-w300" /><img src="media/15653591872010/15653659341541.jpg" alt="-w300" /><img src="media/15653591872010/15653659750166.jpg" alt="-w300" /><img src="media/15653591872010/15653660101127.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Cai-0-Days-And-Mitigations-Roadways-To-Exploit-And-Secure-Connected-BMW-Cars.pdf" target="_blank">0-Days &amp; Mitigations: Roadways to Exploit and Secure Connected BMW Cars</a></li>
+</ul>
+
+<p>科恩实验室挖 BMW 车载系统漏洞的过程，非常好的 IoT 产品攻击面分析的范例。</p>
+
+<p><img src="media/15653591872010/15653667149091.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Campana-Everybody-Be-Cool-This-Is-A-Robbery.pdf" target="_blank">Everybody be Cool, This is a Robbery!</a></li>
+</ul>
+
+<p>不论是中国还是美国，高安全级别的系统一般都引入了 HSM 。这篇介绍了直接针对 HSM 的攻击，其实越小众的产品，安全性越差。在这个演示中的测试的 HSM 和前面那篇车载系统一样，选用的系统版本比较老，新一点的 Linux 自身内核保护机制都没有。只要存在漏洞，基本就会被利用。HSM 存在漏洞会直接破坏信任根，甚至在系统中提供一个非常隐蔽的持久据点。</p>
+
+<p><img src="media/15653591872010/15653673278472.jpg" alt="-w300" /><img src="media/15653591872010/15653673491823.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Carcano-The-Future-Of-Securing-IED-Using-The-IEC62351-7-Standard-For-Monitoring.pdf" target="_blank">The Future of Securing Intelligent Electronic Devices Using the IEC 62351-7 Standard for Monitoring</a></li>
+</ul>
+
+<p>主要是介绍了一下电网安全的 IEC 62351-7 标准、以及电网的安全环境和挑战、以及几个场景的 DEMO</p>
+
+<p><img src="media/15653591872010/15653678486345.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Conti-Operational-Templates-for-State-Level-Attack-and-Collective-Defense-of-Countries.pdf" target="_blank">Operational Templates for State-Level Attack and Collective Defense of Countries</a></li>
+</ul>
+
+<p>面对国家攻击的时候应该采用集体防御的方法，根据不同级别的安全威胁应该有不同级别的安全事件响应机制。各个层面都会有自己各自的脆弱性，在国家级的对抗中，攻击者不会放过任何一个可以利用的脆弱性。目前 Known/Knowing 的问题解决方法基本都有了，需要自动化来提高效率、改善体验、释放“资源”（这里的“资源“是指广义的资源，甚至包括产业界的关注度），并获得更多的资源投入到需要 “Behavioral Analytics + Hunting” 的范围内。</p>
+
+<p>除此之外，我觉得可能还给网络安全执法提供了合法性相关的思路：</p>
+
+<pre><code>* 为了减少火灾，会进行相关的防火教育和检查，并有严格的合规要求
+* 如果发现你家着火，为了确保公众安全，公众的消防力量有主动进行灭火的义务和权力
+* 发生火灾给第三方造成损失的，会有民事责任、刑事责任
+</code></pre>
+
+<p><img src="media/15653591872010/15654191308613.jpg" alt="-w300" /><img src="media/15653591872010/15653687430843.jpg" alt="-w300" />
+<img src="media/15653591872010/15653686514831.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Davidov-Inside-The-Apple-T2.pdf" target="_blank">Inside The Apple T2</a></li>
+</ul>
+
+<p>苹果设备中有一块 T2 的芯片，这块芯片夹在 CPU 和硬件设备之间，增加了额外的安全保障和控制。这篇主要是对其软硬件工作机制进行了分析。</p>
+
+<p><img src="media/15653591872010/15653699445151.jpg" alt="-w300" /><img src="media/15653591872010/15653700955524.jpg" alt="-w300" /><img src="media/15653591872010/15653701581991.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Doerr-The-Enemy-Within-Modern-Supply-Chain-Attacks.pdf" target="_blank">The Enemy Within Modern Supply Chain Attacks</a></li>
+</ul>
+
+<p>微软内部安全团队认为要从硬件、软件、服务、人这四个维度考虑供应链安全，每个部分都举了一个例子。</p>
+
+<p><img src="media/15653591872010/15653705673135.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Edwards-Compendium-Of-Container-Escapes.pdf" target="_blank">A Compendium of Container Escapes</a></li>
+</ul>
+
+<p>Docker 不是虚拟机，提供的隔离能力有限，这里介绍了三大类的绕过方式，从原理到代码。</p>
+
+<p><img src="media/15653591872010/15653716564331.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Farshchi-On-Trust-Stories-From-The-Front-Lines.pdf" target="_blank">ON TRUST - Stories from the Front Lines</a></li>
+</ul>
+
+<p>最最最水</p>
+
+<ul>
+<li><a href="us-19-Franceschi-Bicchierai-The-Discovery-Of-A-Government-Malware-And-An-Unexpected-Spy-Scandal.pdf" target="_blank">The Discovery of a Government Malware and an Unexpected Spy Scandal</a></li>
+</ul>
+
+<p>标题就看出来了 …… 意大利某“违法”监听调查分析</p>
+
+<p><img src="media/15653591872010/15654110727921.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Hauke-Denial-Of-Service-With-A-Fistful-Of-Packets-Exploiting-Algorithmic-Complexity-Vulnerabilities.pdf" target="_blank">Denial of Service with a Fistful of Packets: Exploiting Algorithmic Complexity Vulnerabilities</a></li>
+</ul>
+
+<p>AC 匹配的漏洞，并且介绍了 ACsploit 这个工具箱。这类漏洞比较有名的就是 CloudFlare 在 2019 年 7 月份那次因为正则表达式导致全球性故障。</p>
+
+<p>里面提出了一个观点比较有意思 —— AC 匹配的漏洞并不是实现层面的 BUG ，而是设计层面的问题。个人并不是很赞同这个观点，bug 并不局限于实现层面。只要是出现了不符合预期的结果，某种意义上都是 bug 。而 AC 匹配相关的这类漏洞，应该是设计者没有考虑各种最坏的情况可能出现的问题，从而导致了漏洞产生。和没有考虑用户输入可能导致命令执行类似。</p>
+
+<p><img src="media/15653591872010/15654118589379.jpg" alt="-w300" /><img src="media/15653591872010/15654119371191.jpg" alt="-w300" /><img src="media/15653591872010/15654117966384.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Hawkes-Project-Zero-Five-Years-Of-Make-0day-Hard.pdf" target="_blank">Google Project Zero</a></li>
+</ul>
+
+<p>Google 这篇主要是介绍了 Project Zero 的一些数据来佐证观点。干货不多感觉主要是保持曝光。</p>
+
+<p><img src="media/15653591872010/15654171165908.jpg" alt="-w300" /><img src="media/15653591872010/15654171367327.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Healey-Rough-and-Ready-Frameworks-To-Measure-Persistent-Engagment-and-Deterrence.pdf" target="_blank">Rough and Ready: Frameworks to Measure Persistent Engagement and Deterrence</a></li>
+</ul>
+
+<p>讲了一堆对持续威胁进行度量的意义、为什么要有度量，提出了一个三万英尺的框架。以及一堆未来的工作。</p>
+
+<ul>
+<li><a href="us-19-Hoelzel-How-To-Detect-That-Your-Domains-Are-Being-Abused-For-Phishing-By-Using-DNS.pdf" target="_blank">How to detect that your domains are being abused for phishing attacks by using DNS</a></li>
+</ul>
+
+<p>主要讲了一下在 DNS 层面可以做哪些事情来避免自己邮件域不会被用于钓鱼。</p>
+
+<p><img src="media/15653591872010/15654218119402.jpg" alt="-w300" /><img src="media/15653591872010/15654217902153.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Howes-Securing-Apps-In-The-Open-By-Default-Cloud.pdf" target="_blank">Securing Apps in the Open-By-Default Cloud</a></li>
+</ul>
+
+<p>snapchat 在公有云基础上应用安全的实践。snapchat 大量使用了AWS/GCP，在公有云上有一些限制，例如：没有办法获得一个仅为内部使用的网络基础设施、AWS/GCP 提供的控制点选项并不多、像 AppEngine 这样的服务必须直接暴露在互联网上、缺乏集中的 CI/CD 管道、使用大量技术带来技术栈复杂度高。</p>
+
+<p>snapchat 在软件生命周期中把所有的服务分成 UnManaged 和 Managed 两个阶段。在 UnManaged 阶段，主要是防火墙和无状态的认证（AuthN）和授权（AuthZ）代理，而在 Managed 阶段，主要是通过服务网格以及其 API Gateway 来进行管理。对于比较老的应用，则应该及时关注其状态和安全告警。</p>
+
+<p><img src="media/15653591872010/15654244942637.jpg" alt="-w300" /></p>
+
+<p><img src="media/15653591872010/15654250820930.jpg" alt="-w300" /><img src="media/15653591872010/15654256831681.jpg" alt="-w300" /></p>
+
+<p><img src="media/15653591872010/15654251304249.jpg" alt="-w300" /><img src="media/15653591872010/15654255470708.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Huang-Towards-Discovering-Remote-Code-Execution-Vulnerabilities-In-Apple-FaceTime.pdf" target="_blank">Towards Discovering Remote Code Execution Vulnerabilities in Apple FaceTime</a></li>
+</ul>
+
+<p>盘古带来的 FaceTime 远程代码执行漏洞分析。介绍了 iOS/macOS 中 FaceTime 的流程、攻击面分析、漏洞发现和利用。FaceTime 的通信过程有完整的可信链，苹果公司的安全架构设计绝对值得看一下。</p>
+
+<p><img src="media/15653591872010/15654260992836.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Jaiswal-Preventing-Authentication-Bypass-A-Tale-Of-Two-Researchers.pdf" target="_blank">Preventing Authentication Bypass A Tale of Two Researchers</a></li>
+</ul>
+
+<p>主要是讲了两个身份认证绕过的漏洞案例。这两个漏洞影响 Outlook/Live/Hotmail 的所有用户，攻击者可以获取被攻击者的所有邮件。主要的突破口就是在新版本上线引入的未签名 JWT Token 。</p>
+
+<ul>
+<li><a href="us-19-Jerkeby-Command-Injection-In-Irules-Loadbalancer-Scripts.pdf" target="_blank">COMMAND INJECTION IN IRULES LOADBALANCER SCRIPTS - A story about how TCL interpretation works in F5 iRules and how it can be detected or exploited</a></li>
+</ul>
+
+<p>主要是讲 F5 的内置规则引擎 iRule 规则的利用。F5 应用范围很广（包括 DoD 也在大量使用）。但这个漏洞并不是很好评价，不知道 iRule 缺省是否存在并被启用。</p>
+
+<p><img src="media/15653591872010/15654275398688.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Kotler-Process-Injection-Techniques-Gotta-Catch-Them-All.pdf" target="_blank">Windows Process Injection in 2019</a></li>
+</ul>
+
+<p>SafeBreach 搞了一个可以在最新版 Windows 10 x64 上进行进程注入的 C/C++ 库： <a href="https://github.com/SafeBreach-Labs/pinjectra" target="_blank">Pinjectra</a></p>
+
+<p><img src="media/15653591872010/15654282480908.jpg" alt="-w600" /></p>
+
+<ul>
+<li><a href="us-19-Lilang-Debug-For-Bug-Crack-And-Hack-Apple-Core-By-Itself-Fun-And-Profit-To-Debug-And-Fuzz-Apple-Kernel-By-LLDB-Script.pdf" target="_blank">Debug for bug: Crack and Hack Apple Core by itself</a></li>
+</ul>
+
+<p>macOS 的内核/驱动 Fuzz 研究。发现了不少显卡驱动的漏洞。</p>
+
+<ul>
+<li><a href="us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf" target="_blank">Woke Hiring Won&rsquo;t Save Us: An Actionable Approach to Diversity Hiring and Retention</a></li>
+</ul>
+
+<p>主要是说女性在 IT 行业招聘和保留的问题。</p>
+
+<ul>
+<li><a href="us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf" target="_blank">API-Induced SSRF - How Apple Pay Scattered Vulnerabilities Across the Web</a></li>
+</ul>
+
+<p>主要是苹果公司在 Apple Pay 上一个漏洞响应措施比较让人不满意。这个作者喷了一通，并且提出了一个有意思的观点：有缺陷的设计模式导致了有缺陷的实现，有缺陷的实现导致了有缺陷的部署。</p>
+
+<p><img src="media/15653591872010/15654298293684.jpg" alt="-w300" /><img src="media/15653591872010/15654293378265.jpg" alt="-w300" /><img src="media/15653591872010/15654293633681.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf" target="_blank">The Future of Account Takeover</a></li>
+</ul>
+
+<p>币圈的 coinbase 讲了一下账号窃取的一些事情。换卡、账号找回的滥用、钓鱼、撞库、社会工程、恶意代码、以及利用 SEO 冒充官方技术支持等一些攻击技巧。…… 等等，这些怎么在国内好像都看过呢？！😓</p>
+
+<ul>
+<li><a href="us-19-Matrosov-Breaking-Through-Another-Side-Bypassing-Firmware-Security-Boundaries-From-Embedded-Controller.pdf" target="_blank">Breaking Through Another Side - Bypassing Firmware Security Boundaries from Embedded Controller</a></li>
+</ul>
+
+<p>硬核的 x86 平台硬件/固件安全。这个架构和《<a href="us-19-Davidov-Inside-The-Apple-T2.pdf" target="_blank">Inside The Apple T2</a>》这篇文章中苹果的架构一起对比来看，非常有意思。</p>
+
+<p><img src="media/15653591872010/15654328401505.jpg" alt="-w300" /><img src="media/15653591872010/15654328816020.jpg" alt="-w300" /><img src="media/15653591872010/15654330383563.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Nakajima-Women-In-Security-Building-A-Female-InfoSec-Community-In-Korea-Japan-And-Taiwan.pdf" target="_blank">Building a Female InfoSec Community in Korea, Japan, and Taiwan</a></li>
+</ul>
+
+<p>如何让信息安全不再是男人统治的领域。加油！</p>
+
+<ul>
+<li><a href="us-19-Pavur-GDPArrrrr-Using-Privacy-Laws-To-Steal-Identities.pdf" target="_blank">GDPArrrrr: Using Privacy Laws to Steal Identities</a></li>
+</ul>
+
+<p>在 GPDR 法案颁布以后，演讲者利用隐私保护法案来盗取身份信息，按照 Kill-Chain 的思路把整个过程讲了一遍。整个过程的核心是 GPDR 中要求：服务商必须对外公布联系方式，通过这个联系方式，用户可以申请自己所有的个人信息，而服务商需要在一个自然月以内向用户提供可机读的个人信息。个人觉得国内这么搞一下，然后出国去讲，很可能被请喝茶。</p>
+
+<p><img src="media/15653591872010/15654341433711.jpg" alt="-w300" /><img src="media/15653591872010/15654340825160.jpg" alt="-w300" /></p>
+
+<p><img src="media/15653591872010/15654358926051.jpg" alt="-w300" /><img src="media/15653591872010/15654359442090.jpg" alt="-w300" /><img src="media/15653591872010/15654360197728.jpg" alt="-w300" /></p>
+
+<p><img src="media/15653591872010/15654360478216.jpg" alt="-w300" /></p>
+
+<p><img src="media/15653591872010/15654360638454.jpg" alt="-w300" /><img src="media/15653591872010/15654361042671.jpg" alt="-w300" /></p>
+
+<p><img src="media/15653591872010/15654361565895.jpg" alt="-w300" /></p>
+
+<p><img src="media/15653591872010/15654362245877.jpg" alt="-w300" /></p>
+
+<p><img src="media/15653591872010/15654363276071.jpg" alt="-w300" /><img src="media/15653591872010/15654366981174.jpg" alt="-w300" /><img src="media/15653591872010/15654367222044.jpg" alt="-w300" /><img src="media/15653591872010/15654367582753.jpg" alt="-w300" /><img src="media/15653591872010/15654367742188.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Perlman-Hacking-Ten-Million-Useful-Idiots-Online-Propaganda-As-A-Socio-Technical-Security-Project.pdf" target="_blank">Hacking Ten Million Useful Idiots: Online Propaganda as a Socio-Technical Security Project</a></li>
+</ul>
+
+<p>错误信息是一个社会层面的安全问题，会带来各种物理、经济方面的影响。还提出了一个 AMITT 的框架。算是社会学范安全的领域吧。</p>
+
+<p><img src="media/15653591872010/15654390376717.jpg" alt="-w300" /><img src="media/15653591872010/15654390870350.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Peterlin-Breaking-Samsungs-ARM-TrustZone.pdf" target="_blank">Breaking Samsung&rsquo;s ARM TrustZone</a></li>
+</ul>
+
+<p>简单介绍了三种不同类型的可信执行的环境，并详细介绍了如何攻破三星的 ARMv7 的 TrustZone 。</p>
+
+<p><img src="media/15653591872010/15654396394106.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Pi-Exploiting-Qualcomm-WLAN-And-Modem-Over-The-Air.pdf" target="_blank">Exploiting Qualcomm WLAN And Modem Over-The-Air</a></li>
+</ul>
+
+<p>在博通、Marvell 等 WiFi 被安全社区发现漏洞之后，腾讯 Blade Team 决定研究下高通 WiFi 芯片。结果搞定了从 OTA -&gt; WALN -&gt; Modem -&gt; Kernel 的全链条，可以从无线网控制设备。😱</p>
+
+<p><img src="media/15653591872010/15654419124544.jpg" alt="-w300" /><img src="media/15653591872010/15654418647448.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Price-Playing-Offense-And-Defense-With-Deepfakes.pdf" target="_blank">Playing Offense and Defense with Deepfakes</a></li>
+</ul>
+
+<p>介绍了 deepfake 的历史，认为现在 deepfake 类产生的恶意视频人类靠肉眼已经很难辨认。因此开发了一套新的名为 <a href="https://github.com/zerofox-oss/deepstar" target="_blank">deepstar</a> 检测方法（还没有开源）。</p>
+
+<p><img src="media/15653591872010/15654420971329.jpg" alt="-w300" /><img src="media/15653591872010/15654425397013.jpg" alt="-w300" /><img src="media/15653591872010/15654425651801.jpg" alt="-w300" /></p>
+
+<ul>
+<li><a href="us-19-Qian-Exploring-The-New-World-Remote-Exploitation-Of-SQLite-And-Curl.pdf" target="_blank">Exploring the New World : Remote Exploitation of SQLite and Curl</a></li>
+</ul>
+
+<p>SQLite 和 cURL 的漏洞发现和利用。腾讯 Blade Team 出品。</p>
+
+<h2 id="相关资源的下载">相关资源的下载</h2>
+
+<p>一句话下载 BlackHat US19 资料（需要 jq ）</p>
+
+<pre><code class="language-bash">#!/bin/bash
+curl &quot;https://www.blackhat.com/us-19/briefings/schedule/sessions.json&quot; | jq &quot;.sessions[].bh_files[].url&quot; -r | sort | grep -v github | xargs -n1 wget -c
+</code></pre>
+
+    </div>
+
+    
+
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/blackhat/">blackhat</a>
+  
+  <a class="badge badge-light" href="">笔记</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/sbilly/avatar_hu0e09cc2018de1a599b70958c39834348_240652_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://sbilly.github.io/">sbilly</a></h5>
+      
+      <p class="card-text" itemprop="description">主要关注 信息安全、网络安全、系统架构、计算机、网络、开发、科技、制造等科技领域</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/sbilly" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/sbilly" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://weibo.com/sbilly" target="_blank" rel="noopener">
+              <i class="fab fa-weibo"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/" >
+              <i class="fab fa-weixin"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+
+    
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "sbilly" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://sbilly.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    2019 &copy; &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
