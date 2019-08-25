@@ -5,12 +5,36 @@
     <link>https://sbilly.github.io/tags/</link>
       <atom:link href="https://sbilly.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Wed, 14 Aug 2019 00:50:22 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Sun, 25 Aug 2019 21:34:30 +0800</lastBuildDate>
     <image>
       <url>https://sbilly.github.io/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://sbilly.github.io/tags/</link>
     </image>
+    
+    <item>
+      <title>历史</title>
+      <link>https://sbilly.github.io/tags/%E5%8E%86%E5%8F%B2/</link>
+      <pubDate>Sun, 25 Aug 2019 21:34:30 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/%E5%8E%86%E5%8F%B2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>案例</title>
+      <link>https://sbilly.github.io/tags/%E6%A1%88%E4%BE%8B/</link>
+      <pubDate>Sun, 25 Aug 2019 21:34:30 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/%E6%A1%88%E4%BE%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>百科</title>
+      <link>https://sbilly.github.io/tags/%E7%99%BE%E7%A7%91/</link>
+      <pubDate>Sun, 25 Aug 2019 21:34:30 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/%E7%99%BE%E7%A7%91/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Docker</title>

@@ -5,7 +5,7 @@
     <link>https://sbilly.github.io/categories/</link>
       <atom:link href="https://sbilly.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Wed, 14 Aug 2019 00:50:22 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Sun, 25 Aug 2019 21:34:30 +0800</lastBuildDate>
     <image>
       <url>https://sbilly.github.io/img/icon-192.png</url>
       <title>Categories</title>
@@ -13,18 +13,18 @@
     </image>
     
     <item>
-      <title>学习笔记</title>
-      <link>https://sbilly.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Wed, 14 Aug 2019 00:50:22 +0800</pubDate>
-      <guid>https://sbilly.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <title>安全产业</title>
+      <link>https://sbilly.github.io/categories/%E5%AE%89%E5%85%A8%E4%BA%A7%E4%B8%9A/</link>
+      <pubDate>Sun, 25 Aug 2019 21:34:30 +0800</pubDate>
+      <guid>https://sbilly.github.io/categories/%E5%AE%89%E5%85%A8%E4%BA%A7%E4%B8%9A/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>安全产业</title>
-      <link>https://sbilly.github.io/categories/%E5%AE%89%E5%85%A8%E4%BA%A7%E4%B8%9A/</link>
-      <pubDate>Wed, 31 Jul 2019 15:56:57 +0800</pubDate>
-      <guid>https://sbilly.github.io/categories/%E5%AE%89%E5%85%A8%E4%BA%A7%E4%B8%9A/</guid>
+      <title>学习笔记</title>
+      <link>https://sbilly.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 14 Aug 2019 00:50:22 +0800</pubDate>
+      <guid>https://sbilly.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     
