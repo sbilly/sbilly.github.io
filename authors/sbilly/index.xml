@@ -2621,14 +2621,5 @@ IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs deamon
 </description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://sbilly.github.io/authors/sbilly/</link>
-      <pubDate>Wed, 14 Aug 2019 00:50:22 +0800</pubDate>
-      <guid>https://sbilly.github.io/authors/sbilly/</guid>
-      <description>&lt;p&gt;我很懒，以至于什么都没写。&lt;/p&gt;
-</description>
-    </item>
-    
   </channel>
 </rss>
