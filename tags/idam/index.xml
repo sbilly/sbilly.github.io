@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>【转】美军网络安全 | 第5篇：身份和访问管理（IdAM）</title>
+      <title>【转】美军网络安全 | 第 5 篇：身份和访问管理（IdAM）</title>
       <link>https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/</link>
       <pubDate>Tue, 27 Aug 2019 18:54:52 +0800</pubDate>
       <guid>https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/</guid>
@@ -27,9 +27,9 @@
 
 &lt;p&gt;本系列第一篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-1-the-summary-of-joint-information-enviroment/&#34; target=&#34;_blank&#34;&gt;美军网络安全 | 开篇：JIE（联合信息环境）概述&lt;/a&gt;）介绍了美军 &lt;strong&gt;JIE（联合信息环境）&lt;/strong&gt;的总体情况。&lt;/p&gt;
 
-&lt;p&gt;本系列第二篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/&#34; target=&#34;_blank&#34;&gt;美军网络安全 | 第2篇：JIE 网络安全架构SSA（单一安全架构）&lt;/a&gt;）和第三篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-3-joint-information-enviroment-joint-region-security-stack/&#34; target=&#34;_blank&#34;&gt;美军网络安全 | 第3篇：JIE 联合区域安全栈 JRSS&lt;/a&gt;）分别介绍了 JIE 网络安全体系架构和重要实现。&lt;/p&gt;
+&lt;p&gt;本系列第二篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/&#34; target=&#34;_blank&#34;&gt;美军网络安全 | 第 2 篇：JIE 网络安全架构SSA（单一安全架构）&lt;/a&gt;）和第三篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-3-joint-information-enviroment-joint-region-security-stack/&#34; target=&#34;_blank&#34;&gt;美军网络安全 | 第 3 篇：JIE 联合区域安全栈 JRSS&lt;/a&gt;）分别介绍了 JIE 网络安全体系架构和重要实现。&lt;/p&gt;
 
-&lt;p&gt;本系列第四篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-4-corss-domain-solution/&#34; target=&#34;_blank&#34;&gt;美军网络安全 | 第4篇：跨域解决方案（CDS）&lt;/a&gt;）介绍了不同密级网络之间安全连接的解决方案。&lt;/p&gt;
+&lt;p&gt;本系列第四篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-4-corss-domain-solution/&#34; target=&#34;_blank&#34;&gt;美军网络安全 | 第 4 篇：跨域解决方案（CDS）&lt;/a&gt;）介绍了不同密级网络之间安全连接的解决方案。&lt;/p&gt;
 
 &lt;p&gt;本篇（即第五篇），将介绍身份和访问安全的解决方案 —— &lt;strong&gt;IdAM（身份与访问管理）&lt;/strong&gt;。它在  JIE 框架中的地位如下图所示：&lt;/p&gt;
 
@@ -315,8 +315,7 @@
 &lt;li&gt;利用云托管的移动电话实例，在一台移动设备上允许访问多个密级；&lt;/li&gt;
 &lt;li&gt;移动设备上不存储数据，允许使用政府供应设备（GFE）和自带设备（BYOD）；&lt;/li&gt;
 &lt;li&gt;支持完整的设备功能：端点上的无缝虚拟化；&lt;/li&gt;
-&lt;li&gt;使用派生PKI证书。
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;使用派生PKI证书。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;media/15668995071162/15669026716794.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
