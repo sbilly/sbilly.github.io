@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.4.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="sbilly">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="本篇（即第五篇），将介绍身份和访问安全的解决方案 —— IdAM（身份与访问管理）。">
+
+  
+  <link rel="alternate" hreflang="zh" href="https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.dd629241ea9333c62c071f4a25f829ff.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-6223295-2', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@sbilly">
+  <meta property="twitter:creator" content="@sbilly">
+  
+  <meta property="og:site_name" content="Keep Simple, Make Fun.">
+  <meta property="og:url" content="https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/">
+  <meta property="og:title" content="【转】美军网络安全 | 第5篇：身份和访问管理（IdAM） | Keep Simple, Make Fun.">
+  <meta property="og:description" content="本篇（即第五篇），将介绍身份和访问安全的解决方案 —— IdAM（身份与访问管理）。"><meta property="og:image" content="https://sbilly.github.io/img/icon-192.png">
+  <meta property="twitter:image" content="https://sbilly.github.io/img/icon-192.png"><meta property="og:locale" content="zh">
+  
+    
+      <meta property="article:published_time" content="2019-08-27T18:54:52&#43;08:00">
+    
+    <meta property="article:modified_time" content="2019-08-27T18:54:52&#43;08:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>【转】美军网络安全 | 第5篇：身份和访问管理（IdAM） | Keep Simple, Make Fun.</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Keep Simple, Make Fun.</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>文章</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>项目</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>关于</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">【转】美军网络安全 | 第5篇：身份和访问管理（IdAM）</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2019-08-27 18:54:52 &#43;0800 CST" itemprop="datePublished">
+<meta content="2019-08-27 18:54:52 &#43;0800 CST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/sbilly/">sbilly</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2019-08-27</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    18 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/dod-network-security-part-5-identity-and-access-manaement/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="">安全产业</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/&amp;text=%e3%80%90%e8%bd%ac%e3%80%91%e7%be%8e%e5%86%9b%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%20%7c%20%e7%ac%ac5%e7%af%87%ef%bc%9a%e8%ba%ab%e4%bb%bd%e5%92%8c%e8%ae%bf%e9%97%ae%e7%ae%a1%e7%90%86%ef%bc%88IdAM%ef%bc%89" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/&amp;t=%e3%80%90%e8%bd%ac%e3%80%91%e7%be%8e%e5%86%9b%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%20%7c%20%e7%ac%ac5%e7%af%87%ef%bc%9a%e8%ba%ab%e4%bb%bd%e5%92%8c%e8%ae%bf%e9%97%ae%e7%ae%a1%e7%90%86%ef%bc%88IdAM%ef%bc%89" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%e3%80%90%e8%bd%ac%e3%80%91%e7%be%8e%e5%86%9b%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%20%7c%20%e7%ac%ac5%e7%af%87%ef%bc%9a%e8%ba%ab%e4%bb%bd%e5%92%8c%e8%ae%bf%e9%97%ae%e7%ae%a1%e7%90%86%ef%bc%88IdAM%ef%bc%89&amp;body=https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/&amp;title=%e3%80%90%e8%bd%ac%e3%80%91%e7%be%8e%e5%86%9b%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%20%7c%20%e7%ac%ac5%e7%af%87%ef%bc%9a%e8%ba%ab%e4%bb%bd%e5%92%8c%e8%ae%bf%e9%97%ae%e7%ae%a1%e7%90%86%ef%bc%88IdAM%ef%bc%89" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=%e3%80%90%e8%bd%ac%e3%80%91%e7%be%8e%e5%86%9b%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%20%7c%20%e7%ac%ac5%e7%af%87%ef%bc%9a%e8%ba%ab%e4%bb%bd%e5%92%8c%e8%ae%bf%e9%97%ae%e7%ae%a1%e7%90%86%ef%bc%88IdAM%ef%bc%89%20https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/&amp;title=%e3%80%90%e8%bd%ac%e3%80%91%e7%be%8e%e5%86%9b%e7%bd%91%e7%bb%9c%e5%ae%89%e5%85%a8%20%7c%20%e7%ac%ac5%e7%af%87%ef%bc%9a%e8%ba%ab%e4%bb%bd%e5%92%8c%e8%ae%bf%e9%97%ae%e7%ae%a1%e7%90%86%ef%bc%88IdAM%ef%bc%89" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="一-前言">一、前言</h2>
+
+<p>美军 JIE（<strong>联合信息环境</strong>）的目标是实现“<strong>三个任意</strong>”的愿景 —— 美军作战人员能够用任意设备、在任意时间、在任意地方获取经授权的所需信息，以满足联合作战的需求。</p>
+
+<p>JIE 的关键领域是：1）网络现代化（网络规范化）；2）网络安全体系架构（单一安全架构，SSA/CCA）；3）身份和访问管理（IdAM/ICAM）；4）企业运营；5）企业服务；6）云计算；7）数据中心整合；8）任务伙伴环境（MPE）；9）移动性。“美军网络安全”系列将围绕这些主题进行介绍。</p>
+
+<p>本系列第一篇（<a href="https://sbilly.github.io/post/dod-network-security-part-1-the-summary-of-joint-information-enviroment/" target="_blank">美军网络安全 | 开篇：JIE（联合信息环境）概述</a>）介绍了美军 <strong>JIE（联合信息环境）</strong>的总体情况。</p>
+
+<p>本系列第二篇（<a href="https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/" target="_blank">美军网络安全 | 第2篇：JIE 网络安全架构SSA（单一安全架构）</a>）和第三篇（<a href="https://sbilly.github.io/post/dod-network-security-part-3-joint-information-enviroment-joint-region-security-stack/" target="_blank">美军网络安全 | 第3篇：JIE 联合区域安全栈 JRSS</a>）分别介绍了 JIE 网络安全体系架构和重要实现。</p>
+
+<p>本系列第四篇（<a href="https://sbilly.github.io/post/dod-network-security-part-4-corss-domain-solution/" target="_blank">美军网络安全 | 第4篇：跨域解决方案（CDS）</a>）介绍了不同密级网络之间安全连接的解决方案。</p>
+
+<p>本篇（即第五篇），将介绍身份和访问安全的解决方案 —— <strong>IdAM（身份与访问管理）</strong>。它在  JIE 框架中的地位如下图所示：</p>
+
+<p><img src="media/15668995071162/15669004268184.jpg" alt="-w600" /></p>
+
+<p>我们曾经提到过，在下面的 JIE 框架图中，所有深红色部分都属于网络安全内容，即 SSA（单一安全架构）涵盖的范畴。然而 IdAM 并不是深红色，而是浅蓝色。这种颜色主要代表的是企业化能力和服务。（细节是魔鬼，这张图中的各种颜色，都是有特定含义的）</p>
+
+<p><img src="media/15668995071162/15669004822105.jpg" alt="-w600" /></p>
+
+<p>笔者推测，美军这么看待 IdAM 的原因是：IdAM 与传统的 PKI/CA 认证体系一脉相承，早已成为美国国防部一项非常基础、非常重要的服务——信任基础设施。</p>
+
+<p>笔者提示：对 <strong>Gartner 自适应安全防护模型</strong>和 <strong>Gartner 自适应访问控制模型</strong>比较熟悉的同学知道，<strong>安全</strong>和<strong>信任</strong>分别解决了<strong>防护侧</strong>和<strong>访问侧</strong>的问题。从这个意义上讲，信任是与安全并驾齐驱的领域。所以，本次介绍的 IdAM（解决信任问题）与前面强调过的单一安全架构 SSA（解决安全问题）在 JIE 中的地位是可以类比的。</p>
+
+<p>说明：在较新的国防部文件中，<strong>IdAM 也经常被称为 ICAM（身份、凭证与访问管理）</strong>。</p>
+
+<h2 id="二-idam-背景-gig-时代">二、IdAM 背景（GIG 时代）</h2>
+
+<h3 id="1-gig-2-0-中的全球访问愿景">1、GIG 2.0 中的全球访问愿景</h3>
+
+<p>先看一张 2009 年国防部 GIG（全球信息栅格）2.0 的作战概念图：</p>
+
+<p><img src="media/15668995071162/15669006356754.jpg" alt="-w600" /></p>
+
+<p>左边是美军当时的访问能力状态，右侧是美军希望达到的目标状态。很明显，那时的认证基础设施和访问目录都是分散的，他们希望能够实现大统一，将认证和访问控制<strong>集中统管</strong>起来。</p>
+
+<p>注意，这是 2009 年的图。当时，JIE（联合信息环境）概念尚未提出。2012 年后提出的 JIE，也非常推崇<strong>统管制</strong>，其目的是冲破组织烟囱和功能烟囱的藩篱。这是美军 IT 管理机制的一次影响深远的重大变革，树立了管理制度大胆变革的榜样。</p>
+
+<p>从集中统管这种思路上看，IdAM 毫无疑问走在了前头。当然，这也与其作为基础设施的地位分不开。无论是 GIG 时代，还是 JIE 时代，都是如此。</p>
+
+<p>全球认证、访问控制、目录服务是 GIG 2.0 作战概念的 3 个关键特征，用于确保任何授权用户，利用通用和移动的身份证书，能够从任意地点访问全球网络基础设施，并使所有授权的作战人员、业务支持人员或情报人员都能获得与其任务相关的和可视的信息、服务和应用，同时做到单一签名，在任意时间和地点，实现对网络、信息技术、国家安全系统服务的访问，以及对整个国防部全球地址清单的访问。《<strong>全企业访问网络和协同服务参考体系结构</strong>》（EANCE RA）正是着眼全球可访问资源的全球认证、授权和访问控制，进行了体系结构设计。</p>
+
+<h3 id="2-信息保障基础设施中的身份访问控制">2、信息保障基础设施中的身份访问控制</h3>
+
+<p>在 GIG（全球信息栅格）时代，IdAM 的功能主要被包含在<strong>信息保障（IA）基础设施</strong>中。信息保障基础设施由各种软硬件以及管理系统和安全保密设备组成,用于维持和保护 GIG 网络的正常运行以及<strong>身份识别与授权、访问控制</strong>、用户信息保护、动态管理、资源分配、网络防御与态势感知等功能，确保 GIG 网络的有效操作和安全可靠。2006 年，美国国防部颁布了“<strong>全球信息栅格信息保障体系结构</strong>” 1.1 版，确定了 <strong>GIG 信息保障任务</strong>的 6 个能力域、15 种能力要求、19 项基本系统功能。</p>
+
+<p>信息保障机制包括：基于策略决策服务（PDS）、策略检索服务（PRS）、策略管理服务（PoAS）、证书确认服务（CVS）、主要特征识别服务（PrAS）等 5 项“核心”功能。基于这些功能形成的保护机制，基本上可以确保其他服务功能的安全调用。<strong>DoD 信息保障服务机制</strong>如下图所示：</p>
+
+<p><img src="media/15668995071162/15669009750140.jpg" alt="-w600" /></p>
+
+<p>这种保障机制可以实现：</p>
+
+<ul>
+<li>认证和授权：只有授权用户(服务用户、服务提供者以及各种应用)可调用信息服务；</li>
+<li>保密性：可保护信息或文件，使其不被非授权用户访问；</li>
+<li>数据完整性：保护信息在传输过程中不被非授权用户修改；</li>
+<li>不可否认性：确保信息发送者不能否认已发送信息，信息接收者不能否认已接收的信息；</li>
+<li>问责性：提供安全登录和审查；</li>
+<li>互操作性：接口可支持各种领域或者机构的商用技术方案。</li>
+</ul>
+
+<h3 id="3-pki-pke">3、PKI/PKE</h3>
+
+<p><strong>国防部 PKI</strong>（公共密钥基础设施）：负责公钥证书及其相应私钥的生成、生产、分发、控制、撤销、恢复和跟踪。</p>
+
+<p><strong>公钥启用</strong>（<strong>PKE</strong>， Public Key Enablement）：是确保应用程序可以使用由 PKI 颁发的证书来支持标识和身份验证、数据完整性、机密性和/或技术不可否认性的过程。</p>
+
+<p>PKE 的常见用例包括启用：</p>
+
+<ul>
+<li>智能卡登录 DoD 网络和基于证书的系统认证；</li>
+<li>到 DoD 服务器的安全连接（SSL/TLS）；</li>
+<li>来自桌面、Web、移动客户端的电子邮件的数字签名和加密；</li>
+<li>表格的数字签名。</li>
+</ul>
+
+<p>当前，<strong>国防部 PKI 的发展方向</strong>：</p>
+
+<ul>
+<li><strong>非个人实体（NPE）</strong>：NPE 系统为 NIPRNET 和 SIPRNET 上的设备（如工作站、Web服务器、网络设备）和服务，提供了更加简化的 PKI 证书颁发。</li>
+<li><strong>移动认证</strong>：为 DoD PKI 订阅用户在<strong>商用移动设备</strong>上使用，提供了一种安全、可扩展的分发软件证书的方法。即后文提到的纯种系统；</li>
+</ul>
+
+<p>PKI有两种基本类型：</p>
+
+<ul>
+<li><strong>国防部 PKI（DoD 证书颁发机构）</strong>：国防部向人员实体和非人员实体（如网络服务器、网络设备、路由器、应用程序）颁发证书，以支持国防部的任务和业务运作。</li>
+<li><strong>ECA PKI（外部证书颁发机构）</strong>：国防部已经建立了外部认证机构（ECA）计划，以支持向行业合作伙伴和其他外部实体和组织，颁发国防部批准的证书。</li>
+</ul>
+
+<p>对于 <strong>DoD PKI</strong>：</p>
+
+<ul>
+<li><strong>在 NIPRNET 上</strong>：国防部 PKI 是一个层次结构系统，在层次结构的顶部有一个根证书机构（CA），以及一些支持可扩展性和提供灾难恢复能力的颁发 CA。该 PKI 在公共访问卡（CAC）上颁发证书，并颁发软件证书以支持应用程序需求。</li>
+<li><strong>在 SIPRNET 上</strong>：国防部在 <strong>NSS（国家安全系统）PKI 根 CA</strong> 下运行 CA，该根 CA 支持在机密网络上拥有用户或系统的所有联邦机构。<strong>NSS PKI 在 SIPRNET 硬件令牌和软件证书上颁发证书</strong>，以支持应用程序需求。</li>
+</ul>
+
+<p>对于 <strong>ECA PKI</strong>：</p>
+
+<ul>
+<li>根据 ECA 项目颁发的 PKI 证书，提供了一种机制，使这些实体能够与国防部安全通信，并认证到国防部信息系统。</li>
+<li>ECA PKI 由一个根 CA 和从属 CA 组成，根 CA 在运行 DoD PKI 根 CA 的同一设施中维护，而从属 CA 则由授权供应商维护。</li>
+</ul>
+
+<p>PKI 互操作性是国防部及其联邦政府和行业内合作伙伴之间安全信息共享的重要组成部分。这些年来，国防部 PKI 不断扩展与外部的互操作性。下面 2016 年的国防部 PKI 外部互操作性架构图，说明了国防部如何通过联邦桥与批准的外部 PKI 进行交互。</p>
+
+<p><img src="media/15668995071162/15669014169591.jpg" alt="-w600" /></p>
+
+<h3 id="4-军事人员的通用访问卡">4、军事人员的通用访问卡</h3>
+
+<p>1999 年开始，美国国防部开始为现役人员、预备役人员、文职雇员制发新式<strong>通用访问卡</strong>（CAC 卡，Commom Access Card）。</p>
+
+<p>2006 年，美国国防部开始对个人发放<strong>新一代通用访问卡</strong>（CAC）。新卡大约相当于标准信用卡大小，在一个集成电路芯片上存储 144K 的数据存储和内存。新型通用访问卡提供统一的电子结构，增加了<strong>身份欺骗防护</strong>措施，并升级了安全和隐私能力。新卡的芯片上保存了 <strong>PKI 证书、两枚指纹、一张数码照片、个人身份验证（PIV）证书</strong>、人事关系、社会保险号、机构、卡片有效期。同时，在发卡前还将对人员进行背景检查。</p>
+
+<p>CAC 卡允许对<strong>所有物理和逻辑访问</strong>，进行<strong>快速身份验证</strong>和增强安全性。</p>
+
+<p>CAC 卡存储的数据只能通过安全的CAC应用程序访问。事实上，如果没有以下条件，就无法访问存储在 CAC 上的信息：</p>
+
+<ul>
+<li>个人识别号（PIN）：如果忘记了 PIN ，只能前往发行站点，将您的指纹与您发行卡时存储在国防注册资格报告系统中的指纹进行匹配。如果指纹匹配成功，则可以选择新的 PIN。目前，<strong>无法远程重置</strong>您的 PIN；</li>
+<li>系统访问解释数据所需的<strong>安全 CAC 应用程序</strong>。</li>
+</ul>
+
+<p><img src="media/15668995071162/15669015957605.jpg" alt="-w300" /><img src="media/15668995071162/15669016079741.jpg" alt="-w300" /></p>
+
+<h2 id="三-idam-内涵-jie-时代">三、IdAM 内涵（JIE 时代）</h2>
+
+<h3 id="1-idam-概念和作用">1、IdAM 概念和作用</h3>
+
+<p><strong>IdAM</strong>（<strong>身份和访问管理服务</strong>，Identity and Access Management）定义：IdAM 是创建、定义和管理身份信息的使用/保护的技术系统、策略和过程的组合。也称为 <strong>ICAM</strong>（Identity, Credential, and Access Management）。</p>
+
+<p><strong>IdAM 主管部门</strong>：国防部信息系统局（DISA）、国防人力数据中心（DMDC ）、国家安全局（NSA）组合资源，为国防部提供 IdAM 解决方案。</p>
+
+<p>在 JIE 的概念体系中，IdAM 是实现数据安全及与任务伙伴安全共享信息的根本。<strong>“身份”可在整个企业，在所有网络上，对人员和机器，实现端到端的、唯一的、明确的区分</strong>。这些能力对于提高国防部 IT 安全性及任务有效性的双重目标至关重要。这种能力与基于访问的控制相结合，可以使得<strong>人员实体和非人员实体</strong>，能够在任意时间、在任意地点、安全地访问经过授权的国防部信息，得以实现“<strong>三个任意</strong>”的目标。</p>
+
+<p>IdAM 能够正确识别国防部信息网络上的用户（人员或软件），并对用户访问网络资源和服务进行高效<strong>管理</strong>。通过将<strong>用户活动与数字身份进行绑定</strong>，确保所有用户都必须经过强有力的认证，且只能访问其经过授权的资源，并能对所有用户进行监控，从而降低内部和外部威胁风险。</p>
+
+<p>国防部 <strong>PKI</strong>（公钥基础设施）认证的使用范围将<strong>最大化</strong>，可以<strong>用于 NIPRNET/SIPRNET 的所有登录和 NIPR/SIPR 国防部网站的每次访问</strong>。国防部 PKI 认证的使用，也将提供更有效的监控和追溯能力。</p>
+
+<p>简而言之，IdAM 可以生成全军全网唯一且可追溯的“<strong>身份</strong>”，既使得作战人员可以实现三个任意的全球访问，又使得国防部可以有效管理网络上的所有人员和系统。</p>
+
+<p>为了改变和提升国防部过去那种人工密集的、不一致的、耗时的、资源繁重的本地管理归档和信息系统访问管理能力，新的 IdAM 能力将可最大程度地实现对IT系统的日常访问控制的<strong>自动化</strong>，将使系统访问更具<strong>动态性</strong>，确保实体发现，并可实现活动监控与追溯。</p>
+
+<h3 id="2-idam-能力模型">2、IdAM 能力模型</h3>
+
+<p>IdAM 产品高层能力模型如下图所示：</p>
+
+<p><img src="media/15668995071162/15669018854637.jpg" alt="-w600" /></p>
+
+<p>可见，IdAM 解决方案包含三个部分：</p>
+
+<ul>
+<li>管理数字身份</li>
+<li>认证用户</li>
+<li>授权资源访问</li>
+</ul>
+
+<p>其中，不同颜色有不同的含义：</p>
+
+<ul>
+<li>蓝色：DISA 提供的服务；</li>
+<li>绿色：DISA 与 NSA 一起提供的服务；</li>
+<li>红色：DMDC 提供的服务；</li>
+<li>黑色：系统级提供的服务。</li>
+</ul>
+
+<p>主要功能模块的含义如下：</p>
+
+<ul>
+<li><strong>milConnect</strong>：是 DMDC（国防人力数据中心）提供的一个网站，允许 DoD 成员更新他们的个人数据。</li>
+<li><strong>EIAS（企业身份属性服务）</strong>：通过一个安全的、基于标准的 SAML（安全断言标记语言）接口，分发国防部人员、角色和人员属性，用于访问控制。</li>
+<li><strong>RBS（实时经纪人服务）</strong>：允许 CC/S/AS（作战指挥、军种和机构）从 DMDC 的 PDR ，请求和接收当前身份数据，以验证访问其应用程序的用户的身份，并同步本地数据存储。</li>
+<li><strong>BBS（批量代理服务）</strong>：该服务旨在为 DoD 军事人员、其家属、退休人员、DoD 文职人员、承包商提供到政府机构的身份验证服务。BBS 是一种异步Web服务，它允许客户在 PDR  （个人数据存储库）中获取特定人员或大量人员的数据记录或更改。</li>
+<li><strong>IdSS（身份同步服务）</strong>：是为作战指挥/军种/部门/机构目录和全局地址列表（GAL）填充权威企业身份和联系属性的服务。</li>
+<li><strong>EDQS（企业目录查询服务）</strong>：提供国防部 CC/S/A（作战指挥、军种和机构）到包含 IdSS 数据的 LDAP/S 目录的只读连接。</li>
+<li><strong>IdMI（IdSS 机器接口）</strong>：为国防部 CC/S/A （作战指挥、军种和机构）提供了使用 IdSS 数据的方法。</li>
+</ul>
+
+<p>下图所示的 IdAM 产品架构，包含了各个组件之间的访问逻辑和流程：</p>
+
+<p><img src="media/15668995071162/15669019764524.jpg" alt="-w600" /></p>
+
+<p>IdAM 能力将包括：</p>
+
+<ul>
+<li>基于 <strong>NIPRNet 通用访问卡（CAC）</strong>和 <strong>SIPRNet 令牌</strong>，完全自动化地生成用户账户；</li>
+<li>基于申请用户的属性（如密级许可权、衔级、岗位职能等），做出<strong>实时</strong>的信息访问控制决策；</li>
+<li>基于更有效的监控和追溯，帮助国防部网络的运行人员和防御人员，更好地了解谁在国防部网络操作和他们正在干什么。</li>
+</ul>
+
+<h3 id="3-idam-目标状态">3、IdAM 目标状态</h3>
+
+<p>国防部 ICAM 的目标状态是<strong>实现动态访问控制</strong>，如下图所示：</p>
+
+<p><img src="media/15668995071162/15669021558138.jpg" alt="-w600" /></p>
+
+<p>其中的主体功能是基于策略的授权服务、身份与凭证管理、策略管理、资源管理四个方面。</p>
+
+<p>理解国防部 IdAM 的关键是基于属性的访问控制（ABAC）模型。ABAC 体系结构如下所示：</p>
+
+<p><img src="media/15668995071162/15669021836916.jpg" alt="-w600" /></p>
+
+<h2 id="四-icam-战略目标">四、ICAM 战略目标</h2>
+
+<p>在《美国国防部数字现代化战略：国防部信息资源管理战略计划 FY19-23》中，列出了如下所示的战略目标：</p>
+
+<p><img src="media/15668995071162/15669022113221.jpg" alt="-w600" /></p>
+
+<p>其中，ICAM 位列第 3 大战略目标（即“3：发展网络安全，形成灵活和弹性的防御态势”）的第2 子目标（即“3.2 部署端到端 ICAM 基础设施”），主要内容如下：</p>
+
+<p><strong>目标描述</strong>：</p>
+
+<ul>
+<li>部署端到端 ICAM 基础设施。</li>
+<li>国防部必须促进企业 ICAM 的实施，以支持快速访问任务信息，加强与盟国和伙伴的负责任的信息共享和归属，并通过移动应用和迁移到云支持更高的效率和效率。</li>
+<li>ICAM 创造了一个安全可信的环境，任何用户都可以访问所有授权资源（包括应用程序和数据），以成功完成任务；同时也可以让国防部随时知道谁在网络上。</li>
+</ul>
+
+<p><strong>战略要素</strong>：</p>
+
+<ul>
+<li>战略要素 1：扩展<strong>公钥启用（PKE）</strong>能力，以支持 ICAM；</li>
+<li>战略要素 2：实施<strong>自动帐户供应</strong>（AAP）；</li>
+<li>战略要素 3：实施对批准的多因素认证能力的支持；</li>
+<li>战略要素 4：增强<strong>企业身份属性服务（EIAS）</strong>；</li>
+<li>战略要素 5：扩大<strong>派生凭证</strong>的使用；</li>
+<li>战略要素 6：实施<strong>以数据为中心</strong>的方法，来收集、验证、维护和共享身份和其他属性；</li>
+<li>战略要素 7：通过通用标准、共享服务和联邦，改进和启用对国防部网络和资源的认证；</li>
+<li>战略要素 8：部署共享服务，促进企业 ICAM 的实施；</li>
+<li>战略要素 9：实现一致的监控和日志记录，以支持<strong>身份分析</strong>，以检测内部威胁和外部攻击；</li>
+<li>战略要素 10：提升治理结构，促进企业 ICAM 解决方案的开发和采用；</li>
+<li>战略要素 11：制定国防部政策和标准，明确定义识别、凭证、认证、授权生命周期管理的要求。</li>
+</ul>
+
+<p><strong>ICAM 的四个支柱</strong>：</p>
+
+<ol>
+<li>数字身份管理：建立数字身份和生命周期管理。</li>
+<li>凭证管理：颁发物理或电子令牌（公共访问卡（CAC）/公钥基础设施（PKI）证书和/或帐户），作为实体权威数字身份的代理。</li>
+<li>认证：通过一个凭证并验证该凭证是否为真实凭证的方式，声明身份。PKI是国防部目前的认证技术解决方案。但是，当不能使用PKI时，可以使用已批准的多因素身份验证和身份联邦服务。</li>
+<li>授权：基于数字策略和有关请求身份和被访问资源的权威信息，批准访问。</li>
+</ol>
+
+<h2 id="五-idam-发展路线图">五、IdAM 发展路线图</h2>
+
+<p>IdAM 未来几年的路线图如下图所示：</p>
+
+<p><img src="media/15668995071162/15669024641062.jpg" alt="-w600" /></p>
+
+<p>下面，主要介绍其中提到的可靠身份、纯种移动认证、证书缩减。</p>
+
+<h3 id="1-可靠身份">1、可靠身份</h3>
+
+<p><strong>可靠身份（Assured Identity）</strong>：建立并持续验证数字身份，然后为该身份分配属性，并将其与个人或可信设备强关联。</p>
+
+<p>可靠身份的目标：对使用<strong>移动设备</strong>的作战人员的身份的保证和保护。</p>
+
+<p>可靠身份的基础能力：</p>
+
+<ul>
+<li>利用移动设备上的本机传感器，收集和训练生物特征和上下文因素，以进行持续多因素身份验证。</li>
+<li>使用基于硬件的安全元素，发布和保护纯种派生凭证和相关私钥，这些安全元素相当于通用访问卡（CAC）的凭证强度。</li>
+<li>观察用户行为，以建立模式和网络授权的关系。</li>
+</ul>
+
+<p>可靠身份的关键步骤如下：</p>
+
+<ol>
+<li><p><strong>硬件认证</strong>：</p>
+
+<ul>
+<li>烧录到移动设备硬件中的数字密钥，为传感器数据和本地生成的密钥提供信任。</li>
+</ul></li>
+
+<li><p><strong>CMFA（持续多因素认证）</strong>：</p>
+
+<ul>
+<li>传感器数据-行为和上下文生物识别因素-机器学习算法；</li>
+<li>移动、桌面或服务器环境中的持续身份验证；</li>
+<li>启用无需口令的物理和逻辑访问；</li>
+<li>为逻辑和物理方式的设备访问，分配信任分数；</li>
+</ul></li>
+
+<li><p><strong>个性化上下文认证</strong>：</p>
+
+<ul>
+<li>CMFA 不断验证身份。</li>
+</ul></li>
+</ol>
+
+<p>基于可靠身份，可以实现<strong>虚拟传输解决方案</strong>：</p>
+
+<ul>
+<li>利用云托管的移动电话实例，在一台移动设备上允许访问多个密级；</li>
+<li>移动设备上不存储数据，允许使用政府供应设备（GFE）和自带设备（BYOD）；</li>
+<li>支持完整的设备功能：端点上的无缝虚拟化；</li>
+<li>使用派生PKI证书。
+<br /></li>
+</ul>
+
+<p><img src="media/15668995071162/15669026716794.jpg" alt="-w600" /></p>
+
+<h3 id="2-纯种移动认证">2、纯种移动认证</h3>
+
+<p><strong>纯种（Purebred）</strong>移动安全凭证：</p>
+
+<ul>
+<li>是派生凭证；</li>
+<li>由一个密钥管理服务器和一组应用程序组成：应用程序将密钥管理与设备管理分开；</li>
+<li>将密钥管理与设备管理分开：旨在促进密钥管理与设备管理的分离，以使密钥管理保持与PKI的密切关系，并在国防部企业内保持一致，而设备管理可以随每个作战场景而变化。</li>
+</ul>
+
+<p>纯种启用了<strong>空中证书认证</strong>，取代了对智能卡读卡器的需求。</p>
+
+<p>纯种由 DISA PKI 工程公司开发，旨在为 DoD PKI 用户在<strong>商用移动设备</strong>上使用提供一种安全、可扩展的<strong>分发软件证书</strong>的方法。系统首先建立对用于加密绑定到设备的配置数据的设备证书的信任，然后允许订户演示其 CAC 的拥有和使用，以生成两个新的派生凭据并恢复现有的电子邮件加密密钥。</p>
+
+<p><img src="media/15668995071162/15669028089717.jpg" alt="-w600" /></p>
+
+<h3 id="3-证书缩减">3、证书缩减</h3>
+
+<p>CAC 包含四种 PKI 证书：</p>
+
+<ol>
+<li>国防部身份证书；</li>
+<li>PIV（个人身份验证）身份验证证书；</li>
+<li>电子邮件签名证书；</li>
+<li>加密证书；</li>
+</ol>
+
+<p>在 2019 财年，IdAM 团队计划减少国防部颁发的 CAC 证书数量。减少证书数量后，会减少证书吊销列表的大小，并使用更少的资源来维护 PKI 基础设施，从而提高效率。</p>
+
+<p>证书缩减将消除<strong>国防部身份证书</strong>，并使用已经存在于 CAC 上的 <strong>PIV 认证证书</strong>替换认证功能。</p>
+
+<p>目的是对所有已颁发的 CAC 使用 PIV 认证证书。军方早在 2018 年 2 月份就开始了这项工作。</p>
+
+<h2 id="六-走向零信任">六、走向零信任</h2>
+
+<p>在《美国国防部数字现代化战略：国防部信息资源管理战略计划 FY19-23》中，提及了国防部向零信任发展的明确方向。主要内容如下：</p>
+
+<p><strong>零信任安全</strong>：零信任是一种网络安全策略，它将安全嵌入到整个体系结构中，以阻止数据泄露。</p>
+
+<p>零信任安全是国防部首席信息官正在与 DISA、美国网络司令部、国家安全局合作探索的一项新举措。</p>
+
+<p><strong>零信任安全的优势</strong>：</p>
+
+<ul>
+<li>这种<strong>以数据为中心</strong>的安全模型，消除了受信任或不受信任的网络、设备、角色或进程的概念，并转变为基于多属性的<strong>信任级别</strong>，使身份验证和授权策略在最低特权访问概念下得以实现。</li>
+<li>实现零信任，需要重新思考我们如何利用现有的基础设施，以更简单、更高效的方式设计安全性，同时实现不受阻碍的操作。</li>
+<li>除了总体上保护架构的优势外，还有其他跨功能的好处。</li>
+</ul>
+
+<p><strong>零信任的实现复杂性</strong>：</p>
+
+<ul>
+<li>虽然原则上简洁易懂，但零信任的实际实现和操作，在包括网络配置、软件定义网络（SDN）、数据标签、分析、访问控制、策略编排、加密、自动化，以及端到端 <strong>ICAM</strong>（身份、凭证和访问管理）等方面，具有显著的复杂性。</li>
+<li>企业级考虑还包括确定需要保护的数据、应用程序、资产、服务，以及映射事务流、策略决策、策略实施位置。</li>
+</ul>
+
+<p><strong>零信任适合云部署</strong>：</p>
+
+<ul>
+<li>云部署非常适合实现零信任概念，特别是在使用商业云时。如果云基础设施本身受到威胁，则零信任兼容架构可提供保护，避免对手试图在我们的虚拟网络中扎根。</li>
+<li>虽然商业云提供了一个扩展能力和控制成本的绝佳机会，但它们会带来风险，因为我们无法控制基础设施，而且在通信受损时可能会有延迟。而零信任关于你已经失陷的假设，特别适合云基础设施。</li>
+</ul>
+
+<p><strong>零信任需要安全自动化</strong>：</p>
+
+<ul>
+<li>安全自动化和编排是成功部署和管理零信任兼容基础架构的关键功能，因为附加的身份验证、授权、监视和分析要求无法再通过手动管理。例如，所有节点的安全凭证需要自动化能力，以确保以机器速度进行键控和重新键控，而不会因不必要的人工干预而延迟。这需要经过认证和授权的设备确保它们正在通信的设备是健康的和经过批准的（设备认证）。</li>
+</ul>
+
+<p><strong>零信任需要密码现代化</strong>：</p>
+
+<ul>
+<li>需要进行密码现代化，以确保数据的保护水平符合国家安全系统委员会（CNS）第 15 条政策中定义的商业国家安全算法（CNSA）套件。我们系统的加密安全性升级，可能会对遗留应用程序和硬件构成重大挑战，这些应用程序和硬件在如何支持所需的较大密钥尺寸和算法方面可能存在很大差异。</li>
+</ul>
+
+<p><strong>零信任需要新的分析能力</strong>：</p>
+
+<ul>
+<li>分析将需要额外的能力来处理与零信任安全相关的所需传感器和日志数据。</li>
+<li>可能需要采用不同的过程和程序，来测量网络的健康状况并识别异常行为。例如，网络内部资源之间的端到端加密，将限制内部数据包检查以检测问题的能力。需要采用新的分析措施，以确保只有经过授权的通信才能发生。</li>
+</ul>
+
+<p>更进一步，在《DISA（国防信息系统局）战略计划 2019-2022》中，给出了如下的 DISA 技术路线图：</p>
+
+<p><img src="media/15668995071162/15669030798356.jpg" alt="-w600" /></p>
+
+<p>很明显，在积极追求 ICAM、持续多因素认证、区块链技术的基础上，DISA 已经把零信任架构、软件定义企业、机器学习&amp;人工智能摆到了发展道路上。</p>
+
+<h2 id="七-零信任广告">七、零信任广告</h2>
+
+<p><strong>零信任广告一</strong>：零信任提出者所著的《零信任网络》的中文译本，由奇安信身份安全团队翻译，已经面市，欢迎阅读。BCS大会就有签赠会噢：</p>
+
+<p><img src="media/15668995071162/15669031308270.jpg" alt="-w600" /></p>
+
+<p><strong>零信任广告二</strong>：奇安信零信任安全产品体系和解决方案已经基本成熟，并在国内重大部委率先落地。</p>
+
+<p><img src="media/15668995071162/15669031496429.jpg" alt="-w600" /></p>
+
+<p><img src="media/15668995071162/15669031581581.jpg" alt="-w600" /></p>
+
+<h2 id="八-总结和预告">八、总结和预告</h2>
+
+<p>在本系列的介绍中，限于众所周知的原因，笔者只能采取蜻蜓点水的全景方式，介绍了美军网络安全的方方面面。</p>
+
+<p>即便如此，也已经比网上的公开资料涵盖了更多、更深入的信息。毕竟，大部分英文原文资料是需要 FanQ 的。而不同来源之间的矛盾、不同版本之间的冲突，都需要关联和厘清。</p>
+
+<p>在 JIE 的关键领域中，网络规范化、企业运营、企业服务、云计算、数据中心整合、任务伙伴环境、移动性等内容都还没有介绍，会在后期一一概述。</p>
+
+<p>笔者深深地感到一种无奈：美军网络安全的博大精深，绝非朝夕之间可以理解。毕竟，美国国防部自己都在与时俱进，不断调整和优化自身的网络安全战略方向和技术路线。</p>
+
+<p>笔者暗暗地感到一种喜悦：美国密级划分有非常精细化的处理手段（精细到字段级），只要是能公开的信息和技术资料都会尽量公开，因为他们以普世价值和理念宣扬为荣。作为一个技术人员，能与强者的技术理念共振，实属幸事。</p>
+
+<p>笔者默默地感到一种无助：如何把美军网络安全理念和技术应用于我军、我国的实际环境，切实提升网络安全水平，更多地取决于用户自己，而非对手。作为第三方安全厂商，我们只能建议，却未必有足够的影响力。</p>
+
+<p>以上观点，仅代表个人。</p>
+
+    </div>
+
+    
+
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="">美军</a>
+  
+  <a class="badge badge-light" href="/tags/dod/">DoD</a>
+  
+  <a class="badge badge-light" href="/tags/jie/">JIE</a>
+  
+  <a class="badge badge-light" href="/tags/cybersecurity/">Cybersecurity</a>
+  
+  <a class="badge badge-light" href="/tags/joint-information-environment/">Joint Information Environment</a>
+  
+  <a class="badge badge-light" href="/tags/idam/">IdAM</a>
+  
+  <a class="badge badge-light" href="/tags/iam/">IAM</a>
+  
+  <a class="badge badge-light" href="/tags/zero-trust-model/">Zero Trust Model</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/sbilly/avatar_hu0e09cc2018de1a599b70958c39834348_240652_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://sbilly.github.io/">sbilly</a></h5>
+      
+      <p class="card-text" itemprop="description">主要关注 信息安全、网络安全、系统架构、计算机、网络、开发、科技、制造等科技领域</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/sbilly" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/sbilly" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://weibo.com/sbilly" target="_blank" rel="noopener">
+              <i class="fab fa-weibo"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/" >
+              <i class="fab fa-weixin"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/post/dod-network-security-part-4-corss-domain-solution/">【转】美军网络安全 | 第 4 篇：跨域解决方案（ CDS ）</a></li>
+          
+          <li><a href="/post/dod-network-security-part-3-joint-information-enviroment-joint-region-security-stack/">【转】美军网络安全 | 第 3 篇：JIE 联合区域安全栈 JRSS</a></li>
+          
+          <li><a href="/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/">【转】美军网络安全 | 第 2 篇：JIE 网络安全架构 SSA（单一安全架构）</a></li>
+          
+          <li><a href="/post/dod-network-security-part-1-the-summary-of-joint-information-enviroment/">【转】美军网络安全 | 开篇：JIE（联合信息环境）概述</a></li>
+          
+          <li><a href="/post/dod-joint-information-environment-security-architecture-analysis-by-zhouxiaochuan/">【转】美军信息网络安全架构解析</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+
+    
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "sbilly" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://sbilly.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.16bbb3750feb7244c9bc409a5a4fe678.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    2019 &copy; &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
