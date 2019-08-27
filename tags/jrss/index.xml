@@ -39,7 +39,7 @@
 
 &lt;p&gt;为了切实贯彻和推进 SSA 的实施，美陆军在整合升级网络、加强网络防御的同时首先开发了 JRSS。作为&lt;strong&gt;陆军网络现代化&lt;/strong&gt;工作的一部分，JRSS 将解决各军种网络安全框架间的差别问题，为美军国防部网络安全建立标准统一的网络安全框架支撑设施，未来将作为美军国防部网络的中枢神经点，连接数百万的用户，确保通用安全能力的输出，实现全军网络间的透明化，快速应对新兴网络威胁。&lt;/p&gt;
 
-&lt;h2 id=&#34;三-jrss概念和思路&#34;&gt;三、JRSS概念和思路&lt;/h2&gt;
+&lt;h2 id=&#34;三-jrss-概念和思路&#34;&gt;三、JRSS 概念和思路&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;JRSS 概念&lt;/strong&gt;：JRSS 由一系列相辅相成的安全站点、设备和机制构成。JRSS是一套执行防火墙功能、入侵检测和防御、企业管理、虚拟路由和转发（VRF）并提供大量网络安全功能的设备。&lt;/p&gt;
 
@@ -102,7 +102,7 @@
 &lt;p&gt;&lt;img src=&#34;media/15645529542792/15645536429416.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;*&lt;em&gt;非密版和涉密版&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;非密版和涉密版&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;当然，与上一篇所述 SSA 分为 NIPRNET 和 SIPRNET 版本一致， JRSS 肯定也是区分为 NIPRNET 非密版和 SIPRNET 涉密版的，如下图所示：&lt;/p&gt;
@@ -112,7 +112,7 @@
 &lt;p&gt;为何 SIPRNET-JRSS 比 NIPRNET-JRSS “&lt;strong&gt;轻&lt;/strong&gt;”很多？请自行思考。提示：这与 SIPRNET 和 NIPRNET 的网络基础设施和安全基础条件有关。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;JRSS版本演进&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JRSS 版本演进&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;media/15645529542792/15645537945261.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
@@ -123,14 +123,11 @@
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;JRSS 部署&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;部署数量和位置&lt;/strong&gt;
-
-&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;部署数量和位置&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;JRSS 部署数量&lt;/strong&gt;：美军将全球基地划分为若干个区域，每个区域对应一个 JRSS 。利用 JRSS，美军国防部预计减少现有的 1000多 个网络访问接口，替换为全球 50 个地点的 JRSS 站点。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;JRSS 部署位置&lt;/strong&gt;：JRSS 部署在 DoD MPLS 网络的&lt;strong&gt;边缘处&lt;/strong&gt;，包括 B/P/C/S 前哨站、DISA DECC（企业防御计算中心）以及 CDC（核心数据中心）等子网的&lt;strong&gt;接入处&lt;/strong&gt;，对所有进出的流量进行检测和控制，以达到预设的安全目标。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;区域化配置管理&lt;/strong&gt;：JRSS 采用集中式的安全配置管理和标准化的安全工具、策略和行为，来取代之前各军种在基地、前沿阵地、指挥所等地实施的分散式配置管理和非标准化做法，从顶层角度统一负责各自区域内各军种的网络安全事务。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;防失效部署模式&lt;/strong&gt;：为防止因网络攻击或故障导致的失效，美军初期建立的部分 JRSS 节点之间进行了防失效的部署模式，如美国中西部的 St.Louis 和东北部的 Meade 节点即互为备份。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;一图胜千言，下图表明了 JRSS 的部署位置，不仅有在 JIE 中的逻辑位置，还有在真实世界中的物理位置。其中，以世界地图为背景的蓝色圆点，就是一个个 JRSS 接入点。请大家自行数数共有多少个。&lt;/p&gt;
