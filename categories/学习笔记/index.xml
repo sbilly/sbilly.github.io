@@ -46,6 +46,9 @@
       <guid>https://sbilly.github.io/post/blackhat-us-2019-slides-reading-notes/</guid>
       <description>
 
+&lt;p&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
+HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
+
 &lt;h2 id=&#34;0x00-读后感&#34;&gt;0x00 读后感&lt;/h2&gt;
 
 &lt;p&gt;看完 BlackHat 2019 的这些议题，我个人最强烈的感受就是企业承担的信息安全责任应该是有前提和有边界的，不应该是无前提和无边界的。如果拿消防做类比，在现行的治理框架下如果一个企业因为不可抗力或者被纵火，如果企业本身无过失（合规）的情况下一般只需要承担民事责任而没有刑事责任。美国的治理体系中就有这样的例子 —— FireEye 就获得了 SAFETY Act Certification 认证，&lt;a href=&#34;https://www.fireeye.com/company/awards/safety-act-certification-and-fireeye-products.html&#34; target=&#34;_blank&#34;&gt;FireEye 的用户可以在某种情况下免于被起诉&lt;/a&gt;。&lt;/p&gt;
@@ -1252,6 +1255,9 @@ kubectl describe pod -n kube-system tiller-deploy-75f6c87b87-gbpfv
       <description>
 
 &lt;p&gt;&lt;img src=&#34;media/15641153824612/15641250270855.jpg&#34; alt=&#34;!-w800&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
+HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://ipfs.io/&#34; target=&#34;_blank&#34;&gt;go-ipfs&lt;/a&gt; 是一个分布式基于区块链技术的分布式文件系统，文档可以查看 &lt;a href=&#34;https://docs.ipfs.io/&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt; 。本文主要记录和介绍如何使用 go-ipfs 搭建与公有网络隔离的私有网络。&lt;/p&gt;
 

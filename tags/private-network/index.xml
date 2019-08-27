@@ -21,6 +21,9 @@
 
 &lt;p&gt;&lt;img src=&#34;media/15641153824612/15641250270855.jpg&#34; alt=&#34;!-w800&#34; /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
+HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://ipfs.io/&#34; target=&#34;_blank&#34;&gt;go-ipfs&lt;/a&gt; 是一个分布式基于区块链技术的分布式文件系统，文档可以查看 &lt;a href=&#34;https://docs.ipfs.io/&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt; 。本文主要记录和介绍如何使用 go-ipfs 搭建与公有网络隔离的私有网络。&lt;/p&gt;
 
 &lt;p&gt;要点其实也不复杂：&lt;/p&gt;
