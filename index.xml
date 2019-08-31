@@ -5,12 +5,137 @@
     <link>https://sbilly.github.io/</link>
       <atom:link href="https://sbilly.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Keep Simple, Make Fun.</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Tue, 27 Aug 2019 18:54:52 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Sat, 31 Aug 2019 12:48:13 +0800</lastBuildDate>
     <image>
       <url>https://sbilly.github.io/img/icon-192.png</url>
       <title>Keep Simple, Make Fun.</title>
       <link>https://sbilly.github.io/</link>
     </image>
+    
+    <item>
+      <title>美国 NICE 计划和《NICE 网络安全人才队伍框架》</title>
+      <link>https://sbilly.github.io/post/nist-nice-and-nice-cybersecurity-workforce-framework/</link>
+      <pubDate>Sat, 31 Aug 2019 12:48:13 +0800</pubDate>
+      <guid>https://sbilly.github.io/post/nist-nice-and-nice-cybersecurity-workforce-framework/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;media/15671254823394/15672516692355.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;经过历时七年业界范围内的广泛讨论，NIST 终于发布了《NICE 网络安全人才队伍框架》，这个框架是非常少数的对人这个生产里要素相关的重量级框架，非常值得阅读。&lt;/p&gt;
+
+&lt;h2 id=&#34;一-nice-计划背景&#34;&gt;一、NICE 计划背景&lt;/h2&gt;
+
+&lt;p&gt;2009 年之后，美国信息安全事件频发对未来美国社会、经济、国家安全造成严重影响。时任总统的奥巴马认为需要美国急需提高整个国家的网络空间安全意识和素养，启动了一系列的工作：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2010 年 4 月，美国启动“国家网络空间安全教育计划”（National Initiative of CybersecurityEducation，NICE），期望通过国家的整体布局和行动，在信息安全常识普及、正规学历教育、职业化培训和认证等三个方面开展系统化、规范化的强化工作，来全面提高美国的信息安全能力。&lt;/li&gt;
+&lt;li&gt;2011 年 8 月，美国国家标准技术研究院发布了《NICE 战略计划（草案）》，并在网上公开征集意见。&lt;/li&gt;
+&lt;li&gt;2011 年 9 月，公布《NICE 网络空间安全人才队伍框架（草案）》（NICE Cybersecurity Workforce Framework），并在网上公开征求各方意见。&lt;/li&gt;
+&lt;li&gt;2017 年 5 月，&amp;rdquo;总统签署了美国总统发布了“加强联邦网络和关键基础设施网络安全的行政命令”。在某种程度上，该命令指出，美国的政策是“支持网络安全和相关领域的技能人才的增长和维持，作为实现我们在网络空间目标的基础。”&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;2017 年 8 月，历时 7 年的讨论和修改，NIST 正式公布了《NICE 网络安全人才队伍框架》&lt;/li&gt;
+&lt;li&gt;2018 年 9 月，总统签署发布美国《国家网络战略》，再次强调要把培养卓越的网络安全人才队伍作为国家网络战略的重要目标。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2017 年 8 月，经过历时七年业界范围内的广泛讨论，NIST 终于发布了《&lt;a href=&#34;media/15671254823394/NIST.SP.800-181.pdf&#34; target=&#34;_blank&#34;&gt;NICE 网络安全人才队伍框架&lt;/a&gt;》（&lt;a href=&#34;media/15671254823394/NIST.%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BA%BA%E6%89%8D%E6%A1%86%E6%9E%B6%EF%BC%88NCWF%EF%BC%89.%E4%B8%AD%E6%96%87.v2.0.pdf&#34; target=&#34;_blank&#34;&gt;中文 v2.0&lt;/a&gt;、&lt;a href=&#34;media/15671254823394/NIST.%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BA%BA%E6%89%8D%E6%A1%86%E6%9E%B6%EF%BC%88NCWF%EF%BC%89.%E4%B8%AD%E6%96%87.v1.8.pdf&#34; target=&#34;_blank&#34;&gt;中文版 v1.8&lt;/a&gt;）。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;media/15671254823394/15671567183343.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;国家网络安全教育计划是（NICE）由 NIST 牵头，国土安全局（DHS）、国防部（DoD）、教育部（ED）、美国国家科学基金会（NSF）、国家情报总监办公室（ODNI）、美国联邦人事管理局（OPM）等共同领导，旨在建立一个动态的、可持续的网络安全教育计划，目的是确保各级政府正确使用良好的网络安全实践活动，从而最终提升整个国家的安全态势感知能力。NICE 计划管理架构如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;media/15671254823394/15671576664369.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中由 DHS 牵头的网络安全人才架构部分主要侧重于网络安全专业人才的管理。目的是评估工作人员的专业化水平，为预测未来网络安全需求推荐最佳的实践活动，为招募和挽留人才制定国家策略。&lt;/p&gt;
+
+&lt;p&gt;《NICE 网络安全人才队伍框架》通过对行业内分析各类组织的职位描述的分析（包括公开渠道、DoD 和联邦政府内部数据），并通过广泛、充分的行业内讨论对安全行业内的工作类型、专业领域、工作角色、知识、技能、能力和任务进行了体系化的梳理。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;media/15671254823394/15672274621894.jpg&#34; alt=&#34;《NICE 网络安全人才队伍框架》的开发过程-600&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;二-nice-网络安全人才队伍框架-的核心概念&#34;&gt;二、《NICE 网络安全人才队伍框架》的核心概念&lt;/h2&gt;
+
+&lt;p&gt;《NICE 网络安全人才队伍框架》本身定义了一套包含通用的词汇、分类法及其他数据标准在内的共同语言，来帮助行业讨论和理解网络空间安全专业人员的工作和技能要求。&lt;/p&gt;
+
+&lt;p&gt;《NICE 网络安全人才队伍框架》用&lt;strong&gt;类别（Category）&lt;/strong&gt;、&lt;strong&gt;专业领域（Specialty Area）&lt;/strong&gt;和&lt;strong&gt;工作角色（Work Role）&lt;/strong&gt;这三类组件来描述网络空间安全工作，并且定义了四类组件来为每个工作角色定义相关的网络空间安全&lt;strong&gt;知识（Knowledge）&lt;/strong&gt;、&lt;strong&gt;技能（Skill）&lt;/strong&gt;、&lt;strong&gt;能力（Ability）&lt;/strong&gt;、&lt;strong&gt;任务（Task）&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;用多个《NICE 网络安全人才队伍框架》组件来描述信息技术（IT）、网络空间安全和网络空间相关工作。每个类别下有多个专业领域的分支，每个专业领域下又有多个岗位角色的分支，每个 岗位角色又是由大量独立的工作职责和与之对应的 &lt;strong&gt;KSA（“知识”、“技能”、“能力”的统称）&lt;/strong&gt; 组成。特别说明的是，&lt;strong&gt;KSA 序号 K0001 到 K0006 是所有网络空间安全活动的核心，适用于每一个岗位角色&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;media/15671254823394/15671597735679.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;类别（Category）&lt;/strong&gt;：《NICE 网络安全人才队伍框架》的顶层概念（和职位头衔无关），一共有 7 个类别。每个类别都由专业领域（Specialty Area）和岗位角色（Work Role）组成。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;专业领域（Specialty Area）&lt;/strong&gt;：各个类别下包含的网络空间安全工作分组被称为专业领域（Specialty Areas）。在 v1.0 框架中有 31 个专业领域，在 v2.0 框架中有 32 个专业领域。每个专业领域代表了网络空间安全领域的一类专门工作职能。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作角色（Work Role）&lt;/strong&gt;：是 IT、网络空间安全或网络空间相关工作最细化的分组。工作角色阐明了从业人员完成规定职能和职责所必须具备的知识、技能和能力。一个网络安全从业人员一般承担了一个或者多个工作角色并履行相关职责。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;任务（Task）&lt;/strong&gt;：每个工作角色都需要通过完成一些任务来履行其职责。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;KSA（知识、技能和能力）&lt;/strong&gt;：KSA（知识、技能和能力）是完成一项工作必需的属性，一般通过相关的工作经验、教育背景或培训经历体现。为每个岗位角色清晰定义了胜任该职责和职能所必需具备的任职资历和能力。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;三-nice-网络安全人才队伍框架-核心内容&#34;&gt;三、《NICE 网络安全人才队伍框架》核心内容&lt;/h2&gt;
+
+&lt;p&gt;《NICE 网络安全人才队伍框架》中核心内容如上图，其中涉及 &lt;strong&gt;7 大类别&lt;/strong&gt;的 &lt;strong&gt;32 个专业领域&lt;/strong&gt;，&lt;strong&gt;38 种工作角色&lt;/strong&gt;的 &lt;strong&gt;1007 类任务&lt;/strong&gt;所需的 &lt;strong&gt;1180 种知识、技能和能力（KSA）&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;media/15671254823394/NICE%20网络空间安全人才队伍框架.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中，类别是围绕不同的目标对专业领域进行了分类所形成的：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;安全交付（Securely Provision）&lt;/strong&gt;：概念化、设计、采购和（或）构建安全的信息技术系统，包括系统和（或）网络开发的各个方面。个人感觉主要是 SDLC 相关的工作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;运营与维护（Operate and Maintain）&lt;/strong&gt;：提供必要的支持、管理和维护，以确保有效和高效的信息技术系统性能和安全性。个人感觉主要是日常基础设施维护相关的工作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;监管与治理（Oversee and Govern）&lt;/strong&gt; ：提供领导、管理、指导（或开发和宣传），以便组织能够有效地开展网络安全工作。个人感觉主要是合规与规划相关的工作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保护与防御（Protect and Defend）&lt;/strong&gt;：识别、分析和减轻对内部信息技术系统和（或）网络的威胁。个人感觉主要是入侵检测、防护，漏洞管理等相关的工作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分析（Analyze）&lt;/strong&gt;：对输入的网络安全信息进行高度专业化的审查和评估，以确定其对情报的有用性。个人感觉主要是威胁情报和渗透测试相关的工作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;搜集与行动（Collect and Operate）&lt;/strong&gt;：提供可用于开发情报的网络安全信息的收集，提供专门的拒止和欺骗行动。个人感觉主要是红队与反制相关的工作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;调查（Investigate）&lt;/strong&gt;：调查与信息技术系统、网络和数字证据有关的网络安全事件或犯罪。个人感觉主要是司法取证相关的工作。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://niccs.us-cert.gov/workforce-development/cyber-security-workforce-framework&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;media/15671254823394/15672523306129.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;四-nice-网络安全人才队伍框架-相关工具&#34;&gt;四、《NICE 网络安全人才队伍框架》相关工具&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;media/15671254823394/15671627143598.jpg&#34; alt=&#34;-600&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;组织可以使用 NICE 框架来定义组织、岗位、任职要求等一系列与网络空间安全人员管理和人员的选用育留相关政策。除此之外，NIST 等组织还提供了一系列的工具：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.nist.gov/document/supplementnicespecialtyareasandworkroleksasandtasksxlsx&#34; target=&#34;_blank&#34;&gt;NICE 框架的电子表格&lt;/a&gt;&lt;/strong&gt;：包含了 NIST SP 800-181 中所有的概念的定义。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://niccs.us-cert.gov/workforce-development/cybersecurityworkforce-development-toolkit&#34; target=&#34;_blank&#34;&gt;美国国土安全部网络安全劳动力开发工具包&lt;/a&gt;&lt;/strong&gt;：帮助组织了解自身的网络空间安全工作人员和员工需求，可帮助组织进行网络空间安全人才盘点，可帮助组织评估其网络安全人力规划能力的成熟度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.nist.gov/baldrige/products-services/baldrige-cybersecurity-initiative#bceb&#34; target=&#34;_blank&#34;&gt;Baldrige 网络空间卓越构建工具&lt;/a&gt;&lt;/strong&gt;：组织绩效自评工具。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://niccs.us-cert.gov/workforce-development/dhs-cmsi-pushbuttonpd-tool&#34; target=&#34;_blank&#34;&gt;PushbuttonPD 职位描述起草工具&lt;/a&gt;&lt;/strong&gt;：协助用户按照 NICE 框架起草职位描述&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;五-其他&#34;&gt;五、其他&lt;/h2&gt;
+
+&lt;p&gt;在企业环境中，无论是业务、攻击者（对手）、计算环境、监管中的哪一个发生变化，安全都需要随之而变。个人认为正因为这种快速变化，导致安全行业各个层面都缺乏共同语言，甚至对行业发展产生了一些不良的影响。这是一个全球范围的现象，美国的 NIST、MITRE 等组织正在尝试通过 《关键基础设施网络安全框架》、ATT&amp;amp;CK、《NICE 网络安全人才队伍框架》等一系列的工作从不同层面来解决这个问题。特别是 NIST 新开发的重量级框架中都尤其重视制定的标准/指南/框架中经常看到专门的章节来描述如何与其他标准/指南/框架关联在一起使用。&lt;/p&gt;
+
+&lt;h2 id=&#34;资料&#34;&gt;资料&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/memoranda/2016/m-16-15.pdf&#34; target=&#34;_blank&#34;&gt;Executive Order 13800&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.nist.gov/itl/applied-cybersecurity/nice/resources/nice-cybersecurity-workforce-framework&#34; target=&#34;_blank&#34;&gt;NICE Cybersecurity Workforce Framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dodcio.defense.gov/Cyber-Workforce.aspx&#34; target=&#34;_blank&#34;&gt;DoD Cyber Workforce&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;media/15671254823394/NIST.SP.800-181.pdf&#34; target=&#34;_blank&#34;&gt;National Initiative for Cybersecurity Education (NICE) Cybersecurity Workforce Framework (NIST.SP.800-181)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;media/15671254823394/NIST.%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BA%BA%E6%89%8D%E6%A1%86%E6%9E%B6%EF%BC%88NCWF%EF%BC%89.%E4%B8%AD%E6%96%87.v2.0.pdf&#34; target=&#34;_blank&#34;&gt;正式发布 v2.0 中文翻译&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;media/15671254823394/NIST.%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BA%BA%E6%89%8D%E6%A1%86%E6%9E%B6%EF%BC%88NCWF%EF%BC%89.%E4%B8%AD%E6%96%87.v1.8.pdf&#34; target=&#34;_blank&#34;&gt;草案 v1.8 中文翻译&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://csrc.nist.gov/publications/detail/nistir/8193/draft&#34; target=&#34;_blank&#34;&gt;National Initiative for Cybersecurity Education (NICE) Framework Work Role Capability Indicators: Indicators for Performing Work Roles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.nist.gov/nice-tutorials#NICE%20Cybersecurity%20Workforce%20Framework%20101&#34; target=&#34;_blank&#34;&gt;NICE Cybersecurity Workforce Framework 101&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cyberindustry.org/Workrole&#34; target=&#34;_blank&#34;&gt;Cyber Security Work Roles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://niccs.us-cert.gov/workforce-development&#34; target=&#34;_blank&#34;&gt;NICCS workforce development&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;相关文献&#34;&gt;相关文献&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/nARIadYpvzuOW-icxK09vA&#34; target=&#34;_blank&#34;&gt;美公布《网络安全人才框架》 快来看你在美国能做什么工作&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/_eWI_c1tLiHQ2r_2jEf2EA&#34; target=&#34;_blank&#34;&gt;指南 | 国家网络安全教育计划(NICE)网络安全劳动力框架&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;media/15671254823394/%E7%BE%8E%E5%9B%BD%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E6%95%99%E8%82%B2%E6%88%98%E7%95%A5%E8%AE%A1%E5%88%92.pdf&#34; target=&#34;_blank&#34;&gt;美国网络空间安全教育战略计划&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;media/15671254823394/%E7%BE%8E%E5%9B%BDNICE%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E4%BA%BA%E6%89%8D%E9%98%9F%E4%BC%8D%E6%A1%86%E6%9E%B6%E6%8E%A2%E6%9E%90.pdf&#34; target=&#34;_blank&#34;&gt;美国 NICE 网络空间安全人才队伍框架探析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sohu.com/a/221710690_99894478?spm=smpc.author.fd-d.8.1567053481573whZrxFG&#34; target=&#34;_blank&#34;&gt;国土安全部迫切需要采取行动明确网络安全人才地位和关键技能要求&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sohu.com/a/281455157_99894478?spm=smpc.author.fd-d.5.1567053481573whZrxFG&#34; target=&#34;_blank&#34;&gt;NICE 的网络安全人才框架之二 安全提供（SP）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sohu.com/a/281765683_99894478?spm=smpc.author.fd-d.4.1567053481573whZrxFG&#34; target=&#34;_blank&#34;&gt;NICE 的网络安全人才框架之三 操作和维护（OM）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sohu.com/a/282094437_99894478?spm=smpc.author.fd-d.3.1567053481573whZrxFG&#34; target=&#34;_blank&#34;&gt;NICE 的网络安全人才框架之四 监督和治理（OV）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sohu.com/a/282256587_99894478?spm=smpc.author.fd-d.2.1567053481573whZrxFG&#34; target=&#34;_blank&#34;&gt;NICE 的网络安全人才框架之五 保护和防御（PR）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sohu.com/a/282279704_99894478?spm=smpc.author.fd-d.1.1567053481573whZrxFG&#34; target=&#34;_blank&#34;&gt;NICE 的网络安全人才框架之六 分析（AN）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>【转】美军网络安全 | 第 5 篇：身份和访问管理（IdAM）</title>
@@ -1706,131 +1831,6 @@ kubectl describe pod -n kube-system tiller-deploy-75f6c87b87-gbpfv
 &lt;li&gt;&lt;a href=&#34;https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9&#34; target=&#34;_blank&#34;&gt;Building an ARM Kubernetes Cluster&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://medium.com/@carlosedp/building-a-hybrid-x86-64-and-arm-kubernetes-cluster-e7f94ff6e51d&#34; target=&#34;_blank&#34;&gt;Building a hybrid x86–64 and ARM Kubernetes Cluster&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://containerized.me/arming-kubernetes-with-openebs-1/&#34; target=&#34;_blank&#34;&gt;ARMing Kubernetes with OpenEBS #1&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>美国 NICE 计划和《NICE 网络安全人才队伍框架》</title>
-      <link>https://sbilly.github.io/post/nist-nice-and-nice-cybersecurity-workforce-framework/</link>
-      <pubDate>Tue, 06 Aug 2019 17:36:13 +0800</pubDate>
-      <guid>https://sbilly.github.io/post/nist-nice-and-nice-cybersecurity-workforce-framework/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;media/15671254823394/15672516692355.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;经过历时七年业界范围内的广泛讨论，NIST 终于发布了《NICE 网络安全人才队伍框架》，这个框架是非常少数的对人这个生产里要素相关的重量级框架，非常值得阅读。&lt;/p&gt;
-
-&lt;h2 id=&#34;一-nice-计划背景&#34;&gt;一、NICE 计划背景&lt;/h2&gt;
-
-&lt;p&gt;2009 年之后，美国信息安全事件频发对未来美国社会、经济、国家安全造成严重影响。时任总统的奥巴马认为需要美国急需提高整个国家的网络空间安全意识和素养，启动了一系列的工作：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;2010 年 4 月，美国启动“国家网络空间安全教育计划”（National Initiative of CybersecurityEducation，NICE），期望通过国家的整体布局和行动，在信息安全常识普及、正规学历教育、职业化培训和认证等三个方面开展系统化、规范化的强化工作，来全面提高美国的信息安全能力。&lt;/li&gt;
-&lt;li&gt;2011 年 8 月，美国国家标准技术研究院发布了《NICE 战略计划（草案）》，并在网上公开征集意见。&lt;/li&gt;
-&lt;li&gt;2011 年 9 月，公布《NICE 网络空间安全人才队伍框架（草案）》（NICE Cybersecurity Workforce Framework），并在网上公开征求各方意见。&lt;/li&gt;
-&lt;li&gt;2017 年 5 月，&amp;rdquo;总统签署了美国总统发布了“加强联邦网络和关键基础设施网络安全的行政命令”。在某种程度上，该命令指出，美国的政策是“支持网络安全和相关领域的技能人才的增长和维持，作为实现我们在网络空间目标的基础。”&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;2017 年 8 月，历时 7 年的讨论和修改，NIST 正式公布了《NICE 网络安全人才队伍框架》&lt;/li&gt;
-&lt;li&gt;2018 年 9 月，总统签署发布美国《国家网络战略》，再次强调要把培养卓越的网络安全人才队伍作为国家网络战略的重要目标。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;2017 年 8 月，经过历时七年业界范围内的广泛讨论，NIST 终于发布了《&lt;a href=&#34;media/15671254823394/NIST.SP.800-181.pdf&#34; target=&#34;_blank&#34;&gt;NICE 网络安全人才队伍框架&lt;/a&gt;》（&lt;a href=&#34;media/15671254823394/NIST.%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BA%BA%E6%89%8D%E6%A1%86%E6%9E%B6%EF%BC%88NCWF%EF%BC%89.%E4%B8%AD%E6%96%87.v2.0.pdf&#34; target=&#34;_blank&#34;&gt;中文 v2.0&lt;/a&gt;、&lt;a href=&#34;media/15671254823394/NIST.%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BA%BA%E6%89%8D%E6%A1%86%E6%9E%B6%EF%BC%88NCWF%EF%BC%89.%E4%B8%AD%E6%96%87.v1.8.pdf&#34; target=&#34;_blank&#34;&gt;中文版 v1.8&lt;/a&gt;）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15671254823394/15671567183343.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;国家网络安全教育计划是（NICE）由 NIST 牵头，国土安全局（DHS）、国防部（DoD）、教育部（ED）、美国国家科学基金会（NSF）、国家情报总监办公室（ODNI）、美国联邦人事管理局（OPM）等共同领导，旨在建立一个动态的、可持续的网络安全教育计划，目的是确保各级政府正确使用良好的网络安全实践活动，从而最终提升整个国家的安全态势感知能力。NICE 计划管理架构如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15671254823394/15671576664369.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;其中由 DHS 牵头的网络安全人才架构部分主要侧重于网络安全专业人才的管理。目的是评估工作人员的专业化水平，为预测未来网络安全需求推荐最佳的实践活动，为招募和挽留人才制定国家策略。&lt;/p&gt;
-
-&lt;p&gt;《NICE 网络安全人才队伍框架》通过对行业内分析各类组织的职位描述的分析（包括公开渠道、DoD 和联邦政府内部数据），并通过广泛、充分的行业内讨论对安全行业内的工作类型、专业领域、工作角色、知识、技能、能力和任务进行了体系化的梳理。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15671254823394/15672274621894.jpg&#34; alt=&#34;《NICE 网络安全人才队伍框架》的开发过程-600&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;二-nice-网络安全人才队伍框架-的核心概念&#34;&gt;二、《NICE 网络安全人才队伍框架》的核心概念&lt;/h2&gt;
-
-&lt;p&gt;《NICE 网络安全人才队伍框架》本身定义了一套包含通用的词汇、分类法及其他数据标准在内的共同语言，来帮助行业讨论和理解网络空间安全专业人员的工作和技能要求。&lt;/p&gt;
-
-&lt;p&gt;《NICE 网络安全人才队伍框架》用&lt;strong&gt;类别（Category）&lt;/strong&gt;、&lt;strong&gt;专业领域（Specialty Area）&lt;/strong&gt;和&lt;strong&gt;工作角色（Work Role）&lt;/strong&gt;这三类组件来描述网络空间安全工作，并且定义了四类组件来为每个工作角色定义相关的网络空间安全&lt;strong&gt;知识（Knowledge）&lt;/strong&gt;、&lt;strong&gt;技能（Skill）&lt;/strong&gt;、&lt;strong&gt;能力（Ability）&lt;/strong&gt;、&lt;strong&gt;任务（Task）&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;用多个《NICE 网络安全人才队伍框架》组件来描述信息技术（IT）、网络空间安全和网络空间相关工作。每个类别下有多个专业领域的分支，每个专业领域下又有多个岗位角色的分支，每个 岗位角色又是由大量独立的工作职责和与之对应的 &lt;strong&gt;KSA（“知识”、“技能”、“能力”的统称）&lt;/strong&gt; 组成。特别说明的是，&lt;strong&gt;KSA 序号 K0001 到 K0006 是所有网络空间安全活动的核心，适用于每一个岗位角色&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15671254823394/15671597735679.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;类别（Category）&lt;/strong&gt;：《NICE 网络安全人才队伍框架》的顶层概念（和职位头衔无关），一共有 7 个类别。每个类别都由专业领域（Specialty Area）和岗位角色（Work Role）组成。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;专业领域（Specialty Area）&lt;/strong&gt;：各个类别下包含的网络空间安全工作分组被称为专业领域（Specialty Areas）。在 v1.0 框架中有 31 个专业领域，在 v2.0 框架中有 32 个专业领域。每个专业领域代表了网络空间安全领域的一类专门工作职能。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;工作角色（Work Role）&lt;/strong&gt;：是 IT、网络空间安全或网络空间相关工作最细化的分组。工作角色阐明了从业人员完成规定职能和职责所必须具备的知识、技能和能力。一个网络安全从业人员一般承担了一个或者多个工作角色并履行相关职责。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;任务（Task）&lt;/strong&gt;：每个工作角色都需要通过完成一些任务来履行其职责。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;KSA（知识、技能和能力）&lt;/strong&gt;：KSA（知识、技能和能力）是完成一项工作必需的属性，一般通过相关的工作经验、教育背景或培训经历体现。为每个岗位角色清晰定义了胜任该职责和职能所必需具备的任职资历和能力。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;三-nice-网络安全人才队伍框架-核心内容&#34;&gt;三、《NICE 网络安全人才队伍框架》核心内容&lt;/h2&gt;
-
-&lt;p&gt;《NICE 网络安全人才队伍框架》中核心内容如上图，其中涉及 &lt;strong&gt;7 大类别&lt;/strong&gt;的 &lt;strong&gt;32 个专业领域&lt;/strong&gt;，&lt;strong&gt;38 种工作角色&lt;/strong&gt;的 &lt;strong&gt;1007 类任务&lt;/strong&gt;所需的 &lt;strong&gt;1180 种知识、技能和能力（KSA）&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15671254823394/NICE%20网络空间安全人才队伍框架.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;其中，类别是围绕不同的目标对专业领域进行了分类所形成的：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;安全交付（Securely Provision）&lt;/strong&gt;：概念化、设计、采购和（或）构建安全的信息技术系统，包括系统和（或）网络开发的各个方面。个人感觉主要是 SDLC 相关的工作。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;运营与维护（Operate and Maintain）&lt;/strong&gt;：提供必要的支持、管理和维护，以确保有效和高效的信息技术系统性能和安全性。个人感觉主要是日常基础设施维护相关的工作。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;监管与治理（Oversee and Govern）&lt;/strong&gt; ：提供领导、管理、指导（或开发和宣传），以便组织能够有效地开展网络安全工作。个人感觉主要是合规与规划相关的工作。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;保护与防御（Protect and Defend）&lt;/strong&gt;：识别、分析和减轻对内部信息技术系统和（或）网络的威胁。个人感觉主要是入侵检测、防护，漏洞管理等相关的工作。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;分析（Analyze）&lt;/strong&gt;：对输入的网络安全信息进行高度专业化的审查和评估，以确定其对情报的有用性。个人感觉主要是威胁情报和渗透测试相关的工作。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;搜集与行动（Collect and Operate）&lt;/strong&gt;：提供可用于开发情报的网络安全信息的收集，提供专门的拒止和欺骗行动。个人感觉主要是红队与反制相关的工作。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;调查（Investigate）&lt;/strong&gt;：调查与信息技术系统、网络和数字证据有关的网络安全事件或犯罪。个人感觉主要是司法取证相关的工作。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://niccs.us-cert.gov/workforce-development/cyber-security-workforce-framework&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;media/15671254823394/15672523306129.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;四-nice-网络安全人才队伍框架-相关工具&#34;&gt;四、《NICE 网络安全人才队伍框架》相关工具&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15671254823394/15671627143598.jpg&#34; alt=&#34;-600&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;组织可以使用 NICE 框架来定义组织、岗位、任职要求等一系列与网络空间安全人员管理和人员的选用育留相关政策。除此之外，NIST 等组织还提供了一系列的工具：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.nist.gov/document/supplementnicespecialtyareasandworkroleksasandtasksxlsx&#34; target=&#34;_blank&#34;&gt;NICE 框架的电子表格&lt;/a&gt;&lt;/strong&gt;：包含了 NIST SP 800-181 中所有的概念的定义。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://niccs.us-cert.gov/workforce-development/cybersecurityworkforce-development-toolkit&#34; target=&#34;_blank&#34;&gt;美国国土安全部网络安全劳动力开发工具包&lt;/a&gt;&lt;/strong&gt;：帮助组织了解自身的网络空间安全工作人员和员工需求，可帮助组织进行网络空间安全人才盘点，可帮助组织评估其网络安全人力规划能力的成熟度。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://www.nist.gov/baldrige/products-services/baldrige-cybersecurity-initiative#bceb&#34; target=&#34;_blank&#34;&gt;Baldrige 网络空间卓越构建工具&lt;/a&gt;&lt;/strong&gt;：组织绩效自评工具。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://niccs.us-cert.gov/workforce-development/dhs-cmsi-pushbuttonpd-tool&#34; target=&#34;_blank&#34;&gt;PushbuttonPD 职位描述起草工具&lt;/a&gt;&lt;/strong&gt;：协助用户按照 NICE 框架起草职位描述&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;五-其他&#34;&gt;五、其他&lt;/h2&gt;
-
-&lt;p&gt;在企业环境中，无论是业务、攻击者（对手）、计算环境、监管中的哪一个发生变化，安全都需要随之而变。个人认为正因为这种快速变化，导致安全行业各个层面都缺乏共同语言，甚至对行业发展产生了一些不良的影响。这是一个全球范围的现象，美国的 NIST、MITRE 等组织正在尝试通过 《关键基础设施网络安全框架》、ATT&amp;amp;CK、《NICE 网络安全人才队伍框架》等一系列的工作从不同层面来解决这个问题。特别是 NIST 新开发的重量级框架中都尤其重视制定的标准/指南/框架中经常看到专门的章节来描述如何与其他标准/指南/框架关联在一起使用。&lt;/p&gt;
-
-&lt;h2 id=&#34;资料&#34;&gt;资料&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/memoranda/2016/m-16-15.pdf&#34; target=&#34;_blank&#34;&gt;Executive Order 13800&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.nist.gov/itl/applied-cybersecurity/nice/resources/nice-cybersecurity-workforce-framework&#34; target=&#34;_blank&#34;&gt;NICE Cybersecurity Workforce Framework&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://dodcio.defense.gov/Cyber-Workforce.aspx&#34; target=&#34;_blank&#34;&gt;DoD Cyber Workforce&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;media/15671254823394/NIST.SP.800-181.pdf&#34; target=&#34;_blank&#34;&gt;National Initiative for Cybersecurity Education (NICE) Cybersecurity Workforce Framework (NIST.SP.800-181)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;media/15671254823394/NIST.%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BA%BA%E6%89%8D%E6%A1%86%E6%9E%B6%EF%BC%88NCWF%EF%BC%89.%E4%B8%AD%E6%96%87.v2.0.pdf&#34; target=&#34;_blank&#34;&gt;正式发布 v2.0 中文翻译&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;media/15671254823394/NIST.%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E4%BA%BA%E6%89%8D%E6%A1%86%E6%9E%B6%EF%BC%88NCWF%EF%BC%89.%E4%B8%AD%E6%96%87.v1.8.pdf&#34; target=&#34;_blank&#34;&gt;草案 v1.8 中文翻译&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://csrc.nist.gov/publications/detail/nistir/8193/draft&#34; target=&#34;_blank&#34;&gt;National Initiative for Cybersecurity Education (NICE) Framework Work Role Capability Indicators: Indicators for Performing Work Roles&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.nist.gov/nice-tutorials#NICE%20Cybersecurity%20Workforce%20Framework%20101&#34; target=&#34;_blank&#34;&gt;NICE Cybersecurity Workforce Framework 101&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cyberindustry.org/Workrole&#34; target=&#34;_blank&#34;&gt;Cyber Security Work Roles&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://niccs.us-cert.gov/workforce-development&#34; target=&#34;_blank&#34;&gt;NICCS workforce development&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;相关文献&#34;&gt;相关文献&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/nARIadYpvzuOW-icxK09vA&#34; target=&#34;_blank&#34;&gt;美公布《网络安全人才框架》 快来看你在美国能做什么工作&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/_eWI_c1tLiHQ2r_2jEf2EA&#34; target=&#34;_blank&#34;&gt;指南 | 国家网络安全教育计划(NICE)网络安全劳动力框架&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;media/15671254823394/%E7%BE%8E%E5%9B%BD%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E6%95%99%E8%82%B2%E6%88%98%E7%95%A5%E8%AE%A1%E5%88%92.pdf&#34; target=&#34;_blank&#34;&gt;美国网络空间安全教育战略计划&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;media/15671254823394/%E7%BE%8E%E5%9B%BDNICE%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E4%BA%BA%E6%89%8D%E9%98%9F%E4%BC%8D%E6%A1%86%E6%9E%B6%E6%8E%A2%E6%9E%90.pdf&#34; target=&#34;_blank&#34;&gt;美国 NICE 网络空间安全人才队伍框架探析&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sohu.com/a/221710690_99894478?spm=smpc.author.fd-d.8.1567053481573whZrxFG&#34; target=&#34;_blank&#34;&gt;国土安全部迫切需要采取行动明确网络安全人才地位和关键技能要求&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sohu.com/a/281455157_99894478?spm=smpc.author.fd-d.5.1567053481573whZrxFG&#34; target=&#34;_blank&#34;&gt;NICE 的网络安全人才框架之二 安全提供（SP）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sohu.com/a/281765683_99894478?spm=smpc.author.fd-d.4.1567053481573whZrxFG&#34; target=&#34;_blank&#34;&gt;NICE 的网络安全人才框架之三 操作和维护（OM）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sohu.com/a/282094437_99894478?spm=smpc.author.fd-d.3.1567053481573whZrxFG&#34; target=&#34;_blank&#34;&gt;NICE 的网络安全人才框架之四 监督和治理（OV）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sohu.com/a/282256587_99894478?spm=smpc.author.fd-d.2.1567053481573whZrxFG&#34; target=&#34;_blank&#34;&gt;NICE 的网络安全人才框架之五 保护和防御（PR）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sohu.com/a/282279704_99894478?spm=smpc.author.fd-d.1.1567053481573whZrxFG&#34; target=&#34;_blank&#34;&gt;NICE 的网络安全人才框架之六 分析（AN）&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
