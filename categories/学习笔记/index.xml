@@ -18,23 +18,16 @@
       <pubDate>Wed, 14 Aug 2019 00:50:22 +0800</pubDate>
       <guid>https://sbilly.github.io/post/best-rss-toolchain-on-macos-2019/</guid>
       <description>&lt;p&gt;我一直是 RSS 的重度使用者，一路从 Google Reader 到 Inoreader 到现在一直都在持续使用，甚至在 Inoreader 上付费使用，直到 Inoreader 对订阅源数量做限制。像我这种只加 feed 不删 feed 的人怎么能忍得了。&lt;/p&gt;
-
-&lt;p&gt;这两天把 RSS 阅读相关的软件栈看了一下，发现 &lt;a href=&#34;https://github.com/miniflux/miniflux&#34; target=&#34;_blank&#34;&gt;miniflux&lt;/a&gt; + &lt;a href=&#34;https://reederapp.com&#34; target=&#34;_blank&#34;&gt;Reeder&lt;/a&gt; 这个组合满足我从功能到外观的所有要求（如果希望完全免费，可以使用 &lt;a href=&#34;https://ranchero.com/netnewswire/&#34; target=&#34;_blank&#34;&gt;NetNewsWire&lt;/a&gt; 替代 Reeder）。miniflux 需要 pgsql 才能运行，界面极为简洁，而 Reeder 可以通过 fever 兼容的 API 接口把 miniflux 完全当成后台使用，操作几乎和 Google Reader、Inoreader 等流行的阅读器 vim 风格快捷键无缝兼容。除此之外，miniflux 和 Reeder 都支持直接抓取全文。&lt;strong&gt;千万不要相信什么 FreshRSS、Tiny Tiny RSS 比 miniflux 好的说法&lt;/strong&gt;，光是一个内容抓取，这些比 miniflux 就弱了好几条街。&lt;/p&gt;
-
-&lt;p&gt;因为 miniflux 支持用 docker 部署，看 miniflux 的&lt;a href=&#34;https://miniflux.app/docs/installation.html#docker&#34; target=&#34;_blank&#34;&gt;官方教程&lt;/a&gt;部署起来非常简单。要点简单列举一下：&lt;/p&gt;
-
+&lt;p&gt;这两天把 RSS 阅读相关的软件栈看了一下，发现 &lt;a href=&#34;https://github.com/miniflux/miniflux&#34;&gt;miniflux&lt;/a&gt; + &lt;a href=&#34;https://reederapp.com&#34;&gt;Reeder&lt;/a&gt; 这个组合满足我从功能到外观的所有要求（如果希望完全免费，可以使用 &lt;a href=&#34;https://ranchero.com/netnewswire/&#34;&gt;NetNewsWire&lt;/a&gt; 替代 Reeder）。miniflux 需要 pgsql 才能运行，界面极为简洁，而 Reeder 可以通过 fever 兼容的 API 接口把 miniflux 完全当成后台使用，操作几乎和 Google Reader、Inoreader 等流行的阅读器 vim 风格快捷键无缝兼容。除此之外，miniflux 和 Reeder 都支持直接抓取全文。&lt;strong&gt;千万不要相信什么 FreshRSS、Tiny Tiny RSS 比 miniflux 好的说法&lt;/strong&gt;，光是一个内容抓取，这些比 miniflux 就弱了好几条街。&lt;/p&gt;
+&lt;p&gt;因为 miniflux 支持用 docker 部署，看 miniflux 的&lt;a href=&#34;https://miniflux.app/docs/installation.html#docker&#34;&gt;官方教程&lt;/a&gt;部署起来非常简单。要点简单列举一下：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;需要把 pgsql 和 miniflux 用 docker 的 &lt;code&gt;--link&lt;/code&gt; 参数连接在一起。pgsql 连接的别名应该是 &lt;code&gt;db&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;需要按照教程来初始化数据库和增加管理员账号&lt;/li&gt;
 &lt;li&gt;建议增加环境变量 &lt;code&gt;HTTP_PROXY&lt;/code&gt; 和 &lt;code&gt;HTTPS_PROXY&lt;/code&gt; 避免抓取内容时撞墙&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;最后，看一下图吧：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15657118705513/15657132919673.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15657118705513/15657126038433.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15657118705513/15657132919673.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15657118705513/15657126038433.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;TODO：计划看看 RSShub 这类工具是否，把微信公众号这些也都加到 RSS 阅读器中&lt;/p&gt;
 </description>
     </item>
@@ -44,497 +37,310 @@
       <link>https://sbilly.github.io/post/blackhat-us-2019-slides-reading-notes/</link>
       <pubDate>Sun, 11 Aug 2019 13:37:25 +0800</pubDate>
       <guid>https://sbilly.github.io/post/blackhat-us-2019-slides-reading-notes/</guid>
-      <description>
-
-&lt;p&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
-
-&lt;h2 id=&#34;0x00-读后感&#34;&gt;0x00 读后感&lt;/h2&gt;
-
-&lt;p&gt;看完 BlackHat 2019 的这些议题，我个人最强烈的感受就是企业承担的信息安全责任应该是有前提和有边界的，不应该是无前提和无边界的。如果拿消防做类比，在现行的治理框架下如果一个企业因为不可抗力或者被纵火，如果企业本身无过失（合规）的情况下一般只需要承担民事责任而没有刑事责任。美国的治理体系中就有这样的例子 —— FireEye 就获得了 SAFETY Act Certification 认证，&lt;a href=&#34;https://www.fireeye.com/company/awards/safety-act-certification-and-fireeye-products.html&#34; target=&#34;_blank&#34;&gt;FireEye 的用户可以在某种情况下免于被起诉&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;在《&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Conti-Operational-Templates-for-State-Level-Attack-and-Collective-Defense-of-Countries.pdf&#34; target=&#34;_blank&#34;&gt;Operational Templates for State-Level Attack and Collective Defense of Countries&lt;/a&gt;》里有几张图也表达了这个意思 —— 商业公司缺乏足够的资源与国家层面的威胁对抗。攻击方可以在各个层面寻找脆弱性来突破。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654181329540.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654196349463.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;就像《&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Pavur-GDPArrrrr-Using-Privacy-Laws-To-Steal-Identities.pdf&#34; target=&#34;_blank&#34;&gt;GDPArrrrr: Using Privacy Laws to Steal Identities&lt;/a&gt;》所实践的 —— 连 GPDR 这样的隐私法案都能被利用来窃取隐私。而防守方以 Google Project Zero 这样的实力，也只能聚焦于二进制方向，漏洞挖掘也是以手工挖掘漏洞为主、辅助以半自动化的 Fuzzing 。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654340825160.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654363276071.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654366981174.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654367742188.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654171165908.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654171367327.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;0x01-blackhat-us19-议题笔记&#34;&gt;0x01 BlackHat US19 议题笔记&lt;/h2&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;0x00-&#34;&gt;0x00 读后感&lt;/h2&gt;
+&lt;p&gt;看完 BlackHat 2019 的这些议题，我个人最强烈的感受就是企业承担的信息安全责任应该是有前提和有边界的，不应该是无前提和无边界的。如果拿消防做类比，在现行的治理框架下如果一个企业因为不可抗力或者被纵火，如果企业本身无过失（合规）的情况下一般只需要承担民事责任而没有刑事责任。美国的治理体系中就有这样的例子 —— FireEye 就获得了 SAFETY Act Certification 认证，&lt;a href=&#34;https://www.fireeye.com/company/awards/safety-act-certification-and-fireeye-products.html&#34;&gt;FireEye 的用户可以在某种情况下免于被起诉&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;在《&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Conti-Operational-Templates-for-State-Level-Attack-and-Collective-Defense-of-Countries.pdf&#34;&gt;Operational Templates for State-Level Attack and Collective Defense of Countries&lt;/a&gt;》里有几张图也表达了这个意思 —— 商业公司缺乏足够的资源与国家层面的威胁对抗。攻击方可以在各个层面寻找脆弱性来突破。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654181329540.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654196349463.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;就像《&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Pavur-GDPArrrrr-Using-Privacy-Laws-To-Steal-Identities.pdf&#34;&gt;GDPArrrrr: Using Privacy Laws to Steal Identities&lt;/a&gt;》所实践的 —— 连 GPDR 这样的隐私法案都能被利用来窃取隐私。而防守方以 Google Project Zero 这样的实力，也只能聚焦于二进制方向，漏洞挖掘也是以手工挖掘漏洞为主、辅助以半自动化的 Fuzzing 。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654340825160.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654363276071.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654366981174.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654367742188.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654171165908.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654171367327.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;0x01-blackhat-us19-&#34;&gt;0x01 BlackHat US19 议题笔记&lt;/h2&gt;
 &lt;p&gt;按照自己的理解简单记录和分类。这次腾讯真的爆发啊，投的议题太多了。&lt;/p&gt;
-
-&lt;h3 id=&#34;漏洞挖掘和利用&#34;&gt;漏洞挖掘和利用&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading&#34;&gt;漏洞挖掘和利用&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Birch-HostSplit-Exploitable-Antipatterns-In-Unicode-Normalization.pdf&#34; target=&#34;_blank&#34;&gt;Host/Split: Exploitable Antipatterns in Unicode Normalization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Birch-HostSplit-Exploitable-Antipatterns-In-Unicode-Normalization.pdf&#34;&gt;Host/Split: Exploitable Antipatterns in Unicode Normalization&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;主要是描述了一个因为 IDN 支持 unicode 以后带来的安全风险。很多大厂、很多软件、很多语言都受影响。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653647015903.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653647015903.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Bitan-Rogue7-Rogue-Engineering-Station-Attacks-On-S7-Simatic-PLCs.pdf&#34; target=&#34;_blank&#34;&gt;Rogue7: Rogue Engineering-Station attacks on S7 Simatic PLCs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Bitan-Rogue7-Rogue-Engineering-Station-Attacks-On-S7-Simatic-PLCs.pdf&#34;&gt;Rogue7: Rogue Engineering-Station attacks on S7 Simatic PLCs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;新发现的 PLC 操作系统的漏洞（和 S7 协议相关）。加上 ICS 安全的背景、全貌，以及这个漏洞的技术分析。这个议题在 ICS 方向讲得比较完整。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653650152855.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653650152855.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Cai-0-Days-And-Mitigations-Roadways-To-Exploit-And-Secure-Connected-BMW-Cars.pdf&#34; target=&#34;_blank&#34;&gt;0-Days &amp;amp; Mitigations: Roadways to Exploit and Secure Connected BMW Cars&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Cai-0-Days-And-Mitigations-Roadways-To-Exploit-And-Secure-Connected-BMW-Cars.pdf&#34;&gt;0-Days &amp;amp; Mitigations: Roadways to Exploit and Secure Connected BMW Cars&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;科恩实验室挖 BMW 车载系统漏洞的过程，非常好的 IoT 产品攻击面分析的范例。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653667149091.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653667149091.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Campana-Everybody-Be-Cool-This-Is-A-Robbery.pdf&#34; target=&#34;_blank&#34;&gt;Everybody be Cool, This is a Robbery!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Campana-Everybody-Be-Cool-This-Is-A-Robbery.pdf&#34;&gt;Everybody be Cool, This is a Robbery!&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;不论是中国还是美国，高安全级别的系统一般都引入了 HSM 。这篇介绍了直接针对 HSM 的攻击，其实越小众的产品，安全性越差。在这个演示中的测试的 HSM 和前面那篇车载系统一样，选用的系统版本比较老，新一点的 Linux 自身内核保护机制都没有。只要存在漏洞，基本就会被利用。HSM 存在漏洞会直接破坏信任根，甚至在系统中提供一个非常隐蔽的持久据点。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653673278472.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15653673491823.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653673278472.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15653673491823.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Edwards-Compendium-Of-Container-Escapes.pdf&#34; target=&#34;_blank&#34;&gt;A Compendium of Container Escapes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Edwards-Compendium-Of-Container-Escapes.pdf&#34;&gt;A Compendium of Container Escapes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Docker 不是虚拟机，提供的隔离能力有限，这里介绍了三大类的绕过方式，从原理到代码。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653716564331.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653716564331.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Hauke-Denial-Of-Service-With-A-Fistful-Of-Packets-Exploiting-Algorithmic-Complexity-Vulnerabilities.pdf&#34; target=&#34;_blank&#34;&gt;Denial of Service with a Fistful of Packets: Exploiting Algorithmic Complexity Vulnerabilities&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Hauke-Denial-Of-Service-With-A-Fistful-Of-Packets-Exploiting-Algorithmic-Complexity-Vulnerabilities.pdf&#34;&gt;Denial of Service with a Fistful of Packets: Exploiting Algorithmic Complexity Vulnerabilities&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;AC 匹配的漏洞，并且介绍了 ACsploit 这个工具箱。这类漏洞比较有名的就是 CloudFlare 在 2019 年 7 月份那次因为正则表达式导致全球性故障。&lt;/p&gt;
-
 &lt;p&gt;里面提出了一个观点比较有意思 —— AC 匹配的漏洞并不是实现层面的 BUG ，而是设计层面的问题。个人并不是很赞同这个观点，bug 并不局限于实现层面。只要是出现了不符合预期的结果，某种意义上都是 bug 。而 AC 匹配相关的这类漏洞，应该是设计者没有考虑各种最坏的情况可能出现的问题，从而导致了漏洞产生。和没有考虑用户输入可能导致命令执行类似。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654118589379.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654119371191.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654117966384.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654118589379.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654119371191.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654117966384.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Huang-Towards-Discovering-Remote-Code-Execution-Vulnerabilities-In-Apple-FaceTime.pdf&#34; target=&#34;_blank&#34;&gt;Towards Discovering Remote Code Execution Vulnerabilities in Apple FaceTime&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Huang-Towards-Discovering-Remote-Code-Execution-Vulnerabilities-In-Apple-FaceTime.pdf&#34;&gt;Towards Discovering Remote Code Execution Vulnerabilities in Apple FaceTime&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;盘古带来的 FaceTime 远程代码执行漏洞分析。介绍了 iOS/macOS 中 FaceTime 的流程、攻击面分析、漏洞发现和利用。FaceTime 的通信过程有完整的可信链，苹果公司的安全架构设计绝对值得看一下。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654260992836.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654260992836.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Jaiswal-Preventing-Authentication-Bypass-A-Tale-Of-Two-Researchers.pdf&#34; target=&#34;_blank&#34;&gt;Preventing Authentication Bypass A Tale of Two Researchers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Jaiswal-Preventing-Authentication-Bypass-A-Tale-Of-Two-Researchers.pdf&#34;&gt;Preventing Authentication Bypass A Tale of Two Researchers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;主要是讲了两个身份认证绕过的漏洞案例。这两个漏洞影响 Outlook/Live/Hotmail 的所有用户，攻击者可以获取被攻击者的所有邮件。主要的突破口就是在新版本上线引入的未签名 JWT Token 。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Jerkeby-Command-Injection-In-Irules-Loadbalancer-Scripts.pdf&#34; target=&#34;_blank&#34;&gt;COMMAND INJECTION IN IRULES LOADBALANCER SCRIPTS - A story about how TCL interpretation works in F5 iRules and how it can be detected or exploited&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Jerkeby-Command-Injection-In-Irules-Loadbalancer-Scripts.pdf&#34;&gt;COMMAND INJECTION IN IRULES LOADBALANCER SCRIPTS - A story about how TCL interpretation works in F5 iRules and how it can be detected or exploited&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;主要是讲 F5 的内置规则引擎 iRule 规则的利用。F5 应用范围很广（包括 DoD 也在大量使用）。但这个漏洞并不是很好评价，不知道 iRule 缺省是否存在并被启用。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654275398688.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654275398688.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Kotler-Process-Injection-Techniques-Gotta-Catch-Them-All.pdf&#34; target=&#34;_blank&#34;&gt;Windows Process Injection in 2019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Kotler-Process-Injection-Techniques-Gotta-Catch-Them-All.pdf&#34;&gt;Windows Process Injection in 2019&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;SafeBreach 搞了一个可以在最新版 Windows 10 x64 上进行进程注入的 C/C++ 库： &lt;a href=&#34;https://github.com/SafeBreach-Labs/pinjectra&#34; target=&#34;_blank&#34;&gt;Pinjectra&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654282480908.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;SafeBreach 搞了一个可以在最新版 Windows 10 x64 上进行进程注入的 C/C++ 库： &lt;a href=&#34;https://github.com/SafeBreach-Labs/pinjectra&#34;&gt;Pinjectra&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654282480908.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Lilang-Debug-For-Bug-Crack-And-Hack-Apple-Core-By-Itself-Fun-And-Profit-To-Debug-And-Fuzz-Apple-Kernel-By-LLDB-Script.pdf&#34; target=&#34;_blank&#34;&gt;Debug for bug: Crack and Hack Apple Core by itself&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Lilang-Debug-For-Bug-Crack-And-Hack-Apple-Core-By-Itself-Fun-And-Profit-To-Debug-And-Fuzz-Apple-Kernel-By-LLDB-Script.pdf&#34;&gt;Debug for bug: Crack and Hack Apple Core by itself&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;macOS 的内核/驱动 Fuzz 研究。发现了不少显卡驱动的漏洞。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Peterlin-Breaking-Samsungs-ARM-TrustZone.pdf&#34; target=&#34;_blank&#34;&gt;Breaking Samsung&amp;rsquo;s ARM TrustZone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Peterlin-Breaking-Samsungs-ARM-TrustZone.pdf&#34;&gt;Breaking Samsung&#39;s ARM TrustZone&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;简单介绍了三种不同类型的可信执行的环境，并详细介绍了如何攻破三星的 ARMv7 的 TrustZone 。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654396394106.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654396394106.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Pi-Exploiting-Qualcomm-WLAN-And-Modem-Over-The-Air.pdf&#34; target=&#34;_blank&#34;&gt;Exploiting Qualcomm WLAN And Modem Over-The-Air&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Pi-Exploiting-Qualcomm-WLAN-And-Modem-Over-The-Air.pdf&#34;&gt;Exploiting Qualcomm WLAN And Modem Over-The-Air&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;在博通、Marvell 等 WiFi 被安全社区发现漏洞之后，腾讯 Blade Team 决定研究下高通 WiFi 芯片。结果搞定了从 OTA -&amp;gt; WALN -&amp;gt; Modem -&amp;gt; Kernel 的全链条，可以从无线网控制设备。😱&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654419124544.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654418647448.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654419124544.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654418647448.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Qian-Exploring-The-New-World-Remote-Exploitation-Of-SQLite-And-Curl.pdf&#34; target=&#34;_blank&#34;&gt;Exploring the New World : Remote Exploitation of SQLite and Curl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Qian-Exploring-The-New-World-Remote-Exploitation-Of-SQLite-And-Curl.pdf&#34;&gt;Exploring the New World : Remote Exploitation of SQLite and Curl&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;SQLite 和 cURL 的漏洞发现和利用。腾讯 Blade Team 出品。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Chen-Biometric-Authentication-Under-Threat-Liveness-Detection-Hacking.pdf&#34; target=&#34;_blank&#34;&gt;Biometric Authentication Under Threat: Liveness Detection Hacking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Chen-Biometric-Authentication-Under-Threat-Liveness-Detection-Hacking.pdf&#34;&gt;Biometric Authentication Under Threat: Liveness Detection Hacking&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;各种花式绕活体检测的方法。来自于腾讯玄武实验室。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655115116727.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655115311991.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655115116727.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655115311991.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Feng-The-Most-Secure-Browser-Pwning-Chrome-From-2016-To-2019.pdf&#34; target=&#34;_blank&#34;&gt;The Most Secure Browser? Pwning Chrome from 2016 to 2019.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Feng-The-Most-Secure-Browser-Pwning-Chrome-From-2016-To-2019.pdf&#34;&gt;The Most Secure Browser? Pwning Chrome from 2016 to 2019.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;我是如何干翻所谓最安全浏览器 Chrome 的。—— 来自腾讯科恩安全实验室。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Gong-Bypassing-The-Maginot-Line-Remotely-Exploit-The-Hardware-Decoder-On-Smartphone.pdf&#34; target=&#34;_blank&#34;&gt;Bypassing the Maginot Line: Remotely Exploit the Hardware Decoder on Smartphone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Gong-Bypassing-The-Maginot-Line-Remotely-Exploit-The-Hardware-Decoder-On-Smartphone.pdf&#34;&gt;Bypassing the Maginot Line: Remotely Exploit the Hardware Decoder on Smartphone&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;远程攻击智能手机配备的硬件解码器。来自腾讯 Blade 实验室。已经搞到了 Venus 芯片。如果是从浏览器和即时通讯工具发起攻击，目前整个攻击链还差两环：还没有搞定从应用程序搞到 StageFright 引擎，也还没有搞定从 Venus 芯片进入到 Kernel 。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655128792080.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655128792080.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Jablonski-Attacking-Electric-Motors-For-Fun-And-Profit.pdf&#34; target=&#34;_blank&#34;&gt;Attacking Electric Motors For Fun And Profit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Jablonski-Attacking-Electric-Motors-For-Fun-And-Profit.pdf&#34;&gt;Attacking Electric Motors For Fun And Profit&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;虽然说是搞电动机，实际上是搞的无人机。比较全面，不过个人觉得远程搞的讲的太少了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655157267412.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655157267412.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Joly-Hunting-For-Bugs-Catching-Dragons.pdf&#34; target=&#34;_blank&#34;&gt;Hunting for bugs, catching dragons&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Joly-Hunting-For-Bugs-Catching-Dragons.pdf&#34;&gt;Hunting for bugs, catching dragons&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;利用邮件来攻击 Outlook 和 Exchange 。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Kettle-HTTP-Desync-Attacks-Smashing-Into-The-Cell-Next-Door.pdf&#34; target=&#34;_blank&#34;&gt;HTTP Desync Attacks: Smashing into the Cell Next Door&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Kettle-HTTP-Desync-Attacks-Smashing-Into-The-Cell-Next-Door.pdf&#34;&gt;HTTP Desync Attacks: Smashing into the Cell Next Door&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;HTTP Desync 攻击，一种攻击方式，列举是不少的利用。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Matula-APICs-Adventures-In-Wonderland.pdf&#34; target=&#34;_blank&#34;&gt;APIC’s Adventures in Wonderland&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Matula-APICs-Adventures-In-Wonderland.pdf&#34;&gt;APIC’s Adventures in Wonderland&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Cisco 的 APIC 漏洞。作者说主要是 APIC 比较贵，以前的研究比较少，很随便的就搞了个远程特权执行的漏洞出来。片子里面讲的 LLDP 协议的几个例子还是非常有网络设备的特色的。和 HSM 的那个片子类似 —— 越少见产品安全性越难得到保证。居然还有这种漏洞 ……&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655371827093.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655372133757.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655371827093.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655372133757.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Teissier-Mobile-Interconnect-Threats-How-Next-Gen-Products-May-Be-Already-Outdated.pdf&#34; target=&#34;_blank&#34;&gt;MOBILE INTERCONNECT THREATS - How next-gen products may be already outdated&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Teissier-Mobile-Interconnect-Threats-How-Next-Gen-Products-May-Be-Already-Outdated.pdf&#34;&gt;MOBILE INTERCONNECT THREATS - How next-gen products may be already outdated&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;移动环境下协议栈的一些特性带来的安全问题&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655942608960.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655942608960.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Zaikin-Reverse-Engineering-WhatsApp-Encryption-For-Chat-Manipulation-And-More.pdf&#34; target=&#34;_blank&#34;&gt;REVERSE ENGINEERING WHATSAPP ENCRYPTION FOR CHAT MANIPULATION AND MORE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Zaikin-Reverse-Engineering-WhatsApp-Encryption-For-Chat-Manipulation-And-More.pdf&#34;&gt;REVERSE ENGINEERING WHATSAPP ENCRYPTION FOR CHAT MANIPULATION AND MORE&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;What&amp;rsquo;s App 的加密存在缺陷。不知道 What&amp;rsquo;s App 是不是正好需要看一下之前讲的那个即时通信加密算法？&lt;/p&gt;
-
+&lt;p&gt;What&#39;s App 的加密存在缺陷。不知道 What&#39;s App 是不是正好需要看一下之前讲的那个即时通信加密算法？&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Wu-Battle-Of-Windows-Service-A-Silver-Bullet-To-Discover-File-Privilege-Escalation-Bugs-Automatically.pdf&#34; target=&#34;_blank&#34;&gt;Battle of Windows Service:A Silver Bullet to Discover File Privilege Escalation Bugs Automatically&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Wu-Battle-Of-Windows-Service-A-Silver-Bullet-To-Discover-File-Privilege-Escalation-Bugs-Automatically.pdf&#34;&gt;Battle of Windows Service:A Silver Bullet to Discover File Privilege Escalation Bugs Automatically&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;腾讯玄武实验室出品。我是怎么发现一堆 Windows 10 平台上 ALPC 漏洞的。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Wang-Attacking-IPhone-XS-Max.pdf&#34; target=&#34;_blank&#34;&gt;Attacking iPhone XS Max&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Wang-Attacking-IPhone-XS-Max.pdf&#34;&gt;Attacking iPhone XS Max&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;盘古带来的如何突破软硬件层层防护把 iPhone XS Max 搞定的。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Valenta-Monsters-In-The-Middleboxes-Building-Tools-For-Detecting-HTTPS-Interception.pdf&#34; target=&#34;_blank&#34;&gt;Monsters in the Middleboxes - Building Tools for Detecting HTTPS Interception&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Valenta-Monsters-In-The-Middleboxes-Building-Tools-For-Detecting-HTTPS-Interception.pdf&#34;&gt;Monsters in the Middleboxes - Building Tools for Detecting HTTPS Interception&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;在服务端检测 HTTPS 中间人，提供了一个 golang 库可以直接用。感觉使用场景有限。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655963959679.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655965035419.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655963959679.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655965035419.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Vanhoef-Dragonblood-Attacking-The-Dragonfly-Handshake-Of-WPA3.pdf&#34; target=&#34;_blank&#34;&gt;Dragonblood: Attacking the Dragonﬂy Handshake of WPA3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Vanhoef-Dragonblood-Attacking-The-Dragonfly-Handshake-Of-WPA3.pdf&#34;&gt;Dragonblood: Attacking the Dragonﬂy Handshake of WPA3&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;如何攻击 WPA3 的密码学相关介绍。看样子 WPA3 不足够安全，可能会要搞 3.1 。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15656186846664.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15656186846664.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Tsai-Infiltrating-Corporate-Intranet-Like-NSA.pdf&#34; target=&#34;_blank&#34;&gt;Infiltrating Corporate Intranet Like NSA - Pre-auth RCE on Leading SSL VPNs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Tsai-Infiltrating-Corporate-Intranet-Like-NSA.pdf&#34;&gt;Infiltrating Corporate Intranet Like NSA - Pre-auth RCE on Leading SSL VPNs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Fortinet、Pulse Secure、Palo Alto 等多个厂商的 SSL VPN 无需身份认证的远程利用漏洞。用自己发现的漏洞搞定了 Twitter 双因素认证的 SSL VPN 。估计参加国内群体性红蓝对抗大赛的朋友们对这个方法并不陌生。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655944794980.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655944794980.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Matula-APICs-Adventures-In-Wonderland.pdf&#34; target=&#34;_blank&#34;&gt;Attacking &amp;amp; Defending the Microsoft Cloud (Azure AD &amp;amp; Office 365)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Matula-APICs-Adventures-In-Wonderland.pdf&#34;&gt;Attacking &amp;amp; Defending the Microsoft Cloud (Azure AD &amp;amp; Office 365)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;关于 Azure AD 和 Office 365 攻防的介绍。值得看一下。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655382671068.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655382671068.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Santamarta-Arm-IDA-And-Cross-Check-Reversing-The-787-Core-Network.pdf&#34; target=&#34;_blank&#34;&gt;Arm IDA and Cross Check: Reversing the 787’s Core Network&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Santamarta-Arm-IDA-And-Cross-Check-Reversing-The-787-Core-Network.pdf&#34;&gt;Arm IDA and Cross Check: Reversing the 787’s Core Network&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;通过泄漏的文档、二进制代码分析得出波音 787 有可能被攻击者入侵。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Simakov-Finding-A-Needle-In-An-Encrypted-Haystack-Leveraging-Cryptographic-Abilities-To-Detect-The-Most-Prevalent-Attacks-On-Active-Directory.pdf&#34; target=&#34;_blank&#34;&gt;Finding a Needle In An Encrypted Haystack: Leveraging Cryptographic Abilities To Detect The Most Prevalent Attacks On Active Directory&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Simakov-Finding-A-Needle-In-An-Encrypted-Haystack-Leveraging-Cryptographic-Abilities-To-Detect-The-Most-Prevalent-Attacks-On-Active-Directory.pdf&#34;&gt;Finding a Needle In An Encrypted Haystack: Leveraging Cryptographic Abilities To Detect The Most Prevalent Attacks On Active Directory&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;介绍微软 AD 的攻防，在原有 AD 攻防的基础上重点讲了好三类新的攻击方式和检测、防护建议。值得阅读。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655858192352.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655861266518.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655863704137.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655872215074.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655858192352.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655861266518.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655863704137.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655872215074.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Munoz-SSO-Wars-The-Token-Menace.pdf&#34; target=&#34;_blank&#34;&gt;SSO Wars: The Token Menace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Munoz-SSO-Wars-The-Token-Menace.pdf&#34;&gt;SSO Wars: The Token Menace&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;主要是介绍 SSO 特别是微软系列产品的 SSO 相关的漏洞。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655392088036.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655392391103.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655392088036.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655392391103.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Shwartz-Selling-0-Days-To-Governments-And-Offensive-Security-Companies.pdf&#34; target=&#34;_blank&#34;&gt;Look, No Hands! The Remote, Interaction-less Attack Surface of the iPhone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Shwartz-Selling-0-Days-To-Governments-And-Offensive-Security-Companies.pdf&#34;&gt;Look, No Hands! The Remote, Interaction-less Attack Surface of the iPhone&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;iOS 的远程利用攻击面分析并结合了一些漏洞的实际例子。估计是准备发布一个 iOS 的研究工具来预热的。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655842488260.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655842488260.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Shupeng-All-The-4G-Modules-Could-Be-Hacked.pdf&#34; target=&#34;_blank&#34;&gt;All the 4G Modules Cloud be Hacked&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Shupeng-All-The-4G-Modules-Could-Be-Hacked.pdf&#34;&gt;All the 4G Modules Cloud be Hacked&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;百度安全实验室出品。如何搞定广泛使用的 4G 模块。可以看到一堆的硬编码的密码，考虑到 4g 模块的出货量，个人觉得还是非常好利用的。感受下 ……&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655832995147.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655832995147.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Seri-Critical-Zero-Days-Remotely-Compromise-The-Most-Popular-Real-Time-OS.pdf&#34; target=&#34;_blank&#34;&gt;Critical vulnerabilities to remotely compromise VxWorks, the most popular RTOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Seri-Critical-Zero-Days-Remotely-Compromise-The-Most-Popular-Real-Time-OS.pdf&#34;&gt;Critical vulnerabilities to remotely compromise VxWorks, the most popular RTOS&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;发现了 11 个 VxWorks TCP/IP 协议栈 IPnet 的高危漏洞，其中 6 个可以导致远程执行。这个协议栈由 WindRiver 维护，在多个实时操作系统中使用。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655766782957.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655766782957.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Shaik-New-Vulnerabilities-In-5G-Networks.pdf&#34; target=&#34;_blank&#34;&gt;New Vulnerabilities in 5G Networks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Shaik-New-Vulnerabilities-In-5G-Networks.pdf&#34;&gt;New Vulnerabilities in 5G Networks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;5G 网络的漏洞挖掘，有点软。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655785306772.jpg&#34; alt=&#34;-w500&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;威胁跟踪与防护&#34;&gt;威胁跟踪与防护&lt;/h3&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655785306772.jpg&#34; alt=&#34;-w500&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;heading1&#34;&gt;威胁跟踪与防护&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Franceschi-Bicchierai-The-Discovery-Of-A-Government-Malware-And-An-Unexpected-Spy-Scandal.pdf&#34; target=&#34;_blank&#34;&gt;The Discovery of a Government Malware and an Unexpected Spy Scandal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Franceschi-Bicchierai-The-Discovery-Of-A-Government-Malware-And-An-Unexpected-Spy-Scandal.pdf&#34;&gt;The Discovery of a Government Malware and an Unexpected Spy Scandal&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;标题就看出来了 …… 意大利某“违法”监听调查分析&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654110727921.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654110727921.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Hoelzel-How-To-Detect-That-Your-Domains-Are-Being-Abused-For-Phishing-By-Using-DNS.pdf&#34; target=&#34;_blank&#34;&gt;How to detect that your domains are being abused for phishing attacks by using DNS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Hoelzel-How-To-Detect-That-Your-Domains-Are-Being-Abused-For-Phishing-By-Using-DNS.pdf&#34;&gt;How to detect that your domains are being abused for phishing attacks by using DNS&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;主要讲了一下在 DNS 层面可以做哪些事情来避免自己邮件域不会被用于钓鱼。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654218119402.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654217902153.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654218119402.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654217902153.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Carcano-The-Future-Of-Securing-IED-Using-The-IEC62351-7-Standard-For-Monitoring.pdf&#34; target=&#34;_blank&#34;&gt;The Future of Securing Intelligent Electronic Devices Using the IEC 62351-7 Standard for Monitoring&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Carcano-The-Future-Of-Securing-IED-Using-The-IEC62351-7-Standard-For-Monitoring.pdf&#34;&gt;The Future of Securing Intelligent Electronic Devices Using the IEC 62351-7 Standard for Monitoring&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;主要是介绍了一下电网安全的 IEC 62351-7 标准、以及电网的安全环境和挑战、以及几个场景的 DEMO&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653678486345.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653678486345.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf&#34; target=&#34;_blank&#34;&gt;The Future of Account Takeover&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf&#34;&gt;The Future of Account Takeover&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;币圈的 coinbase 讲了一下账号窃取的一些事情。换卡、账号找回的滥用、钓鱼、撞库、社会工程、恶意代码、以及利用 SEO 冒充官方技术支持等一些攻击技巧。…… 等等，这些怎么在国内好像都看过呢？！😓&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Pavur-GDPArrrrr-Using-Privacy-Laws-To-Steal-Identities.pdf&#34; target=&#34;_blank&#34;&gt;GDPArrrrr: Using Privacy Laws to Steal Identities&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Pavur-GDPArrrrr-Using-Privacy-Laws-To-Steal-Identities.pdf&#34;&gt;GDPArrrrr: Using Privacy Laws to Steal Identities&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;在 GPDR 法案颁布以后，演讲者利用隐私保护法案来盗取身份信息，按照 Kill-Chain 的思路把整个过程讲了一遍。整个过程的核心是 GPDR 中要求：服务商必须对外公布联系方式，通过这个联系方式，用户可以申请自己所有的个人信息，而服务商需要在一个自然月以内向用户提供可机读的个人信息。个人觉得国内这么搞一下，然后出国去讲，很可能被请喝茶。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654341433711.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654340825160.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654358926051.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654359442090.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654360197728.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654360478216.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654360638454.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654361042671.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654361565895.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654362245877.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654363276071.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654366981174.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654367222044.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654367582753.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654367742188.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654341433711.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654340825160.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654358926051.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654359442090.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654360197728.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654360478216.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654360638454.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654361042671.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654361565895.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654362245877.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654363276071.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654366981174.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654367222044.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654367582753.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654367742188.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Perlman-Hacking-Ten-Million-Useful-Idiots-Online-Propaganda-As-A-Socio-Technical-Security-Project.pdf&#34; target=&#34;_blank&#34;&gt;Hacking Ten Million Useful Idiots: Online Propaganda as a Socio-Technical Security Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Perlman-Hacking-Ten-Million-Useful-Idiots-Online-Propaganda-As-A-Socio-Technical-Security-Project.pdf&#34;&gt;Hacking Ten Million Useful Idiots: Online Propaganda as a Socio-Technical Security Project&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;错误信息是一个社会层面的安全问题，会带来各种物理、经济方面的影响。还提出了一个 AMITT 的框架。算是社会学范安全的领域吧。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654390376717.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654390870350.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654390376717.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654390870350.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Price-Playing-Offense-And-Defense-With-Deepfakes.pdf&#34; target=&#34;_blank&#34;&gt;Playing Offense and Defense with Deepfakes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Price-Playing-Offense-And-Defense-With-Deepfakes.pdf&#34;&gt;Playing Offense and Defense with Deepfakes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;介绍了 deepfake 的历史，认为现在 deepfake 类产生的恶意视频人类靠肉眼已经很难辨认。因此开发了一套新的名为 &lt;a href=&#34;https://github.com/zerofox-oss/deepstar&#34; target=&#34;_blank&#34;&gt;deepstar&lt;/a&gt; 检测方法（还没有开源）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654420971329.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654425397013.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654425651801.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;介绍了 deepfake 的历史，认为现在 deepfake 类产生的恶意视频人类靠肉眼已经很难辨认。因此开发了一套新的名为 &lt;a href=&#34;https://github.com/zerofox-oss/deepstar&#34;&gt;deepstar&lt;/a&gt; 检测方法（还没有开源）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654420971329.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654425397013.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654425651801.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Amini-Worm-Charming-Harvesting-Malware-Lures-For-Fun-And-Profit.pdf&#34; target=&#34;_blank&#34;&gt;Worm Charming - Harvesting Malware Lures for Fun and Profit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Amini-Worm-Charming-Harvesting-Malware-Lures-For-Fun-And-Profit.pdf&#34;&gt;Worm Charming - Harvesting Malware Lures for Fun and Profit&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;从开源情报源和 VirusTotal 情报源获取非可执行文件的威胁情报并进行分析，发现了不少的真实世界中传播的样本。并发布了 &lt;a href=&#34;https://labs.inquest.net&#34; target=&#34;_blank&#34;&gt;labs.inquest.net&lt;/a&gt; 这个集成工具。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655062817028.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655063401266.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655061425594.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;从开源情报源和 VirusTotal 情报源获取非可执行文件的威胁情报并进行分析，发现了不少的真实世界中传播的样本。并发布了 &lt;a href=&#34;https://labs.inquest.net&#34;&gt;labs.inquest.net&lt;/a&gt; 这个集成工具。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655062817028.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655063401266.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655061425594.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Baril-He-Said-She-Said-Poisoned-RDP-Offense-And-Defense.pdf&#34; target=&#34;_blank&#34;&gt;Poisoned RDP - He Said, She Said - Poisoned RDP Offense and Defense&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Baril-He-Said-She-Said-Poisoned-RDP-Offense-And-Defense.pdf&#34;&gt;Poisoned RDP - He Said, She Said - Poisoned RDP Offense and Defense&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;通过 RDP 服务搞客户端。和 BlueKeep:CVE-2019-0708 不同的一个攻击向量。这里面提到了 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization&#34; target=&#34;_blank&#34;&gt;Windows Telemetry&lt;/a&gt; 的数据，这些数据看起来是会上报给微软的，需要谨慎一些。&lt;/p&gt;
-
+&lt;p&gt;通过 RDP 服务搞客户端。和 BlueKeep:CVE-2019-0708 不同的一个攻击向量。这里面提到了 &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization&#34;&gt;Windows Telemetry&lt;/a&gt; 的数据，这些数据看起来是会上报给微软的，需要谨慎一些。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Bernal-Detecting-Malicious-Files-With-YARA-Rules-As-They-Traverse-The-Network.pdf&#34; target=&#34;_blank&#34;&gt;Detecting malicious files with YARA rules as they traverse the network&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Bernal-Detecting-Malicious-Files-With-YARA-Rules-As-They-Traverse-The-Network.pdf&#34;&gt;Detecting malicious files with YARA rules as they traverse the network&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;利用 YARA + Zeek 的组合来做流量中的文件检查。提供了一些开源工具。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655090614752.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655090946261.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655090614752.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655090946261.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Burke-ClickOnce-And-Youre-In-When-Appref-Ms-Abuse-Is-Operating-As-Intended.pdf&#34; target=&#34;_blank&#34;&gt;CLICKONCE AND YOU’RE IN: When .appref-ms abuse is operating as intended&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Burke-ClickOnce-And-Youre-In-When-Appref-Ms-Abuse-Is-Operating-As-Intended.pdf&#34;&gt;CLICKONCE AND YOU’RE IN: When .appref-ms abuse is operating as intended&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.dhs.gov/CISA&#34; target=&#34;_blank&#34;&gt;DHS:CISA&lt;/a&gt; 发布的一个利用微软 .appref-ms 做钓鱼和持久化的方法。核心是 .appref-ms 不但可以远程安装程序，还会确保被安装的程序是最新的。&lt;/p&gt;
-
+&lt;p&gt;&lt;a href=&#34;https://www.dhs.gov/CISA&#34;&gt;DHS:CISA&lt;/a&gt; 发布的一个利用微软 .appref-ms 做钓鱼和持久化的方法。核心是 .appref-ms 不但可以远程安装程序，还会确保被安装的程序是最新的。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Landers-Flying-A-False-Flag-Advanced-C2-Trust-Conflicts-And-Domain-Takeover.pdf&#34; target=&#34;_blank&#34;&gt;Flying A False Flag - Advanced C2, Trust Conflicts, and Domain Takeover&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Landers-Flying-A-False-Flag-Advanced-C2-Trust-Conflicts-And-Domain-Takeover.pdf&#34;&gt;Flying A False Flag - Advanced C2, Trust Conflicts, and Domain Takeover&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;对 C2 的全貌做了个介绍，讲了很多的 C2 套路，顺便把很多资源系统的梳理了一遍，值得看一下。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655360691708.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655360846226.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655360691708.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655360846226.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Metzman-Going-Beyond-Coverage-Guided-Fuzzing-With-Structured-Fuzzing.pdf&#34; target=&#34;_blank&#34;&gt;Going Beyond Coverage-Guided Fuzzing with Structured Fuzzing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Metzman-Going-Beyond-Coverage-Guided-Fuzzing-With-Structured-Fuzzing.pdf&#34;&gt;Going Beyond Coverage-Guided Fuzzing with Structured Fuzzing&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;结构化的 Fuzzing 技术介绍（结合 &lt;a href=&#34;https://github.com/google/clusterfuzz&#34; target=&#34;_blank&#34;&gt;ClusterFuzz&lt;/a&gt; ）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655383781270.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;结构化的 Fuzzing 技术介绍（结合 &lt;a href=&#34;https://github.com/google/clusterfuzz&#34;&gt;ClusterFuzz&lt;/a&gt; ）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655383781270.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Mulliner-Come-Join-The-CAFSA-Continuous-Automated-Firmware-Security-Analysis.pdf&#34; target=&#34;_blank&#34;&gt;Come Join the [CAFSA] Continuous Automated Firmware Security Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Mulliner-Come-Join-The-CAFSA-Continuous-Automated-Firmware-Security-Analysis.pdf&#34;&gt;Come Join the [CAFSA] Continuous Automated Firmware Security Analysis&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;介绍一个自动化分析文件镜像的工具 &lt;a href=&#34;http://www.github.com/cruise-automation/fwanalyzer&#34; target=&#34;_blank&#34;&gt;FwAnalyzer&lt;/a&gt; 。主要是做一些镜像基线检查（比如：不包含调试工具、开启 SELinux、……），而不是做漏洞检查。&lt;/p&gt;
-
+&lt;p&gt;介绍一个自动化分析文件镜像的工具 &lt;a href=&#34;http://www.github.com/cruise-automation/fwanalyzer&#34;&gt;FwAnalyzer&lt;/a&gt; 。主要是做一些镜像基线检查（比如：不包含调试工具、开启 SELinux、……），而不是做漏洞检查。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Wixey-Im-Unique-Just-Like-You-Human-Side-Channels-And-Their-Implications-For-Security-And-Privacy.pdf&#34; target=&#34;_blank&#34;&gt;I’m unique, just like you - Human side-channels and their implications for security and privacy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Wixey-Im-Unique-Just-Like-You-Human-Side-Channels-And-Their-Implications-For-Security-And-Privacy.pdf&#34;&gt;I’m unique, just like you - Human side-channels and their implications for security and privacy&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;人的行为某种意义上来说也是一种可用于检测的“侧信道”。作者举了不少例子。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Williams-Detecting-Deep-Fakes-With-Mice.pdf&#34; target=&#34;_blank&#34;&gt;Detecting Deep Fakes With Mice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Williams-Detecting-Deep-Fakes-With-Mice.pdf&#34;&gt;Detecting Deep Fakes With Mice&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;训练老鼠来检测 Deep Fakes ，其实主要是说 deepfake 这类可以怎么检测。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Zheng-All-Your-Apple-Are-Belong-To-Us-Unique-Identification-And-Cross-Device-Tracking-Of-Apple-Devices.pdf&#34; target=&#34;_blank&#34;&gt;All Your Apple Are Belong To Us: Unique Identification and Cross-device Tracking of Apple Devices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Zheng-All-Your-Apple-Are-Belong-To-Us-Unique-Identification-And-Cross-Device-Tracking-Of-Apple-Devices.pdf&#34;&gt;All Your Apple Are Belong To Us: Unique Identification and Cross-device Tracking of Apple Devices&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;阿里安全出品。将如何跨设备跟踪用户。主要思路就是：1. 通过 Device ID 唯一的标记和跟踪每台设别；2. 把属于同一个 User ID 的 Device ID 都找出来。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Smith-Fantastic-Red-Team-Attacks-And-How-To-Find-Them.pdf&#34; target=&#34;_blank&#34;&gt;Fantastic Red Team Attacks - And How to Find Them&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Smith-Fantastic-Red-Team-Attacks-And-How-To-Find-Them.pdf&#34;&gt;Fantastic Red Team Attacks - And How to Find Them&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;介绍和推广 Atomic Red Team、EQL 这两个围绕 ATT&amp;amp;CK 的工具。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655878703875.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655878703875.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Snezhkov-Zombie-Ant-Farming-Practical-Tips-For-Playing-Hide-And-Seek-With-Linux-EDRs.pdf&#34; target=&#34;_blank&#34;&gt;Zombie Ant Farm: Practical Tips for Playing Hide and Seek with Linux EDRs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Snezhkov-Zombie-Ant-Farming-Practical-Tips-For-Playing-Hide-And-Seek-With-Linux-EDRs.pdf&#34;&gt;Zombie Ant Farm: Practical Tips for Playing Hide and Seek with Linux EDRs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;绕过 Linux EDR 的方法。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Tyagi-Defense-Against-Rapidly-Morphing-DDOS.pdf&#34; target=&#34;_blank&#34;&gt;Defense against Rapidly Morphing DDOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Tyagi-Defense-Against-Rapidly-Morphing-DDOS.pdf&#34;&gt;Defense against Rapidly Morphing DDOS&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;少见的抗 DDoS 的议题。感觉主要是推广 &lt;a href=&#34;https://github.com/464d41/soda&#34; target=&#34;_blank&#34;&gt;SODA&lt;/a&gt; 这个项目。&lt;/p&gt;
-
+&lt;p&gt;少见的抗 DDoS 的议题。感觉主要是推广 &lt;a href=&#34;https://github.com/464d41/soda&#34;&gt;SODA&lt;/a&gt; 这个项目。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Soman-Death-To-The-IOC-Whats-Next-In-Threat-Intelligence.pdf&#34; target=&#34;_blank&#34;&gt;Death of IOC - What&amp;rsquo;s next in Threat Intelligence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Soman-Death-To-The-IOC-Whats-Next-In-Threat-Intelligence.pdf&#34;&gt;Death of IOC - What&#39;s next in Threat Intelligence&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;机器学习的威胁情报抽取，比如：实体抽取之类的。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655905080740.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655905080740.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Sandin-PicoDMA-DMA-Attacks-At-Your-Fingertips.pdf&#34; target=&#34;_blank&#34;&gt;PICODMA: DMA ATTACKS AT YOUR FINGERTIPS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Sandin-PicoDMA-DMA-Attacks-At-Your-Fingertips.pdf&#34;&gt;PICODMA: DMA ATTACKS AT YOUR FINGERTIPS&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;造了一个指尖大小利用 DMA 绕过系统访问控制直接获取敏感信息的硬件工具。可以像 rekall 和 Volatility 那样调查取证。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655748697795.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;安全体系和实践&#34;&gt;安全体系和实践&lt;/h3&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655748697795.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;heading2&#34;&gt;安全体系和实践&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Almubayed-Practical-Approach-To-Automate-The-Discovery-And-Eradication-Of-Open-Source-Software-Vulnerabilities-At-Scale.pdf&#34; target=&#34;_blank&#34;&gt;Practical Approach to Automate the Discovery and Eradication of Open-Source Software Vulnerabilities at Scale&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Almubayed-Practical-Approach-To-Automate-The-Discovery-And-Eradication-Of-Open-Source-Software-Vulnerabilities-At-Scale.pdf&#34;&gt;Practical Approach to Automate the Discovery and Eradication of Open-Source Software Vulnerabilities at Scale&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;国内国外都一样，安全管理员觉得最坑的场景之一就是某一天又爆发一个不得不补的远程执行漏洞。现在的软件生态包依赖关系非常复杂，软件供应链安全也非常复杂。演讲者认为需要遵循这几个原则：可扩展、自动化、高研发效率、关注兼容性。对漏洞的维度进行排序，分清主次才能进行有效的修复。一方面要从多个数据源（开源或商业化）收集漏洞、威胁相关的信息；另一方面，也需要通过自动化构建过程对自己的 IT 环境有足够的了解。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653598646612.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653605758169.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653614862053.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15653609908146.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15653617912984.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653598646612.jpg&#34; alt=&#34;-w800&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653605758169.jpg&#34; alt=&#34;-w800&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653614862053.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15653609908146.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15653617912984.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Brand-WebAuthn-101-Demystifying-WebAuthn.pdf&#34; target=&#34;_blank&#34;&gt;WebAuthn 101 - Demystifying WebAuthn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Brand-WebAuthn-101-Demystifying-WebAuthn.pdf&#34;&gt;WebAuthn 101 - Demystifying WebAuthn&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;主要是介绍 WebAuthn 和 FIDO2 的好处。我对这种既改善用户体验、又增强安全性的方案是非常期望看到的。现在各方力量都在联合推动无密码认证的实现，DISA 下一步的现代化计划中也增加了改善用户认证，实现无密码认证的目标。目前，国民电子也在国内推 FIDO2 的相关方案。&lt;/p&gt;
-
 &lt;p&gt;除此之外，这里面有不少统计数据是值得看的：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;91% 的信息安全事件和钓鱼有关&lt;/li&gt;
 &lt;li&gt;80% 的针对商业机构的攻击行动中使用了钓鱼&lt;/li&gt;
@@ -543,279 +349,180 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 &lt;li&gt;一个设计良好的钓鱼页面有 43% 的成功率&lt;/li&gt;
 &lt;li&gt;使用生物特征进行重新验证，98% 的用户可以在 38 秒内完成，而使用用户名密码进行重新验证，98% 的用户要花 150 秒&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653653084670.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15653653413046.jpg&#34; alt=&#34;-w300&#34; /&gt;
-&lt;img src=&#34;media/15653591872010/15653653801597.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653655934548.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15653655326116.jpg&#34; alt=&#34;-w300&#34; /&gt;
-&lt;img src=&#34;media/15653591872010/15653655558021.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15653659341541.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15653659750166.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15653660101127.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653653084670.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15653653413046.jpg&#34; alt=&#34;-w300&#34;&gt;
+&lt;img src=&#34;media/15653591872010/15653653801597.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653655934548.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15653655326116.jpg&#34; alt=&#34;-w300&#34;&gt;
+&lt;img src=&#34;media/15653591872010/15653655558021.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15653659341541.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15653659750166.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15653660101127.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Howes-Securing-Apps-In-The-Open-By-Default-Cloud.pdf&#34; target=&#34;_blank&#34;&gt;Securing Apps in the Open-By-Default Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Howes-Securing-Apps-In-The-Open-By-Default-Cloud.pdf&#34;&gt;Securing Apps in the Open-By-Default Cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;snapchat 在公有云基础上应用安全的实践。snapchat 大量使用了AWS/GCP，在公有云上有一些限制，例如：没有办法获得一个仅为内部使用的网络基础设施、AWS/GCP 提供的控制点选项并不多、像 AppEngine 这样的服务必须直接暴露在互联网上、缺乏集中的 CI/CD 管道、使用大量技术带来技术栈复杂度高。&lt;/p&gt;
-
 &lt;p&gt;snapchat 在软件生命周期中把所有的服务分成 UnManaged 和 Managed 两个阶段。在 UnManaged 阶段，主要是防火墙和无状态的认证（AuthN）和授权（AuthZ）代理，而在 Managed 阶段，主要是通过服务网格以及其 API Gateway 来进行管理。对于比较老的应用，则应该及时关注其状态和安全告警。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654244942637.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654250820930.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654256831681.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654251304249.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654255470708.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654244942637.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654250820930.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654256831681.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654251304249.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654255470708.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Davidov-Inside-The-Apple-T2.pdf&#34; target=&#34;_blank&#34;&gt;Inside The Apple T2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Davidov-Inside-The-Apple-T2.pdf&#34;&gt;Inside The Apple T2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;苹果设备中有一块 T2 的芯片，这块芯片夹在 CPU 和硬件设备之间，增加了额外的安全保障和控制。这篇主要是对其软硬件工作机制进行了分析。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653699445151.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15653700955524.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15653701581991.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653699445151.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15653700955524.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15653701581991.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Doerr-The-Enemy-Within-Modern-Supply-Chain-Attacks.pdf&#34; target=&#34;_blank&#34;&gt;The Enemy Within Modern Supply Chain Attacks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Doerr-The-Enemy-Within-Modern-Supply-Chain-Attacks.pdf&#34;&gt;The Enemy Within Modern Supply Chain Attacks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;微软内部安全团队认为要从硬件、软件、服务、人这四个维度考虑供应链安全，每个部分都举了一个例子。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653705673135.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15653705673135.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Matrosov-Breaking-Through-Another-Side-Bypassing-Firmware-Security-Boundaries-From-Embedded-Controller.pdf&#34; target=&#34;_blank&#34;&gt;Breaking Through Another Side - Bypassing Firmware Security Boundaries from Embedded Controller&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Matrosov-Breaking-Through-Another-Side-Bypassing-Firmware-Security-Boundaries-From-Embedded-Controller.pdf&#34;&gt;Breaking Through Another Side - Bypassing Firmware Security Boundaries from Embedded Controller&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;硬核的 x86 平台硬件/固件安全。这个架构和《&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Davidov-Inside-The-Apple-T2.pdf&#34; target=&#34;_blank&#34;&gt;Inside The Apple T2&lt;/a&gt;》这篇文章中苹果的架构一起对比来看，非常有意思。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654328401505.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654328816020.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654330383563.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;硬核的 x86 平台硬件/固件安全。这个架构和《&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Davidov-Inside-The-Apple-T2.pdf&#34;&gt;Inside The Apple T2&lt;/a&gt;》这篇文章中苹果的架构一起对比来看，非常有意思。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654328401505.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654328816020.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654330383563.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Hasarfaty-Behind-The-Scenes-Of-Intel-Security-And-Manageability-Engine.pdf&#34; target=&#34;_blank&#34;&gt;Behind the Scenes of Intel Security and Manageability Engine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Hasarfaty-Behind-The-Scenes-Of-Intel-Security-And-Manageability-Engine.pdf&#34;&gt;Behind the Scenes of Intel Security and Manageability Engine&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;介绍 Intel 第 8 代和第 9 代处理器所使用的 CSME 12 固件和硬件。感觉 Intel 的做法是在 x86/x64 大楼的地下室又修了一个大楼。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655141040988.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655146694157.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655143309341.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655141040988.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655146694157.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655143309341.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Roytman-Jacobs-Predictive-Vulnerability-Scoring-System.pdf&#34; target=&#34;_blank&#34;&gt;Exploit Prediction Scoring System (EPSS)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Roytman-Jacobs-Predictive-Vulnerability-Scoring-System.pdf&#34;&gt;Exploit Prediction Scoring System (EPSS)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;个人非常喜欢的一篇。简单来说，和我观点一致 —— 现在漏洞管理的问题是发现的漏洞太多了，管理层面需要分清楚轻重缓急，区分对待。最好需要确保最后能修复掉。这个和当年恶意代码太多，防病毒厂商不睡觉来分析、加特征码都搞不过来，最后只能换个思路来搞定一样。&lt;/p&gt;
-
-&lt;p&gt;他们的工作更进一步，提出了一个新的 EPSS 模型（个人感觉还需要继续改进）。可惜作者提供的评分系统还不能正常访问： &lt;a href=&#34;http://kennaresearch.com/tools/epss-calculator&#34; target=&#34;_blank&#34;&gt;http://kennaresearch.com/tools/epss-calculator&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655732839315.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655734182663.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655734426956.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655738409553.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655738746291.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;他们的工作更进一步，提出了一个新的 EPSS 模型（个人感觉还需要继续改进）。可惜作者提供的评分系统还不能正常访问： &lt;a href=&#34;http://kennaresearch.com/tools/epss-calculator&#34;&gt;&lt;a href=&#34;http://kennaresearch.com/tools/epss-calculator&#34;&gt;http://kennaresearch.com/tools/epss-calculator&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655732839315.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655734182663.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655734426956.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655738409553.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655738746291.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Stone-Securing-The-System-A-Deep-Dive-Into-Reversing-Android-Preinstalled-Apps.pdf&#34; target=&#34;_blank&#34;&gt;Securing the System: A Deep Dive into Reversing Android Pre-Installed Apps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Stone-Securing-The-System-A-Deep-Dive-Into-Reversing-Android-Preinstalled-Apps.pdf&#34;&gt;Securing the System: A Deep Dive into Reversing Android Pre-Installed Apps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;介绍 Android 平台下的逆向分析实例，主要是保持曝光。从里面可以看到 Google 认为有些 OEM/ODM 会植入恶意代码。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Stanislav-Shifting-Knowledge-Left-Keeping-Up-With-Modern-Application-Security.pdf&#34; target=&#34;_blank&#34;&gt;Shifting Knowledge Left - Keeping Up With Modern Application Security&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Stanislav-Shifting-Knowledge-Left-Keeping-Up-With-Modern-Application-Security.pdf&#34;&gt;Shifting Knowledge Left - Keeping Up With Modern Application Security&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;主要讲的是如何提升开发人员安全意识和能力，也提到了研发、安全之间更好的关系应该是合作而不是摩擦。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655919233771.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655919233771.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Vessels-Cybersecurity-Risk-Assessment-For-Safety-Critical-Systems.pdf&#34; target=&#34;_blank&#34;&gt;CYBERSECURITY RISK ASSESSMENT FOR SAFETY-CRITICAL SYSTEMS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Vessels-Cybersecurity-Risk-Assessment-For-Safety-Critical-Systems.pdf&#34;&gt;CYBERSECURITY RISK ASSESSMENT FOR SAFETY-CRITICAL SYSTEMS&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;介绍 Honeywell 的系统风险评估方法。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Nickels-MITRE-ATTACK-The-Play-At-Home-Edition.pdf&#34; target=&#34;_blank&#34;&gt;MITRE ATT&amp;amp;CK: The Play at Home Edition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Nickels-MITRE-ATTACK-The-Play-At-Home-Edition.pdf&#34;&gt;MITRE ATT&amp;amp;CK: The Play at Home Edition&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;用讲故事的方式说明了 ATT&amp;amp;CK 可以怎么用，以及为什么不能生搬硬套。除此之外还介绍了不少关于 ATT&amp;amp;CK 的相关资源（值得再看一次）。其实这方面国内外遇到的挑战和国内的安全团队非常类似。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655400241054.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655400449695.jpg&#34; alt=&#34;-w300&#34; /&gt;
-&lt;img src=&#34;media/15653591872010/15655400659203.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655400857835.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655399693002.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655400241054.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655400449695.jpg&#34; alt=&#34;-w300&#34;&gt;
+&lt;img src=&#34;media/15653591872010/15655400659203.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655400857835.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655399693002.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Sedova-Know-How-Data-Can-Shape-Security-Engagement.pdf&#34; target=&#34;_blank&#34;&gt;It&amp;rsquo;s Not What You Know, It&amp;rsquo;s What You Do: How Data Can Shape Security Engagement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Sedova-Know-How-Data-Can-Shape-Security-Engagement.pdf&#34;&gt;It&#39;s Not What You Know, It&#39;s What You Do: How Data Can Shape Security Engagement&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;安全意识教育。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655760933755.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655761205733.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655761852178.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655762281694.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655762555435.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655764170330.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655764841559.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655760933755.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655761205733.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655761852178.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655762281694.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655762555435.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655764170330.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655764841559.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Shortridge-Controlled-Chaos-The-Inevitable-Marriage-Of-DevOps-And-Security.pdf&#34; target=&#34;_blank&#34;&gt;Controlled Chaos - The Inevitable Marriage of DevOps &amp;amp; Security&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Shortridge-Controlled-Chaos-The-Inevitable-Marriage-Of-DevOps-And-Security.pdf&#34;&gt;Controlled Chaos - The Inevitable Marriage of DevOps &amp;amp; Security&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;主要是讲理念性质的东西，比如：如何应该如何驾驭与 DevOps 的关系，比如认为混乱工程和弹性才是安全的未来。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655790053963.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655795021093.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655801524951.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655801767728.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655790053963.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655795021093.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655801524951.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655801767728.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Shrivastava-DevSecOps-What-Why-And-How.pdf&#34; target=&#34;_blank&#34;&gt;DevSecOps What Why and How?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Shrivastava-DevSecOps-What-Why-And-How.pdf&#34;&gt;DevSecOps What Why and How?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;DevSecOps 应该争取 “Secure by Default”，而默认安全由三个层次来决定：a) 通过工具实现内嵌安全；b）创建安全即代码的文化；c）鼓励跨界。本质上是在工具链和流程中融入安全因素，让自动化成为组织内广泛的文化认同。这篇值得再看下。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655804489602.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655807799561.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655819512424.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655821490964.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655823066943.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;密码学和其应用&#34;&gt;密码学和其应用&lt;/h3&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655804489602.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655807799561.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655819512424.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655821490964.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655823066943.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;heading3&#34;&gt;密码学和其应用&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Aumasson-Lessons-From-Two-Years-Of-Crypto-Audits.pdf&#34; target=&#34;_blank&#34;&gt;Lessons from 3 years of crypto and blockchain security audits&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Aumasson-Lessons-From-Two-Years-Of-Crypto-Audits.pdf&#34;&gt;Lessons from 3 years of crypto and blockchain security audits&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;可以理解为密码学相关的代码审计。举例都是区块链生态里的实际案例。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Chau-A-Decade-After-Bleichenbacher-06-RSA-Signature-Forgery-Still-Works.pdf&#34; target=&#34;_blank&#34;&gt;A Decade After Bleichenbacher &amp;lsquo;06, RSA Signature Forgery Still Works&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Chau-A-Decade-After-Bleichenbacher-06-RSA-Signature-Forgery-Still-Works.pdf&#34;&gt;A Decade After Bleichenbacher &amp;lsquo;06, RSA Signature Forgery Still Works&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;又是一片硬核密码学的文章。简单来说就是 SSH、IPSec、DNSSEC 的一些实现会受 Bleichenbacher &amp;lsquo;06 发布的 RSA 伪造签名漏洞的攻击。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655107552313.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655107552313.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Robert-Messaging-Layer-Security-Towards-A-New-Era-Of-Secure-Group-Messaging.pdf&#34; target=&#34;_blank&#34;&gt;Messaging Layer Security Towards a new era of secure messaging&amp;hellip;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Robert-Messaging-Layer-Security-Towards-A-New-Era-Of-Secure-Group-Messaging.pdf&#34;&gt;Messaging Layer Security Towards a new era of secure messaging&amp;hellip;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;一个用于即时通讯场景的加密方案，工作于 TLS 之上，特别适用于有群聊的场景。已经在工业界、学术界内讨论过。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655724069362.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655725793737.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655725967011.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655725015641.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655725505946.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;杂项&#34;&gt;杂项&lt;/h3&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655724069362.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655725793737.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655725967011.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655725015641.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655725505946.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;heading4&#34;&gt;杂项&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Conti-Operational-Templates-for-State-Level-Attack-and-Collective-Defense-of-Countries.pdf&#34; target=&#34;_blank&#34;&gt;Operational Templates for State-Level Attack and Collective Defense of Countries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Conti-Operational-Templates-for-State-Level-Attack-and-Collective-Defense-of-Countries.pdf&#34;&gt;Operational Templates for State-Level Attack and Collective Defense of Countries&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;面对国家攻击的时候应该采用集体防御的方法，根据不同级别的安全威胁应该有不同级别的安全事件响应机制。各个层面都会有自己各自的脆弱性，在国家级的对抗中，攻击者不会放过任何一个可以利用的脆弱性。目前 Known/Knowing 的问题解决方法基本都有了，需要自动化来提高效率、改善体验、释放“资源”（这里的“资源“是指广义的资源，甚至包括产业界的关注度），并获得更多的资源投入到需要 “Behavioral Analytics + Hunting” 的范围内。&lt;/p&gt;
-
 &lt;p&gt;除此之外，我觉得可能还给网络安全执法提供了合法性相关的思路：&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;* 为了减少火灾，会进行相关的防火教育和检查，并有严格的合规要求
 * 如果发现你家着火，为了确保公众安全，公众的消防力量有主动进行灭火的义务和权力
 * 发生火灾给第三方造成损失的，会有民事责任、刑事责任
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654191308613.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15653687430843.jpg&#34; alt=&#34;-w300&#34; /&gt;
-&lt;img src=&#34;media/15653591872010/15653686514831.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654191308613.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15653687430843.jpg&#34; alt=&#34;-w300&#34;&gt;
+&lt;img src=&#34;media/15653591872010/15653686514831.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Hawkes-Project-Zero-Five-Years-Of-Make-0day-Hard.pdf&#34; target=&#34;_blank&#34;&gt;Google Project Zero&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Hawkes-Project-Zero-Five-Years-Of-Make-0day-Hard.pdf&#34;&gt;Google Project Zero&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Google 这篇主要是介绍了 Project Zero 的一些数据来佐证观点。干货不多感觉主要是保持曝光。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654171165908.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654171367327.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654171165908.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654171367327.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Nakajima-Women-In-Security-Building-A-Female-InfoSec-Community-In-Korea-Japan-And-Taiwan.pdf&#34; target=&#34;_blank&#34;&gt;Building a Female InfoSec Community in Korea, Japan, and Taiwan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Nakajima-Women-In-Security-Building-A-Female-InfoSec-Community-In-Korea-Japan-And-Taiwan.pdf&#34;&gt;Building a Female InfoSec Community in Korea, Japan, and Taiwan&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;如何让信息安全不再是男人统治的领域。加油！&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Farshchi-On-Trust-Stories-From-The-Front-Lines.pdf&#34; target=&#34;_blank&#34;&gt;ON TRUST - Stories from the Front Lines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Farshchi-On-Trust-Stories-From-The-Front-Lines.pdf&#34;&gt;ON TRUST - Stories from the Front Lines&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;最最最水&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Healey-Rough-and-Ready-Frameworks-To-Measure-Persistent-Engagment-and-Deterrence.pdf&#34; target=&#34;_blank&#34;&gt;Rough and Ready: Frameworks to Measure Persistent Engagement and Deterrence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Healey-Rough-and-Ready-Frameworks-To-Measure-Persistent-Engagment-and-Deterrence.pdf&#34;&gt;Rough and Ready: Frameworks to Measure Persistent Engagement and Deterrence&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;讲了一堆对持续威胁进行度量的意义、为什么要有度量，提出了一个三万英尺的框架。以及一堆未来的工作。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf&#34; target=&#34;_blank&#34;&gt;Woke Hiring Won&amp;rsquo;t Save Us: An Actionable Approach to Diversity Hiring and Retention&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf&#34;&gt;Woke Hiring Won&#39;t Save Us: An Actionable Approach to Diversity Hiring and Retention&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;主要是说女性在 IT 行业招聘和保留的问题。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf&#34; target=&#34;_blank&#34;&gt;API-Induced SSRF - How Apple Pay Scattered Vulnerabilities Across the Web&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Thursday/us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf&#34;&gt;API-Induced SSRF - How Apple Pay Scattered Vulnerabilities Across the Web&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;主要是苹果公司在 Apple Pay 上一个漏洞响应措施比较让人不满意。这个作者喷了一通，并且提出了一个有意思的观点：有缺陷的设计模式导致了有缺陷的实现，有缺陷的实现导致了有缺陷的部署。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654298293684.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654293378265.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15654293633681.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15654298293684.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654293378265.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15654293633681.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Hypponen-Responding-To-A-Cyber-Attack-With-Missiles.pdf&#34; target=&#34;_blank&#34;&gt;Responding To A Cyber Attack With Missiles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Hypponen-Responding-To-A-Cyber-Attack-With-Missiles.pdf&#34;&gt;Responding To A Cyber Attack With Missiles&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;名字很大，slides 没啥，不知道现场如何。主要是展望用导弹干掉攻击源的必要性、可能性之类的。非战时我感觉可能性不大。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Zenz-Infighting-Among-Russian-Security-Services-in-the-Cyber-Sphere.pdf&#34; target=&#34;_blank&#34;&gt;Infighting Among Russian Security Services in the Cyber Sphere&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Zenz-Infighting-Among-Russian-Security-Services-in-the-Cyber-Sphere.pdf&#34;&gt;Infighting Among Russian Security Services in the Cyber Sphere&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;内斗八卦也能上 blackhat&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Wilkin-Testing-Your-Organizations-Social-Media-Awareness.pdf&#34; target=&#34;_blank&#34;&gt;Testing Your Organization&amp;rsquo;s Social Media Awareness&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Wilkin-Testing-Your-Organizations-Social-Media-Awareness.pdf&#34;&gt;Testing Your Organization&#39;s Social Media Awareness&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;貌似是利用社交网站钓鱼。但真心没什么实际内容。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Smith-Cyber-Insurance-101-For-CISOs.pdf&#34; target=&#34;_blank&#34;&gt;Cyber Insurance 101 For CISOs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Smith-Cyber-Insurance-101-For-CISOs.pdf&#34;&gt;Cyber Insurance 101 For CISOs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;卖保险的来啦， CISO 们。不过从议题名字就可以看出来，普及性的内容。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655874512560.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655874792368.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655875167327.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655874512560.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655874792368.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655875167327.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Westelius-Attack-Surface-As-A-Service.pdf&#34; target=&#34;_blank&#34;&gt;Attack Surface As Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Westelius-Attack-Surface-As-A-Service.pdf&#34;&gt;Attack Surface As Service&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;就是说以前的安全产品都比较不好，而改进型的方案给用户增加了不少使用上、体验上的负担。与其花很多精力去检测用户行为是不是正常，还不如告诉用户什么行为是好的。说实话，这 PPT 为了搞艺术，意思都看不清楚了 ……&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Ochoa-Sensor-And-Process-Fingerprinting-In-ICS.pdf&#34; target=&#34;_blank&#34;&gt;Sensor and Process Fingerprinting in Industrial Control Systems&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Ochoa-Sensor-And-Process-Fingerprinting-In-ICS.pdf&#34;&gt;Sensor and Process Fingerprinting in Industrial Control Systems&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;用 ICS 的传感器的噪音来给传感器生成指纹。&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Prevost-How-Insurers-View-The-World.pdf&#34; target=&#34;_blank&#34;&gt;How Do Cyber Insurers View the World&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Prevost-How-Insurers-View-The-World.pdf&#34;&gt;How Do Cyber Insurers View the World&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;卖保险的来了 ……&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Shwartz-Selling-0-Days-To-Governments-And-Offensive-Security-Companies.pdf&#34; target=&#34;_blank&#34;&gt;Selling 0-days to governments and offensive security companies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Shwartz-Selling-0-Days-To-Governments-And-Offensive-Security-Companies.pdf&#34;&gt;Selling 0-days to governments and offensive security companies&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;军火商来介绍经验了。想做军火生意的可以看。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655835760942.jpg&#34; alt=&#34;-w300&#34; /&gt;
-&lt;img src=&#34;media/15653591872010/15655835984799.jpg&#34; alt=&#34;-w300&#34; /&gt;
-&lt;img src=&#34;media/15653591872010/15655836199189.jpg&#34; alt=&#34;-w300&#34; /&gt;
-&lt;img src=&#34;media/15653591872010/15655835582124.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655836502294.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655836668468.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655838065619.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15653591872010/15655838703837.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15653591872010/15655835760942.jpg&#34; alt=&#34;-w300&#34;&gt;
+&lt;img src=&#34;media/15653591872010/15655835984799.jpg&#34; alt=&#34;-w300&#34;&gt;
+&lt;img src=&#34;media/15653591872010/15655836199189.jpg&#34; alt=&#34;-w300&#34;&gt;
+&lt;img src=&#34;media/15653591872010/15655835582124.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655836502294.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655836668468.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655838065619.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15653591872010/15655838703837.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Sardar-Paging-All-Windows-Geeks-Finding-Evil-In-Windows-10-Compressed-Memory.pdf&#34; target=&#34;_blank&#34;&gt;Extracting Compressed Pages from the Windows 10 Virtual Store&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://i.blackhat.com/USA-19/Wednesday/us-19-Sardar-Paging-All-Windows-Geeks-Finding-Evil-In-Windows-10-Compressed-Memory.pdf&#34;&gt;Extracting Compressed Pages from the Windows 10 Virtual Store&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;如何访问 Windows 10 的压缩内存，并且进行自动化分析（包括和 rekall 和 Volatility 的集成）。FireEye 出品。&lt;/p&gt;
-
-&lt;h2 id=&#34;相关资源的下载&#34;&gt;相关资源的下载&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading5&#34;&gt;相关资源的下载&lt;/h2&gt;
 &lt;p&gt;一句话下载 BlackHat US19 资料（需要 jq ）&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
-curl &amp;quot;https://www.blackhat.com/us-19/briefings/schedule/sessions.json&amp;quot; | jq &amp;quot;.sessions[].bh_files[].url&amp;quot; -r | sort | grep -v github | xargs -n1 -I {} wget -c &amp;quot;{}&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://www.blackhat.com/us-19/briefings/schedule/sessions.json&amp;#34;&lt;/span&gt; | jq &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.sessions[].bh_files[].url&amp;#34;&lt;/span&gt; -r | sort | grep -v github | xargs -n1 -I &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt; wget -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;{}&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -823,18 +530,13 @@ curl &amp;quot;https://www.blackhat.com/us-19/briefings/schedule/sessions.json&a
       <link>https://sbilly.github.io/post/howto-setup-kubernetes-cluster-on-armbian-linux-based-on-phicomm-n1-arm64-sbc/</link>
       <pubDate>Tue, 06 Aug 2019 17:36:13 +0800</pubDate>
       <guid>https://sbilly.github.io/post/howto-setup-kubernetes-cluster-on-armbian-linux-based-on-phicomm-n1-arm64-sbc/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650825237899.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650825237899.jpg&#34; alt=&#34;-w800&#34;&gt;&lt;/p&gt;
 &lt;p&gt;树莓派发布了新的主机以后，想买一个来吃灰。搜索了一下，发现斐讯矿难的 phicomm n1 非常便宜（低于人民币 100 元），配置也比树莓派好。同时已经有玩家把 armbian 移植的方法研究出来了，可以跑完整的 arm64 架构的 Ubuntu 系统。性能强、耗电低、无风扇、可以集中供电、这些都非常适合用来建 k8s 集群。于是我就用 695 元搞定了一个 5 节点的 arm64 k8s 集群。&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;可以为 8 台设备提供 12v 电源的集中式变压器 - 48 元&lt;/li&gt;
 &lt;li&gt;H3C 8 口全千兆交换机 - 130 元&lt;/li&gt;
 &lt;li&gt;x10 网线 - 22 元&lt;/li&gt;
 &lt;li&gt;x5 Phicomm N1 - 495 元
-
 &lt;ul&gt;
 &lt;li&gt;Amlogic S905D 四核 1.5G 的 Cortex-A53 处理器（带 Mali-450 GPU）&lt;/li&gt;
 &lt;li&gt;板载 2GB 的 DDR3 内存&lt;/li&gt;
@@ -844,128 +546,106 @@ curl &amp;quot;https://www.blackhat.com/us-19/briefings/schedule/sessions.json&a
 &lt;li&gt;1x 双频 802.11ac WiFi&lt;/li&gt;
 &lt;li&gt;1x 蓝牙 4.1（和树莓派 3B+ 一样，使用 CYW43455 模块）&lt;/li&gt;
 &lt;li&gt;2x USB 2.0&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&#34;要点&#34;&gt;要点&lt;/h2&gt;
-
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;heading&#34;&gt;要点&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;部署 master 节点
-
 &lt;ul&gt;
 &lt;li&gt;docker-ce、kubeadm、kubelet、kubectl 版本
-
 &lt;ul&gt;
 &lt;li&gt;20190805 的 armbian 上使用这样的版本是确定可用的：&lt;code&gt;apt-get install -yq kubeadm=1.14.4-00 kubelet=1.14.4-00 kubectl=1.14.4-00 docker-ce=18.06.2~ce~3-0~ubuntu&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;如果想尝鲜，都使用最新版本也可尝试&lt;/li&gt;
 &lt;li&gt;查询可用版本可以使用 &lt;code&gt;apt-cache madison docker-ce&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;ubuntu 系统需要使用 systemd
-
 &lt;ul&gt;
 &lt;li&gt;kubelet 需要编辑 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; ，增加 &lt;code&gt;KUBELET_EXTRA_ARGS=--cgroup-driver=systemd --fail-swap-on=false&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;phicomm N1 的 armbian 系统使用了 zram，需要增加参数是的 swapon 的时候 k8s 相关服务和 docker 都能正常启动
-
 &lt;ul&gt;
 &lt;li&gt;kebelet 需要编辑 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; ， 增加 &lt;code&gt;KUBELET_EXTRA_ARGS=--fail-swap-on=false&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;需要使用 arm64 架构的 docker 镜像&lt;/strong&gt;，必须翻墙或使用镜像拉取
-
 &lt;ul&gt;
 &lt;li&gt;使用 &lt;code&gt;mirrorgooglecontainers&lt;/code&gt; 或者提前拉取正确的镜像&lt;/li&gt;
 &lt;li&gt;使用 &lt;code&gt;kubeadm config images list&lt;/code&gt; 可以看需要的 docker 镜像&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;安装 flannel 的 CNI 插件&lt;/li&gt;
 &lt;li&gt;安装 dashboard&lt;/li&gt;
 &lt;li&gt;安装 helm
-
 &lt;ul&gt;
-&lt;li&gt;需要使用 arm64 的镜像 &lt;a href=&#34;https://hub.docker.com/r/jessestuart/tiller&#34; target=&#34;_blank&#34;&gt;jessestuart/tiller:latest-arm64&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;需要使用 arm64 的镜像 &lt;a href=&#34;https://hub.docker.com/r/jessestuart/tiller&#34;&gt;jessestuart/tiller:latest-arm64&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;部署节点
-
 &lt;ul&gt;
 &lt;li&gt;需要修改 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; 和 &lt;code&gt;/etc/docker/daemon.json&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;需要把需要翻墙才能下载的镜像手动部署上去&lt;/li&gt;
 &lt;li&gt;需要 token&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;h2 id=&#34;详细安装步骤&#34;&gt;详细安装步骤&lt;/h2&gt;
-
-&lt;h3 id=&#34;准备环境&#34;&gt;准备环境&lt;/h3&gt;
-
+&lt;h2 id=&#34;heading1&#34;&gt;详细安装步骤&lt;/h2&gt;
+&lt;h3 id=&#34;heading2&#34;&gt;准备环境&lt;/h3&gt;
 &lt;p&gt;安装好 armbian 系统，并编辑 &lt;code&gt;/etc/hosts&lt;/code&gt; 增加节点的主机名（非必须）。最好是在本机的 IP 地址前都加上 localhost&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;192.168.31.81 localhost phicomm-n1-peer01
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;192.168.31.81 localhost phicomm-n1-peer01
 192.168.31.82 phicomm-n1-peer02
 192.168.31.83 phicomm-n1-peer03
 192.168.31.84 phicomm-n1-peer04
 192.168.31.85 phicomm-n1-peer05
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;安装和配置-docker-ce-kubeadm-kubectl-kubelet&#34;&gt;安装和配置 docker-ce kubeadm kubectl kubelet&lt;/h3&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-dockerce-kubeadm-kubectl-kubelet&#34;&gt;安装和配置 docker-ce kubeadm kubectl kubelet&lt;/h3&gt;
 &lt;p&gt;创建 &lt;code&gt;/etc/docker/daemon.json&lt;/code&gt; &lt;strong&gt;使 docker 的 cgroupdriver 为 systemd&lt;/strong&gt; （&lt;strong&gt;如果 docker 已经启动，需要重新启动 docker&lt;/strong&gt;）&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p /etc/docker
-cat &amp;gt; /etc/docker/daemon.json &amp;lt;&amp;lt;EOF
-{
-  &amp;quot;exec-opts&amp;quot;: [&amp;quot;native.cgroupdriver=systemd&amp;quot;],
-  &amp;quot;log-driver&amp;quot;: &amp;quot;json-file&amp;quot;,
-  &amp;quot;log-opts&amp;quot;: {
-    &amp;quot;max-size&amp;quot;: &amp;quot;100m&amp;quot;
-  },
-  &amp;quot;storage-driver&amp;quot;: &amp;quot;overlay2&amp;quot;
-}
-EOF
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mkdir -p /etc/docker
+cat &amp;gt; /etc/docker/daemon.json &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;&amp;lt;EOF
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  &amp;#34;exec-opts&amp;#34;: [&amp;#34;native.cgroupdriver=systemd&amp;#34;],
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  &amp;#34;log-driver&amp;#34;: &amp;#34;json-file&amp;#34;,
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  &amp;#34;log-opts&amp;#34;: {
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;max-size&amp;#34;: &amp;#34;100m&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  },
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  &amp;#34;storage-driver&amp;#34;: &amp;#34;overlay2&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;EOF&lt;/span&gt;
 
 sudo systemctl daemon-reload
 sudo systemctl restart docker
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;创建 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; &lt;strong&gt;让 kubelet 也使用 systemd 作为 cgroup-driver，并启用 &lt;code&gt;--fail-swap-on&lt;/code&gt; 强制在 swap 激活时 kubelet 能正常启动&lt;/strong&gt;。正常 k8s 是不建议使用 swap 的，启动时检查到 swap 处于激活状态时会终止启动。但因为 armbian 使用 zram ，不建议关闭 zram ，因此需要增加额外的启动参数。（&lt;strong&gt;如果 kubelet 已经启动，需要重新启动 kubelet&lt;/strong&gt;）&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cat &amp;gt; /etc/default/kubelet &amp;lt;&amp;lt;EOF
-KUBELET_EXTRA_ARGS=--cgroup-driver=systemd --fail-swap-on=false
-EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;创建 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; &lt;strong&gt;让 kubelet 也使用 systemd 作为 cgroup-driver，并启用 &lt;code&gt;--fail-swap-on&lt;/code&gt; 强制在 swap 激活时 kubelet 能正常启动&lt;/strong&gt;。正常 k8s 是不建议使用 swap 的，启动时检查到 swap 处于激活状态时会终止启动。但因为 armbian 使用 zram ，不建议关闭 zram ，因此需要增加额外的启动参数。（&lt;strong&gt;如果 kubelet 已经启动，需要重新启动 kubelet&lt;/strong&gt;）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cat &amp;gt; /etc/default/kubelet &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;&amp;lt;EOF
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;KUBELET_EXTRA_ARGS=--cgroup-driver=systemd --fail-swap-on=false
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;EOF&lt;/span&gt;
 
 sudo systemctl daemon-reload
 sudo systemctl restart kubelet
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;安装 docker-ce kubeadm kubectl kubelet&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt update -y; apt upgrade -y; apt autoremove -y; apt clean -y
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装 docker-ce kubeadm kubectl kubelet&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apt update -y; apt upgrade -y; apt autoremove -y; apt clean -y
 apt install -yq docker-ce kubeadm kubelet kubectl
 
-# 也可以先查看有哪些可用版本，再安装指定版本
-# apt-cache madison docker-ce kubeadm kubelet kubectl
-# apt install -yq kubeadm=1.14.4-00 kubelet=1.14.4-00 kubectl=1.14.4-00 docker-ce=18.06.2~ce~3-0~ubuntu
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;获取-docker-镜像&#34;&gt;获取 docker 镜像&lt;/h3&gt;
-
-&lt;p&gt;因为 k8s 缺省使用的 &lt;code&gt;*.gcr.io&lt;/code&gt; &lt;a href=&#34;https://console.cloud.google.com/gcr/images/google-containers/GLOBAL&#34; target=&#34;_blank&#34;&gt;官方镜像&lt;/a&gt;都被墙，因此需要翻墙。另外，Phicomm N1 是 arm64 架构，因此在获取 docker 镜像时必须使用 arm64 架构的。到 2019 年 8 月 6 日为止， aliyun 提供的 &lt;code&gt;registry.aliyuncs.com&lt;/code&gt; 的 &lt;a href=&#34;https://cr.console.aliyun.com/cn-beijing/instances/images&#34; target=&#34;_blank&#34;&gt;google_container&lt;/a&gt; 镜像缺省只提供了 x64/x86 架构的镜像，&lt;strong&gt;只有 &lt;a href=&#34;https://hub.docker.com/u/mirrorgooglecontainers/&#34; target=&#34;_blank&#34;&gt;mirrorgooglecontainers&lt;/a&gt; 提供的镜像才包含了各种架构最新版本&lt;/strong&gt;。&lt;strong&gt;建议用下面的方法手动获取 k8s 所需 arm64 相关镜像&lt;/strong&gt;。首先，查看当前 k8s 使用的最新 docker 镜像列表&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kubeadm config images list
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后，从 mirrorgooglecontainers 和 coredns 下载 docker 镜像，并重新打上 &lt;code&gt;k8s.gcr.io&lt;/code&gt; 的相关 tag，并删除老的 tag&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下载镜像
+&lt;span style=&#34;color:#75715e&#34;&gt;# 也可以先查看有哪些可用版本，再安装指定版本&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# apt-cache madison docker-ce kubeadm kubelet kubectl&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# apt install -yq kubeadm=1.14.4-00 kubelet=1.14.4-00 kubectl=1.14.4-00 docker-ce=18.06.2~ce~3-0~ubuntu&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-docker-&#34;&gt;获取 docker 镜像&lt;/h3&gt;
+&lt;p&gt;因为 k8s 缺省使用的 &lt;code&gt;*.gcr.io&lt;/code&gt; &lt;a href=&#34;https://console.cloud.google.com/gcr/images/google-containers/GLOBAL&#34;&gt;官方镜像&lt;/a&gt;都被墙，因此需要翻墙。另外，Phicomm N1 是 arm64 架构，因此在获取 docker 镜像时必须使用 arm64 架构的。到 2019 年 8 月 6 日为止， aliyun 提供的 &lt;code&gt;registry.aliyuncs.com&lt;/code&gt; 的 &lt;a href=&#34;https://cr.console.aliyun.com/cn-beijing/instances/images&#34;&gt;google_container&lt;/a&gt; 镜像缺省只提供了 x64/x86 架构的镜像，&lt;strong&gt;只有 &lt;a href=&#34;https://hub.docker.com/u/mirrorgooglecontainers/&#34;&gt;mirrorgooglecontainers&lt;/a&gt; 提供的镜像才包含了各种架构最新版本&lt;/strong&gt;。&lt;strong&gt;建议用下面的方法手动获取 k8s 所需 arm64 相关镜像&lt;/strong&gt;。首先，查看当前 k8s 使用的最新 docker 镜像列表&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubeadm config images list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后，从 mirrorgooglecontainers 和 coredns 下载 docker 镜像，并重新打上 &lt;code&gt;k8s.gcr.io&lt;/code&gt; 的相关 tag，并删除老的 tag&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 下载镜像&lt;/span&gt;
 docker pull mirrorgooglecontainers/kube-apiserver-arm64:v1.15.2
 docker pull mirrorgooglecontainers/kube-controller-manager-arm64:v1.15.2
 docker pull mirrorgooglecontainers/kube-scheduler-arm64:v1.15.2
 docker pull mirrorgooglecontainers/kube-proxy-arm64:v1.15.2
 docker pull mirrorgooglecontainers/pause-arm64:3.1
 docker pull mirrorgooglecontainers/etcd-arm64:3.3.10
-## coredns 需要从 coredns 官方下载
+&lt;span style=&#34;color:#75715e&#34;&gt;## coredns 需要从 coredns 官方下载&lt;/span&gt;
 docker pull coredns/coredns:coredns-arm64
 
-# 打上 k8s.gcr.io 的 tag
+&lt;span style=&#34;color:#75715e&#34;&gt;# 打上 k8s.gcr.io 的 tag&lt;/span&gt;
 docker tag mirrorgooglecontainers/kube-apiserver-arm64:v1.15.2 k8s.gcr.io/kube-apiserver:v1.15.2
 docker tag mirrorgooglecontainers/kube-controller-manager-arm64:v1.15.2 k8s.gcr.io/kube-controller-manager:v1.15.2
 docker tag mirrorgooglecontainers/kube-scheduler-arm64:v1.15.2 k8s.gcr.io/kube-scheduler:v1.15.2
@@ -974,7 +654,7 @@ docker tag mirrorgooglecontainers/pause-arm64:3.1 k8s.gcr.io/pause:3.1
 docker tag mirrorgooglecontainers/etcd-arm64:3.3.10 k8s.gcr.io/etcd:3.3.10
 docker tag coredns/coredns:coredns-arm64 k8s.gcr.io/coredns:1.3.1
 
-# 删除 mirrorgooglecontainers 的相关 tag
+&lt;span style=&#34;color:#75715e&#34;&gt;# 删除 mirrorgooglecontainers 的相关 tag&lt;/span&gt;
 docker rmi mirrorgooglecontainers/kube-apiserver-arm64:v1.15.2
 docker rmi mirrorgooglecontainers/kube-controller-manager-arm64:v1.15.2
 docker rmi mirrorgooglecontainers/kube-scheduler-arm64:v1.15.2
@@ -982,18 +662,11 @@ docker rmi mirrorgooglecontainers/kube-proxy-arm64:v1.15.2
 docker rmi mirrorgooglecontainers/pause-arm64:3.1
 docker rmi mirrorgooglecontainers/etcd-arm64:3.3.10
 docker rmi coredns/coredns:coredns-arm64
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;初始化-k8s-集群&#34;&gt;初始化 k8s 集群&lt;/h3&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-k8s-&#34;&gt;初始化 k8s 集群&lt;/h3&gt;
 &lt;p&gt;使用 kubeadm 初始化 k8s 集群节点。因为使用了 zram ， 因此需要加上 &lt;code&gt;--ignore-preflight-errors Swap&lt;/code&gt; 的命令行选项。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kubeadm init --ignore-preflight-errors Swap 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;正常可以看到安装成功的提示信息&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;Your Kubernetes control-plane has initialized successfully!
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubeadm init --ignore-preflight-errors Swap 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;正常可以看到安装成功的提示信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Your Kubernetes control-plane has initialized successfully!
 
 To start using your cluster, you need to run the following as a regular user:
 
@@ -1002,121 +675,93 @@ To start using your cluster, you need to run the following as a regular user:
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 You should now deploy a pod network to the cluster.
-Run &amp;quot;kubectl apply -f [podnetwork].yaml&amp;quot; with one of the options listed at:
+Run &amp;#34;kubectl apply -f [podnetwork].yaml&amp;#34; with one of the options listed at:
   https://kubernetes.io/docs/concepts/cluster-administration/addons/
 
 Then you can join any number of worker nodes by running the following on each as root:
 
 kubeadm join 192.168.31.81:6443 --token b5it71.ju23p2j3n2qcnty2 \
     --discovery-token-ca-cert-hash sha256:21539e6ae6e9a8c9cddbb9fc7da5750b780dde203aebb1346298f9c4892bac1f
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;执行相关命令可以正常看到集群信息&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 查看集群信息
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行相关命令可以正常看到集群信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 查看集群信息&lt;/span&gt;
 $ kubectl cluster-info
 Kubernetes master is running at https://192.168.31.81:6443
 KubeDNS is running at https://192.168.31.81:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
-# 查看集群节点信息
+&lt;span style=&#34;color:#75715e&#34;&gt;# 查看集群节点信息&lt;/span&gt;
 $ kubectl get nodes
 NAME                STATUS     ROLES    AGE     VERSION
 phicomm-n1-peer01   NotReady   master   3m50s   v1.15.2
 
-# 查看现有 Pod
+&lt;span style=&#34;color:#75715e&#34;&gt;# 查看现有 Pod&lt;/span&gt;
 $ kubectl get pods --all-namespaces
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;安装-flannel&#34;&gt;安装 flannel&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下载最新的 arm64 架构 flannel 插件
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-flannel&#34;&gt;安装 flannel&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 下载最新的 arm64 架构 flannel 插件&lt;/span&gt;
 wget https://github.com/containernetworking/plugins/releases/download/v0.8.1/cni-plugins-linux-arm64-v0.8.1.tgz
 
-# 解压缩 flannel 文件
-sudo mkdir -p /opt/cni/bin &amp;amp;&amp;amp; cd /opt/cni/bin
+&lt;span style=&#34;color:#75715e&#34;&gt;# 解压缩 flannel 文件&lt;/span&gt;
+sudo mkdir -p /opt/cni/bin &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; cd /opt/cni/bin
 sudo tar vfxz cni-plugins-linux-arm64-v0.8.1.tgz -C /opt/cni/bin
 
-# 到 https://quay.io/repository/coreos/flannel 查看最新的 flannel 版本并下载
+&lt;span style=&#34;color:#75715e&#34;&gt;# 到 https://quay.io/repository/coreos/flannel 查看最新的 flannel 版本并下载&lt;/span&gt;
 docker pull quay.io/coreos/flannel:v0.11.0-arm64
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;为了使 flannel 正常工作，需要修改 &lt;code&gt;/etc/kubernetes/manifests/kube-controller-manager.yaml&lt;/code&gt; 文件 —— 在 &lt;code&gt;spec.containers.command&lt;/code&gt; 中增加 &lt;code&gt;kube-controller-manager&lt;/code&gt; 命令的 &lt;code&gt;--allocate-node-cidrs=true&lt;/code&gt; 和 &lt;code&gt;--cluster-cidr=10.244.0.0/16&lt;/code&gt; 参数（需要根据按照实际情况配置 CIDR 值）。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;spec:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;为了使 flannel 正常工作，需要修改 &lt;code&gt;/etc/kubernetes/manifests/kube-controller-manager.yaml&lt;/code&gt; 文件 —— 在 &lt;code&gt;spec.containers.command&lt;/code&gt; 中增加 &lt;code&gt;kube-controller-manager&lt;/code&gt; 命令的 &lt;code&gt;--allocate-node-cidrs=true&lt;/code&gt; 和 &lt;code&gt;--cluster-cidr=10.244.0.0/16&lt;/code&gt; 参数（需要根据按照实际情况配置 CIDR 值）。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;spec:
   containers:
   - command:
     - kube-controller-manager
     - --authentication-kubeconfig=/etc/kubernetes/controller-manager.conf
     - --authorization-kubeconfig=/etc/kubernetes/controller-manager.conf
-    - --bind-address=127.0.0.1
+    - --bind-address=&lt;span style=&#34;color:#ae81ff&#34;&gt;127.0&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;.0&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;.1&lt;/span&gt;
     - --client-ca-file=/etc/kubernetes/pki/ca.crt
     - --cluster-signing-cert-file=/etc/kubernetes/pki/ca.crt
     - --cluster-signing-key-file=/etc/kubernetes/pki/ca.key
-    - --controllers=*,bootstrapsigner,tokencleaner
+    - --controllers=&lt;span style=&#34;color:#75715e&#34;&gt;*,bootstrapsigner,tokencleaner&lt;/span&gt;
     - --kubeconfig=/etc/kubernetes/controller-manager.conf
-    - --leader-elect=true
+    - --leader-elect=&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
     - --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt
     - --root-ca-file=/etc/kubernetes/pki/ca.crt
     - --service-account-private-key-file=/etc/kubernetes/pki/sa.key
-    - --use-service-account-credentials=true
-    - --allocate-node-cidrs=true
-    - --cluster-cidr=10.244.0.0/16
-    image: k8s.gcr.io/kube-controller-manager:v1.15.2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;修改完成后，重新启动 docker 和 k8s&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 下载并安装 flannel
+    - --use-service-account-credentials=&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+    - --allocate-node-cidrs=&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+    - --cluster-cidr=&lt;span style=&#34;color:#ae81ff&#34;&gt;10.244&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;.0&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;.0&lt;/span&gt;/&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;
+    image: k8s.gcr.io/kube-controller-manager:v1&lt;span style=&#34;color:#ae81ff&#34;&gt;.15&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;.2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改完成后，重新启动 docker 和 k8s&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 下载并安装 flannel&lt;/span&gt;
 $ curl -Lo kube-flannel.yml https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 $ kubectl apply -f  kube-flannel.yml
 
-# 安装完毕后可以看到 flannel.1 网络接口
+&lt;span style=&#34;color:#75715e&#34;&gt;# 安装完毕后可以看到 flannel.1 网络接口&lt;/span&gt;
 $ ifconfig flannel.1
 
-# 可以看到所有 pods 已经启动
+&lt;span style=&#34;color:#75715e&#34;&gt;# 可以看到所有 pods 已经启动&lt;/span&gt;
 $ kubectl get pods --all-namespaces -o wide
 
 NAMESPACE     NAME                                        READY   STATUS    RESTARTS   AGE     IP              NODE                NOMINATED NODE   READINESS GATES
-kube-system   coredns-5c98db65d4-dps4b                    1/1     Running   1          7h40m   10.244.0.5      phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   coredns-5c98db65d4-gls5c                    1/1     Running   1          7h40m   10.244.0.4      phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   etcd-phicomm-n1-peer01                      1/1     Running   4          7h39m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   kube-apiserver-phicomm-n1-peer01            1/1     Running   4          7h39m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   kube-controller-manager-phicomm-n1-peer01   1/1     Running   1          6h29m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   kube-flannel-ds-arm64-8nm2s                 1/1     Running   6          6h43m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   kube-proxy-8tbqb                            1/1     Running   4          7h40m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-kube-system   kube-scheduler-phicomm-n1-peer01            1/1     Running   4          7h39m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;增加集群节点&#34;&gt;增加集群节点&lt;/h3&gt;
-
+kube-system   coredns-5c98db65d4-dps4b                    1/1     Running   &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;          7h40m   10.244.0.5      phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   coredns-5c98db65d4-gls5c                    1/1     Running   &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;          7h40m   10.244.0.4      phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   etcd-phicomm-n1-peer01                      1/1     Running   &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;          7h39m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   kube-apiserver-phicomm-n1-peer01            1/1     Running   &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;          7h39m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   kube-controller-manager-phicomm-n1-peer01   1/1     Running   &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;          6h29m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   kube-flannel-ds-arm64-8nm2s                 1/1     Running   &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;          6h43m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   kube-proxy-8tbqb                            1/1     Running   &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;          7h40m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+kube-system   kube-scheduler-phicomm-n1-peer01            1/1     Running   &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;          7h39m   192.168.31.81   phicomm-n1-peer01   &amp;lt;none&amp;gt;           &amp;lt;none&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading3&#34;&gt;增加集群节点&lt;/h3&gt;
 &lt;p&gt;在新的子节点按照上述步骤安装 docker-ce kubeadm kubectl kubelet ， 创建 &lt;code&gt;/etc/default/kubelet&lt;/code&gt; 和 &lt;code&gt;/etc/docker/daemon.json&lt;/code&gt; 文件（需要重新启动），拉取 docker 镜像（别忘了 flannel 的镜像），并加入集群（如果忘记了加入集群所需的 token ，可以在 master 节点上使用 &lt;code&gt;kubeadm token generate&lt;/code&gt; 重新生成）。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 加入节点
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 加入节点&lt;/span&gt;
 kubeadm join 192.168.31.81:6443 --token b5it71.ju23p2j3n2qcnty2 --discovery-token-ca-cert-hash sha256:21539e6ae6e9a8c9cddbb9fc7da5750b780dde203aebb1346298f9c4892bac1f --ignore-preflight-errors Swap
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果一切正常，在 master 节点上执行 &lt;code&gt;kubectl get nodes&lt;/code&gt; 可以看到所有节点； &lt;code&gt;kubectl get pods --all-namespaces&lt;/code&gt; 可以看到当前所有的 pods ；访问 dashboard 可以看到&lt;a href=&#34;https://192.168.31.81:31111/#!/node?namespace=_all&#34; target=&#34;_blank&#34;&gt;当前所有的节点&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650756918552.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;安装-k8s-的-dashboard&#34;&gt;安装 k8s 的 dashboard&lt;/h3&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果一切正常，在 master 节点上执行 &lt;code&gt;kubectl get nodes&lt;/code&gt; 可以看到所有节点； &lt;code&gt;kubectl get pods --all-namespaces&lt;/code&gt; 可以看到当前所有的 pods ；访问 dashboard 可以看到&lt;a href=&#34;https://192.168.31.81:31111/#!/node?namespace=_all&#34;&gt;当前所有的节点&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650756918552.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;-k8s--dashboard&#34;&gt;安装 k8s 的 dashboard&lt;/h3&gt;
 &lt;p&gt;当前（2019 年 8 月 6 日） k8s 的 dashboard 正在开发新的 2.0 版本，但没有正式发布。因此需要从最新的 tag 上获取相关文件。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard-arm.yaml
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;wget https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard-arm.yaml
 mv kubernetes-dashboard-arm.yaml kubernetes-dashboard-arm64.yaml
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;修改 &lt;code&gt;kubernetes-dashboard-arm64.yaml&lt;/code&gt; 把 &lt;code&gt;spec.template.spec.containers.image&lt;/code&gt; 修改为 &lt;code&gt;k8s.gcr.io/kubernetes-dashboard-arm64:v1.10.1&lt;/code&gt; ， 在&lt;strong&gt;所有节点&lt;/strong&gt;上都拉取镜像。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker pull mirrorgooglecontainers/kubernetes-dashboard-arm64:v1.10.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改 &lt;code&gt;kubernetes-dashboard-arm64.yaml&lt;/code&gt; 把 &lt;code&gt;spec.template.spec.containers.image&lt;/code&gt; 修改为 &lt;code&gt;k8s.gcr.io/kubernetes-dashboard-arm64:v1.10.1&lt;/code&gt; ， 在&lt;strong&gt;所有节点&lt;/strong&gt;上都拉取镜像。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker pull mirrorgooglecontainers/kubernetes-dashboard-arm64:v1.10.1
 docker tag mirrorgooglecontainers/kubernetes-dashboard-arm64:v1.10.1 k8s.gcr.io/kubernetes-dashboard-arm64:v1.10.1
 docker rmi mirrorgooglecontainers/kubernetes-dashboard-arm64:v1.10.1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;修改 &lt;code&gt;kubernetes-dashboard-arm64.yaml&lt;/code&gt; 文件，在 &lt;code&gt;spec.ports&lt;/code&gt; 中增加 &lt;code&gt;nodePort: 31111&lt;/code&gt; 和 &lt;code&gt;type: NodePort&lt;/code&gt; 配置。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;kind: Service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改 &lt;code&gt;kubernetes-dashboard-arm64.yaml&lt;/code&gt; 文件，在 &lt;code&gt;spec.ports&lt;/code&gt; 中增加 &lt;code&gt;nodePort: 31111&lt;/code&gt; 和 &lt;code&gt;type: NodePort&lt;/code&gt; 配置。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;kind: Service
 apiVersion: v1
 metadata:
   labels:
@@ -1125,35 +770,26 @@ metadata:
   namespace: kube-system
 spec:
   ports:
-    - port: 443
-      targetPort: 8443
-      nodePort: 31111
+    - port: &lt;span style=&#34;color:#ae81ff&#34;&gt;443&lt;/span&gt;
+      targetPort: &lt;span style=&#34;color:#ae81ff&#34;&gt;8443&lt;/span&gt;
+      nodePort: &lt;span style=&#34;color:#ae81ff&#34;&gt;31111&lt;/span&gt;
   selector:
     k8s-app: kubernetes-dashboard
   type: NodePort
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;安装并启动 dashboard&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kubectl apply -f kubernetes-dashboard-arm64.yaml
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;此时可以访问 master 节点的 31111 端口即可访问 dashboard&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650653330388.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;创建-dashboard-用户&#34;&gt;创建 dashboard 用户&lt;/h3&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装并启动 dashboard&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;kubectl apply -f kubernetes-dashboard-arm64.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此时可以访问 master 节点的 31111 端口即可访问 dashboard&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650653330388.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;-dashboard-&#34;&gt;创建 dashboard 用户&lt;/h3&gt;
 &lt;p&gt;新建文件 &lt;code&gt;dashboard-account.yaml&lt;/code&gt; ，并通过命令行 &lt;code&gt;kubectl create -f dashboard-account.yaml&lt;/code&gt; 使之生效。成功生效后，可以通过 &lt;code&gt;kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk &#39;{print $1}&#39;)&lt;/code&gt; 查看 token 信息。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Create Service Account
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Create Service Account&lt;/span&gt;
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: admin-user
   namespace: kube-system
 ---
-# Create ClusterRoleBinding
+&lt;span style=&#34;color:#75715e&#34;&gt;# Create ClusterRoleBinding&lt;/span&gt;
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRoleBinding
 metadata:
@@ -1166,27 +802,17 @@ subjects:
 - kind: ServiceAccount
   name: admin-user
   namespace: kube-system
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在 &lt;a href=&#34;https://192.168.31.81:31111/&#34; target=&#34;_blank&#34;&gt;https://192.168.31.81:31111/&lt;/a&gt; 登录界面选择“令牌”，并输入 token ，则可以访问 dashboard 管理集群。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650661463575.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;安装-helm&#34;&gt;安装 helm&lt;/h3&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 https://192.168.31.81:31111/ 登录界面选择“令牌”，并输入 token ，则可以访问 dashboard 管理集群。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15649931049936/15650661463575.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;-helm&#34;&gt;安装 helm&lt;/h3&gt;
 &lt;p&gt;下载 arm64 版本的 helm &lt;code&gt;https://get.helm.sh/helm-v2.14.3-linux-arm64.tar.gz&lt;/code&gt; 并解压安装。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://get.helm.sh/helm-v2.14.3-linux-arm64.tar.gz
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;wget https://get.helm.sh/helm-v2.14.3-linux-arm64.tar.gz
 tar vfxz helm-v2.14.3-linux-arm64.tar.gz
 mv linux-arm64/helm /usr/local/bin/helm
 mv linux-arm64/tiller /usr/local/bin/tiller
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;使用 &lt;code&gt;helm init&lt;/code&gt; 初始化（需要翻墙）。因为官方提供的不是 arm64 平台的，需要在 hub.docker.com 上查找替代。通过 docker search tiller 发现 &lt;a href=&#34;https://hub.docker.com/r/jessestuart/tiller&#34; target=&#34;_blank&#34;&gt;jessestuart/tiller&lt;/a&gt; 是镜像自动更新的多平台镜像。使用 &lt;code&gt;kubectl edit deployment tiller-deploy -n kube-system&lt;/code&gt; 修改 &lt;code&gt;spec.template.spec.image&lt;/code&gt; 为 &lt;code&gt;jessestuart/tiller:latest-arm64&lt;/code&gt; 。&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用 &lt;code&gt;helm init&lt;/code&gt; 初始化（需要翻墙）。因为官方提供的不是 arm64 平台的，需要在 hub.docker.com 上查找替代。通过 docker search tiller 发现 &lt;a href=&#34;https://hub.docker.com/r/jessestuart/tiller&#34;&gt;jessestuart/tiller&lt;/a&gt; 是镜像自动更新的多平台镜像。使用 &lt;code&gt;kubectl edit deployment tiller-deploy -n kube-system&lt;/code&gt; 修改 &lt;code&gt;spec.template.spec.image&lt;/code&gt; 为 &lt;code&gt;jessestuart/tiller:latest-arm64&lt;/code&gt; 。&lt;/p&gt;
 &lt;p&gt;创建文件 &lt;code&gt;helm-rbac.yaml&lt;/code&gt; 后通过 &lt;code&gt;kubectl create -f helm-rbac.yaml&lt;/code&gt; 使其生效。最后使用 &lt;code&gt;kubectl patch deploy --namespace kube-system tiller-deploy -p &#39;{&amp;quot;spec&amp;quot;:{&amp;quot;template&amp;quot;:{&amp;quot;spec&amp;quot;:{&amp;quot;serviceAccount&amp;quot;:&amp;quot;tiller&amp;quot;}}}}&#39;&lt;/code&gt; 给最开始通过 &lt;code&gt;helm init&lt;/code&gt; 初始化的 tiller 实例打上补丁。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;apiVersion: v1
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: tiller
@@ -1204,45 +830,36 @@ subjects:
   - kind: ServiceAccount
     name: tiller
     namespace: kube-system
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;配置 helm 使用不用翻墙的镜像&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;helm repo remove stable
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;配置 helm 使用不用翻墙的镜像&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;helm repo remove stable
 helm repo add stable http://mirror.azure.cn/kubernetes/charts/
 helm repo add incubator http://mirror.azure.cn/kubernetes/charts-incubator/
 helm repo add bitnami https://charts.bitnami.com/bitnami
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;k8s-基本操作&#34;&gt;k8s 基本操作&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 显示所有 pods
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;k8s-&#34;&gt;k8s 基本操作&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 显示所有 pods&lt;/span&gt;
 kubectl get pods --all-namespaces
 
-# 显示所有节点
+&lt;span style=&#34;color:#75715e&#34;&gt;# 显示所有节点&lt;/span&gt;
 kubectl get nodes
 
-# 显示某个 pod 的信息
+&lt;span style=&#34;color:#75715e&#34;&gt;# 显示某个 pod 的信息&lt;/span&gt;
 kubectl describe pod -n kube-system tiller-deploy-75f6c87b87-gbpfv
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;heading4&#34;&gt;参考资料&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://liupeng0518.github.io/2019/03/20/k8s/%E9%83%A8%E7%BD%B2/arm64%E9%83%A8%E7%BD%B2k8s/&#34; target=&#34;_blank&#34;&gt;arm64 部署 k8s&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/liukuan73/article/details/83509901&#34; target=&#34;_blank&#34;&gt;使用 amd64 架构 master 节点管理 arm 架构 kubernetes 集群&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jeremyxu2010.github.io/2018/12/arm64硬件架构支持总结/&#34; target=&#34;_blank&#34;&gt;arm64 硬件架构支持总结&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://pdf.us/2019/01/25/2666.html&#34; target=&#34;_blank&#34;&gt;使用 kubeadm 部署 kubernetes v1.13.2 - 阿里源适合国内网络环境&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/hongdada/p/11250293.htmlean&#34; target=&#34;_blank&#34;&gt;使用 kubeadm 安装 kubernetes 1.15.1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jimmysong.io/kubernetes-handbook/practice/helm.html&#34; target=&#34;_blank&#34;&gt;使用 Helm 管理 kubernetes 应用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.qikqiak.com/post/kubernetes-helm-usage/&#34; target=&#34;_blank&#34;&gt;Helm 的基本使用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/aaronkjones/rpi-k8s-node-prep&#34; target=&#34;_blank&#34;&gt;Kubernetes on Raspbian/Hypriot&lt;/a&gt; based on &lt;a href=&#34;https://github.com/alexellis/k8s-on-raspbian&#34; target=&#34;_blank&#34;&gt;teamserverless/k8s-on-raspbian&lt;/a&gt; &lt;del&gt;&lt;a href=&#34;https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975&#34; target=&#34;_blank&#34;&gt;alexellis/k8s-pi.md&lt;/a&gt;&lt;/del&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/mrlesmithjr/ansible-rpi-k8s-cluster&#34; target=&#34;_blank&#34;&gt;ansible-rpi-k8s-cluster&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://rak8s.io&#34; target=&#34;_blank&#34;&gt;Stand up a Raspberry Pi based Kubernetes cluster with Ansible&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://tobru.ch/kubernetes-on-orangepi-arm64/&#34; target=&#34;_blank&#34;&gt;Kubernetes on OrangePI ARM64&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9&#34; target=&#34;_blank&#34;&gt;Building an ARM Kubernetes Cluster&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://medium.com/@carlosedp/building-a-hybrid-x86-64-and-arm-kubernetes-cluster-e7f94ff6e51d&#34; target=&#34;_blank&#34;&gt;Building a hybrid x86–64 and ARM Kubernetes Cluster&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://containerized.me/arming-kubernetes-with-openebs-1/&#34; target=&#34;_blank&#34;&gt;ARMing Kubernetes with OpenEBS #1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://liupeng0518.github.io/2019/03/20/k8s/%E9%83%A8%E7%BD%B2/arm64%E9%83%A8%E7%BD%B2k8s/&#34;&gt;arm64 部署 k8s&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/liukuan73/article/details/83509901&#34;&gt;使用 amd64 架构 master 节点管理 arm 架构 kubernetes 集群&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jeremyxu2010.github.io/2018/12/arm64%E7%A1%AC%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%94%AF%E6%8C%81%E6%80%BB%E7%BB%93/&#34;&gt;arm64 硬件架构支持总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pdf.us/2019/01/25/2666.html&#34;&gt;使用 kubeadm 部署 kubernetes v1.13.2 - 阿里源适合国内网络环境&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/hongdada/p/11250293.htmlean&#34;&gt;使用 kubeadm 安装 kubernetes 1.15.1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jimmysong.io/kubernetes-handbook/practice/helm.html&#34;&gt;使用 Helm 管理 kubernetes 应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.qikqiak.com/post/kubernetes-helm-usage/&#34;&gt;Helm 的基本使用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/aaronkjones/rpi-k8s-node-prep&#34;&gt;Kubernetes on Raspbian/Hypriot&lt;/a&gt; based on &lt;a href=&#34;https://github.com/alexellis/k8s-on-raspbian&#34;&gt;teamserverless/k8s-on-raspbian&lt;/a&gt; &lt;del&gt;&lt;a href=&#34;https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975&#34;&gt;alexellis/k8s-pi.md&lt;/a&gt;&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mrlesmithjr/ansible-rpi-k8s-cluster&#34;&gt;ansible-rpi-k8s-cluster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rak8s.io&#34;&gt;Stand up a Raspberry Pi based Kubernetes cluster with Ansible&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tobru.ch/kubernetes-on-orangepi-arm64/&#34;&gt;Kubernetes on OrangePI ARM64&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itnext.io/building-an-arm-kubernetes-cluster-ef31032636f9&#34;&gt;Building an ARM Kubernetes Cluster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@carlosedp/building-a-hybrid-x86-64-and-arm-kubernetes-cluster-e7f94ff6e51d&#34;&gt;Building a hybrid x86–64 and ARM Kubernetes Cluster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://containerized.me/arming-kubernetes-with-openebs-1/&#34;&gt;ARMing Kubernetes with OpenEBS #1&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -1252,147 +869,120 @@ kubectl describe pod -n kube-system tiller-deploy-75f6c87b87-gbpfv
       <link>https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/</link>
       <pubDate>Fri, 26 Jul 2019 15:04:45 +0800</pubDate>
       <guid>https://sbilly.github.io/post/build-go-ipfs-private-network-with-webui-support/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;media/15641153824612/15641250270855.jpg&#34; alt=&#34;!-w800&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://ipfs.io/&#34; target=&#34;_blank&#34;&gt;go-ipfs&lt;/a&gt; 是一个分布式基于区块链技术的分布式文件系统，文档可以查看 &lt;a href=&#34;https://docs.ipfs.io/&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt; 。本文主要记录和介绍如何使用 go-ipfs 搭建与公有网络隔离的私有网络。&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;img src=&#34;media/15641153824612/15641250270855.jpg&#34; alt=&#34;!-w800&#34;&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://ipfs.io/&#34;&gt;go-ipfs&lt;/a&gt; 是一个分布式基于区块链技术的分布式文件系统，文档可以查看 &lt;a href=&#34;https://docs.ipfs.io/&#34;&gt;官方文档&lt;/a&gt; 。本文主要记录和介绍如何使用 go-ipfs 搭建与公有网络隔离的私有网络。&lt;/p&gt;
 &lt;p&gt;要点其实也不复杂：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;使用 swarm.key 确保私有网络不对外开放&lt;/li&gt;
 &lt;li&gt;删除不必要的 bootstrap 节点，并保留自己的私有 bootstrap 节点&lt;/li&gt;
 &lt;li&gt;使得 ipfs-webui 的相关文件在 ipfs 私有网络上是可以访问到的&lt;/li&gt;
 &lt;li&gt;使用 &lt;code&gt;LIBP2P_FORCE_PNET=1&lt;/code&gt; 的环境变量设置 ipfs 运行在私有网络模式中&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;下面将介绍如何从源码编译并启动 bootstrap 节点。go-ipfs 还在积极开发中，在 2019 年  7 月 26 日是可以正常完成的。如果发现有问题，可以在评论中反馈。&lt;/p&gt;
-
-&lt;h2 id=&#34;准备-ipfs-环境&#34;&gt;准备 ipfs 环境&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 创建 ipfs 的运行时目录
+&lt;h2 id=&#34;-ipfs-&#34;&gt;准备 ipfs 环境&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 创建 ipfs 的运行时目录&lt;/span&gt;
 mkdir -p ./ipfs
 
-# 获取 go-ipfs-swarm-key-gen
+&lt;span style=&#34;color:#75715e&#34;&gt;# 获取 go-ipfs-swarm-key-gen&lt;/span&gt;
 git clone https://github.com/Kubuxu/go-ipfs-swarm-key-gen
 
-# 创建 swarm.key
-# 所有的私有网络节点都需要这个 swarm.key 才能正常加入私有网络
+&lt;span style=&#34;color:#75715e&#34;&gt;# 创建 swarm.key&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# 所有的私有网络节点都需要这个 swarm.key 才能正常加入私有网络&lt;/span&gt;
 cd go-ipfs-swarm-key-gen
-IPFS_PATH=./ipfs go run ipfs-swarm-key-gen/main.go &amp;gt; $IPFS_PATH/swarm.key
+IPFS_PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;./ipfs go run ipfs-swarm-key-gen/main.go &amp;gt; $IPFS_PATH/swarm.key
 cd ../
 
-# 获取最新的 go-ipfs 源码
+&lt;span style=&#34;color:#75715e&#34;&gt;# 获取最新的 go-ipfs 源码&lt;/span&gt;
 git clone https://github.com/ipfs/go-ipfs.git
 
-# 编译 go-ipfs
+&lt;span style=&#34;color:#75715e&#34;&gt;# 编译 go-ipfs&lt;/span&gt;
 cd go-ipfs
 make build
 cd ../
 
-# 初始化 ipfs 的运行时目录
-# 初始化时会创建 ipfs 的 peer identity，这个 peer identity 会在后续配置过程中使用到。peer identity 类似于下面这种形式：
-# peer identity: QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL
-# IPFS_PATH=./ipfs 指定 ./ipfs 为运行时目录
-# LIBP2P_FORCE_PNET=1 要求 ipfs 运行在私有网络模式
-IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs init
+&lt;span style=&#34;color:#75715e&#34;&gt;# 初始化 ipfs 的运行时目录&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# 初始化时会创建 ipfs 的 peer identity，这个 peer identity 会在后续配置过程中使用到。peer identity 类似于下面这种形式：&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# peer identity: QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# IPFS_PATH=./ipfs 指定 ./ipfs 为运行时目录&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# LIBP2P_FORCE_PNET=1 要求 ipfs 运行在私有网络模式&lt;/span&gt;
+IPFS_PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;./ipfs LIBP2P_FORCE_PNET&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ./go-ipfs/cmd/ipfs/ipfs init
 
-# 删除公开网络的所有 bootstrap 节点
-IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs bootstrap rm --all
+&lt;span style=&#34;color:#75715e&#34;&gt;# 删除公开网络的所有 bootstrap 节点&lt;/span&gt;
+IPFS_PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;./ipfs LIBP2P_FORCE_PNET&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ./go-ipfs/cmd/ipfs/ipfs bootstrap rm --all
 
-# 把本机作为 bootstrap 节点
-# 其中 QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL 要修改为实际的 peer identity
-IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs bootstrap add /ip4/127.0.0.1/tcp/4001/ipfs/QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL
+&lt;span style=&#34;color:#75715e&#34;&gt;# 把本机作为 bootstrap 节点&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# 其中 QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL 要修改为实际的 peer identity&lt;/span&gt;
+IPFS_PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;./ipfs LIBP2P_FORCE_PNET&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ./go-ipfs/cmd/ipfs/ipfs bootstrap add /ip4/127.0.0.1/tcp/4001/ipfs/QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL
 
-# 启动 ipfs
-IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs daemon
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;编译并启用-ipfs-webui&#34;&gt;编译并启用 ipfs-webui&lt;/h2&gt;
-
-&lt;p&gt;如果你希望像公网那样使用 ipfs 官方自带的管理界面 &lt;a href=&#34;https://github.com/ipfs-shipyard/ipfs-webui&#34; target=&#34;_blank&#34;&gt;ipfs-weibui&lt;/a&gt; 需要通过以下步骤使用最新的 ipfs-webui 。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 获取最新的 ipfs-webui 代码
+&lt;span style=&#34;color:#75715e&#34;&gt;# 启动 ipfs&lt;/span&gt;
+IPFS_PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;./ipfs LIBP2P_FORCE_PNET&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ./go-ipfs/cmd/ipfs/ipfs daemon
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-ipfswebui&#34;&gt;编译并启用 ipfs-webui&lt;/h2&gt;
+&lt;p&gt;如果你希望像公网那样使用 ipfs 官方自带的管理界面 &lt;a href=&#34;https://github.com/ipfs-shipyard/ipfs-webui&#34;&gt;ipfs-weibui&lt;/a&gt; 需要通过以下步骤使用最新的 ipfs-webui 。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 获取最新的 ipfs-webui 代码&lt;/span&gt;
 git clone https://github.com/ipfs-shipyard/ipfs-webui.git
 
-# 编译 ipfs-webui
-# 需要 python2 支持，需要使用 npm 而不要使用 cnpm
-# 编译后的文件在 build 目录
+&lt;span style=&#34;color:#75715e&#34;&gt;# 编译 ipfs-webui&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# 需要 python2 支持，需要使用 npm 而不要使用 cnpm&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# 编译后的文件在 build 目录&lt;/span&gt;
 cd ipfs-webui
 npm install
 npm run build
 
-# 把编译得到的 ipfs-webui 添加到 ipfs 文件系统私有网络中
-# 下面的命令执行后会返回类似的响应，返回的 public 目录对应的 hash 在需要添加到 go-ipfs 代码中
-# added QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh build
-IPFS_PATH=../ipfs LIBP2P_FORCE_PNET=1 ../go-ipfs/cmd/ipfs/ipfs add -r ./build
+&lt;span style=&#34;color:#75715e&#34;&gt;# 把编译得到的 ipfs-webui 添加到 ipfs 文件系统私有网络中&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# 下面的命令执行后会返回类似的响应，返回的 public 目录对应的 hash 在需要添加到 go-ipfs 代码中&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# added QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh build&lt;/span&gt;
+IPFS_PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;../ipfs LIBP2P_FORCE_PNET&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ../go-ipfs/cmd/ipfs/ipfs add -r ./build
 
-# 在 bootstrap 上强制存储 ipfs-webui
-IPFS_PATH=../ipfs LIBP2P_FORCE_PNET=1 ../go-ipfs/cmd/ipfs/ipfs pin add QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;修改并重新编译-go-ipfs&#34;&gt;修改并重新编译 go-ipfs&lt;/h2&gt;
-
+&lt;span style=&#34;color:#75715e&#34;&gt;# 在 bootstrap 上强制存储 ipfs-webui&lt;/span&gt;
+IPFS_PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;../ipfs LIBP2P_FORCE_PNET&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ../go-ipfs/cmd/ipfs/ipfs pin add QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-goipfs&#34;&gt;修改并重新编译 go-ipfs&lt;/h2&gt;
 &lt;p&gt;修改文件把刚才编译的 ipfs-webui 加到 ipfs 中，需要修改 &lt;code&gt;go-ipfs/core/corehttp/webui.go&lt;/code&gt; 把 webui 对应的 hash 值替换成刚才添加到 ipfs 时的返回的 hash ，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;corehttp&lt;/span&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package corehttp
+&lt;span style=&#34;color:#75715e&#34;&gt;// TODO: move to IPNS
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 把 const WebUIPath 替换成私有网络中 webUI 的 PATH
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;WebUIPath&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh&amp;#34;&lt;/span&gt;
 
-// TODO: move to IPNS
-// 把 const WebUIPath 替换成私有网络中 webUI 的 PATH
-const WebUIPath = &amp;quot;/ipfs/QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh&amp;quot;
-
-// this is a list of all past webUI paths.
-// 原来公开网络的 webUI 路径保存在这个列表中
-var WebUIPaths = []string{
-        WebUIPath,
-        &amp;quot;/ipfs/QmQNHd1suZTktPRhP7DD4nKWG46ZRSxkwHocycHVrK3dYW&amp;quot;, 
-        &amp;quot;/ipfs/QmfQkD8pBSBCBxWEwFSu4XaDVSWK6bjnNuaWZjMyQbyDub&amp;quot;,
-        &amp;quot;/ipfs/QmXc9raDM1M5G5fpBnVyQ71vR4gbnskwnB9iMEzBuLgvoZ&amp;quot;,
-        &amp;quot;/ipfs/QmenEBWcAk3tN94fSKpKFtUMwty1qNwSYw3DMDFV6cPBXA&amp;quot;,
-        &amp;quot;/ipfs/QmUnXcWZC5Ve21gUseouJsH5mLAyz5JPp8aHsg8qVUUK8e&amp;quot;,
-        &amp;quot;/ipfs/QmSDgpiHco5yXdyVTfhKxr3aiJ82ynz8V14QcGKicM3rVh&amp;quot;,
-        &amp;quot;/ipfs/QmRuvWJz1Fc8B9cTsAYANHTXqGmKR9DVfY5nvMD1uA2WQ8&amp;quot;,
-        &amp;quot;/ipfs/QmQLXHs7K98JNQdWrBB2cQLJahPhmupbDjRuH1b9ibmwVa&amp;quot;,
-        &amp;quot;/ipfs/QmXX7YRpU7nNBKfw75VG7Y1c3GwpSAGHRev67XVPgZFv9R&amp;quot;,
-        &amp;quot;/ipfs/QmXdu7HWdV6CUaUabd9q2ZeA4iHZLVyDRj3Gi4dsJsWjbr&amp;quot;,
-        &amp;quot;/ipfs/QmaaqrHyAQm7gALkRW8DcfGX3u8q9rWKnxEMmf7m9z515w&amp;quot;,
-        &amp;quot;/ipfs/QmSHDxWsMPuJQKWmVA1rB5a3NX2Eme5fPqNb63qwaqiqSp&amp;quot;,
-        &amp;quot;/ipfs/QmctngrQAt9fjpQUZr7Bx3BsXUcif52eZGTizWhvcShsjz&amp;quot;,
-        &amp;quot;/ipfs/QmS2HL9v5YeKgQkkWMvs1EMnFtUowTEdFfSSeMT4pos1e6&amp;quot;,
-        &amp;quot;/ipfs/QmR9MzChjp1MdFWik7NjEjqKQMzVmBkdK3dz14A6B5Cupm&amp;quot;,
-        &amp;quot;/ipfs/QmRyWyKWmphamkMRnJVjUTzSFSAAZowYP4rnbgnfMXC9Mr&amp;quot;,
-        &amp;quot;/ipfs/QmU3o9bvfenhTKhxUakbYrLDnZU7HezAVxPM6Ehjw9Xjqy&amp;quot;,
-        &amp;quot;/ipfs/QmPhnvn747LqwPYMJmQVorMaGbMSgA7mRRoyyZYz3DoZRQ&amp;quot;,
+&lt;span style=&#34;color:#75715e&#34;&gt;// this is a list of all past webUI paths.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 原来公开网络的 webUI 路径保存在这个列表中
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;WebUIPaths&lt;/span&gt; = []&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;{
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;WebUIPath&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmQNHd1suZTktPRhP7DD4nKWG46ZRSxkwHocycHVrK3dYW&amp;#34;&lt;/span&gt;, 
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmfQkD8pBSBCBxWEwFSu4XaDVSWK6bjnNuaWZjMyQbyDub&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmXc9raDM1M5G5fpBnVyQ71vR4gbnskwnB9iMEzBuLgvoZ&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmenEBWcAk3tN94fSKpKFtUMwty1qNwSYw3DMDFV6cPBXA&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmUnXcWZC5Ve21gUseouJsH5mLAyz5JPp8aHsg8qVUUK8e&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmSDgpiHco5yXdyVTfhKxr3aiJ82ynz8V14QcGKicM3rVh&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmRuvWJz1Fc8B9cTsAYANHTXqGmKR9DVfY5nvMD1uA2WQ8&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmQLXHs7K98JNQdWrBB2cQLJahPhmupbDjRuH1b9ibmwVa&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmXX7YRpU7nNBKfw75VG7Y1c3GwpSAGHRev67XVPgZFv9R&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmXdu7HWdV6CUaUabd9q2ZeA4iHZLVyDRj3Gi4dsJsWjbr&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmaaqrHyAQm7gALkRW8DcfGX3u8q9rWKnxEMmf7m9z515w&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmSHDxWsMPuJQKWmVA1rB5a3NX2Eme5fPqNb63qwaqiqSp&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmctngrQAt9fjpQUZr7Bx3BsXUcif52eZGTizWhvcShsjz&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmS2HL9v5YeKgQkkWMvs1EMnFtUowTEdFfSSeMT4pos1e6&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmR9MzChjp1MdFWik7NjEjqKQMzVmBkdK3dz14A6B5Cupm&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmRyWyKWmphamkMRnJVjUTzSFSAAZowYP4rnbgnfMXC9Mr&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmU3o9bvfenhTKhxUakbYrLDnZU7HezAVxPM6Ehjw9Xjqy&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/ipfs/QmPhnvn747LqwPYMJmQVorMaGbMSgA7mRRoyyZYz3DoZRQ&amp;#34;&lt;/span&gt;,
 }
 
-var WebUIOption = RedirectOption(&amp;quot;webui&amp;quot;, WebUIPath)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;重新编译 go-ipfs，启动后缺省可以通过 &lt;code&gt;http://127.0.0.1:5001/webui&lt;/code&gt; 访问到 ipfs 的管理界面。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 编译 go-ipfs
+&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;WebUIOption&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;RedirectOption&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;webui&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;WebUIPath&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;重新编译 go-ipfs，启动后缺省可以通过 &lt;code&gt;http://127.0.0.1:5001/webui&lt;/code&gt; 访问到 ipfs 的管理界面。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 编译 go-ipfs&lt;/span&gt;
 cd go-ipfs
 make build
 cd ../
 
-# 启动 ipfs
-IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs deamon
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;启动其他节点&#34;&gt;启动其他节点&lt;/h2&gt;
-
+&lt;span style=&#34;color:#75715e&#34;&gt;# 启动 ipfs&lt;/span&gt;
+IPFS_PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;./ipfs LIBP2P_FORCE_PNET&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; ./go-ipfs/cmd/ipfs/ipfs deamon
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;heading&#34;&gt;启动其他节点&lt;/h2&gt;
 &lt;p&gt;把 &lt;a href=&#34;#toc_1&#34;&gt;准备 ipfs 环境&lt;/a&gt; 中创建的 &lt;code&gt;swarm.key&lt;/code&gt; 复制到合理位置，并且按照 &lt;a href=&#34;#toc_1&#34;&gt;准备 ipfs 环境&lt;/a&gt; 编译 go-ipfs、修改 bootstrap 节点、启动 ipfs 即可。如果一切正常，就可以在 bootstrap 节点上可以看到连接上来的 peer 节点。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15641153824612/15641244880502.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15641153824612/15641244880502.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;heading1&#34;&gt;参考&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ahester57/ipfs-private-swarm&#34; target=&#34;_blank&#34;&gt;IPFS Private Swarm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ahester57/ipfs-private-swarm&#34;&gt;IPFS Private Swarm&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

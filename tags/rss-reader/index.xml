@@ -18,23 +18,16 @@
       <pubDate>Wed, 14 Aug 2019 00:50:22 +0800</pubDate>
       <guid>https://sbilly.github.io/post/best-rss-toolchain-on-macos-2019/</guid>
       <description>&lt;p&gt;我一直是 RSS 的重度使用者，一路从 Google Reader 到 Inoreader 到现在一直都在持续使用，甚至在 Inoreader 上付费使用，直到 Inoreader 对订阅源数量做限制。像我这种只加 feed 不删 feed 的人怎么能忍得了。&lt;/p&gt;
-
-&lt;p&gt;这两天把 RSS 阅读相关的软件栈看了一下，发现 &lt;a href=&#34;https://github.com/miniflux/miniflux&#34; target=&#34;_blank&#34;&gt;miniflux&lt;/a&gt; + &lt;a href=&#34;https://reederapp.com&#34; target=&#34;_blank&#34;&gt;Reeder&lt;/a&gt; 这个组合满足我从功能到外观的所有要求（如果希望完全免费，可以使用 &lt;a href=&#34;https://ranchero.com/netnewswire/&#34; target=&#34;_blank&#34;&gt;NetNewsWire&lt;/a&gt; 替代 Reeder）。miniflux 需要 pgsql 才能运行，界面极为简洁，而 Reeder 可以通过 fever 兼容的 API 接口把 miniflux 完全当成后台使用，操作几乎和 Google Reader、Inoreader 等流行的阅读器 vim 风格快捷键无缝兼容。除此之外，miniflux 和 Reeder 都支持直接抓取全文。&lt;strong&gt;千万不要相信什么 FreshRSS、Tiny Tiny RSS 比 miniflux 好的说法&lt;/strong&gt;，光是一个内容抓取，这些比 miniflux 就弱了好几条街。&lt;/p&gt;
-
-&lt;p&gt;因为 miniflux 支持用 docker 部署，看 miniflux 的&lt;a href=&#34;https://miniflux.app/docs/installation.html#docker&#34; target=&#34;_blank&#34;&gt;官方教程&lt;/a&gt;部署起来非常简单。要点简单列举一下：&lt;/p&gt;
-
+&lt;p&gt;这两天把 RSS 阅读相关的软件栈看了一下，发现 &lt;a href=&#34;https://github.com/miniflux/miniflux&#34;&gt;miniflux&lt;/a&gt; + &lt;a href=&#34;https://reederapp.com&#34;&gt;Reeder&lt;/a&gt; 这个组合满足我从功能到外观的所有要求（如果希望完全免费，可以使用 &lt;a href=&#34;https://ranchero.com/netnewswire/&#34;&gt;NetNewsWire&lt;/a&gt; 替代 Reeder）。miniflux 需要 pgsql 才能运行，界面极为简洁，而 Reeder 可以通过 fever 兼容的 API 接口把 miniflux 完全当成后台使用，操作几乎和 Google Reader、Inoreader 等流行的阅读器 vim 风格快捷键无缝兼容。除此之外，miniflux 和 Reeder 都支持直接抓取全文。&lt;strong&gt;千万不要相信什么 FreshRSS、Tiny Tiny RSS 比 miniflux 好的说法&lt;/strong&gt;，光是一个内容抓取，这些比 miniflux 就弱了好几条街。&lt;/p&gt;
+&lt;p&gt;因为 miniflux 支持用 docker 部署，看 miniflux 的&lt;a href=&#34;https://miniflux.app/docs/installation.html#docker&#34;&gt;官方教程&lt;/a&gt;部署起来非常简单。要点简单列举一下：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;需要把 pgsql 和 miniflux 用 docker 的 &lt;code&gt;--link&lt;/code&gt; 参数连接在一起。pgsql 连接的别名应该是 &lt;code&gt;db&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;需要按照教程来初始化数据库和增加管理员账号&lt;/li&gt;
 &lt;li&gt;建议增加环境变量 &lt;code&gt;HTTP_PROXY&lt;/code&gt; 和 &lt;code&gt;HTTPS_PROXY&lt;/code&gt; 避免抓取内容时撞墙&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;最后，看一下图吧：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15657118705513/15657132919673.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15657118705513/15657126038433.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15657118705513/15657132919673.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15657118705513/15657126038433.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;TODO：计划看看 RSShub 这类工具是否，把微信公众号这些也都加到 RSS 阅读器中&lt;/p&gt;
 </description>
     </item>

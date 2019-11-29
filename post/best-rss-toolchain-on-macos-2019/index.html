@@ -80,7 +80,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.04a87a1cb9027e3c50f566322527c56f.css">
+  <link rel="stylesheet" href="/css/academic.min.891726ba3b332d3508fbc99721fa7e80.css">
 
   
 
@@ -591,23 +591,16 @@
 
     <div class="article-style">
       <p>我一直是 RSS 的重度使用者，一路从 Google Reader 到 Inoreader 到现在一直都在持续使用，甚至在 Inoreader 上付费使用，直到 Inoreader 对订阅源数量做限制。像我这种只加 feed 不删 feed 的人怎么能忍得了。</p>
-
-<p>这两天把 RSS 阅读相关的软件栈看了一下，发现 <a href="https://github.com/miniflux/miniflux" target="_blank">miniflux</a> + <a href="https://reederapp.com" target="_blank">Reeder</a> 这个组合满足我从功能到外观的所有要求（如果希望完全免费，可以使用 <a href="https://ranchero.com/netnewswire/" target="_blank">NetNewsWire</a> 替代 Reeder）。miniflux 需要 pgsql 才能运行，界面极为简洁，而 Reeder 可以通过 fever 兼容的 API 接口把 miniflux 完全当成后台使用，操作几乎和 Google Reader、Inoreader 等流行的阅读器 vim 风格快捷键无缝兼容。除此之外，miniflux 和 Reeder 都支持直接抓取全文。<strong>千万不要相信什么 FreshRSS、Tiny Tiny RSS 比 miniflux 好的说法</strong>，光是一个内容抓取，这些比 miniflux 就弱了好几条街。</p>
-
-<p>因为 miniflux 支持用 docker 部署，看 miniflux 的<a href="https://miniflux.app/docs/installation.html#docker" target="_blank">官方教程</a>部署起来非常简单。要点简单列举一下：</p>
-
+<p>这两天把 RSS 阅读相关的软件栈看了一下，发现 <a href="https://github.com/miniflux/miniflux">miniflux</a> + <a href="https://reederapp.com">Reeder</a> 这个组合满足我从功能到外观的所有要求（如果希望完全免费，可以使用 <a href="https://ranchero.com/netnewswire/">NetNewsWire</a> 替代 Reeder）。miniflux 需要 pgsql 才能运行，界面极为简洁，而 Reeder 可以通过 fever 兼容的 API 接口把 miniflux 完全当成后台使用，操作几乎和 Google Reader、Inoreader 等流行的阅读器 vim 风格快捷键无缝兼容。除此之外，miniflux 和 Reeder 都支持直接抓取全文。<strong>千万不要相信什么 FreshRSS、Tiny Tiny RSS 比 miniflux 好的说法</strong>，光是一个内容抓取，这些比 miniflux 就弱了好几条街。</p>
+<p>因为 miniflux 支持用 docker 部署，看 miniflux 的<a href="https://miniflux.app/docs/installation.html#docker">官方教程</a>部署起来非常简单。要点简单列举一下：</p>
 <ol>
 <li>需要把 pgsql 和 miniflux 用 docker 的 <code>--link</code> 参数连接在一起。pgsql 连接的别名应该是 <code>db</code></li>
 <li>需要按照教程来初始化数据库和增加管理员账号</li>
 <li>建议增加环境变量 <code>HTTP_PROXY</code> 和 <code>HTTPS_PROXY</code> 避免抓取内容时撞墙</li>
 </ol>
-
 <p>最后，看一下图吧：</p>
-
-<p><img src="media/15657118705513/15657132919673.jpg" alt="-w600" /></p>
-
-<p><img src="media/15657118705513/15657126038433.jpg" alt="-w600" /></p>
-
+<p><img src="media/15657118705513/15657132919673.jpg" alt="-w600"></p>
+<p><img src="media/15657118705513/15657126038433.jpg" alt="-w600"></p>
 <p>TODO：计划看看 RSShub 这类工具是否，把微信公众号这些也都加到 RSS 阅读器中</p>
 
     </div>
@@ -897,7 +890,7 @@
   
 
   <p class="powered-by">
-    2019 &copy; &middot; 
+    2019 © &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

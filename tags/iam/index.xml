@@ -5,7 +5,7 @@
     <link>https://sbilly.github.io/tags/iam/</link>
       <atom:link href="https://sbilly.github.io/tags/iam/index.xml" rel="self" type="application/rss+xml" />
     <description>IAM</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Tue, 27 Aug 2019 18:54:52 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Fri, 29 Nov 2019 12:03:12 +0800</lastBuildDate>
     <image>
       <url>https://sbilly.github.io/img/icon-192.png</url>
       <title>IAM</title>
@@ -13,69 +13,217 @@
     </image>
     
     <item>
+      <title>2002-2019 年美国 IT 和网络空间安全预算</title>
+      <link>https://sbilly.github.io/post/2002-2019-us-federal-it-and-cyber-security-budget-analysis/</link>
+      <pubDate>Fri, 29 Nov 2019 12:03:12 +0800</pubDate>
+      <guid>https://sbilly.github.io/post/2002-2019-us-federal-it-and-cyber-security-budget-analysis/</guid>
+      <description>&lt;p&gt;随着“十四五”规划的临近，各行各业都准备做新的规划了。对于安全行业来说，在规划阶段最常见的问题就是：&lt;strong&gt;需要多少预算，有什么依据？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不管是 IT 领域，还是安全领域，美国一直是我们的学习的对象。关于“钱”的问题一直是比较复杂的（预算、决算、统计口径、……），我把自 2002 年以来美国联邦政府所有公开的报告进行了分析，把&lt;strong&gt;预算&lt;/strong&gt;口径（而非其他）的数据拿出来，供大家在回答安全预算相关的“灵魂拷问”时参考。&lt;/p&gt;
+&lt;p&gt;有任何反馈，欢迎大家在此进行评价：&lt;a href=&#34;https://docs.qq.com/doc/DWENacmZ0VXppYldt&#34;&gt;&lt;a href=&#34;https://docs.qq.com/doc/DWENacmZ0VXppYldt&#34;&gt;https://docs.qq.com/doc/DWENacmZ0VXppYldt&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;-it-&#34;&gt;一、美国联邦政府 IT 和网络空间安全预算&lt;/h2&gt;
+&lt;p&gt;最近整理了一下美国 IT 预算和网络空间安全预算相关的一些数据。因为美国非常重视社会统计数据，所以各方面不同部门、不同目的产生的统计数据非常丰富。数据跟踪分析对数据最基本的要求是统一口径。在&lt;strong&gt;美国联邦政府体系中时间最长，最权威的数据&lt;/strong&gt;是自 2002 年以来由白宫一直持续披露的 **FISMA 年度报告（Federal Information Security Modernization Act of 2002/2014 Annual Report to Congress）&lt;strong&gt;和每年由总统签署的&lt;/strong&gt;年度预算的分析视角报告分册（Analytical Perspectives, Budget of the United States Government）**中披露的数据。两份报告都是白宫向国会提交的正式报告，其中 FISMA 年度报告可以说是美国每年政府视角的总结报告，都非常具有权威性。而且这两份报告持续时间都非常长，统计口径也基本一致，更准确地体现美国政府在 IT 领域和网络空间安全领域投资的特点。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15673106143093/15674170400070.jpg&#34; alt=&#34;-w200&#34;&gt;&lt;img src=&#34;media/15673106143093/15674169912073.jpg&#34; alt=&#34;-w200&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;11-&#34;&gt;1.1 汇总数据&lt;/h3&gt;
+&lt;p&gt;在 FY2018 的预算报告里面可以看到美国政府在 FY2001-FY2009 期间有有一段 CAGR=7.1% 的 IT 投资高速增长期，在 FY2009 年之后则进入了 CAGR=2.4% 的“新常态”。这样的特征不仅仅体现在联邦政府非涉密、非军用的领域，在美国国防部的 IT 预算也有同样的特征。但与之明显相对的是，网络空间安全的投资无论是比例还是增速都非常明显的高于 IT 投资的平均水平。FY2015 年推动“国家网络空间安全行动计划”（CNAP：Cybersecurity National Action Plan）增加大量网络空间安全预算达到 24.1% 这个惊人的比例。而 FY2020 年，民用机构的 IT 投资预算从 458 美元亿下降到 367 亿美元，而网络空间安全投入却从 FY2019 的 65 亿美元增长到 78 亿美元，占比也达到惊人的 21% 。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15673106143093/15674162323799.jpg&#34; alt=&#34;-w400&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15673106143093/15749924482069.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;表格中预算的单位为“&lt;strong&gt;亿美元&lt;/strong&gt;”&lt;/li&gt;
+&lt;li&gt;“部分”是指除美国国防部（DoD）和涉密以外的部分&lt;/li&gt;
+&lt;li&gt;FY2005～FY2007 年 FISMA 报告有少量数据对不齐&lt;/li&gt;
+&lt;li&gt;FY2010 年美国联邦预算更新了会计规则，数据更全面（统计口径有变化）&lt;/li&gt;
+&lt;li&gt;FY2015 年推动“国家网络空间安全行动计划”（CNAP：Cybersecurity National Action Plan）增加大量网络空间安全预算。&lt;/li&gt;
+&lt;li&gt;FY2019 之前的安全预算数据主要来自于 FISMA 报告（FISMA 报告目前只出到 FY2018），FY2019（含 FY2019）以后的数据以来自于美国预算分析报告中 Cybersecurity Funding 这个章节&lt;/li&gt;
+&lt;li&gt;FY2019～FY2020 年的 IT 预算中去掉了美国国防部（DoD）和涉密以外的统计数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-&#34;&gt;1.2 美国联邦政府历年预算&lt;/h3&gt;
+&lt;p&gt;美国历年预算都可以从政府网站查到，一直都有专门关于 IT 投资章节。从 FY2019 年开始，开始专门列出了 Cyber Security Funding 的章节。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;美国政府&lt;a href=&#34;https://www.govinfo.gov/app/collection/budget/2020/BUDGET-2020-DB&#34;&gt;FY1996～FY2020 预算报告&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;美国&lt;a href=&#34;https://www.congress.gov/search?q=%7B%22source%22%3A%22comreports%22%7D&#34;&gt;国会报告&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;13--fisma-&#34;&gt;1.3 美国联邦政府历年 FISMA 报告&lt;/h3&gt;
+&lt;p&gt;FISMA 自 2002 年颁布以来的历年报告在&lt;a href=&#34;https://whitehouse.gov&#34;&gt;白宫网站&lt;/a&gt;和相关的存档网站都有披露。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/assets/OMB/inforeg/fy03_fisma_report.pdf&#34;&gt;FISMA FY2003 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/assets/OMB/inforeg/2004_fisma_report.pdf&#34;&gt;FISMA FY2004 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://georgewbush-whitehouse.archives.gov/omb/inforeg/reports/2005_fisma_report_to_congress.pdf&#34;&gt;FISMA FY2005 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.hsdl.org/?view&amp;amp;did=471949&#34;&gt;FISMA FY2006 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://georgewbush-whitehouse.archives.gov/omb/inforeg/reports/2007_fisma_report.pdf&#34;&gt;FISMA FY2007 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/assets/reports/fy2008_fisma.pdf&#34;&gt;FISMA FY2008 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/assets/egov_docs/FY09_FISMA.pdf&#34;&gt;FISMA FY2009 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/assets/egov_docs/FY10_FISMA.pdf&#34;&gt;FISMA FY2010 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/assets/egov_docs/fy11_fisma.pdf&#34;&gt;FISMA FY2011 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/assets/egov_docs/fy12_fisma_0.pdf&#34;&gt;FISMA FY2012 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/assets/egov_docs/fy_2013_fisma_report_05.01.2014.pdf&#34;&gt;FISMA FY2013 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/assets/egov_docs/final_fy14_fisma_report_02_27_2015.pdf&#34;&gt;FISMA FY2014 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/assets/egov_docs/final_fy_2015_fisma_report_to_congress_03_18_2016.pdf&#34;&gt;FISMA FY2015 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/sites/whitehouse.gov/files/briefing-room/presidential-actions/related-omb-material/fy_2016_fisma_report%20to_congress_official_release_march_10_2017.pdf&#34;&gt;FISMA FY2016 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/wp-content/uploads/2017/11/FY2017FISMAReportCongress.pdf&#34;&gt;FISMA FY2017 Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.whitehouse.gov/wp-content/uploads/2019/08/FISMA-2018-Report-FINAL-to-post.pdf&#34;&gt;FISMA FY2018 Report&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;heading&#34;&gt;二、非一手数据报告&lt;/h2&gt;
+&lt;h3 id=&#34;21-dod-cybersecurity-funding-forecasted-to-increase&#34;&gt;2.1 DoD Cybersecurity Funding Forecasted to Increase&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://investors.copt.com/Cache/1001253046.PDF?O=PDF&amp;amp;T=&amp;amp;Y=&amp;amp;D=&amp;amp;FID=1001253046&amp;amp;iid=103010&#34;&gt;DoD Cybersecurity Funding Forecasted to Increase&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;media/15673106143093/15673976746476.jpg&#34; alt=&#34;DoD Cybersecurity Funding Forecasted to Increase-w738&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;22--it-&#34;&gt;2.2 美国国防部 IT 预算&lt;/h3&gt;
+&lt;p&gt;2001 - 2007 财年美国国防部国防总预算和 IT 预算数据（单位：十亿美元）&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;财年&lt;/th&gt;
+&lt;th&gt;国防部总预算&lt;/th&gt;
+&lt;th&gt;IT 预算&lt;/th&gt;
+&lt;th&gt;IT 预算占比&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2001&lt;/td&gt;
+&lt;td&gt;307.1&lt;/td&gt;
+&lt;td&gt;22.9&lt;/td&gt;
+&lt;td&gt;7%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2002&lt;/td&gt;
+&lt;td&gt;355.3&lt;/td&gt;
+&lt;td&gt;24.1&lt;/td&gt;
+&lt;td&gt;7%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2003&lt;/td&gt;
+&lt;td&gt;433.0&lt;/td&gt;
+&lt;td&gt;27.3&lt;/td&gt;
+&lt;td&gt;6%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2004&lt;/td&gt;
+&lt;td&gt;456.3&lt;/td&gt;
+&lt;td&gt;28.5&lt;/td&gt;
+&lt;td&gt;6%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2005&lt;/td&gt;
+&lt;td&gt;502.7&lt;/td&gt;
+&lt;td&gt;31.7&lt;/td&gt;
+&lt;td&gt;6%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2006&lt;/td&gt;
+&lt;td&gt;536.4&lt;/td&gt;
+&lt;td&gt;34.1&lt;/td&gt;
+&lt;td&gt;6%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2007&lt;/td&gt;
+&lt;td&gt;604.5&lt;/td&gt;
+&lt;td&gt;34.4&lt;/td&gt;
+&lt;td&gt;6%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2008&lt;/td&gt;
+&lt;td&gt;669.3&lt;/td&gt;
+&lt;td&gt;37.0&lt;/td&gt;
+&lt;td&gt;6%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2009&lt;/td&gt;
+&lt;td&gt;665.9&lt;/td&gt;
+&lt;td&gt;37.5&lt;/td&gt;
+&lt;td&gt;6%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2010&lt;/td&gt;
+&lt;td&gt;691.8&lt;/td&gt;
+&lt;td&gt;37.8&lt;/td&gt;
+&lt;td&gt;5%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2011&lt;/td&gt;
+&lt;td&gt;689.1&lt;/td&gt;
+&lt;td&gt;38.7&lt;/td&gt;
+&lt;td&gt;6%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2012&lt;/td&gt;
+&lt;td&gt;553.0&lt;/td&gt;
+&lt;td&gt;37.5&lt;/td&gt;
+&lt;td&gt;6.8%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2013&lt;/td&gt;
+&lt;td&gt;525.0&lt;/td&gt;
+&lt;td&gt;37.0&lt;/td&gt;
+&lt;td&gt;7%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2014&lt;/td&gt;
+&lt;td&gt;533.5&lt;/td&gt;
+&lt;td&gt;36.5&lt;/td&gt;
+&lt;td&gt;7%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2015&lt;/td&gt;
+&lt;td&gt;535.9&lt;/td&gt;
+&lt;td&gt;36.5&lt;/td&gt;
+&lt;td&gt;7%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2016&lt;/td&gt;
+&lt;td&gt;555.9&lt;/td&gt;
+&lt;td&gt;35.4&lt;/td&gt;
+&lt;td&gt;6%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2017&lt;/td&gt;
+&lt;td&gt;567.3&lt;/td&gt;
+&lt;td&gt;34.2&lt;/td&gt;
+&lt;td&gt;6%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;2013 年 IT 基础设施投资为 370 亿美元，网络安全预算为 34 亿美元。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据源：《联合信息环境 —— 新世纪美军全球一体化作战的基石》，梁振兴、左琳琳、马雪峰、黄峰、沈艳丽，国防工业出版社&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>【转】美军网络安全 | 第 5 篇：身份和访问管理（IdAM）</title>
       <link>https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/</link>
       <pubDate>Tue, 27 Aug 2019 18:54:52 +0800</pubDate>
       <guid>https://sbilly.github.io/post/dod-network-security-part-5-identity-and-access-manaement/</guid>
-      <description>
-
-&lt;p&gt;原文：&lt;a href=&#34;https://mp.weixin.qq.com/s/lwLJGfq0lhNyuaKQDJVcMg&#34; target=&#34;_blank&#34;&gt;https://mp.weixin.qq.com/s/lwLJGfq0lhNyuaKQDJVcMg&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
-
-&lt;h2 id=&#34;一-前言&#34;&gt;一、前言&lt;/h2&gt;
-
+      <description>&lt;p&gt;原文：&lt;a href=&#34;https://mp.weixin.qq.com/s/lwLJGfq0lhNyuaKQDJVcMg&#34;&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/lwLJGfq0lhNyuaKQDJVcMg&#34;&gt;https://mp.weixin.qq.com/s/lwLJGfq0lhNyuaKQDJVcMg&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;heading&#34;&gt;一、前言&lt;/h2&gt;
 &lt;p&gt;美军 JIE（&lt;strong&gt;联合信息环境&lt;/strong&gt;）的目标是实现“&lt;strong&gt;三个任意&lt;/strong&gt;”的愿景 —— 美军作战人员能够用任意设备、在任意时间、在任意地方获取经授权的所需信息，以满足联合作战的需求。&lt;/p&gt;
-
 &lt;p&gt;JIE 的关键领域是：1）网络现代化（网络规范化）；2）网络安全体系架构（单一安全架构，SSA/CCA）；3）身份和访问管理（IdAM/ICAM）；4）企业运营；5）企业服务；6）云计算；7）数据中心整合；8）任务伙伴环境（MPE）；9）移动性。“美军网络安全”系列将围绕这些主题进行介绍。&lt;/p&gt;
-
-&lt;p&gt;本系列第一篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-1-the-summary-of-joint-information-enviroment/&#34; target=&#34;_blank&#34;&gt;美军网络安全 | 开篇：JIE（联合信息环境）概述&lt;/a&gt;）介绍了美军 &lt;strong&gt;JIE（联合信息环境）&lt;/strong&gt;的总体情况。&lt;/p&gt;
-
-&lt;p&gt;本系列第二篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/&#34; target=&#34;_blank&#34;&gt;美军网络安全 | 第 2 篇：JIE 网络安全架构SSA（单一安全架构）&lt;/a&gt;）和第三篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-3-joint-information-enviroment-joint-region-security-stack/&#34; target=&#34;_blank&#34;&gt;美军网络安全 | 第 3 篇：JIE 联合区域安全栈 JRSS&lt;/a&gt;）分别介绍了 JIE 网络安全体系架构和重要实现。&lt;/p&gt;
-
-&lt;p&gt;本系列第四篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-4-corss-domain-solution/&#34; target=&#34;_blank&#34;&gt;美军网络安全 | 第 4 篇：跨域解决方案（CDS）&lt;/a&gt;）介绍了不同密级网络之间安全连接的解决方案。&lt;/p&gt;
-
+&lt;p&gt;本系列第一篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-1-the-summary-of-joint-information-enviroment/&#34;&gt;美军网络安全 | 开篇：JIE（联合信息环境）概述&lt;/a&gt;）介绍了美军 **JIE（联合信息环境）**的总体情况。&lt;/p&gt;
+&lt;p&gt;本系列第二篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/&#34;&gt;美军网络安全 | 第 2 篇：JIE 网络安全架构SSA（单一安全架构）&lt;/a&gt;）和第三篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-3-joint-information-enviroment-joint-region-security-stack/&#34;&gt;美军网络安全 | 第 3 篇：JIE 联合区域安全栈 JRSS&lt;/a&gt;）分别介绍了 JIE 网络安全体系架构和重要实现。&lt;/p&gt;
+&lt;p&gt;本系列第四篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-4-corss-domain-solution/&#34;&gt;美军网络安全 | 第 4 篇：跨域解决方案（CDS）&lt;/a&gt;）介绍了不同密级网络之间安全连接的解决方案。&lt;/p&gt;
 &lt;p&gt;本篇（即第五篇），将介绍身份和访问安全的解决方案 —— &lt;strong&gt;IdAM（身份与访问管理）&lt;/strong&gt;。它在  JIE 框架中的地位如下图所示：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669004268184.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669004268184.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;我们曾经提到过，在下面的 JIE 框架图中，所有深红色部分都属于网络安全内容，即 SSA（单一安全架构）涵盖的范畴。然而 IdAM 并不是深红色，而是浅蓝色。这种颜色主要代表的是企业化能力和服务。（细节是魔鬼，这张图中的各种颜色，都是有特定含义的）&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669004822105.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669004822105.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;笔者推测，美军这么看待 IdAM 的原因是：IdAM 与传统的 PKI/CA 认证体系一脉相承，早已成为美国国防部一项非常基础、非常重要的服务——信任基础设施。&lt;/p&gt;
-
 &lt;p&gt;笔者提示：对 &lt;strong&gt;Gartner 自适应安全防护模型&lt;/strong&gt;和 &lt;strong&gt;Gartner 自适应访问控制模型&lt;/strong&gt;比较熟悉的同学知道，&lt;strong&gt;安全&lt;/strong&gt;和&lt;strong&gt;信任&lt;/strong&gt;分别解决了&lt;strong&gt;防护侧&lt;/strong&gt;和&lt;strong&gt;访问侧&lt;/strong&gt;的问题。从这个意义上讲，信任是与安全并驾齐驱的领域。所以，本次介绍的 IdAM（解决信任问题）与前面强调过的单一安全架构 SSA（解决安全问题）在 JIE 中的地位是可以类比的。&lt;/p&gt;
-
 &lt;p&gt;说明：在较新的国防部文件中，&lt;strong&gt;IdAM 也经常被称为 ICAM（身份、凭证与访问管理）&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;h2 id=&#34;二-idam-背景-gig-时代&#34;&gt;二、IdAM 背景（GIG 时代）&lt;/h2&gt;
-
-&lt;h3 id=&#34;1-gig-2-0-中的全球访问愿景&#34;&gt;1、GIG 2.0 中的全球访问愿景&lt;/h3&gt;
-
+&lt;h2 id=&#34;idam-gig-&#34;&gt;二、IdAM 背景（GIG 时代）&lt;/h2&gt;
+&lt;h3 id=&#34;1gig-20-&#34;&gt;1、GIG 2.0 中的全球访问愿景&lt;/h3&gt;
 &lt;p&gt;先看一张 2009 年国防部 GIG（全球信息栅格）2.0 的作战概念图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669006356754.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669006356754.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;左边是美军当时的访问能力状态，右侧是美军希望达到的目标状态。很明显，那时的认证基础设施和访问目录都是分散的，他们希望能够实现大统一，将认证和访问控制&lt;strong&gt;集中统管&lt;/strong&gt;起来。&lt;/p&gt;
-
 &lt;p&gt;注意，这是 2009 年的图。当时，JIE（联合信息环境）概念尚未提出。2012 年后提出的 JIE，也非常推崇&lt;strong&gt;统管制&lt;/strong&gt;，其目的是冲破组织烟囱和功能烟囱的藩篱。这是美军 IT 管理机制的一次影响深远的重大变革，树立了管理制度大胆变革的榜样。&lt;/p&gt;
-
 &lt;p&gt;从集中统管这种思路上看，IdAM 毫无疑问走在了前头。当然，这也与其作为基础设施的地位分不开。无论是 GIG 时代，还是 JIE 时代，都是如此。&lt;/p&gt;
-
 &lt;p&gt;全球认证、访问控制、目录服务是 GIG 2.0 作战概念的 3 个关键特征，用于确保任何授权用户，利用通用和移动的身份证书，能够从任意地点访问全球网络基础设施，并使所有授权的作战人员、业务支持人员或情报人员都能获得与其任务相关的和可视的信息、服务和应用，同时做到单一签名，在任意时间和地点，实现对网络、信息技术、国家安全系统服务的访问，以及对整个国防部全球地址清单的访问。《&lt;strong&gt;全企业访问网络和协同服务参考体系结构&lt;/strong&gt;》（EANCE RA）正是着眼全球可访问资源的全球认证、授权和访问控制，进行了体系结构设计。&lt;/p&gt;
-
-&lt;h3 id=&#34;2-信息保障基础设施中的身份访问控制&#34;&gt;2、信息保障基础设施中的身份访问控制&lt;/h3&gt;
-
+&lt;h3 id=&#34;2&#34;&gt;2、信息保障基础设施中的身份访问控制&lt;/h3&gt;
 &lt;p&gt;在 GIG（全球信息栅格）时代，IdAM 的功能主要被包含在&lt;strong&gt;信息保障（IA）基础设施&lt;/strong&gt;中。信息保障基础设施由各种软硬件以及管理系统和安全保密设备组成,用于维持和保护 GIG 网络的正常运行以及&lt;strong&gt;身份识别与授权、访问控制&lt;/strong&gt;、用户信息保护、动态管理、资源分配、网络防御与态势感知等功能，确保 GIG 网络的有效操作和安全可靠。2006 年，美国国防部颁布了“&lt;strong&gt;全球信息栅格信息保障体系结构&lt;/strong&gt;” 1.1 版，确定了 &lt;strong&gt;GIG 信息保障任务&lt;/strong&gt;的 6 个能力域、15 种能力要求、19 项基本系统功能。&lt;/p&gt;
-
 &lt;p&gt;信息保障机制包括：基于策略决策服务（PDS）、策略检索服务（PRS）、策略管理服务（PoAS）、证书确认服务（CVS）、主要特征识别服务（PrAS）等 5 项“核心”功能。基于这些功能形成的保护机制，基本上可以确保其他服务功能的安全调用。&lt;strong&gt;DoD 信息保障服务机制&lt;/strong&gt;如下图所示：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669009750140.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669009750140.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;这种保障机制可以实现：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;认证和授权：只有授权用户(服务用户、服务提供者以及各种应用)可调用信息服务；&lt;/li&gt;
 &lt;li&gt;保密性：可保护信息或文件，使其不被非授权用户访问；&lt;/li&gt;
@@ -84,114 +232,74 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 &lt;li&gt;问责性：提供安全登录和审查；&lt;/li&gt;
 &lt;li&gt;互操作性：接口可支持各种领域或者机构的商用技术方案。&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h3 id=&#34;3-pki-pke&#34;&gt;3、PKI/PKE&lt;/h3&gt;
-
+&lt;h3 id=&#34;3pkipke&#34;&gt;3、PKI/PKE&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;国防部 PKI&lt;/strong&gt;（公共密钥基础设施）：负责公钥证书及其相应私钥的生成、生产、分发、控制、撤销、恢复和跟踪。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;公钥启用&lt;/strong&gt;（&lt;strong&gt;PKE&lt;/strong&gt;， Public Key Enablement）：是确保应用程序可以使用由 PKI 颁发的证书来支持标识和身份验证、数据完整性、机密性和/或技术不可否认性的过程。&lt;/p&gt;
-
 &lt;p&gt;PKE 的常见用例包括启用：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;智能卡登录 DoD 网络和基于证书的系统认证；&lt;/li&gt;
 &lt;li&gt;到 DoD 服务器的安全连接（SSL/TLS）；&lt;/li&gt;
 &lt;li&gt;来自桌面、Web、移动客户端的电子邮件的数字签名和加密；&lt;/li&gt;
 &lt;li&gt;表格的数字签名。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;当前，&lt;strong&gt;国防部 PKI 的发展方向&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;非个人实体（NPE）&lt;/strong&gt;：NPE 系统为 NIPRNET 和 SIPRNET 上的设备（如工作站、Web服务器、网络设备）和服务，提供了更加简化的 PKI 证书颁发。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;移动认证&lt;/strong&gt;：为 DoD PKI 订阅用户在&lt;strong&gt;商用移动设备&lt;/strong&gt;上使用，提供了一种安全、可扩展的分发软件证书的方法。即后文提到的纯种系统；&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;PKI有两种基本类型：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;国防部 PKI（DoD 证书颁发机构）&lt;/strong&gt;：国防部向人员实体和非人员实体（如网络服务器、网络设备、路由器、应用程序）颁发证书，以支持国防部的任务和业务运作。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;ECA PKI（外部证书颁发机构）&lt;/strong&gt;：国防部已经建立了外部认证机构（ECA）计划，以支持向行业合作伙伴和其他外部实体和组织，颁发国防部批准的证书。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;对于 &lt;strong&gt;DoD PKI&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;在 NIPRNET 上&lt;/strong&gt;：国防部 PKI 是一个层次结构系统，在层次结构的顶部有一个根证书机构（CA），以及一些支持可扩展性和提供灾难恢复能力的颁发 CA。该 PKI 在公共访问卡（CAC）上颁发证书，并颁发软件证书以支持应用程序需求。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;在 SIPRNET 上&lt;/strong&gt;：国防部在 &lt;strong&gt;NSS（国家安全系统）PKI 根 CA&lt;/strong&gt; 下运行 CA，该根 CA 支持在机密网络上拥有用户或系统的所有联邦机构。&lt;strong&gt;NSS PKI 在 SIPRNET 硬件令牌和软件证书上颁发证书&lt;/strong&gt;，以支持应用程序需求。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;对于 &lt;strong&gt;ECA PKI&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;根据 ECA 项目颁发的 PKI 证书，提供了一种机制，使这些实体能够与国防部安全通信，并认证到国防部信息系统。&lt;/li&gt;
 &lt;li&gt;ECA PKI 由一个根 CA 和从属 CA 组成，根 CA 在运行 DoD PKI 根 CA 的同一设施中维护，而从属 CA 则由授权供应商维护。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;PKI 互操作性是国防部及其联邦政府和行业内合作伙伴之间安全信息共享的重要组成部分。这些年来，国防部 PKI 不断扩展与外部的互操作性。下面 2016 年的国防部 PKI 外部互操作性架构图，说明了国防部如何通过联邦桥与批准的外部 PKI 进行交互。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669014169591.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;4-军事人员的通用访问卡&#34;&gt;4、军事人员的通用访问卡&lt;/h3&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669014169591.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4&#34;&gt;4、军事人员的通用访问卡&lt;/h3&gt;
 &lt;p&gt;1999 年开始，美国国防部开始为现役人员、预备役人员、文职雇员制发新式&lt;strong&gt;通用访问卡&lt;/strong&gt;（CAC 卡，Commom Access Card）。&lt;/p&gt;
-
 &lt;p&gt;2006 年，美国国防部开始对个人发放&lt;strong&gt;新一代通用访问卡&lt;/strong&gt;（CAC）。新卡大约相当于标准信用卡大小，在一个集成电路芯片上存储 144K 的数据存储和内存。新型通用访问卡提供统一的电子结构，增加了&lt;strong&gt;身份欺骗防护&lt;/strong&gt;措施，并升级了安全和隐私能力。新卡的芯片上保存了 &lt;strong&gt;PKI 证书、两枚指纹、一张数码照片、个人身份验证（PIV）证书&lt;/strong&gt;、人事关系、社会保险号、机构、卡片有效期。同时，在发卡前还将对人员进行背景检查。&lt;/p&gt;
-
 &lt;p&gt;CAC 卡允许对&lt;strong&gt;所有物理和逻辑访问&lt;/strong&gt;，进行&lt;strong&gt;快速身份验证&lt;/strong&gt;和增强安全性。&lt;/p&gt;
-
 &lt;p&gt;CAC 卡存储的数据只能通过安全的CAC应用程序访问。事实上，如果没有以下条件，就无法访问存储在 CAC 上的信息：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;个人识别号（PIN）：如果忘记了 PIN ，只能前往发行站点，将您的指纹与您发行卡时存储在国防注册资格报告系统中的指纹进行匹配。如果指纹匹配成功，则可以选择新的 PIN。目前，&lt;strong&gt;无法远程重置&lt;/strong&gt;您的 PIN；&lt;/li&gt;
 &lt;li&gt;系统访问解释数据所需的&lt;strong&gt;安全 CAC 应用程序&lt;/strong&gt;。&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669015957605.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;img src=&#34;media/15668995071162/15669016079741.jpg&#34; alt=&#34;-w300&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;三-idam-内涵-jie-时代&#34;&gt;三、IdAM 内涵（JIE 时代）&lt;/h2&gt;
-
-&lt;h3 id=&#34;1-idam-概念和作用&#34;&gt;1、IdAM 概念和作用&lt;/h3&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669015957605.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;img src=&#34;media/15668995071162/15669016079741.jpg&#34; alt=&#34;-w300&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;idam-jie-&#34;&gt;三、IdAM 内涵（JIE 时代）&lt;/h2&gt;
+&lt;h3 id=&#34;1idam-&#34;&gt;1、IdAM 概念和作用&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;IdAM&lt;/strong&gt;（&lt;strong&gt;身份和访问管理服务&lt;/strong&gt;，Identity and Access Management）定义：IdAM 是创建、定义和管理身份信息的使用/保护的技术系统、策略和过程的组合。也称为 &lt;strong&gt;ICAM&lt;/strong&gt;（Identity, Credential, and Access Management）。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;IdAM 主管部门&lt;/strong&gt;：国防部信息系统局（DISA）、国防人力数据中心（DMDC ）、国家安全局（NSA）组合资源，为国防部提供 IdAM 解决方案。&lt;/p&gt;
-
 &lt;p&gt;在 JIE 的概念体系中，IdAM 是实现数据安全及与任务伙伴安全共享信息的根本。&lt;strong&gt;“身份”可在整个企业，在所有网络上，对人员和机器，实现端到端的、唯一的、明确的区分&lt;/strong&gt;。这些能力对于提高国防部 IT 安全性及任务有效性的双重目标至关重要。这种能力与基于访问的控制相结合，可以使得&lt;strong&gt;人员实体和非人员实体&lt;/strong&gt;，能够在任意时间、在任意地点、安全地访问经过授权的国防部信息，得以实现“&lt;strong&gt;三个任意&lt;/strong&gt;”的目标。&lt;/p&gt;
-
 &lt;p&gt;IdAM 能够正确识别国防部信息网络上的用户（人员或软件），并对用户访问网络资源和服务进行高效&lt;strong&gt;管理&lt;/strong&gt;。通过将&lt;strong&gt;用户活动与数字身份进行绑定&lt;/strong&gt;，确保所有用户都必须经过强有力的认证，且只能访问其经过授权的资源，并能对所有用户进行监控，从而降低内部和外部威胁风险。&lt;/p&gt;
-
 &lt;p&gt;国防部 &lt;strong&gt;PKI&lt;/strong&gt;（公钥基础设施）认证的使用范围将&lt;strong&gt;最大化&lt;/strong&gt;，可以&lt;strong&gt;用于 NIPRNET/SIPRNET 的所有登录和 NIPR/SIPR 国防部网站的每次访问&lt;/strong&gt;。国防部 PKI 认证的使用，也将提供更有效的监控和追溯能力。&lt;/p&gt;
-
 &lt;p&gt;简而言之，IdAM 可以生成全军全网唯一且可追溯的“&lt;strong&gt;身份&lt;/strong&gt;”，既使得作战人员可以实现三个任意的全球访问，又使得国防部可以有效管理网络上的所有人员和系统。&lt;/p&gt;
-
 &lt;p&gt;为了改变和提升国防部过去那种人工密集的、不一致的、耗时的、资源繁重的本地管理归档和信息系统访问管理能力，新的 IdAM 能力将可最大程度地实现对IT系统的日常访问控制的&lt;strong&gt;自动化&lt;/strong&gt;，将使系统访问更具&lt;strong&gt;动态性&lt;/strong&gt;，确保实体发现，并可实现活动监控与追溯。&lt;/p&gt;
-
-&lt;h3 id=&#34;2-idam-能力模型&#34;&gt;2、IdAM 能力模型&lt;/h3&gt;
-
+&lt;h3 id=&#34;2idam-&#34;&gt;2、IdAM 能力模型&lt;/h3&gt;
 &lt;p&gt;IdAM 产品高层能力模型如下图所示：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669018854637.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669018854637.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;可见，IdAM 解决方案包含三个部分：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;管理数字身份&lt;/li&gt;
 &lt;li&gt;认证用户&lt;/li&gt;
 &lt;li&gt;授权资源访问&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;其中，不同颜色有不同的含义：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;蓝色：DISA 提供的服务；&lt;/li&gt;
 &lt;li&gt;绿色：DISA 与 NSA 一起提供的服务；&lt;/li&gt;
 &lt;li&gt;红色：DMDC 提供的服务；&lt;/li&gt;
 &lt;li&gt;黑色：系统级提供的服务。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;主要功能模块的含义如下：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;milConnect&lt;/strong&gt;：是 DMDC（国防人力数据中心）提供的一个网站，允许 DoD 成员更新他们的个人数据。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EIAS（企业身份属性服务）&lt;/strong&gt;：通过一个安全的、基于标准的 SAML（安全断言标记语言）接口，分发国防部人员、角色和人员属性，用于访问控制。&lt;/li&gt;
@@ -201,51 +309,33 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;EDQS（企业目录查询服务）&lt;/strong&gt;：提供国防部 CC/S/A（作战指挥、军种和机构）到包含 IdSS 数据的 LDAP/S 目录的只读连接。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;IdMI（IdSS 机器接口）&lt;/strong&gt;：为国防部 CC/S/A （作战指挥、军种和机构）提供了使用 IdSS 数据的方法。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;下图所示的 IdAM 产品架构，包含了各个组件之间的访问逻辑和流程：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669019764524.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669019764524.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;IdAM 能力将包括：&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;基于 &lt;strong&gt;NIPRNet 通用访问卡（CAC）&lt;/strong&gt;和 &lt;strong&gt;SIPRNet 令牌&lt;/strong&gt;，完全自动化地生成用户账户；&lt;/li&gt;
+&lt;li&gt;基于 **NIPRNet 通用访问卡（CAC）**和 &lt;strong&gt;SIPRNet 令牌&lt;/strong&gt;，完全自动化地生成用户账户；&lt;/li&gt;
 &lt;li&gt;基于申请用户的属性（如密级许可权、衔级、岗位职能等），做出&lt;strong&gt;实时&lt;/strong&gt;的信息访问控制决策；&lt;/li&gt;
 &lt;li&gt;基于更有效的监控和追溯，帮助国防部网络的运行人员和防御人员，更好地了解谁在国防部网络操作和他们正在干什么。&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h3 id=&#34;3-idam-目标状态&#34;&gt;3、IdAM 目标状态&lt;/h3&gt;
-
+&lt;h3 id=&#34;3idam-&#34;&gt;3、IdAM 目标状态&lt;/h3&gt;
 &lt;p&gt;国防部 ICAM 的目标状态是&lt;strong&gt;实现动态访问控制&lt;/strong&gt;，如下图所示：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669021558138.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669021558138.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;其中的主体功能是基于策略的授权服务、身份与凭证管理、策略管理、资源管理四个方面。&lt;/p&gt;
-
 &lt;p&gt;理解国防部 IdAM 的关键是基于属性的访问控制（ABAC）模型。ABAC 体系结构如下所示：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669021836916.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;四-icam-战略目标&#34;&gt;四、ICAM 战略目标&lt;/h2&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669021836916.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;icam-&#34;&gt;四、ICAM 战略目标&lt;/h2&gt;
 &lt;p&gt;在《美国国防部数字现代化战略：国防部信息资源管理战略计划 FY19-23》中，列出了如下所示的战略目标：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669022113221.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669022113221.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;其中，ICAM 位列第 3 大战略目标（即“3：发展网络安全，形成灵活和弹性的防御态势”）的第2 子目标（即“3.2 部署端到端 ICAM 基础设施”），主要内容如下：&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;目标描述&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;部署端到端 ICAM 基础设施。&lt;/li&gt;
 &lt;li&gt;国防部必须促进企业 ICAM 的实施，以支持快速访问任务信息，加强与盟国和伙伴的负责任的信息共享和归属，并通过移动应用和迁移到云支持更高的效率和效率。&lt;/li&gt;
 &lt;li&gt;ICAM 创造了一个安全可信的环境，任何用户都可以访问所有授权资源（包括应用程序和数据），以成功完成任务；同时也可以让国防部随时知道谁在网络上。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;战略要素&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;战略要素 1：扩展&lt;strong&gt;公钥启用（PKE）&lt;/strong&gt;能力，以支持 ICAM；&lt;/li&gt;
+&lt;li&gt;战略要素 1：扩展**公钥启用（PKE）**能力，以支持 ICAM；&lt;/li&gt;
 &lt;li&gt;战略要素 2：实施&lt;strong&gt;自动帐户供应&lt;/strong&gt;（AAP）；&lt;/li&gt;
 &lt;li&gt;战略要素 3：实施对批准的多因素认证能力的支持；&lt;/li&gt;
 &lt;li&gt;战略要素 4：增强&lt;strong&gt;企业身份属性服务（EIAS）&lt;/strong&gt;；&lt;/li&gt;
@@ -257,188 +347,128 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 &lt;li&gt;战略要素 10：提升治理结构，促进企业 ICAM 解决方案的开发和采用；&lt;/li&gt;
 &lt;li&gt;战略要素 11：制定国防部政策和标准，明确定义识别、凭证、认证、授权生命周期管理的要求。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;ICAM 的四个支柱&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;数字身份管理：建立数字身份和生命周期管理。&lt;/li&gt;
 &lt;li&gt;凭证管理：颁发物理或电子令牌（公共访问卡（CAC）/公钥基础设施（PKI）证书和/或帐户），作为实体权威数字身份的代理。&lt;/li&gt;
 &lt;li&gt;认证：通过一个凭证并验证该凭证是否为真实凭证的方式，声明身份。PKI是国防部目前的认证技术解决方案。但是，当不能使用PKI时，可以使用已批准的多因素身份验证和身份联邦服务。&lt;/li&gt;
 &lt;li&gt;授权：基于数字策略和有关请求身份和被访问资源的权威信息，批准访问。&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;h2 id=&#34;五-idam-发展路线图&#34;&gt;五、IdAM 发展路线图&lt;/h2&gt;
-
+&lt;h2 id=&#34;idam-&#34;&gt;五、IdAM 发展路线图&lt;/h2&gt;
 &lt;p&gt;IdAM 未来几年的路线图如下图所示：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669024641062.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669024641062.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;下面，主要介绍其中提到的可靠身份、纯种移动认证、证书缩减。&lt;/p&gt;
-
-&lt;h3 id=&#34;1-可靠身份&#34;&gt;1、可靠身份&lt;/h3&gt;
-
+&lt;h3 id=&#34;1&#34;&gt;1、可靠身份&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;可靠身份（Assured Identity）&lt;/strong&gt;：建立并持续验证数字身份，然后为该身份分配属性，并将其与个人或可信设备强关联。&lt;/p&gt;
-
 &lt;p&gt;可靠身份的目标：对使用&lt;strong&gt;移动设备&lt;/strong&gt;的作战人员的身份的保证和保护。&lt;/p&gt;
-
 &lt;p&gt;可靠身份的基础能力：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;利用移动设备上的本机传感器，收集和训练生物特征和上下文因素，以进行持续多因素身份验证。&lt;/li&gt;
 &lt;li&gt;使用基于硬件的安全元素，发布和保护纯种派生凭证和相关私钥，这些安全元素相当于通用访问卡（CAC）的凭证强度。&lt;/li&gt;
 &lt;li&gt;观察用户行为，以建立模式和网络授权的关系。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;可靠身份的关键步骤如下：&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;硬件认证&lt;/strong&gt;：&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;硬件认证&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;烧录到移动设备硬件中的数字密钥，为传感器数据和本地生成的密钥提供信任。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;CMFA（持续多因素认证）&lt;/strong&gt;：&lt;/p&gt;
-
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;CMFA（持续多因素认证）&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;传感器数据-行为和上下文生物识别因素-机器学习算法；&lt;/li&gt;
 &lt;li&gt;移动、桌面或服务器环境中的持续身份验证；&lt;/li&gt;
 &lt;li&gt;启用无需口令的物理和逻辑访问；&lt;/li&gt;
 &lt;li&gt;为逻辑和物理方式的设备访问，分配信任分数；&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;个性化上下文认证&lt;/strong&gt;：&lt;/p&gt;
-
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;个性化上下文认证&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;CMFA 不断验证身份。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;基于可靠身份，可以实现&lt;strong&gt;虚拟传输解决方案&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;利用云托管的移动电话实例，在一台移动设备上允许访问多个密级；&lt;/li&gt;
 &lt;li&gt;移动设备上不存储数据，允许使用政府供应设备（GFE）和自带设备（BYOD）；&lt;/li&gt;
 &lt;li&gt;支持完整的设备功能：端点上的无缝虚拟化；&lt;/li&gt;
 &lt;li&gt;使用派生PKI证书。&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669026716794.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2-纯种移动认证&#34;&gt;2、纯种移动认证&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;纯种（Purebred）&lt;/strong&gt;移动安全凭证：&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669026716794.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;21&#34;&gt;2、纯种移动认证&lt;/h3&gt;
+&lt;p&gt;**纯种（Purebred）**移动安全凭证：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;是派生凭证；&lt;/li&gt;
 &lt;li&gt;由一个密钥管理服务器和一组应用程序组成：应用程序将密钥管理与设备管理分开；&lt;/li&gt;
 &lt;li&gt;将密钥管理与设备管理分开：旨在促进密钥管理与设备管理的分离，以使密钥管理保持与PKI的密切关系，并在国防部企业内保持一致，而设备管理可以随每个作战场景而变化。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;纯种启用了&lt;strong&gt;空中证书认证&lt;/strong&gt;，取代了对智能卡读卡器的需求。&lt;/p&gt;
-
 &lt;p&gt;纯种由 DISA PKI 工程公司开发，旨在为 DoD PKI 用户在&lt;strong&gt;商用移动设备&lt;/strong&gt;上使用提供一种安全、可扩展的&lt;strong&gt;分发软件证书&lt;/strong&gt;的方法。系统首先建立对用于加密绑定到设备的配置数据的设备证书的信任，然后允许订户演示其 CAC 的拥有和使用，以生成两个新的派生凭据并恢复现有的电子邮件加密密钥。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669028089717.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;3-证书缩减&#34;&gt;3、证书缩减&lt;/h3&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669028089717.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3&#34;&gt;3、证书缩减&lt;/h3&gt;
 &lt;p&gt;CAC 包含四种 PKI 证书：&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;国防部身份证书；&lt;/li&gt;
 &lt;li&gt;PIV（个人身份验证）身份验证证书；&lt;/li&gt;
 &lt;li&gt;电子邮件签名证书；&lt;/li&gt;
 &lt;li&gt;加密证书；&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;在 2019 财年，IdAM 团队计划减少国防部颁发的 CAC 证书数量。减少证书数量后，会减少证书吊销列表的大小，并使用更少的资源来维护 PKI 基础设施，从而提高效率。&lt;/p&gt;
-
 &lt;p&gt;证书缩减将消除&lt;strong&gt;国防部身份证书&lt;/strong&gt;，并使用已经存在于 CAC 上的 &lt;strong&gt;PIV 认证证书&lt;/strong&gt;替换认证功能。&lt;/p&gt;
-
 &lt;p&gt;目的是对所有已颁发的 CAC 使用 PIV 认证证书。军方早在 2018 年 2 月份就开始了这项工作。&lt;/p&gt;
-
-&lt;h2 id=&#34;六-走向零信任&#34;&gt;六、走向零信任&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading1&#34;&gt;六、走向零信任&lt;/h2&gt;
 &lt;p&gt;在《美国国防部数字现代化战略：国防部信息资源管理战略计划 FY19-23》中，提及了国防部向零信任发展的明确方向。主要内容如下：&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;零信任安全&lt;/strong&gt;：零信任是一种网络安全策略，它将安全嵌入到整个体系结构中，以阻止数据泄露。&lt;/p&gt;
-
 &lt;p&gt;零信任安全是国防部首席信息官正在与 DISA、美国网络司令部、国家安全局合作探索的一项新举措。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;零信任安全的优势&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;这种&lt;strong&gt;以数据为中心&lt;/strong&gt;的安全模型，消除了受信任或不受信任的网络、设备、角色或进程的概念，并转变为基于多属性的&lt;strong&gt;信任级别&lt;/strong&gt;，使身份验证和授权策略在最低特权访问概念下得以实现。&lt;/li&gt;
 &lt;li&gt;实现零信任，需要重新思考我们如何利用现有的基础设施，以更简单、更高效的方式设计安全性，同时实现不受阻碍的操作。&lt;/li&gt;
 &lt;li&gt;除了总体上保护架构的优势外，还有其他跨功能的好处。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;零信任的实现复杂性&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;虽然原则上简洁易懂，但零信任的实际实现和操作，在包括网络配置、软件定义网络（SDN）、数据标签、分析、访问控制、策略编排、加密、自动化，以及端到端 &lt;strong&gt;ICAM&lt;/strong&gt;（身份、凭证和访问管理）等方面，具有显著的复杂性。&lt;/li&gt;
 &lt;li&gt;企业级考虑还包括确定需要保护的数据、应用程序、资产、服务，以及映射事务流、策略决策、策略实施位置。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;零信任适合云部署&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;云部署非常适合实现零信任概念，特别是在使用商业云时。如果云基础设施本身受到威胁，则零信任兼容架构可提供保护，避免对手试图在我们的虚拟网络中扎根。&lt;/li&gt;
 &lt;li&gt;虽然商业云提供了一个扩展能力和控制成本的绝佳机会，但它们会带来风险，因为我们无法控制基础设施，而且在通信受损时可能会有延迟。而零信任关于你已经失陷的假设，特别适合云基础设施。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;零信任需要安全自动化&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;安全自动化和编排是成功部署和管理零信任兼容基础架构的关键功能，因为附加的身份验证、授权、监视和分析要求无法再通过手动管理。例如，所有节点的安全凭证需要自动化能力，以确保以机器速度进行键控和重新键控，而不会因不必要的人工干预而延迟。这需要经过认证和授权的设备确保它们正在通信的设备是健康的和经过批准的（设备认证）。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;零信任需要密码现代化&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;需要进行密码现代化，以确保数据的保护水平符合国家安全系统委员会（CNS）第 15 条政策中定义的商业国家安全算法（CNSA）套件。我们系统的加密安全性升级，可能会对遗留应用程序和硬件构成重大挑战，这些应用程序和硬件在如何支持所需的较大密钥尺寸和算法方面可能存在很大差异。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;零信任需要新的分析能力&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;分析将需要额外的能力来处理与零信任安全相关的所需传感器和日志数据。&lt;/li&gt;
 &lt;li&gt;可能需要采用不同的过程和程序，来测量网络的健康状况并识别异常行为。例如，网络内部资源之间的端到端加密，将限制内部数据包检查以检测问题的能力。需要采用新的分析措施，以确保只有经过授权的通信才能发生。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;更进一步，在《DISA（国防信息系统局）战略计划 2019-2022》中，给出了如下的 DISA 技术路线图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669030798356.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669030798356.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;很明显，在积极追求 ICAM、持续多因素认证、区块链技术的基础上，DISA 已经把零信任架构、软件定义企业、机器学习&amp;amp;人工智能摆到了发展道路上。&lt;/p&gt;
-
-&lt;h2 id=&#34;七-零信任广告&#34;&gt;七、零信任广告&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading2&#34;&gt;七、零信任广告&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;零信任广告一&lt;/strong&gt;：零信任提出者所著的《零信任网络》的中文译本，由奇安信身份安全团队翻译，已经面市，欢迎阅读。BCS大会就有签赠会噢：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669031308270.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669031308270.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;零信任广告二&lt;/strong&gt;：奇安信零信任安全产品体系和解决方案已经基本成熟，并在国内重大部委率先落地。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669031496429.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669031581581.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;八-总结和预告&#34;&gt;八、总结和预告&lt;/h2&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669031496429.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15668995071162/15669031581581.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;heading3&#34;&gt;八、总结和预告&lt;/h2&gt;
 &lt;p&gt;在本系列的介绍中，限于众所周知的原因，笔者只能采取蜻蜓点水的全景方式，介绍了美军网络安全的方方面面。&lt;/p&gt;
-
 &lt;p&gt;即便如此，也已经比网上的公开资料涵盖了更多、更深入的信息。毕竟，大部分英文原文资料是需要 FanQ 的。而不同来源之间的矛盾、不同版本之间的冲突，都需要关联和厘清。&lt;/p&gt;
-
 &lt;p&gt;在 JIE 的关键领域中，网络规范化、企业运营、企业服务、云计算、数据中心整合、任务伙伴环境、移动性等内容都还没有介绍，会在后期一一概述。&lt;/p&gt;
-
 &lt;p&gt;笔者深深地感到一种无奈：美军网络安全的博大精深，绝非朝夕之间可以理解。毕竟，美国国防部自己都在与时俱进，不断调整和优化自身的网络安全战略方向和技术路线。&lt;/p&gt;
-
 &lt;p&gt;笔者暗暗地感到一种喜悦：美国密级划分有非常精细化的处理手段（精细到字段级），只要是能公开的信息和技术资料都会尽量公开，因为他们以普世价值和理念宣扬为荣。作为一个技术人员，能与强者的技术理念共振，实属幸事。&lt;/p&gt;
-
 &lt;p&gt;笔者默默地感到一种无助：如何把美军网络安全理念和技术应用于我军、我国的实际环境，切实提升网络安全水平，更多地取决于用户自己，而非对手。作为第三方安全厂商，我们只能建议，却未必有足够的影响力。&lt;/p&gt;
-
 &lt;p&gt;以上观点，仅代表个人。&lt;/p&gt;
 </description>
     </item>

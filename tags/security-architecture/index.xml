@@ -17,60 +17,37 @@
       <link>https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/</link>
       <pubDate>Wed, 31 Jul 2019 12:01:02 +0800</pubDate>
       <guid>https://sbilly.github.io/post/dod-network-security-part-2-joint-information-enviroment-network-security-architecture-ssa/</guid>
-      <description>
-
-&lt;p&gt;原文：&lt;a href=&#34;https://mp.weixin.qq.com/s/GVcNs7avdB5hEk-ZI7Aq2Q&#34; target=&#34;_blank&#34;&gt;https://mp.weixin.qq.com/s/GVcNs7avdB5hEk-ZI7Aq2Q&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
-
-&lt;h2 id=&#34;一-上期回顾&#34;&gt;一、上期回顾&lt;/h2&gt;
-
-&lt;p&gt;公众号的上一篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-1-the-summary-of-joint-information-enviroment/&#34;&gt;美军网络安全 | 开篇：JIE（联合信息环境）概述&lt;/a&gt;）介绍了美军 &lt;strong&gt;JIE （联合信息环境）&lt;/strong&gt;的总体情况。其主要目标是实现“&lt;strong&gt;三个任意&lt;/strong&gt;”的愿景——美军作战人员能够基于&lt;strong&gt;任意设备&lt;/strong&gt;、在&lt;strong&gt;任意时间&lt;/strong&gt;、在全球范围的&lt;strong&gt;任意地方&lt;/strong&gt;获取所需信息，以满足联合作战的需求。&lt;/p&gt;
-
+      <description>&lt;p&gt;原文：https://mp.weixin.qq.com/s/GVcNs7avdB5hEk-ZI7Aq2Q&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;heading&#34;&gt;一、上期回顾&lt;/h2&gt;
+&lt;p&gt;公众号的上一篇（&lt;a href=&#34;https://sbilly.github.io/post/dod-network-security-part-1-the-summary-of-joint-information-enviroment/&#34;&gt;美军网络安全 | 开篇：JIE（联合信息环境）概述&lt;/a&gt;）介绍了美军 &lt;strong&gt;JIE （联合信息环境）&lt;strong&gt;的总体情况。其主要目标是实现“&lt;strong&gt;三个任意&lt;/strong&gt;”的愿景——美军作战人员能够基于&lt;/strong&gt;任意设备&lt;/strong&gt;、在&lt;strong&gt;任意时间&lt;/strong&gt;、在全球范围的&lt;strong&gt;任意地方&lt;/strong&gt;获取所需信息，以满足联合作战的需求。&lt;/p&gt;
 &lt;p&gt;同时，提到了 JIE 为国防部构建的 &lt;strong&gt;6 项关键能力&lt;/strong&gt;： SSA （单一安全架构）、网络规范化、 IAM （身份与访问管理）、企业服务、云计算、数据中心整合。还提到了 JIE 的 &lt;strong&gt;8 个现代化领域&lt;/strong&gt;：网络现代化、网络安全体系结构、企业运营、计算与存储、企业服务、任务伙伴环境（MPE）、身份和访问管理（IdAM）、移动性。&lt;/p&gt;
-
 &lt;p&gt;这一篇，就谈 &lt;strong&gt;6 项关键能力&lt;/strong&gt;的第 1 项和 &lt;strong&gt;8 个现代化领域&lt;/strong&gt;的第 2 项 —— JIE 网络安全架构 &lt;strong&gt;SSA （单一安全架构）&lt;/strong&gt;。&lt;/p&gt;
-
 &lt;p&gt;注意：&lt;strong&gt;SSA（单一安全架构）&lt;/strong&gt; 在最新的文件中可能被称为 &lt;strong&gt;CCA （一致网络安全架构）&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;h2 id=&#34;二-国防部网络安全准则&#34;&gt;二、国防部网络安全准则&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading1&#34;&gt;二、国防部网络安全准则&lt;/h2&gt;
 &lt;p&gt;根据美国防部 2016 年发布的《国防部网络安全准则实施计划》列出了朴实得不能再朴实的基本安全准则：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;努力方向 1 ：强身份验证&lt;/strong&gt;：降低对手在国防部信息网络上的机动能力。美国防部将执行更为严格的访问要求并&lt;strong&gt;降低网络的匿名性&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;努力方向 2 ：设备加固&lt;/strong&gt;：减少进入国防部信息网络的内部和外部攻击向量。确保设备正确配置和软件补丁为最新,该项工作还包括禁用电子邮件中的活动链接。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;努力方向 3 ：减少攻击面&lt;/strong&gt;：减少进入国防部信息网络的外部攻击载体。指挥官和监察人员必须确保只有&lt;strong&gt;经过授权的设备&lt;/strong&gt;可以访问网络、与国防部网络建立信任。此外,减少被攻击面也是 JIE （联合信息环境）的目标之一。 JIE 使用&lt;strong&gt;联合区域安全堆栈（JRSS）&lt;/strong&gt;减少安全区域的数量，从 1000 多个网络访同点减少到 50 个。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;努力方向 3 ：减少攻击面&lt;/strong&gt;：减少进入国防部信息网络的外部攻击载体。指挥官和监察人员必须确保只有&lt;strong&gt;经过授权的设备&lt;/strong&gt;可以访问网络、与国防部网络建立信任。此外,减少被攻击面也是 JIE （联合信息环境）的目标之一。 JIE 使用**联合区域安全堆栈（JRSS）**减少安全区域的数量，从 1000 多个网络访同点减少到 50 个。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;努力方向 4：与网络安全/计算机网络防御服务提供商保持一致&lt;/strong&gt;：提高对敌方活动的探测和响应能力。监控网络外围，推动网络事件报告方式的标准化，将提高对网络事件的快速检测和快速反应。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;从第 3 个努力方向可以看出：&lt;strong&gt;减少攻击面&lt;/strong&gt;是其关键原则之一。而 SSA 正是贯彻这一安全原则的产物。&lt;/p&gt;
-
-&lt;h2 id=&#34;三-设计ssa的背景原因&#34;&gt;三、设计SSA的背景原因&lt;/h2&gt;
-
+&lt;h2 id=&#34;ssa&#34;&gt;三、设计SSA的背景原因&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;美国防部设计 SSA 的根本原因是 GIG 存在问题&lt;/strong&gt;。&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;GIG 初衷：&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;GIG 是美军在提出 JIE 之前构建实施的巨大而复杂的通信与服务系统，其网络基础结构由不同的分布式服务单元组成，旨在将美国国防部的所有的信息系统、服务及应用，集成为一个无缝隙的、可靠的和安全的网络。&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;GIG 结果：&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;但是随着 GIG 演进工作的不断推进，原有的设计逐步暴露出构建成本高昂、互联能力有限、新技术采用缓慢、事件响应灵活性差等问题，美军构想的信息共享、基础设施建设、系统和服务采办模式、联合训练、通信保障及作战支持等能力并未达到预期目标。&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;GIG 问题披露：&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;2012 年，美国网络司令部司令兼国家安全局局长，亚历山大将军，接受联邦新闻电台采访时说：“对于现在的 DoD 体系结构，我认为保护它们真的是非常困难。我们有 15000 个飞地，每个都是&lt;strong&gt;单独管理&lt;/strong&gt;的。其结果是，每一个都要被修补，像一个独立的采邑一样运行。负责保护它们的人看不到防火墙以外的东西。基于主机的安全系统有所帮助，但实事求是的讲，态势感知是不存在的。”&lt;/p&gt;
-
 &lt;p&gt;2014 年，美军在《陆军网络安全企业参考架构 2.0》中提出，当前网络安全防护手段存在以下缺点：&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;各军兵种的网络包含重复、冗余的网络安全控制手段，同一数据在到达接收方路径中会被检查多次，造成效率低下、时延增加；&lt;/li&gt;
 &lt;li&gt;美海军提出的 CND 2.0（计算机网络防御体系）在实践中被认为没有达到预期效果，功能不完备；&lt;/li&gt;
@@ -79,118 +56,73 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 &lt;li&gt;许多 P/C/S （美军不同级别的前线阵地）用户需要同时维护不同网络的&lt;strong&gt;多种边界安全防护设备&lt;/strong&gt;；&lt;/li&gt;
 &lt;li&gt;缺乏面向最终用户和设备的&lt;strong&gt;态势感知和事件响应能力&lt;/strong&gt;。&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;原因分析：&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;在 GIG 所代表的传统信息框架下，各军种具备自行设计网络、开展网络防御的&lt;strong&gt;决定权&lt;/strong&gt;。&lt;/p&gt;
-
 &lt;p&gt;尽管美军国防部在各军种、军事机构中推动和实施了多个网络安全战略性项目，但 GIG 各组成单元间相互脱节的网络安全策略和保护措施&lt;strong&gt;多样化&lt;/strong&gt;的实现途径，导致网络安全本质上的整体保障能力存在巨大风险。&lt;/p&gt;
-
-&lt;h2 id=&#34;四-ssa-的背后思想&#34;&gt;四、SSA 的背后思想&lt;/h2&gt;
-
+&lt;h2 id=&#34;ssa-&#34;&gt;四、SSA 的背后思想&lt;/h2&gt;
 &lt;p&gt;SSA 的设计思想是减少网络攻击面暴露。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645443742807.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645443742807.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;由于多种&lt;strong&gt;非标准化安全实现&lt;/strong&gt;带来大量的 DoD 网络攻击面暴露，所以 SSA 的基本思想是&lt;strong&gt;标准化安全实现&lt;/strong&gt;，以减小网络攻击面。从 SSA 的名称“单一安全体系结构”也可以领会到这一点。&lt;/p&gt;
-
-&lt;h2 id=&#34;五-ssa-定义-定位&#34;&gt;五、SSA 定义&amp;amp;定位&lt;/h2&gt;
-
+&lt;h2 id=&#34;ssa-1&#34;&gt;五、SSA 定义&amp;amp;定位&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;SSA 定义：&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;JIE SSA 是一个联合的国防部安全架构，为美军国防部所有军事机构的计算机和网络防御，提供通用方法：&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;使用&lt;strong&gt;标准化&lt;/strong&gt;的安全防护功能集/套件，在&lt;strong&gt;最佳位置&lt;/strong&gt;开展防御；&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;移除冗余&lt;/strong&gt;的不必要的信息保障手段，以提高效能；&lt;/li&gt;
 &lt;li&gt;通过集中式计算机网络防御数据库，控制用户数据流动，并向 B/P/C/S 提供&lt;strong&gt;全局态势感知&lt;/strong&gt;；&lt;/li&gt;
 &lt;li&gt;在服务器、用户资产与骨干网分离时，保护网络飞地；&lt;/li&gt;
-&lt;li&gt;在 JIE 指定的美军国防部 &lt;strong&gt;EOC （企业操作中心）&lt;/strong&gt;中，提供用于监视和控制所有安全手段的工具集。&lt;/li&gt;
+&lt;li&gt;在 JIE 指定的美军国防部 **EOC （企业操作中心）**中，提供用于监视和控制所有安全手段的工具集。&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;SSA 定位：&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;SSA 的提出体现了美军为扭转安全防护的不利态势，而在 JIE 中做出的&lt;strong&gt;不懈努力&lt;/strong&gt;。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;SSA 在 JIE 中定位&lt;/strong&gt;：SSA 对应于 JIE 关键目标中的“建立整体的企业化安全架构，以确保优化的和同步化的网络、项目和企业化服务、以及联合和联盟作战行动”这一要求。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;SSA 与 JRSS 关系&lt;/strong&gt;： JRSS 是 SSA 的重要组成部分和贯彻实施形式。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;SSA 的主要原理&lt;/strong&gt;：降低所需的信息技术设备总量、实现配置标准化，建立企业级的安全共享协议和简化数据路由等。&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;SSA 目的：&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;SSA 目的&lt;/strong&gt;：打破军兵种间分割和安全防御的各自为战，整合成一个安全集成框架；&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;将&lt;strong&gt;最佳&lt;/strong&gt;的 CC/S/A（作战司令部/军种/机构）的信息保障能力和实践，应用于JIE安全体系结构。&lt;/li&gt;
 &lt;li&gt;用户在 SSA 支撑下，能够连接以前从未访问过的外部网络，从而获得更灵活的战术优势。&lt;/li&gt;
 &lt;li&gt;SSA 通过&lt;strong&gt;规整网络安全边界&lt;/strong&gt;，减少外部攻击面、管理标准化和操作、技术控制，确保在所有任务背景下美军国防部信息资产的保密性、完整性、可用性，同时能够促进快速攻击侦察、诊断、控制、响应能力的实现。&lt;/li&gt;
 &lt;li&gt;试图解决在实施任务保障时存在的机构&lt;strong&gt;重叠&lt;/strong&gt;、职责不清等问题，消除系统烟囱和网络安全边界，&lt;strong&gt;减少暴露于外部的攻击面&lt;/strong&gt;，实现参战单元的信息互通及快速、安全的数据共享，推进安全机制和协议规范的复用，降低已有系统改造和集成的耗费，从而使得信息基础设施管理员们更方便地监控和发现潜在安全威胁，并更迅速地应对。&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;h2 id=&#34;五-ssa方案和能力分解&#34;&gt;五、SSA方案和能力分解&lt;/h2&gt;
-
+&lt;h2 id=&#34;ssa1&#34;&gt;五、SSA方案和能力分解&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;SSA 方案&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;美国防部网络区分为 &lt;strong&gt;NIPRNet&lt;/strong&gt;（非密网）和 &lt;strong&gt;SIPRNet&lt;/strong&gt;（涉密网），对应的 &lt;strong&gt;SSA&lt;/strong&gt; 方案有所不同。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;NIPRNet&lt;/strong&gt; 的 &lt;strong&gt;SSA&lt;/strong&gt; 方案如下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645448204684.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645448204684.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;SIPRNet&lt;/strong&gt; 的 &lt;strong&gt;SSA&lt;/strong&gt; 方案如下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645448423886.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645448423886.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;留个作业：请自行对比上面两张图的区别。&lt;/p&gt;
-
 &lt;p&gt;看到这两张图，应该会很自然地联想到上一篇的 JIE 整体框架图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645448687901.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645448687901.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;现在，&lt;strong&gt;兑现上期的承诺：给出JIE整体框架的汉化版：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645448917809.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645448917809.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;实际上，图中所有深红色标记的安全能力都属于SSA的覆盖范畴，当然标记为SSA和JRSS的那些模块最为直接。&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;SSA 能力分解&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;对应地，两种网络中 SSA 的能力也有所不同。&lt;/p&gt;
-
 &lt;p&gt;NIPRNet 的 SSA 能力如下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645449356228.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645449356228.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;SIPRNet 的 SSA 能力如下图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645449569018.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15645432223609/15645449569018.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;可以看出， &lt;strong&gt;SSA 覆盖的安全能力&lt;/strong&gt;包括：国防部企业&lt;strong&gt;边界&lt;/strong&gt;保护、&lt;strong&gt;端点&lt;/strong&gt;安全、&lt;strong&gt;移动端点&lt;/strong&gt;安全、&lt;strong&gt;数据中心&lt;/strong&gt;安全、网络安全&lt;strong&gt;态势感知&lt;/strong&gt;分析能力、&lt;strong&gt;身份和访问管理&lt;/strong&gt;。可谓面面俱到。&lt;/p&gt;
-
-&lt;h2 id=&#34;六-总结和预告&#34;&gt;六、总结和预告&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading2&#34;&gt;六、总结和预告&lt;/h2&gt;
 &lt;p&gt;这一篇主要介绍了美 JIE 环境的整体安全架构思想 SSA 。&lt;/p&gt;
-
 &lt;p&gt;关注于落地实现细节的童鞋，可能会有很多疑问。&lt;/p&gt;
-
 &lt;p&gt;是的。SSA 更多的是一种&lt;strong&gt;安全思想&lt;/strong&gt;，而其落地实现则会分解到更多的安全能力模块中，比如JRSS（联合区域安全栈）就是SSA的核心实现之一。&lt;/p&gt;
-
 &lt;p&gt;若想进一步了解SSA实现细节，&lt;strong&gt;且等&lt;/strong&gt;下回分解。&lt;/p&gt;
-
 &lt;p&gt;注意是“&lt;strong&gt;且等&lt;/strong&gt;”，感兴趣却没有耐心的童鞋，还请自行分析研究，欢迎交流沟通。&lt;/p&gt;
 </description>
     </item>
@@ -200,72 +132,42 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
       <link>https://sbilly.github.io/post/dod-network-security-part-1-the-summary-of-joint-information-enviroment/</link>
       <pubDate>Wed, 31 Jul 2019 11:02:50 +0800</pubDate>
       <guid>https://sbilly.github.io/post/dod-network-security-part-1-the-summary-of-joint-information-enviroment/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;media/15645411696534/15645414651034.jpg&#34; alt=&#34;-w800&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;原文：&lt;a href=&#34;https://mp.weixin.qq.com/s/9VK8KFKF_ikSL2NBS8H3Mg&#34; target=&#34;_blank&#34;&gt;https://mp.weixin.qq.com/s/9VK8KFKF_ikSL2NBS8H3Mg&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;img src=&#34;media/15645411696534/15645414651034.jpg&#34; alt=&#34;-w800&#34;&gt;&lt;/p&gt;
+&lt;p&gt;原文：https://mp.weixin.qq.com/s/9VK8KFKF_ikSL2NBS8H3Mg&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;按语：久等了。我打算同步编写两个系列：一是“美军网络安全”系列；二是“安全自动化”系列。这是“美军网络安全”系列的第一篇。&lt;/p&gt;
-
-&lt;h2 id=&#34;一-为何研究美军网络安全技术&#34;&gt;一、为何研究美军网络安全技术？&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading&#34;&gt;一、为何研究美军网络安全技术？&lt;/h2&gt;
 &lt;p&gt;美军技术是美国技术的先导；
 美国技术是世界技术的先导。&lt;/p&gt;
-
-&lt;h2 id=&#34;二-做网络安全-不能缺乏对网络的理解&#34;&gt;二、做网络安全，不能缺乏对网络的理解。&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading1&#34;&gt;二、做网络安全，不能缺乏对网络的理解。&lt;/h2&gt;
 &lt;p&gt;从美军网络安全防护领导机构说起：&lt;/p&gt;
-
 &lt;p&gt;在 2010 年之前，由 DISA（美国国防信息系统局）局长负责指挥网络防御作战已有十余年的历史。&lt;/p&gt;
-
 &lt;p&gt;然而，在 2010 年，DISA 的网络安全防护职能移交给了新成立的&lt;strong&gt;美军网络司令部&lt;/strong&gt;。&lt;/p&gt;
-
 &lt;p&gt;但是，在 2015 年，DISA 局长兼任国防部信息网络联合部队司令部（JFHQ-DoDIN）司令，负责防御性网络空间作战，标志着 DISA 加入作战指挥序列，再次统领美军的网络安全防护。&lt;/p&gt;
-
 &lt;p&gt;美军的网络安全防护为什么重新由 DISA 统领？根本原因是网络安全防护必须以对网络的深刻理解为基础。 DISA 长期负责 DoDIN 的建设和运维，从设计理念到运维细节， DISA 是美军最清楚国防部信息网络（DoDIN）的部门。 2016 年 5 月，美军网络司令部作战部部长承认，在美军网络司令部组建网络安全防护力量的过程中，&lt;strong&gt;一个重要教训是：缺乏对网络的理解&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;h2 id=&#34;三-美国有哪几个网络值得学习&#34;&gt;三、美国有哪几个网络值得学习？&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading2&#34;&gt;三、美国有哪几个网络值得学习？&lt;/h2&gt;
 &lt;p&gt;美国政府目前主要有 3 种网络模型作为参考：&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;国防部联合信息环境（JIE）&lt;/strong&gt;：该网络旨在建立标准化的服务和管制措施，将更多数据控制在受保护的环境中，并利用49个联合区域安全栈（JRSS）限制与公共网络的连接。联合区域安全栈（JRSS）扮演了国防网络与全球互联网之间网关的角色。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;情报界信息技术企业（IC ITE）&lt;/strong&gt;：该网络耗资数十亿美元，包括建立共用传输和安全层，实现情报界 IT 服务的协调一致和标准化；&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;国土安全部 OneNet&lt;/strong&gt;：它是一种集中式的虚拟网络结构，将国土安全部下属的 7 大主要部门和 15 个子部门连接在一起。&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;从普适性、可参考性、研究资料的可获取性等角度综合考虑，我们将联合信息环境（JIE）作为首要研究对象。&lt;/p&gt;
-
-&lt;h2 id=&#34;四-jie-联合信息环境-概述&#34;&gt;四、JIE（联合信息环境）概述&lt;/h2&gt;
-
+&lt;h2 id=&#34;jie&#34;&gt;四、JIE（联合信息环境）概述&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;JIE 的预期效果&lt;/strong&gt;：&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15645411696534/15645413706331.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15645411696534/15645413706331.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;JIE（联合信息环境）概念 &amp;amp; 意义&lt;/strong&gt;：&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;&lt;strong&gt;联合信息环境（JIE， Joint Information Environment）&lt;/strong&gt;：是一个单一、联合、安全、可靠和敏捷的指挥、控制、通信和计算企业信息环境。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;美军目标&lt;/strong&gt;： JIE 将包含所有国防部网络，在 2020 年前，利用 JIE 使所有军种实现互联互通，以安全、高效的方式为作战人员提供所需的信息服务，实现“三个任意”的愿景——美军作战人员能够基于任意设备、在任意时间、在全球范围的任意地方获取所需信息，以满足联合作战的需求。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;主要目的&lt;/strong&gt;：通过减少基础设施和人员配置来提高运营效率，增强网络安全性，节省资金。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;重要意义&lt;/strong&gt;：从 GIG（全球信息栅格）到 JIE，意味着美军基础设施的建设模式从部门间相互协同转变为真正的一体化，美军从&lt;strong&gt;“以网络为中心”&lt;/strong&gt;转变为&lt;strong&gt;“以数据为中心”&lt;/strong&gt;。&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;重要意义&lt;/strong&gt;：从 GIG（全球信息栅格）到 JIE，意味着美军基础设施的建设模式从部门间相互协同转变为真正的一体化，美军从**“以网络为中心”**转变为**“以数据为中心”**。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;主要特点&lt;/strong&gt;：数据统一（核心数据中心集），网络统一（一个网络），系统统一（全面标准化）。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;关键优势&lt;/strong&gt;：将军事网络延伸到战术前沿。&lt;/p&gt;
-
 &lt;p&gt;JIE 为整个国防部构建的&lt;strong&gt;关键能力&lt;/strong&gt;：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;SSA（单一安全架构）；&lt;/li&gt;
 &lt;li&gt;网络规范化：提供一个安全、可靠、无缝连接作战人员的单一、受保护的信息环境；&lt;/li&gt;
@@ -274,72 +176,72 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 &lt;li&gt;云计算：国防部向云计算的迁移带来了挑战；&lt;/li&gt;
 &lt;li&gt;数据中心整合：国防部将继续通过关闭和整合整个国防部的数据中心来整合计算能力，同时确定现有的数据中心将转变为 JIE 核心数据中心（CDC）。&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&#34;五-jie-联合信息环境-整体框架&#34;&gt;五、JIE（联合信息环境）整体框架&lt;/h2&gt;
-
+&lt;h2 id=&#34;jie1&#34;&gt;五、JIE（联合信息环境）整体框架&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;JIE 整体框架：
-&lt;img src=&#34;media/15645411696534/15645414651034.jpg&#34; alt=&#34;-w600&#34; /&gt;
-（本系列下一篇将展示汉化版）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;JIE现代化领域&lt;/strong&gt;：&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;JIE 整体框架：
+&lt;img src=&#34;media/15645411696534/15645414651034.jpg&#34; alt=&#34;-w600&#34;&gt;
+（本系列下一篇将展示汉化版）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;JIE现代化领域&lt;/strong&gt;：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;网络现代化&lt;/strong&gt;
-
 &lt;ul&gt;
 &lt;li&gt;光载波升级&lt;/li&gt;
 &lt;li&gt;多协议标签交换（MPLS）&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;网络安全体系结构&lt;/strong&gt;
-
 &lt;ul&gt;
 &lt;li&gt;联合区域安全栈（JRSS）&lt;/li&gt;
 &lt;li&gt;联合管理系统（JMS）&lt;/li&gt;
 &lt;li&gt;边界、网络、数据、端点安全&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;企业运营&lt;/strong&gt;
-
 &lt;ul&gt;
 &lt;li&gt;JIE 管理网络（JMN）&lt;/li&gt;
 &lt;li&gt;网络指挥控制（C2）&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;计算与存储&lt;/strong&gt;
-
 &lt;ul&gt;
 &lt;li&gt;数据中心整合&lt;/li&gt;
 &lt;li&gt;云&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;企业服务&lt;/strong&gt;
-
 &lt;ul&gt;
 &lt;li&gt;国防企业电子邮件&lt;/li&gt;
 &lt;li&gt;协作能力&lt;/li&gt;
 &lt;li&gt;通用应用&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;任务伙伴环境（MPE）&lt;/strong&gt;
-
 &lt;ul&gt;
 &lt;li&gt;联盟信息共享&lt;/li&gt;
 &lt;li&gt;MPE信息系统（MPE-IS）&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;身份和访问管理（IdAM）&lt;/strong&gt;
-
 &lt;ul&gt;
 &lt;li&gt;动态访问和实体发现&lt;/li&gt;
 &lt;li&gt;活动监控&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;移动性&lt;/strong&gt;
-
 &lt;ul&gt;
 &lt;li&gt;国防移动非涉密能力&lt;/li&gt;
 &lt;li&gt;国防移动涉密能力&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;JIE 研究思路&lt;/strong&gt;：&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;JIE 研究思路&lt;/strong&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;系统性方法：根据JIE整体架构图，结合JIE现代化领域，遵循与网络安全的相关性，挑选重点领域，逐一开展研究。&lt;/p&gt;
 </description>
     </item>
@@ -349,78 +251,41 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
       <link>https://sbilly.github.io/post/high-security-military-network-based-on-proactive-protection/</link>
       <pubDate>Wed, 31 Jul 2019 10:13:53 +0800</pubDate>
       <guid>https://sbilly.github.io/post/high-security-military-network-based-on-proactive-protection/</guid>
-      <description>
-
-&lt;p&gt;原文：&lt;a href=&#34;http://mp.weixin.qq.com/s/kpDKsoV3n1A9l6yfoYqM9g&#34; target=&#34;_blank&#34;&gt;http://mp.weixin.qq.com/s/kpDKsoV3n1A9l6yfoYqM9g&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;军事信息网络的特殊安全需求&#34;&gt;军事信息网络的特殊安全需求&lt;/h2&gt;
-
+      <description>&lt;p&gt;原文：http://mp.weixin.qq.com/s/kpDKsoV3n1A9l6yfoYqM9g&lt;/p&gt;
+&lt;h2 id=&#34;heading&#34;&gt;军事信息网络的特殊安全需求&lt;/h2&gt;
 &lt;p&gt;军事指挥网络不同于普通信息网络，其核心任务是保障军队指挥链常时畅通、持续有效，确保指挥命令、指挥要素、指挥活动得以依托网络快速展开，在指挥链路的全时贯通、指控信息的全时受控、指挥系统的连续运行、指挥体系的安全可靠等方面有着很高的要求，导致其网络安全防护体系设计有其特殊性。现阶段主要采取传统安全保护技术手段，对军事指挥网络进行防护，并不能很好地满足指挥信息体系安全需求。其特殊性主要体现在以下 3 个方面：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;一是安全防御以可靠性作为首要目标。&lt;/strong&gt;在信息网络的安全保护中，主要关注的是对网络中业务数据的安全防护，着重保证数据的私密性、完整性与不可抵赖性。而在军事指挥网络中，网络的可用性是需要率先保障的，且其需要连续运行的特性决定了网络生命周期很长，指挥业务要求不间断运行，运行过程中很难对安全设备进行更新换代，也不能像信息网络那样可以晚间中止服务数个小时来更新通信协议版本或安全机制。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;二是安全弹性是军事网络的基本属性。&lt;/strong&gt;与普通信息网络强调“共享性”不同，军事指挥网络是典型的对抗型网络，其网络信息体系设计和安全防御架构，必须考虑从“硬摧毁”和“软杀伤”等各类网络攻击事件中“迅速恢复”能力，即弹性安全能力（Cyber Resilience）。如何确保军队指挥活动在遭受覆盖性网络攻击期间，军事网络系统能够抵挡攻击活动并快速从攻击损伤中恢复，弹性适应作战环境并保持其业务正常运转能力，是非常重要的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;三是军事网络是高度确定性网络。&lt;/strong&gt;军事网络环境相对清晰明确，网络边界、终端设备、通信协议、操作行为都可以通过管理制度、强制措施等方式予以明确，在相对局部的网络环境内，其安全防护的对象是有限而清晰定义的，其网络整体的可描述性和确定性更强。&lt;/p&gt;
-
+&lt;p&gt;**一是安全防御以可靠性作为首要目标。**在信息网络的安全保护中，主要关注的是对网络中业务数据的安全防护，着重保证数据的私密性、完整性与不可抵赖性。而在军事指挥网络中，网络的可用性是需要率先保障的，且其需要连续运行的特性决定了网络生命周期很长，指挥业务要求不间断运行，运行过程中很难对安全设备进行更新换代，也不能像信息网络那样可以晚间中止服务数个小时来更新通信协议版本或安全机制。&lt;/p&gt;
+&lt;p&gt;**二是安全弹性是军事网络的基本属性。**与普通信息网络强调“共享性”不同，军事指挥网络是典型的对抗型网络，其网络信息体系设计和安全防御架构，必须考虑从“硬摧毁”和“软杀伤”等各类网络攻击事件中“迅速恢复”能力，即弹性安全能力（Cyber Resilience）。如何确保军队指挥活动在遭受覆盖性网络攻击期间，军事网络系统能够抵挡攻击活动并快速从攻击损伤中恢复，弹性适应作战环境并保持其业务正常运转能力，是非常重要的。&lt;/p&gt;
+&lt;p&gt;**三是军事网络是高度确定性网络。**军事网络环境相对清晰明确，网络边界、终端设备、通信协议、操作行为都可以通过管理制度、强制措施等方式予以明确，在相对局部的网络环境内，其安全防护的对象是有限而清晰定义的，其网络整体的可描述性和确定性更强。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;基于军事指挥网络特殊安全属性，其安全防御需求至少包括以下 3 个方面：&lt;/strong&gt;&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;一是网络环境的可信性&lt;/strong&gt;，主要是指整个网络环境必须是确定清晰且可信任的，至少涵盖网络边界、网络设备和网络交互的可信性等三个方面。&lt;/p&gt;
-
 &lt;p&gt;其中：&lt;strong&gt;边界可信&lt;/strong&gt;是指所有网络边界都是清晰可描述的，包括终端设备的接入、终端设备上的外设接口、边界隔离交换设备配置策略等；&lt;strong&gt;设备可信&lt;/strong&gt;是指所有接入网络的设备都是明确无遗漏的，所有终端设备的使用与变更要做到实时监控；&lt;strong&gt;网络交互可信&lt;/strong&gt;是指网络中各个终端设备之间的交互行为是清晰可信的，包括网络交互的参与方、采用的通信协议、执行的操作行为等。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;二是网络状态的可知性&lt;/strong&gt;，主要是指网络安全管理部门对于网络当前运行的总体状态明确可知，能够及时感知其中正在发生或可能发生的安全事件，提前发现网络异常情况或正在发生的攻击活动，提升网络异常行为发现探知能力，至少涵盖设备接入、网络交互和安全事件的可知性等三个方面。&lt;/p&gt;
-
 &lt;p&gt;其中：&lt;strong&gt;设备接入可知&lt;/strong&gt;是指各类终端设备接入网络的情况是实时可知的，包括设备数量、类型、终端属性信息等；&lt;strong&gt;交互活动可知&lt;/strong&gt;是指网络内各个终端设备之间的交互情况是实时可知的，包括当前活动连接分布情况、网络流量内容情况等；&lt;strong&gt;安全事件可知&lt;/strong&gt;是指网络中出现的异常流量现象或异常网络行为是实时可知的，包括可疑终端设备接入、违规外联、恶意提权操作等。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;三是网络运行的可控性&lt;/strong&gt;，主要是指网络能够在运行过程中随着网络环境的变化及时调整威胁检测规则，在网络内发现异常活动或攻击行为时能够随即采取措施，阻断其攻击活动，控制其危害范围，保证相关指挥业务系统的安全平稳运行，至少需要涵盖分布性、适应性和可恢复性等三个方面内容。&lt;/p&gt;
-
 &lt;p&gt;其中：&lt;strong&gt;控制的分布性&lt;/strong&gt;是指网络中的安全控制点或监测设备分散在网络各个角落，无中心监测器；&lt;strong&gt;控制的适应性&lt;/strong&gt;是指能够随着网络环境的变化动态调整其威胁检测能力，确保对外部安全威胁和内部异常行为的检测效率与准确性；&lt;strong&gt;控制的自恢复性&lt;/strong&gt;是指网络在发现内部异常活动或外部攻击行为后，能够及时采取措施反制，自行恢复网络运转。&lt;/p&gt;
-
-&lt;h2 id=&#34;高安全军事网络设计思路&#34;&gt;高安全军事网络设计思路&lt;/h2&gt;
-
+&lt;h2 id=&#34;heading1&#34;&gt;高安全军事网络设计思路&lt;/h2&gt;
 &lt;p&gt;高安全军事网络，不是用各种绝对安全控制手段将核心网络节点和重要数据资产隔离起来，形成传统意义上的“安全孤岛”或“数字堡垒”。高安全军事网络构建，主要有以下4个着眼点：&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;一是创新网络体系结构&lt;/strong&gt;，基于下一代互联网技术建立具备自认证特征的基础安全网络，解决现有网络在互联互通与安全可控之间的对立矛盾，改变当前以行政管理手段解决基础架构安全问题的尴尬局面，为军事网络安全防御体系构造打下坚实技术根基；&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;二是加强已有静态防御机制&lt;/strong&gt;，将网络安全能力部署到信息化基础设施与信息系统的“每一个角落”，力求最大化覆盖构成网络的各个组成实体，实现信息化与安全防护措施“深度结合、全面覆盖”的综合防御能力；&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;三是建立动态信任体系&lt;/strong&gt;，将传统网络安全技术与&amp;rdquo;可信计算&amp;rdquo;技术结合起来，改变传统安全体系&amp;rdquo;防外重于防内&amp;rdquo;却&amp;rdquo;防不胜防&amp;rdquo;的不利现状，根据不同任务场景的不同安全需求，以终端的安全可信为源头、作为信任根，从终端到网络、到应用、到服务、到数据，基于主体属性与客体保护等级之间的安全度量，建立动态信任关系（信任链），一级认证一级、一级信任一级，最终建立起覆盖整个军事网络的可信网络连接，从而提供对军事网络环境更加完善的关口控制与安全保障；&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;三是建立动态信任体系&lt;/strong&gt;，将传统网络安全技术与&amp;quot;可信计算&amp;quot;技术结合起来，改变传统安全体系&amp;quot;防外重于防内&amp;quot;却&amp;quot;防不胜防&amp;quot;的不利现状，根据不同任务场景的不同安全需求，以终端的安全可信为源头、作为信任根，从终端到网络、到应用、到服务、到数据，基于主体属性与客体保护等级之间的安全度量，建立动态信任关系（信任链），一级认证一级、一级信任一级，最终建立起覆盖整个军事网络的可信网络连接，从而提供对军事网络环境更加完善的关口控制与安全保障；&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;四是部署网络主动防御能力&lt;/strong&gt;，建立威胁情报引导的网络安全态势感知与安全控制体系，持续检测网络安全风险、准确感知网络攻击征候、及时阻断网络攻击活动、完善改进网络防护措施，哪怕是在战争环境下遭受物理攻击，也能确保核心业务数据不被窃取、重要军事活动不被干扰、关键行动流程不被影响，表现出充分的业务安全弹性与自主恢复能力。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;关于创新网络体系架构&lt;/strong&gt;，高安全军事网络基于 IPv6 协议实现安全保密一体化设计，具备内生式安全特性。所谓“内生式安全”是指信实体或网络活动“天生”就带有安全免疫能力，可自认证、自检测，并能够根据认证和检测结果建立安全依赖和信任关系，并自然贯穿到终端安全、网络准入控制、路由交换、行为控制、应用交互等过程中。内生式安全网络将安全视为第一要素融入网络体系，在考虑未来网络的发展趋势的同时实现安全要素与网络功能一体化设计，我们需要从“网络安全”到“安全网络”的构想出发，建立从终端、网元、协议到应用系统具有先天安全防护和免疫能力的网络，使得基础网元是安全和可信的、接入网络的用户是可信和可控的、提供的服务和内容是无害的，摆脱网络安全被动跟随网络架构的束缚。特别是，需要从攻防实践的视角检验内生式安全机制的有效性，通过实验改进设计和运行效果。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;关于加强静态防御机制&lt;/strong&gt;，高安全军事网络的基础传输、网络承载、计算终端、信息服务等安全防护装备，以&amp;rdquo;硬件集成化、软件容器化&amp;rdquo;为指导原则，采用硬件与软件解耦的软件定义设计思路，采用具备可编程接口、可嵌入结构的国产化通用计算平台作为其基础硬件，能够根据业务应用类型、业务通联关系以及网络安全态势等多样化需求，按需加载定制后的安全服务功能插件，使得安全防护端点设备具有&amp;rdquo;算法可注入、软件可下载、硬件可扩展、功能可重构&amp;rdquo;能力，从根本上改变现有安全防护产品功能固化、单一的现状，实现通过软件插件来定义和赋予所需的安全服务功能。&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;关于加强静态防御机制&lt;/strong&gt;，高安全军事网络的基础传输、网络承载、计算终端、信息服务等安全防护装备，以&amp;quot;硬件集成化、软件容器化&amp;quot;为指导原则，采用硬件与软件解耦的软件定义设计思路，采用具备可编程接口、可嵌入结构的国产化通用计算平台作为其基础硬件，能够根据业务应用类型、业务通联关系以及网络安全态势等多样化需求，按需加载定制后的安全服务功能插件，使得安全防护端点设备具有&amp;quot;算法可注入、软件可下载、硬件可扩展、功能可重构&amp;quot;能力，从根本上改变现有安全防护产品功能固化、单一的现状，实现通过软件插件来定义和赋予所需的安全服务功能。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;关于建立动态信任体系&lt;/strong&gt;，高效的身份管理与访问控制体系是保证军事网络高安全性、高可用性的前提。网络的元活动就是按照各种标识或地址将数据包从一个地点运送到另外一个地点，并基于此来完成各种应用功能。对通信实体各种标识的身份管理与信任关系构建是保证军事网络安全的第一道关口。网络标识、主机/设备标识、服务（应用程序）标识、内容标识、用户标识等身份标识的管理与认证，是解决源地址欺骗、拒绝服务攻击、泛洪攻击的前提，是关系到网络各个环节安全运转的关键。与此同时，考虑到这些身份标识的数量规模是海量的，基于传统公钥密码体制PKI的身份标识认证过程使用类似 CA 的可信第三方进行密钥分发与管理，产生大量通信与计算开销，有可能成为限制网络运行效率的主要瓶颈，大大降低网络可用性。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;关于部署主动防御能力&lt;/strong&gt;，高安全军事网络不应再依赖于网络安全威胁的先验知识，能够有效应对潜在未知安全威胁，全方位收集整合各类安全数据，建立威胁可视化及分析框架，及时发现各种攻击威胁与异常，全面掌握攻击前的扫描探测、攻击中的越权提权、攻击后的破坏行动等威胁情报，在此基础上，以实时威胁情报为指引，通过网络系统中协议、软件、接口等主动重构或迁移实现动态环境，在防御方可控范围内进行主动变化，动态隐藏网络特征，攻击方难以觉察和预测，从而大幅提高网络攻击难度与成本，大幅降低网络安全风险。&lt;/p&gt;
-
-&lt;h2 id=&#34;高安全军事网络实现关键路径&#34;&gt;高安全军事网络实现关键路径&lt;/h2&gt;
-
-&lt;p&gt;高安全军事网络以统一安全基底为基础、以安全按需赋能为核心、以智能安全管理为保障，在安全态势感知、威胁检测预警、防御能力部署机制的支撑下，形成“监测—决策—响应—防御”的动态防御体系，实现基于态势变化和安全需求的网络信息系统安全防御。其关键技术途径主要包括：&lt;strong&gt;内生安全基础网络、动态信任体制、多域安全可信终端&lt;/strong&gt;，其中：基础安全网络是整个军事网络防御的基石，不解决基础架构安全问题，其他所谓被动防御、积极防御、动态防御都是浮云；动态信任体制是军事网络防御的关口，既不能让&amp;rdquo;坏人&amp;rdquo;进来，又要把&amp;rdquo;好人&amp;rdquo;放进来，而且&amp;rdquo;好&amp;rdquo;与&amp;rdquo;坏&amp;rdquo;并非一成不变，而是要持续度量持续评估；多域安全可信终端是军事网络防御的支点，终端是所有安全策略与信任关系的执行点，是所有安全措施与访问控制的落脚点，是所有安全防御活动实际效果体现的环节。&lt;/p&gt;
-
-&lt;h3 id=&#34;内生式安全网络&#34;&gt;内生式安全网络&lt;/h3&gt;
-
+&lt;h2 id=&#34;heading2&#34;&gt;高安全军事网络实现关键路径&lt;/h2&gt;
+&lt;p&gt;高安全军事网络以统一安全基底为基础、以安全按需赋能为核心、以智能安全管理为保障，在安全态势感知、威胁检测预警、防御能力部署机制的支撑下，形成“监测—决策—响应—防御”的动态防御体系，实现基于态势变化和安全需求的网络信息系统安全防御。其关键技术途径主要包括：&lt;strong&gt;内生安全基础网络、动态信任体制、多域安全可信终端&lt;/strong&gt;，其中：基础安全网络是整个军事网络防御的基石，不解决基础架构安全问题，其他所谓被动防御、积极防御、动态防御都是浮云；动态信任体制是军事网络防御的关口，既不能让&amp;quot;坏人&amp;quot;进来，又要把&amp;quot;好人&amp;quot;放进来，而且&amp;quot;好&amp;quot;与&amp;quot;坏&amp;quot;并非一成不变，而是要持续度量持续评估；多域安全可信终端是军事网络防御的支点，终端是所有安全策略与信任关系的执行点，是所有安全措施与访问控制的落脚点，是所有安全防御活动实际效果体现的环节。&lt;/p&gt;
+&lt;h3 id=&#34;heading3&#34;&gt;内生式安全网络&lt;/h3&gt;
 &lt;p&gt;现有军事网络不具备地址真实性鉴别的内生机制，不仅容易造成源地址欺骗（Source Spoofing）、路由劫持（Hijacked Route）、拒绝服务（Denial-of-service）等攻击的发生，而且导致攻击源头和攻击者身份难以追查。军队内部运用强大的行政管理资源，将所有在线军事机构实体与IP地址进行一对一绑定，通过行政手段进行IP地址安全性验证，耗费大量人力物力且加剧了网络管理体制的僵化程度，最终效果如何也不易评价。现有的安全技术都是以修修补补的形式增加，系统性不强，基本处于被动应对状态。我们认为，造成这一问题的根本原因在于IP网络不具备审计能力，即发生问题后无法进行追责。为此，包括地址真实性鉴别在内的命名安全体系是网络安全的基础和前提，也是高安全军事网络设计亟待解决的重要问题之一。&lt;/p&gt;
-
 &lt;p&gt;这里我们采用IETF提出的HIP协议思路，在网络层和传输层之间插入主机标识层，IP地址只作为网络层所使用的定位标识符，实现数据报的路由转发，主机标识符 HI（Host Identity）提供主机身份标识功能，由传输层使用。双方在通信时，IP地址的变化对传输层透明，从而保证在发生移动或地址变化时，通信不中断可以持续进行，并且通信对端可以根据主机标识 HI确定移动节点身份。这里主机标识符HI使用 IPv6 地址，IP 地址还是使用 IPv4 地址，两者之间的转换使用 IPv4/v6 协议双栈完成。主机标识符 HI 的生成算法采用组合公钥体制 CPK 体制，即主机标识符 HI 作为通信实体标识送到 KMC （私钥管理中心）， KMC 对 HI 进行散列变换后，生成映射序列 YS ，取 YS 序列的前 64 位为 HI 中的本地地址； KMC 使用映射序列的行列坐标得到组合矩阵，然后按照有限域上的加法得到组合私钥， KMC 将组合私钥发送给主机并在本地删除，公钥矩阵以文件形式公布；其它主机以及网络通信设备按照HI和和公钥矩阵， 查表获得其组合公钥。&lt;/p&gt;
-
 &lt;p&gt;将军事网络通信实体标识与 CPK 公钥签名技术结合， 能够实现主机标识符、网络标识符和公钥三者绑定， 为地址真实性提供证据（地址的签名）， 并且任何路由器均可鉴别其真伪（验证签名），快速实现主机鉴别、路由通告鉴别与消息加密，能够从数据源端到目的端，保证用户身份和信息内容的真实性，保证转发过程中的真实性，从源头上保证了网络层的内生安全。&lt;/p&gt;
-
-&lt;h3 id=&#34;多域安全可信终端&#34;&gt;多域安全可信终端&lt;/h3&gt;
-
-&lt;p&gt;目前军队网络信息体系中的各类终端设备，其软硬件体系结构（ Wintel 架构）在很大程度不符合安全保密需要，其终端安全管控系统只能通过&amp;rdquo;打补丁、堵漏洞、建盾墙&amp;rdquo;等外挂方式，为军用终端系统运行提供安全防护能力，其防护效果无法满足军事安全要求。根据国产化替代工程实施要求，军队各类终端设备都要使用国产化硬件平台（ PK 架构），如何利用此次终端软硬件体系架构变更契机，研究提出满足军事安全需求的新一代终端安全体系架构，是当前迫切需要解决的问题。&lt;/p&gt;
-
+&lt;h3 id=&#34;heading4&#34;&gt;多域安全可信终端&lt;/h3&gt;
+&lt;p&gt;目前军队网络信息体系中的各类终端设备，其软硬件体系结构（ Wintel 架构）在很大程度不符合安全保密需要，其终端安全管控系统只能通过&amp;quot;打补丁、堵漏洞、建盾墙&amp;quot;等外挂方式，为军用终端系统运行提供安全防护能力，其防护效果无法满足军事安全要求。根据国产化替代工程实施要求，军队各类终端设备都要使用国产化硬件平台（ PK 架构），如何利用此次终端软硬件体系架构变更契机，研究提出满足军事安全需求的新一代终端安全体系架构，是当前迫切需要解决的问题。&lt;/p&gt;
 &lt;p&gt;在单台国产硬件平台（飞腾或龙芯）上部署自主可控的 Hypervisor 虚拟化平台，该平台具备最高硬件权限和较小可信计算基，能够同时运行多个相互隔离的 Linux 系列操作系统（包括Android），实现单台终端对多个不同安全域的同时访问。不同 Linux 系统内可以使用来自不同安全域的数据、应用、服务，不同 Linux 系统之间保持充分的隔离性，即使某个 Linux 系统遭到恶意渗透或攻击，部署在虚拟化 Hypervisor 平台中的安全保密措施也可以确保攻击活动被限制在有限范围内。&lt;/p&gt;
-
 &lt;p&gt;在此基础上，将虚拟化软件栈视为一个整体，运用多层次的隔离机制、加密机制和访问控制机制，构建安全保密一体化的多层次虚拟化软件栈防护框架，通过这个框架对 Hypervisor 层、 GOS 和业务应用进行统一的行为监控、资源控制、密钥管理、虚拟机之间的隔离，以及虚拟机内部不同模块与应用之间隔离，通过多层隔离机制实现资源独立访问，通过多层访问控制实现共享资源的不同权限访问，通过多层监控机制实现整体恶意代码发现识别，通过多层密钥管理实现安全快捷的加密服务。这个统一安全架构能够从横向和纵向两个维度防护不同类型的安全威胁，还可以增加信息认证功能为用户提供确凿的运行时证据，证明其所属的数据与软件的安全。&lt;/p&gt;
-
-&lt;h3 id=&#34;动态信任体制&#34;&gt;动态信任体制&lt;/h3&gt;
-
+&lt;h3 id=&#34;heading5&#34;&gt;动态信任体制&lt;/h3&gt;
 &lt;p&gt;在军队传统C/S应用架构中，服务器是整个业务应用体系的核心节点，应用架构采用基于PKI和CA的静态信任机制，用于保证单机系统的可信问题。静态信任机制先构建基础的信任根，然后从信任根开始到硬件平台、操作系统、应用程序，一层认证一层，一层信任一层，把这种信任扩展到整个计算机系统，从而确保整个计算机系统的可信性。新一代军事信息系统更加强调大规模业务资源共享与广域业务流程协作，更加强调扁平化指挥控制与分步式协同联动，静态信任机制不适用于当前及未来军事信息体系。&lt;/p&gt;
-
 &lt;p&gt;基于“零特权“理念的动态信任体制，是参考了人类社会中的信任关系而提出的用于解决分布式网络的信任管理模型。动态信任管理模型认为信任关系随时间变化而变化，需要实时在线对信任关系进行评估；认为不同任务场景下网络主体与客体之间的信任关系，需要根据主体身份属性与客体受保护等级的不同而精确度量分析，进行细粒度权限控制和特定时空范围的检测审计；认为信任关系可以传播，可以沿着业务网络中具备可信连接路径的关系路线进行传播，解决不同安全域之间身份标识按需安全互认问题；认为信任关系的构建主要依靠相当长有效时间的安全交互行为，真正管用好用的可信管理策略需要从海量通信实体交互日志中挖掘生成，人为行政管理手段只是辅助。&lt;/p&gt;
 </description>
     </item>
@@ -430,58 +295,32 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
       <link>https://sbilly.github.io/post/dod-joint-information-environment-security-architecture-analysis-by-zhouxiaochuan/</link>
       <pubDate>Wed, 31 Jul 2019 09:42:20 +0800</pubDate>
       <guid>https://sbilly.github.io/post/dod-joint-information-environment-security-architecture-analysis-by-zhouxiaochuan/</guid>
-      <description>&lt;p&gt;原文地址：&lt;a href=&#34;https://mp.weixin.qq.com/s/54-kZjKg2YqWYrzjhk1KGQ&#34; target=&#34;_blank&#34;&gt;https://mp.weixin.qq.com/s/54-kZjKg2YqWYrzjhk1KGQ&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
-
+      <description>&lt;p&gt;原文地址：https://mp.weixin.qq.com/s/54-kZjKg2YqWYrzjhk1KGQ&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;美军信息网络是世界上最复杂的国家级网络之一，随着美军战略调整始终保持动态演进的态势，平均每5年就会抛出新的网络概念、新的网络架构和新的网络建设计划，其安全体系设计也不断变化，这里&lt;strong&gt;主要梳理美军网络整体概况和发展进程，重点关注其网络隔离与跨域融合的安全保障措施&lt;/strong&gt;。&lt;/p&gt;
-
 &lt;p&gt;美军通信网络建设的主管单位是国防部信息系统局（DISA），在DISA的推动引领下，美军已经建成世界上最先进、最复杂、最强大的天地一体化军事通信网系，整体上可以划分为3个层次：&lt;strong&gt;全军共用基础信息网络、全军共用传感器网络和作战部队网络&lt;/strong&gt;。&lt;/p&gt;
-
 &lt;p&gt;其中，&lt;strong&gt;全军共用基础信息网络&lt;/strong&gt;，按照其发展历程，大致可以划分为国防通信系统（DCS）与国防信息系统网（DISN）、全球信息栅格（GIG）、基于国防部信息网络（DoDIN）构建联合信息环境（JIE）等3个阶段。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;全军共用传感器网络&lt;/strong&gt;，按照其作战空间不同，主要包括情报侦察网络（由天基侦察卫星和高空侦察机组成）、国家战略预警网络（由天基预警卫星和远程预警雷达组成）、国家空间监视网络（由大型相控阵雷达和对空观测望远镜组成）、国家海洋监视网络（由海洋监视卫星组成）和其他国家级传感器网络（由GPS全球定位系统组成）等。&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;作战部队网络&lt;/strong&gt;，按照军种划分，主要包括空军指挥控制星座、陆军未来作战系统和海军部队网等。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15645368836699/15645370622213.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;美军网络简单来说，就包括&lt;strong&gt;美国防部网络和军种网络&lt;/strong&gt;等两类网络。国防部网络与军种网络是自20世纪60年代起同步建设发展的，国防部网络发端于1960前后建成的&amp;rdquo;全球军事指挥控制系统&amp;rdquo;，物理上通过路由器等网络设备、使用与国际互联网相同的协议族将各个指挥系统连接起来，其初衷是国家指挥机构能够对分散部署的部队有效行使指挥权，但因应用需求难以统一和技术条件限制，未能实现全面集成的最初目标。&lt;/p&gt;
-
-&lt;p&gt;全球军事指挥控制系统的基础网络被称为&amp;rdquo;国防通信系统&amp;rdquo;，DISA将国防通信系统分为两类：&lt;strong&gt;加密互联网协议路由器网SIPRNET和非加密互联网协议路由器网NIPRNET&lt;/strong&gt;。&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15645368836699/15645370622213.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;美军网络简单来说，就包括&lt;strong&gt;美国防部网络和军种网络&lt;/strong&gt;等两类网络。国防部网络与军种网络是自20世纪60年代起同步建设发展的，国防部网络发端于1960前后建成的&amp;quot;全球军事指挥控制系统&amp;rdquo;，物理上通过路由器等网络设备、使用与国际互联网相同的协议族将各个指挥系统连接起来，其初衷是国家指挥机构能够对分散部署的部队有效行使指挥权，但因应用需求难以统一和技术条件限制，未能实现全面集成的最初目标。&lt;/p&gt;
+&lt;p&gt;全球军事指挥控制系统的基础网络被称为&amp;quot;国防通信系统&amp;rdquo;，DISA将国防通信系统分为两类：&lt;strong&gt;加密互联网协议路由器网SIPRNET和非加密互联网协议路由器网NIPRNET&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;NIPRNET用来在国际互联网与军队内网之间交换非密敏感信息，由国防部部署的所有IP路由器组成，前身称为MILNET，目前分别在美国内的哥伦比亚城、圣安东尼奥城、梅卡尼克斯堡和俄克拉荷马城等4个位置与国际互联网之间设有安全缓冲区。&lt;/p&gt;
-
 &lt;p&gt;SIPRNET是美国防部与美国政府（包括驻外大使馆）之间进行数据传输的计算机网络，使用美国家安全局认可的加密系统进行数据加密，最高涉密等级达到机密级别。&lt;/p&gt;
-
 &lt;p&gt;在此之上，还有一个连接美国政府所有16个情报机构的绝密级网络，称为全球联合情报通信系统JWICS，用于各情报机构之间交换情报信息，其前身是DSNET2和DSNET3等两个最高机密的国防数据网。&lt;/p&gt;
-
 &lt;p&gt;SIPRNET与JWICS两个网络，构成了美国防部的保密版互联网。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15645368836699/15645371419052.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;20世纪80年代，美军对全球军事指挥控制系统进行了大规模升级，在1991年海湾战争中发挥了重要作用，但同时也暴露出信息系统之间无法互联互通互操作、不适应联合作战需要等问题，为此美军1992年开始实施&amp;rdquo;武士&amp;rdquo;C4I计划，将国防部、各军种和北约盟国的指挥控制系统全部连通，改造形成指挥、控制、通信、情报等要素高度融合的&amp;rdquo;全球指挥控制系统&amp;rdquo;，该系统将NIPRNET、SIPRNET和JWICS等国防部网络，与各军种网络连接起来，全面采用成熟的商用计算机与网络技术，形成美国防部能够进行集成信息处理与支持跨军种业务应用互操作的&amp;rdquo;国防信息系统网&amp;rdquo;（DISN）。&lt;/p&gt;
-
-&lt;p&gt;在国防信息系统网中，不同安全等级的物理网络之间，特别是SIPRNET、JWICS与NIPRNET之间已经开始使用&amp;rdquo;跨域解决方案&amp;rdquo;来解决不同密级数据相互交换问题，主要技术设施是隔离网闸；在隔离网闸作用下，不同密级物理网络之间是&amp;rdquo;物理隔离&amp;rdquo;的，即&amp;rdquo;看起来是连通的，但实际上是断开的&amp;rdquo;。NIPRNET与国际互联网之间设置安全缓冲地带，主要技术设施是防火墙，两者之间是&amp;rdquo;逻辑隔离&amp;rdquo;的，即&amp;rdquo;看起来是断开的，但实际上是连通的&amp;rdquo;。&lt;/p&gt;
-
-&lt;p&gt;20世纪90年代，为有效推进美军&amp;rdquo;网络中心战&amp;rdquo;战略构想落地，解决越来越庞大的军种网络信息系统与国防部网络之间的集成与互操作问题，&lt;strong&gt;美国防部发起了&amp;rdquo;全球信息栅格&amp;rdquo;建设计划，以取代以平台为中心的国防信息基础设施&lt;/strong&gt;。&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;media/15645368836699/15645371419052.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;20世纪80年代，美军对全球军事指挥控制系统进行了大规模升级，在1991年海湾战争中发挥了重要作用，但同时也暴露出信息系统之间无法互联互通互操作、不适应联合作战需要等问题，为此美军1992年开始实施&amp;quot;武士&amp;quot;C4I计划，将国防部、各军种和北约盟国的指挥控制系统全部连通，改造形成指挥、控制、通信、情报等要素高度融合的&amp;quot;全球指挥控制系统&amp;rdquo;，该系统将NIPRNET、SIPRNET和JWICS等国防部网络，与各军种网络连接起来，全面采用成熟的商用计算机与网络技术，形成美国防部能够进行集成信息处理与支持跨军种业务应用互操作的&amp;quot;国防信息系统网&amp;rdquo;（DISN）。&lt;/p&gt;
+&lt;p&gt;在国防信息系统网中，不同安全等级的物理网络之间，特别是SIPRNET、JWICS与NIPRNET之间已经开始使用&amp;quot;跨域解决方案&amp;quot;来解决不同密级数据相互交换问题，主要技术设施是隔离网闸；在隔离网闸作用下，不同密级物理网络之间是&amp;quot;物理隔离&amp;quot;的，即&amp;quot;看起来是连通的，但实际上是断开的&amp;rdquo;。NIPRNET与国际互联网之间设置安全缓冲地带，主要技术设施是防火墙，两者之间是&amp;quot;逻辑隔离&amp;quot;的，即&amp;quot;看起来是断开的，但实际上是连通的&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;20世纪90年代，为有效推进美军&amp;quot;网络中心战&amp;quot;战略构想落地，解决越来越庞大的军种网络信息系统与国防部网络之间的集成与互操作问题，&lt;strong&gt;美国防部发起了&amp;quot;全球信息栅格&amp;quot;建设计划，以取代以平台为中心的国防信息基础设施&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;全球信息栅格主要由3个组成层次：&lt;strong&gt;第一层是全球网络&lt;/strong&gt;，主要是通过拓宽基础传输光缆带宽，连通分布于美国国内、太平洋地区和欧洲的主要美军基地的国防信息基础设施全部700余个节点，囊括各军种作战网络和军事卫星网、联合战术无线网络等；&lt;strong&gt;第二层是战区网络&lt;/strong&gt;，包括海军区域网络、空军机载网络、陆军战术互联网等；&lt;strong&gt;第三层是战术网络&lt;/strong&gt;，包括海军区域网子网、陆战队战术网、空军战术网、营区/哨所/兵站节点等。&lt;/p&gt;
-
-&lt;p&gt;为确保通信网络融合与信息系统集成过程中不形成新的安全隐患，保护网络中传输的保密信息并免受外部攻击，DISA在推动全球信息栅格建设过程中，同时发起了所谓&lt;strong&gt;&amp;ldquo;加密转型&amp;rdquo;的安全保障建设计划&lt;/strong&gt;，主要内容是利用IPv6和多协议标签交换MPLS技术来改造现有网络基础，使用高安全IP加密网关来打造&amp;rdquo;黑色核心&amp;rdquo;网络，使用虚拟网络技术与VPN网关在SIPRNET、NIPRNET等物理网络中划分各自独立的&amp;rdquo;虚拟安全域&amp;rdquo;，分配给各军种、各机构使用，各单位分布在不同保密等级的物理网络中的&amp;rdquo;虚拟安全域&amp;rdquo;，再组成各单位的&amp;rdquo;作战行动虚拟网&amp;rdquo;（网络作战域），不同安全等级的终端分别接入相应密级的虚拟安全域，不同密级网络之间的信息交换，由美国防部统一实施的&amp;rdquo;跨域解决方案&amp;rdquo;解决。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;media/15645368836699/15645371776087.jpg&#34; alt=&#34;-w600&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;为确保通信网络融合与信息系统集成过程中不形成新的安全隐患，保护网络中传输的保密信息并免受外部攻击，DISA在推动全球信息栅格建设过程中，同时发起了所谓**&amp;ldquo;加密转型&amp;quot;的安全保障建设计划**，主要内容是利用IPv6和多协议标签交换MPLS技术来改造现有网络基础，使用高安全IP加密网关来打造&amp;quot;黑色核心&amp;quot;网络，使用虚拟网络技术与VPN网关在SIPRNET、NIPRNET等物理网络中划分各自独立的&amp;quot;虚拟安全域&amp;rdquo;，分配给各军种、各机构使用，各单位分布在不同保密等级的物理网络中的&amp;quot;虚拟安全域&amp;rdquo;，再组成各单位的&amp;quot;作战行动虚拟网&amp;rdquo;（网络作战域），不同安全等级的终端分别接入相应密级的虚拟安全域，不同密级网络之间的信息交换，由美国防部统一实施的&amp;quot;跨域解决方案&amp;quot;解决。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;media/15645368836699/15645371776087.jpg&#34; alt=&#34;-w600&#34;&gt;&lt;/p&gt;
 &lt;p&gt;经过近二十年的整合与建设，全球信息栅格在系统集成与业务互操作性方面取得很大进展，但同时也形成了全球最大的异构分布式系统，存在很多冗余、繁复、不兼容、不标准的业务功能和技术环节，各种面向特定作战功能的作战网络与软件系统，其信息技术资产形成了全球范围内2000余个数据中心，年度维护经费超过760亿美元。&lt;/p&gt;
-
-&lt;p&gt;为此，2012年美国防部提出&lt;strong&gt;&amp;ldquo;联合信息环境&amp;rdquo;建设计划&lt;/strong&gt;，希望按照标准化和体系化建设思路，将全球范围内数百个军事设施、15000余个独立军事网络、超过700万套计算机设备整合起来，打造联合、安全、可靠和敏捷的一体化军事信息环境，减少基础设施和人员配置，提高运营效率，增强网络安全性。&lt;/p&gt;
-
-&lt;p&gt;2014年，全球信息栅格更名为&lt;strong&gt;&amp;ldquo;国防部信息网络&amp;rdquo;&lt;/strong&gt;；2015年，国防部信息网络联合部队司令部具备初始作战能力。国防部信息网络可以认为是实现联合信息环境的基础设施，联合信息环境是建构在国防部信息网络之上的业务应用架构。国防部信息网络在安全保障方面的重大举措就是使用统一安全架构，在缩减后的全球23个数据中心部署联合区域安全栈，涵盖了包括身份认证管理、网络态势感知、威胁检测发现、追踪溯源反制在内的各种安全技术能力，提升全网安全资源调度与主动防御能力。&lt;/p&gt;
-
-&lt;p&gt;总体而言，美军通信网络建设的核心目标，是支撑作战指挥信息系统部署展开，其建设发展阶段与美军战略调整和指挥信息系统架构变迁相同步。在国防部网络中，始自20世纪60年代建设形成的NIPRNET、SIPRNET与JWICS，经过全球信息栅格、联合信息环境等无数次集成建设依然存在；网络信息集成建设只是加强了国防部网络与各军种网络的资源整合与业务融合，并未改变不同保密等级网络之间&amp;rdquo;物理隔离&amp;rdquo;的状态，注意这里是&amp;rdquo;物理隔离&amp;rdquo;而非&amp;rdquo;物理断开&amp;rdquo;。&lt;/p&gt;
-
-&lt;p&gt;美军为解决来自不同保密等级网络间的跨域信息交换问题，特地开发&amp;rdquo;跨域解决方案&amp;rdquo;CDS，该方案不是简单的技术架构，而是涵盖了政策、组织、机制、管理、技术等各个方面的体系化安全措施，由国防部下属的统一跨域服务管理办公室推进实施。此外，美军长期以来非常重视国际互联网的组织运用，尽管NIPRNET经常遭受外部攻击，但美军从未断开与国际互联网的物理连接，反而是积极利用国际互联网加强部队建设，比如包括美国防部、参联会、各军种、各基地甚至营团都在互联网上建立网站，展开舆论宣传，进行兵员招募，实施远程教育，同时加强信息安全与保密系统建设，安全而合理地利用国际互联网的连通性与便捷性；美军情报机构甚至直接使用&amp;rdquo;暗网&amp;rdquo;进行情报传递和行动协调，美军最低限度通信网更是直接将国际互联网作为首轮核生化打击之后的首选指挥渠道。&lt;/p&gt;
+&lt;p&gt;为此，2012年美国防部提出**&amp;ldquo;联合信息环境&amp;quot;建设计划**，希望按照标准化和体系化建设思路，将全球范围内数百个军事设施、15000余个独立军事网络、超过700万套计算机设备整合起来，打造联合、安全、可靠和敏捷的一体化军事信息环境，减少基础设施和人员配置，提高运营效率，增强网络安全性。&lt;/p&gt;
+&lt;p&gt;2014年，全球信息栅格更名为**&amp;ldquo;国防部信息网络&amp;rdquo;**；2015年，国防部信息网络联合部队司令部具备初始作战能力。国防部信息网络可以认为是实现联合信息环境的基础设施，联合信息环境是建构在国防部信息网络之上的业务应用架构。国防部信息网络在安全保障方面的重大举措就是使用统一安全架构，在缩减后的全球23个数据中心部署联合区域安全栈，涵盖了包括身份认证管理、网络态势感知、威胁检测发现、追踪溯源反制在内的各种安全技术能力，提升全网安全资源调度与主动防御能力。&lt;/p&gt;
+&lt;p&gt;总体而言，美军通信网络建设的核心目标，是支撑作战指挥信息系统部署展开，其建设发展阶段与美军战略调整和指挥信息系统架构变迁相同步。在国防部网络中，始自20世纪60年代建设形成的NIPRNET、SIPRNET与JWICS，经过全球信息栅格、联合信息环境等无数次集成建设依然存在；网络信息集成建设只是加强了国防部网络与各军种网络的资源整合与业务融合，并未改变不同保密等级网络之间&amp;quot;物理隔离&amp;quot;的状态，注意这里是&amp;quot;物理隔离&amp;quot;而非&amp;quot;物理断开&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;美军为解决来自不同保密等级网络间的跨域信息交换问题，特地开发&amp;quot;跨域解决方案&amp;quot;CDS，该方案不是简单的技术架构，而是涵盖了政策、组织、机制、管理、技术等各个方面的体系化安全措施，由国防部下属的统一跨域服务管理办公室推进实施。此外，美军长期以来非常重视国际互联网的组织运用，尽管NIPRNET经常遭受外部攻击，但美军从未断开与国际互联网的物理连接，反而是积极利用国际互联网加强部队建设，比如包括美国防部、参联会、各军种、各基地甚至营团都在互联网上建立网站，展开舆论宣传，进行兵员招募，实施远程教育，同时加强信息安全与保密系统建设，安全而合理地利用国际互联网的连通性与便捷性；美军情报机构甚至直接使用&amp;quot;暗网&amp;quot;进行情报传递和行动协调，美军最低限度通信网更是直接将国际互联网作为首轮核生化打击之后的首选指挥渠道。&lt;/p&gt;
 </description>
     </item>
     

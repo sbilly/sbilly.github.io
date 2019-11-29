@@ -80,7 +80,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.04a87a1cb9027e3c50f566322527c56f.css">
+  <link rel="stylesheet" href="/css/academic.min.891726ba3b332d3508fbc99721fa7e80.css">
 
   
 
@@ -590,158 +590,120 @@
   <div class="article-container">
 
     <div class="article-style">
-      
-
-<p><img src="media/15641153824612/15641250270855.jpg" alt="!-w800" /></p>
-
-<p><h2>Table of Contents</h2>
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#准备-ipfs-环境">准备 ipfs 环境</a></li>
-<li><a href="#编译并启用-ipfs-webui">编译并启用 ipfs-webui</a></li>
-<li><a href="#修改并重新编译-go-ipfs">修改并重新编译 go-ipfs</a></li>
-<li><a href="#启动其他节点">启动其他节点</a></li>
-<li><a href="#参考">参考</a></li>
-</ul></li>
-</ul>
-</nav></p>
-
-<p><a href="https://ipfs.io/" target="_blank">go-ipfs</a> 是一个分布式基于区块链技术的分布式文件系统，文档可以查看 <a href="https://docs.ipfs.io/" target="_blank">官方文档</a> 。本文主要记录和介绍如何使用 go-ipfs 搭建与公有网络隔离的私有网络。</p>
-
+      <p><img src="media/15641153824612/15641250270855.jpg" alt="!-w800"></p>
+<!-- raw HTML omitted -->
+<p><a href="https://ipfs.io/">go-ipfs</a> 是一个分布式基于区块链技术的分布式文件系统，文档可以查看 <a href="https://docs.ipfs.io/">官方文档</a> 。本文主要记录和介绍如何使用 go-ipfs 搭建与公有网络隔离的私有网络。</p>
 <p>要点其实也不复杂：</p>
-
 <ul>
 <li>使用 swarm.key 确保私有网络不对外开放</li>
 <li>删除不必要的 bootstrap 节点，并保留自己的私有 bootstrap 节点</li>
 <li>使得 ipfs-webui 的相关文件在 ipfs 私有网络上是可以访问到的</li>
 <li>使用 <code>LIBP2P_FORCE_PNET=1</code> 的环境变量设置 ipfs 运行在私有网络模式中</li>
 </ul>
-
 <p>下面将介绍如何从源码编译并启动 bootstrap 节点。go-ipfs 还在积极开发中，在 2019 年  7 月 26 日是可以正常完成的。如果发现有问题，可以在评论中反馈。</p>
-
-<h2 id="准备-ipfs-环境">准备 ipfs 环境</h2>
-
-<pre><code class="language-bash"># 创建 ipfs 的运行时目录
+<h2 id="-ipfs-">准备 ipfs 环境</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 创建 ipfs 的运行时目录</span>
 mkdir -p ./ipfs
 
-# 获取 go-ipfs-swarm-key-gen
+<span style="color:#75715e"># 获取 go-ipfs-swarm-key-gen</span>
 git clone https://github.com/Kubuxu/go-ipfs-swarm-key-gen
 
-# 创建 swarm.key
-# 所有的私有网络节点都需要这个 swarm.key 才能正常加入私有网络
+<span style="color:#75715e"># 创建 swarm.key</span>
+<span style="color:#75715e"># 所有的私有网络节点都需要这个 swarm.key 才能正常加入私有网络</span>
 cd go-ipfs-swarm-key-gen
-IPFS_PATH=./ipfs go run ipfs-swarm-key-gen/main.go &gt; $IPFS_PATH/swarm.key
+IPFS_PATH<span style="color:#f92672">=</span>./ipfs go run ipfs-swarm-key-gen/main.go &gt; $IPFS_PATH/swarm.key
 cd ../
 
-# 获取最新的 go-ipfs 源码
+<span style="color:#75715e"># 获取最新的 go-ipfs 源码</span>
 git clone https://github.com/ipfs/go-ipfs.git
 
-# 编译 go-ipfs
+<span style="color:#75715e"># 编译 go-ipfs</span>
 cd go-ipfs
 make build
 cd ../
 
-# 初始化 ipfs 的运行时目录
-# 初始化时会创建 ipfs 的 peer identity，这个 peer identity 会在后续配置过程中使用到。peer identity 类似于下面这种形式：
-# peer identity: QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL
-# IPFS_PATH=./ipfs 指定 ./ipfs 为运行时目录
-# LIBP2P_FORCE_PNET=1 要求 ipfs 运行在私有网络模式
-IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs init
+<span style="color:#75715e"># 初始化 ipfs 的运行时目录</span>
+<span style="color:#75715e"># 初始化时会创建 ipfs 的 peer identity，这个 peer identity 会在后续配置过程中使用到。peer identity 类似于下面这种形式：</span>
+<span style="color:#75715e"># peer identity: QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL</span>
+<span style="color:#75715e"># IPFS_PATH=./ipfs 指定 ./ipfs 为运行时目录</span>
+<span style="color:#75715e"># LIBP2P_FORCE_PNET=1 要求 ipfs 运行在私有网络模式</span>
+IPFS_PATH<span style="color:#f92672">=</span>./ipfs LIBP2P_FORCE_PNET<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ./go-ipfs/cmd/ipfs/ipfs init
 
-# 删除公开网络的所有 bootstrap 节点
-IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs bootstrap rm --all
+<span style="color:#75715e"># 删除公开网络的所有 bootstrap 节点</span>
+IPFS_PATH<span style="color:#f92672">=</span>./ipfs LIBP2P_FORCE_PNET<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ./go-ipfs/cmd/ipfs/ipfs bootstrap rm --all
 
-# 把本机作为 bootstrap 节点
-# 其中 QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL 要修改为实际的 peer identity
-IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs bootstrap add /ip4/127.0.0.1/tcp/4001/ipfs/QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL
+<span style="color:#75715e"># 把本机作为 bootstrap 节点</span>
+<span style="color:#75715e"># 其中 QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL 要修改为实际的 peer identity</span>
+IPFS_PATH<span style="color:#f92672">=</span>./ipfs LIBP2P_FORCE_PNET<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ./go-ipfs/cmd/ipfs/ipfs bootstrap add /ip4/127.0.0.1/tcp/4001/ipfs/QmQ2YEpJhikmMZJXG39fzxgQNCAFDzyv9m15xe9GsvkRPL
 
-# 启动 ipfs
-IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs daemon
-</code></pre>
-
-<h2 id="编译并启用-ipfs-webui">编译并启用 ipfs-webui</h2>
-
-<p>如果你希望像公网那样使用 ipfs 官方自带的管理界面 <a href="https://github.com/ipfs-shipyard/ipfs-webui" target="_blank">ipfs-weibui</a> 需要通过以下步骤使用最新的 ipfs-webui 。</p>
-
-<pre><code class="language-bash"># 获取最新的 ipfs-webui 代码
+<span style="color:#75715e"># 启动 ipfs</span>
+IPFS_PATH<span style="color:#f92672">=</span>./ipfs LIBP2P_FORCE_PNET<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ./go-ipfs/cmd/ipfs/ipfs daemon
+</code></pre></div><h2 id="-ipfswebui">编译并启用 ipfs-webui</h2>
+<p>如果你希望像公网那样使用 ipfs 官方自带的管理界面 <a href="https://github.com/ipfs-shipyard/ipfs-webui">ipfs-weibui</a> 需要通过以下步骤使用最新的 ipfs-webui 。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 获取最新的 ipfs-webui 代码</span>
 git clone https://github.com/ipfs-shipyard/ipfs-webui.git
 
-# 编译 ipfs-webui
-# 需要 python2 支持，需要使用 npm 而不要使用 cnpm
-# 编译后的文件在 build 目录
+<span style="color:#75715e"># 编译 ipfs-webui</span>
+<span style="color:#75715e"># 需要 python2 支持，需要使用 npm 而不要使用 cnpm</span>
+<span style="color:#75715e"># 编译后的文件在 build 目录</span>
 cd ipfs-webui
 npm install
 npm run build
 
-# 把编译得到的 ipfs-webui 添加到 ipfs 文件系统私有网络中
-# 下面的命令执行后会返回类似的响应，返回的 public 目录对应的 hash 在需要添加到 go-ipfs 代码中
-# added QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh build
-IPFS_PATH=../ipfs LIBP2P_FORCE_PNET=1 ../go-ipfs/cmd/ipfs/ipfs add -r ./build
+<span style="color:#75715e"># 把编译得到的 ipfs-webui 添加到 ipfs 文件系统私有网络中</span>
+<span style="color:#75715e"># 下面的命令执行后会返回类似的响应，返回的 public 目录对应的 hash 在需要添加到 go-ipfs 代码中</span>
+<span style="color:#75715e"># added QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh build</span>
+IPFS_PATH<span style="color:#f92672">=</span>../ipfs LIBP2P_FORCE_PNET<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ../go-ipfs/cmd/ipfs/ipfs add -r ./build
 
-# 在 bootstrap 上强制存储 ipfs-webui
-IPFS_PATH=../ipfs LIBP2P_FORCE_PNET=1 ../go-ipfs/cmd/ipfs/ipfs pin add QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh
-</code></pre>
-
-<h2 id="修改并重新编译-go-ipfs">修改并重新编译 go-ipfs</h2>
-
+<span style="color:#75715e"># 在 bootstrap 上强制存储 ipfs-webui</span>
+IPFS_PATH<span style="color:#f92672">=</span>../ipfs LIBP2P_FORCE_PNET<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ../go-ipfs/cmd/ipfs/ipfs pin add QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh
+</code></pre></div><h2 id="-goipfs">修改并重新编译 go-ipfs</h2>
 <p>修改文件把刚才编译的 ipfs-webui 加到 ipfs 中，需要修改 <code>go-ipfs/core/corehttp/webui.go</code> 把 webui 对应的 hash 值替换成刚才添加到 ipfs 时的返回的 hash ，例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">corehttp</span>
 
-<pre><code class="language-go">package corehttp
+<span style="color:#75715e">// TODO: move to IPNS
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 把 const WebUIPath 替换成私有网络中 webUI 的 PATH
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">WebUIPath</span> = <span style="color:#e6db74">&#34;/ipfs/QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh&#34;</span>
 
-// TODO: move to IPNS
-// 把 const WebUIPath 替换成私有网络中 webUI 的 PATH
-const WebUIPath = &quot;/ipfs/QmRSgDcuaXEKJMTpJPL4bVDRRzWXmvF4Gt6cVBXsucpDMh&quot;
-
-// this is a list of all past webUI paths.
-// 原来公开网络的 webUI 路径保存在这个列表中
-var WebUIPaths = []string{
-        WebUIPath,
-        &quot;/ipfs/QmQNHd1suZTktPRhP7DD4nKWG46ZRSxkwHocycHVrK3dYW&quot;, 
-        &quot;/ipfs/QmfQkD8pBSBCBxWEwFSu4XaDVSWK6bjnNuaWZjMyQbyDub&quot;,
-        &quot;/ipfs/QmXc9raDM1M5G5fpBnVyQ71vR4gbnskwnB9iMEzBuLgvoZ&quot;,
-        &quot;/ipfs/QmenEBWcAk3tN94fSKpKFtUMwty1qNwSYw3DMDFV6cPBXA&quot;,
-        &quot;/ipfs/QmUnXcWZC5Ve21gUseouJsH5mLAyz5JPp8aHsg8qVUUK8e&quot;,
-        &quot;/ipfs/QmSDgpiHco5yXdyVTfhKxr3aiJ82ynz8V14QcGKicM3rVh&quot;,
-        &quot;/ipfs/QmRuvWJz1Fc8B9cTsAYANHTXqGmKR9DVfY5nvMD1uA2WQ8&quot;,
-        &quot;/ipfs/QmQLXHs7K98JNQdWrBB2cQLJahPhmupbDjRuH1b9ibmwVa&quot;,
-        &quot;/ipfs/QmXX7YRpU7nNBKfw75VG7Y1c3GwpSAGHRev67XVPgZFv9R&quot;,
-        &quot;/ipfs/QmXdu7HWdV6CUaUabd9q2ZeA4iHZLVyDRj3Gi4dsJsWjbr&quot;,
-        &quot;/ipfs/QmaaqrHyAQm7gALkRW8DcfGX3u8q9rWKnxEMmf7m9z515w&quot;,
-        &quot;/ipfs/QmSHDxWsMPuJQKWmVA1rB5a3NX2Eme5fPqNb63qwaqiqSp&quot;,
-        &quot;/ipfs/QmctngrQAt9fjpQUZr7Bx3BsXUcif52eZGTizWhvcShsjz&quot;,
-        &quot;/ipfs/QmS2HL9v5YeKgQkkWMvs1EMnFtUowTEdFfSSeMT4pos1e6&quot;,
-        &quot;/ipfs/QmR9MzChjp1MdFWik7NjEjqKQMzVmBkdK3dz14A6B5Cupm&quot;,
-        &quot;/ipfs/QmRyWyKWmphamkMRnJVjUTzSFSAAZowYP4rnbgnfMXC9Mr&quot;,
-        &quot;/ipfs/QmU3o9bvfenhTKhxUakbYrLDnZU7HezAVxPM6Ehjw9Xjqy&quot;,
-        &quot;/ipfs/QmPhnvn747LqwPYMJmQVorMaGbMSgA7mRRoyyZYz3DoZRQ&quot;,
+<span style="color:#75715e">// this is a list of all past webUI paths.
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 原来公开网络的 webUI 路径保存在这个列表中
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">WebUIPaths</span> = []<span style="color:#66d9ef">string</span>{
+        <span style="color:#a6e22e">WebUIPath</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmQNHd1suZTktPRhP7DD4nKWG46ZRSxkwHocycHVrK3dYW&#34;</span>, 
+        <span style="color:#e6db74">&#34;/ipfs/QmfQkD8pBSBCBxWEwFSu4XaDVSWK6bjnNuaWZjMyQbyDub&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmXc9raDM1M5G5fpBnVyQ71vR4gbnskwnB9iMEzBuLgvoZ&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmenEBWcAk3tN94fSKpKFtUMwty1qNwSYw3DMDFV6cPBXA&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmUnXcWZC5Ve21gUseouJsH5mLAyz5JPp8aHsg8qVUUK8e&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmSDgpiHco5yXdyVTfhKxr3aiJ82ynz8V14QcGKicM3rVh&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmRuvWJz1Fc8B9cTsAYANHTXqGmKR9DVfY5nvMD1uA2WQ8&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmQLXHs7K98JNQdWrBB2cQLJahPhmupbDjRuH1b9ibmwVa&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmXX7YRpU7nNBKfw75VG7Y1c3GwpSAGHRev67XVPgZFv9R&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmXdu7HWdV6CUaUabd9q2ZeA4iHZLVyDRj3Gi4dsJsWjbr&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmaaqrHyAQm7gALkRW8DcfGX3u8q9rWKnxEMmf7m9z515w&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmSHDxWsMPuJQKWmVA1rB5a3NX2Eme5fPqNb63qwaqiqSp&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmctngrQAt9fjpQUZr7Bx3BsXUcif52eZGTizWhvcShsjz&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmS2HL9v5YeKgQkkWMvs1EMnFtUowTEdFfSSeMT4pos1e6&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmR9MzChjp1MdFWik7NjEjqKQMzVmBkdK3dz14A6B5Cupm&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmRyWyKWmphamkMRnJVjUTzSFSAAZowYP4rnbgnfMXC9Mr&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmU3o9bvfenhTKhxUakbYrLDnZU7HezAVxPM6Ehjw9Xjqy&#34;</span>,
+        <span style="color:#e6db74">&#34;/ipfs/QmPhnvn747LqwPYMJmQVorMaGbMSgA7mRRoyyZYz3DoZRQ&#34;</span>,
 }
 
-var WebUIOption = RedirectOption(&quot;webui&quot;, WebUIPath)
-</code></pre>
-
-<p>重新编译 go-ipfs，启动后缺省可以通过 <code>http://127.0.0.1:5001/webui</code> 访问到 ipfs 的管理界面。</p>
-
-<pre><code class="language-bash"># 编译 go-ipfs
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">WebUIOption</span> = <span style="color:#a6e22e">RedirectOption</span>(<span style="color:#e6db74">&#34;webui&#34;</span>, <span style="color:#a6e22e">WebUIPath</span>)
+</code></pre></div><p>重新编译 go-ipfs，启动后缺省可以通过 <code>http://127.0.0.1:5001/webui</code> 访问到 ipfs 的管理界面。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 编译 go-ipfs</span>
 cd go-ipfs
 make build
 cd ../
 
-# 启动 ipfs
-IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs deamon
-</code></pre>
-
-<h2 id="启动其他节点">启动其他节点</h2>
-
+<span style="color:#75715e"># 启动 ipfs</span>
+IPFS_PATH<span style="color:#f92672">=</span>./ipfs LIBP2P_FORCE_PNET<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ./go-ipfs/cmd/ipfs/ipfs deamon
+</code></pre></div><h2 id="heading">启动其他节点</h2>
 <p>把 <a href="#toc_1">准备 ipfs 环境</a> 中创建的 <code>swarm.key</code> 复制到合理位置，并且按照 <a href="#toc_1">准备 ipfs 环境</a> 编译 go-ipfs、修改 bootstrap 节点、启动 ipfs 即可。如果一切正常，就可以在 bootstrap 节点上可以看到连接上来的 peer 节点。</p>
-
-<p><img src="media/15641153824612/15641244880502.jpg" alt="-w600" /></p>
-
-<h2 id="参考">参考</h2>
-
+<p><img src="media/15641153824612/15641244880502.jpg" alt="-w600"></p>
+<h2 id="heading1">参考</h2>
 <ul>
-<li><a href="https://github.com/ahester57/ipfs-private-swarm" target="_blank">IPFS Private Swarm</a></li>
+<li><a href="https://github.com/ahester57/ipfs-private-swarm">IPFS Private Swarm</a></li>
 </ul>
 
     </div>
@@ -1029,7 +991,7 @@ IPFS_PATH=./ipfs LIBP2P_FORCE_PNET=1 ./go-ipfs/cmd/ipfs/ipfs deamon
   
 
   <p class="powered-by">
-    2019 &copy; &middot; 
+    2019 © &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

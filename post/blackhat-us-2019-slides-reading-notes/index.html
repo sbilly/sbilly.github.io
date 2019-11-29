@@ -80,7 +80,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.04a87a1cb9027e3c50f566322527c56f.css">
+  <link rel="stylesheet" href="/css/academic.min.891726ba3b332d3508fbc99721fa7e80.css">
 
   
 
@@ -590,513 +590,310 @@
   <div class="article-container">
 
     <div class="article-style">
-      
-
-<p><h2>Table of Contents</h2>
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#0x00-读后感">0x00 读后感</a></li>
-<li><a href="#0x01-blackhat-us19-议题笔记">0x01 BlackHat US19 议题笔记</a>
-<ul>
-<li><a href="#漏洞挖掘和利用">漏洞挖掘和利用</a></li>
-<li><a href="#威胁跟踪与防护">威胁跟踪与防护</a></li>
-<li><a href="#安全体系和实践">安全体系和实践</a></li>
-<li><a href="#密码学和其应用">密码学和其应用</a></li>
-<li><a href="#杂项">杂项</a></li>
-</ul></li>
-<li><a href="#相关资源的下载">相关资源的下载</a></li>
-</ul></li>
-</ul>
-</nav></p>
-
-<h2 id="0x00-读后感">0x00 读后感</h2>
-
-<p>看完 BlackHat 2019 的这些议题，我个人最强烈的感受就是企业承担的信息安全责任应该是有前提和有边界的，不应该是无前提和无边界的。如果拿消防做类比，在现行的治理框架下如果一个企业因为不可抗力或者被纵火，如果企业本身无过失（合规）的情况下一般只需要承担民事责任而没有刑事责任。美国的治理体系中就有这样的例子 —— FireEye 就获得了 SAFETY Act Certification 认证，<a href="https://www.fireeye.com/company/awards/safety-act-certification-and-fireeye-products.html" target="_blank">FireEye 的用户可以在某种情况下免于被起诉</a>。</p>
-
-<p>在《<a href="http://i.blackhat.com/USA-19/Thursday/us-19-Conti-Operational-Templates-for-State-Level-Attack-and-Collective-Defense-of-Countries.pdf" target="_blank">Operational Templates for State-Level Attack and Collective Defense of Countries</a>》里有几张图也表达了这个意思 —— 商业公司缺乏足够的资源与国家层面的威胁对抗。攻击方可以在各个层面寻找脆弱性来突破。</p>
-
-<p><img src="media/15653591872010/15654181329540.jpg" alt="-w300" /><img src="media/15653591872010/15654196349463.jpg" alt="-w300" /></p>
-
-<p>就像《<a href="http://i.blackhat.com/USA-19/Thursday/us-19-Pavur-GDPArrrrr-Using-Privacy-Laws-To-Steal-Identities.pdf" target="_blank">GDPArrrrr: Using Privacy Laws to Steal Identities</a>》所实践的 —— 连 GPDR 这样的隐私法案都能被利用来窃取隐私。而防守方以 Google Project Zero 这样的实力，也只能聚焦于二进制方向，漏洞挖掘也是以手工挖掘漏洞为主、辅助以半自动化的 Fuzzing 。</p>
-
-<p><img src="media/15653591872010/15654340825160.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15654363276071.jpg" alt="-w300" /><img src="media/15653591872010/15654366981174.jpg" alt="-w300" /><img src="media/15653591872010/15654367742188.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15654171165908.jpg" alt="-w300" /><img src="media/15653591872010/15654171367327.jpg" alt="-w300" /></p>
-
-<h2 id="0x01-blackhat-us19-议题笔记">0x01 BlackHat US19 议题笔记</h2>
-
+      <!-- raw HTML omitted -->
+<h2 id="0x00-">0x00 读后感</h2>
+<p>看完 BlackHat 2019 的这些议题，我个人最强烈的感受就是企业承担的信息安全责任应该是有前提和有边界的，不应该是无前提和无边界的。如果拿消防做类比，在现行的治理框架下如果一个企业因为不可抗力或者被纵火，如果企业本身无过失（合规）的情况下一般只需要承担民事责任而没有刑事责任。美国的治理体系中就有这样的例子 —— FireEye 就获得了 SAFETY Act Certification 认证，<a href="https://www.fireeye.com/company/awards/safety-act-certification-and-fireeye-products.html">FireEye 的用户可以在某种情况下免于被起诉</a>。</p>
+<p>在《<a href="http://i.blackhat.com/USA-19/Thursday/us-19-Conti-Operational-Templates-for-State-Level-Attack-and-Collective-Defense-of-Countries.pdf">Operational Templates for State-Level Attack and Collective Defense of Countries</a>》里有几张图也表达了这个意思 —— 商业公司缺乏足够的资源与国家层面的威胁对抗。攻击方可以在各个层面寻找脆弱性来突破。</p>
+<p><img src="media/15653591872010/15654181329540.jpg" alt="-w300"><img src="media/15653591872010/15654196349463.jpg" alt="-w300"></p>
+<p>就像《<a href="http://i.blackhat.com/USA-19/Thursday/us-19-Pavur-GDPArrrrr-Using-Privacy-Laws-To-Steal-Identities.pdf">GDPArrrrr: Using Privacy Laws to Steal Identities</a>》所实践的 —— 连 GPDR 这样的隐私法案都能被利用来窃取隐私。而防守方以 Google Project Zero 这样的实力，也只能聚焦于二进制方向，漏洞挖掘也是以手工挖掘漏洞为主、辅助以半自动化的 Fuzzing 。</p>
+<p><img src="media/15653591872010/15654340825160.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15654363276071.jpg" alt="-w300"><img src="media/15653591872010/15654366981174.jpg" alt="-w300"><img src="media/15653591872010/15654367742188.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15654171165908.jpg" alt="-w300"><img src="media/15653591872010/15654171367327.jpg" alt="-w300"></p>
+<h2 id="0x01-blackhat-us19-">0x01 BlackHat US19 议题笔记</h2>
 <p>按照自己的理解简单记录和分类。这次腾讯真的爆发啊，投的议题太多了。</p>
-
-<h3 id="漏洞挖掘和利用">漏洞挖掘和利用</h3>
-
+<h3 id="heading">漏洞挖掘和利用</h3>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Birch-HostSplit-Exploitable-Antipatterns-In-Unicode-Normalization.pdf" target="_blank">Host/Split: Exploitable Antipatterns in Unicode Normalization</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Birch-HostSplit-Exploitable-Antipatterns-In-Unicode-Normalization.pdf">Host/Split: Exploitable Antipatterns in Unicode Normalization</a></li>
 </ul>
-
 <p>主要是描述了一个因为 IDN 支持 unicode 以后带来的安全风险。很多大厂、很多软件、很多语言都受影响。</p>
-
-<p><img src="media/15653591872010/15653647015903.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15653647015903.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Bitan-Rogue7-Rogue-Engineering-Station-Attacks-On-S7-Simatic-PLCs.pdf" target="_blank">Rogue7: Rogue Engineering-Station attacks on S7 Simatic PLCs</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Bitan-Rogue7-Rogue-Engineering-Station-Attacks-On-S7-Simatic-PLCs.pdf">Rogue7: Rogue Engineering-Station attacks on S7 Simatic PLCs</a></li>
 </ul>
-
 <p>新发现的 PLC 操作系统的漏洞（和 S7 协议相关）。加上 ICS 安全的背景、全貌，以及这个漏洞的技术分析。这个议题在 ICS 方向讲得比较完整。</p>
-
-<p><img src="media/15653591872010/15653650152855.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15653650152855.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Cai-0-Days-And-Mitigations-Roadways-To-Exploit-And-Secure-Connected-BMW-Cars.pdf" target="_blank">0-Days &amp; Mitigations: Roadways to Exploit and Secure Connected BMW Cars</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Cai-0-Days-And-Mitigations-Roadways-To-Exploit-And-Secure-Connected-BMW-Cars.pdf">0-Days &amp; Mitigations: Roadways to Exploit and Secure Connected BMW Cars</a></li>
 </ul>
-
 <p>科恩实验室挖 BMW 车载系统漏洞的过程，非常好的 IoT 产品攻击面分析的范例。</p>
-
-<p><img src="media/15653591872010/15653667149091.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15653667149091.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Campana-Everybody-Be-Cool-This-Is-A-Robbery.pdf" target="_blank">Everybody be Cool, This is a Robbery!</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Campana-Everybody-Be-Cool-This-Is-A-Robbery.pdf">Everybody be Cool, This is a Robbery!</a></li>
 </ul>
-
 <p>不论是中国还是美国，高安全级别的系统一般都引入了 HSM 。这篇介绍了直接针对 HSM 的攻击，其实越小众的产品，安全性越差。在这个演示中的测试的 HSM 和前面那篇车载系统一样，选用的系统版本比较老，新一点的 Linux 自身内核保护机制都没有。只要存在漏洞，基本就会被利用。HSM 存在漏洞会直接破坏信任根，甚至在系统中提供一个非常隐蔽的持久据点。</p>
-
-<p><img src="media/15653591872010/15653673278472.jpg" alt="-w300" /><img src="media/15653591872010/15653673491823.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15653673278472.jpg" alt="-w300"><img src="media/15653591872010/15653673491823.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Edwards-Compendium-Of-Container-Escapes.pdf" target="_blank">A Compendium of Container Escapes</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Edwards-Compendium-Of-Container-Escapes.pdf">A Compendium of Container Escapes</a></li>
 </ul>
-
 <p>Docker 不是虚拟机，提供的隔离能力有限，这里介绍了三大类的绕过方式，从原理到代码。</p>
-
-<p><img src="media/15653591872010/15653716564331.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15653716564331.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Hauke-Denial-Of-Service-With-A-Fistful-Of-Packets-Exploiting-Algorithmic-Complexity-Vulnerabilities.pdf" target="_blank">Denial of Service with a Fistful of Packets: Exploiting Algorithmic Complexity Vulnerabilities</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Hauke-Denial-Of-Service-With-A-Fistful-Of-Packets-Exploiting-Algorithmic-Complexity-Vulnerabilities.pdf">Denial of Service with a Fistful of Packets: Exploiting Algorithmic Complexity Vulnerabilities</a></li>
 </ul>
-
 <p>AC 匹配的漏洞，并且介绍了 ACsploit 这个工具箱。这类漏洞比较有名的就是 CloudFlare 在 2019 年 7 月份那次因为正则表达式导致全球性故障。</p>
-
 <p>里面提出了一个观点比较有意思 —— AC 匹配的漏洞并不是实现层面的 BUG ，而是设计层面的问题。个人并不是很赞同这个观点，bug 并不局限于实现层面。只要是出现了不符合预期的结果，某种意义上都是 bug 。而 AC 匹配相关的这类漏洞，应该是设计者没有考虑各种最坏的情况可能出现的问题，从而导致了漏洞产生。和没有考虑用户输入可能导致命令执行类似。</p>
-
-<p><img src="media/15653591872010/15654118589379.jpg" alt="-w300" /><img src="media/15653591872010/15654119371191.jpg" alt="-w300" /><img src="media/15653591872010/15654117966384.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654118589379.jpg" alt="-w300"><img src="media/15653591872010/15654119371191.jpg" alt="-w300"><img src="media/15653591872010/15654117966384.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Huang-Towards-Discovering-Remote-Code-Execution-Vulnerabilities-In-Apple-FaceTime.pdf" target="_blank">Towards Discovering Remote Code Execution Vulnerabilities in Apple FaceTime</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Huang-Towards-Discovering-Remote-Code-Execution-Vulnerabilities-In-Apple-FaceTime.pdf">Towards Discovering Remote Code Execution Vulnerabilities in Apple FaceTime</a></li>
 </ul>
-
 <p>盘古带来的 FaceTime 远程代码执行漏洞分析。介绍了 iOS/macOS 中 FaceTime 的流程、攻击面分析、漏洞发现和利用。FaceTime 的通信过程有完整的可信链，苹果公司的安全架构设计绝对值得看一下。</p>
-
-<p><img src="media/15653591872010/15654260992836.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654260992836.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Jaiswal-Preventing-Authentication-Bypass-A-Tale-Of-Two-Researchers.pdf" target="_blank">Preventing Authentication Bypass A Tale of Two Researchers</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Jaiswal-Preventing-Authentication-Bypass-A-Tale-Of-Two-Researchers.pdf">Preventing Authentication Bypass A Tale of Two Researchers</a></li>
 </ul>
-
 <p>主要是讲了两个身份认证绕过的漏洞案例。这两个漏洞影响 Outlook/Live/Hotmail 的所有用户，攻击者可以获取被攻击者的所有邮件。主要的突破口就是在新版本上线引入的未签名 JWT Token 。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Jerkeby-Command-Injection-In-Irules-Loadbalancer-Scripts.pdf" target="_blank">COMMAND INJECTION IN IRULES LOADBALANCER SCRIPTS - A story about how TCL interpretation works in F5 iRules and how it can be detected or exploited</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Jerkeby-Command-Injection-In-Irules-Loadbalancer-Scripts.pdf">COMMAND INJECTION IN IRULES LOADBALANCER SCRIPTS - A story about how TCL interpretation works in F5 iRules and how it can be detected or exploited</a></li>
 </ul>
-
 <p>主要是讲 F5 的内置规则引擎 iRule 规则的利用。F5 应用范围很广（包括 DoD 也在大量使用）。但这个漏洞并不是很好评价，不知道 iRule 缺省是否存在并被启用。</p>
-
-<p><img src="media/15653591872010/15654275398688.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654275398688.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Kotler-Process-Injection-Techniques-Gotta-Catch-Them-All.pdf" target="_blank">Windows Process Injection in 2019</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Kotler-Process-Injection-Techniques-Gotta-Catch-Them-All.pdf">Windows Process Injection in 2019</a></li>
 </ul>
-
-<p>SafeBreach 搞了一个可以在最新版 Windows 10 x64 上进行进程注入的 C/C++ 库： <a href="https://github.com/SafeBreach-Labs/pinjectra" target="_blank">Pinjectra</a></p>
-
-<p><img src="media/15653591872010/15654282480908.jpg" alt="-w600" /></p>
-
+<p>SafeBreach 搞了一个可以在最新版 Windows 10 x64 上进行进程注入的 C/C++ 库： <a href="https://github.com/SafeBreach-Labs/pinjectra">Pinjectra</a></p>
+<p><img src="media/15653591872010/15654282480908.jpg" alt="-w600"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Lilang-Debug-For-Bug-Crack-And-Hack-Apple-Core-By-Itself-Fun-And-Profit-To-Debug-And-Fuzz-Apple-Kernel-By-LLDB-Script.pdf" target="_blank">Debug for bug: Crack and Hack Apple Core by itself</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Lilang-Debug-For-Bug-Crack-And-Hack-Apple-Core-By-Itself-Fun-And-Profit-To-Debug-And-Fuzz-Apple-Kernel-By-LLDB-Script.pdf">Debug for bug: Crack and Hack Apple Core by itself</a></li>
 </ul>
-
 <p>macOS 的内核/驱动 Fuzz 研究。发现了不少显卡驱动的漏洞。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Peterlin-Breaking-Samsungs-ARM-TrustZone.pdf" target="_blank">Breaking Samsung&rsquo;s ARM TrustZone</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Peterlin-Breaking-Samsungs-ARM-TrustZone.pdf">Breaking Samsung's ARM TrustZone</a></li>
 </ul>
-
 <p>简单介绍了三种不同类型的可信执行的环境，并详细介绍了如何攻破三星的 ARMv7 的 TrustZone 。</p>
-
-<p><img src="media/15653591872010/15654396394106.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654396394106.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Pi-Exploiting-Qualcomm-WLAN-And-Modem-Over-The-Air.pdf" target="_blank">Exploiting Qualcomm WLAN And Modem Over-The-Air</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Pi-Exploiting-Qualcomm-WLAN-And-Modem-Over-The-Air.pdf">Exploiting Qualcomm WLAN And Modem Over-The-Air</a></li>
 </ul>
-
 <p>在博通、Marvell 等 WiFi 被安全社区发现漏洞之后，腾讯 Blade Team 决定研究下高通 WiFi 芯片。结果搞定了从 OTA -&gt; WALN -&gt; Modem -&gt; Kernel 的全链条，可以从无线网控制设备。😱</p>
-
-<p><img src="media/15653591872010/15654419124544.jpg" alt="-w300" /><img src="media/15653591872010/15654418647448.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654419124544.jpg" alt="-w300"><img src="media/15653591872010/15654418647448.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Qian-Exploring-The-New-World-Remote-Exploitation-Of-SQLite-And-Curl.pdf" target="_blank">Exploring the New World : Remote Exploitation of SQLite and Curl</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Qian-Exploring-The-New-World-Remote-Exploitation-Of-SQLite-And-Curl.pdf">Exploring the New World : Remote Exploitation of SQLite and Curl</a></li>
 </ul>
-
 <p>SQLite 和 cURL 的漏洞发现和利用。腾讯 Blade Team 出品。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Chen-Biometric-Authentication-Under-Threat-Liveness-Detection-Hacking.pdf" target="_blank">Biometric Authentication Under Threat: Liveness Detection Hacking</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Chen-Biometric-Authentication-Under-Threat-Liveness-Detection-Hacking.pdf">Biometric Authentication Under Threat: Liveness Detection Hacking</a></li>
 </ul>
-
 <p>各种花式绕活体检测的方法。来自于腾讯玄武实验室。</p>
-
-<p><img src="media/15653591872010/15655115116727.jpg" alt="-w300" /><img src="media/15653591872010/15655115311991.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655115116727.jpg" alt="-w300"><img src="media/15653591872010/15655115311991.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Feng-The-Most-Secure-Browser-Pwning-Chrome-From-2016-To-2019.pdf" target="_blank">The Most Secure Browser? Pwning Chrome from 2016 to 2019.</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Feng-The-Most-Secure-Browser-Pwning-Chrome-From-2016-To-2019.pdf">The Most Secure Browser? Pwning Chrome from 2016 to 2019.</a></li>
 </ul>
-
 <p>我是如何干翻所谓最安全浏览器 Chrome 的。—— 来自腾讯科恩安全实验室。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Gong-Bypassing-The-Maginot-Line-Remotely-Exploit-The-Hardware-Decoder-On-Smartphone.pdf" target="_blank">Bypassing the Maginot Line: Remotely Exploit the Hardware Decoder on Smartphone</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Gong-Bypassing-The-Maginot-Line-Remotely-Exploit-The-Hardware-Decoder-On-Smartphone.pdf">Bypassing the Maginot Line: Remotely Exploit the Hardware Decoder on Smartphone</a></li>
 </ul>
-
 <p>远程攻击智能手机配备的硬件解码器。来自腾讯 Blade 实验室。已经搞到了 Venus 芯片。如果是从浏览器和即时通讯工具发起攻击，目前整个攻击链还差两环：还没有搞定从应用程序搞到 StageFright 引擎，也还没有搞定从 Venus 芯片进入到 Kernel 。</p>
-
-<p><img src="media/15653591872010/15655128792080.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655128792080.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Jablonski-Attacking-Electric-Motors-For-Fun-And-Profit.pdf" target="_blank">Attacking Electric Motors For Fun And Profit</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Jablonski-Attacking-Electric-Motors-For-Fun-And-Profit.pdf">Attacking Electric Motors For Fun And Profit</a></li>
 </ul>
-
 <p>虽然说是搞电动机，实际上是搞的无人机。比较全面，不过个人觉得远程搞的讲的太少了。</p>
-
-<p><img src="media/15653591872010/15655157267412.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655157267412.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Joly-Hunting-For-Bugs-Catching-Dragons.pdf" target="_blank">Hunting for bugs, catching dragons</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Joly-Hunting-For-Bugs-Catching-Dragons.pdf">Hunting for bugs, catching dragons</a></li>
 </ul>
-
 <p>利用邮件来攻击 Outlook 和 Exchange 。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Kettle-HTTP-Desync-Attacks-Smashing-Into-The-Cell-Next-Door.pdf" target="_blank">HTTP Desync Attacks: Smashing into the Cell Next Door</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Kettle-HTTP-Desync-Attacks-Smashing-Into-The-Cell-Next-Door.pdf">HTTP Desync Attacks: Smashing into the Cell Next Door</a></li>
 </ul>
-
 <p>HTTP Desync 攻击，一种攻击方式，列举是不少的利用。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Matula-APICs-Adventures-In-Wonderland.pdf" target="_blank">APIC’s Adventures in Wonderland</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Matula-APICs-Adventures-In-Wonderland.pdf">APIC’s Adventures in Wonderland</a></li>
 </ul>
-
 <p>Cisco 的 APIC 漏洞。作者说主要是 APIC 比较贵，以前的研究比较少，很随便的就搞了个远程特权执行的漏洞出来。片子里面讲的 LLDP 协议的几个例子还是非常有网络设备的特色的。和 HSM 的那个片子类似 —— 越少见产品安全性越难得到保证。居然还有这种漏洞 ……</p>
-
-<p><img src="media/15653591872010/15655371827093.jpg" alt="-w300" /><img src="media/15653591872010/15655372133757.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655371827093.jpg" alt="-w300"><img src="media/15653591872010/15655372133757.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Teissier-Mobile-Interconnect-Threats-How-Next-Gen-Products-May-Be-Already-Outdated.pdf" target="_blank">MOBILE INTERCONNECT THREATS - How next-gen products may be already outdated</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Teissier-Mobile-Interconnect-Threats-How-Next-Gen-Products-May-Be-Already-Outdated.pdf">MOBILE INTERCONNECT THREATS - How next-gen products may be already outdated</a></li>
 </ul>
-
 <p>移动环境下协议栈的一些特性带来的安全问题</p>
-
-<p><img src="media/15653591872010/15655942608960.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655942608960.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Zaikin-Reverse-Engineering-WhatsApp-Encryption-For-Chat-Manipulation-And-More.pdf" target="_blank">REVERSE ENGINEERING WHATSAPP ENCRYPTION FOR CHAT MANIPULATION AND MORE</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Zaikin-Reverse-Engineering-WhatsApp-Encryption-For-Chat-Manipulation-And-More.pdf">REVERSE ENGINEERING WHATSAPP ENCRYPTION FOR CHAT MANIPULATION AND MORE</a></li>
 </ul>
-
-<p>What&rsquo;s App 的加密存在缺陷。不知道 What&rsquo;s App 是不是正好需要看一下之前讲的那个即时通信加密算法？</p>
-
+<p>What's App 的加密存在缺陷。不知道 What's App 是不是正好需要看一下之前讲的那个即时通信加密算法？</p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Wu-Battle-Of-Windows-Service-A-Silver-Bullet-To-Discover-File-Privilege-Escalation-Bugs-Automatically.pdf" target="_blank">Battle of Windows Service:A Silver Bullet to Discover File Privilege Escalation Bugs Automatically</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Wu-Battle-Of-Windows-Service-A-Silver-Bullet-To-Discover-File-Privilege-Escalation-Bugs-Automatically.pdf">Battle of Windows Service:A Silver Bullet to Discover File Privilege Escalation Bugs Automatically</a></li>
 </ul>
-
 <p>腾讯玄武实验室出品。我是怎么发现一堆 Windows 10 平台上 ALPC 漏洞的。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Wang-Attacking-IPhone-XS-Max.pdf" target="_blank">Attacking iPhone XS Max</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Wang-Attacking-IPhone-XS-Max.pdf">Attacking iPhone XS Max</a></li>
 </ul>
-
 <p>盘古带来的如何突破软硬件层层防护把 iPhone XS Max 搞定的。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Valenta-Monsters-In-The-Middleboxes-Building-Tools-For-Detecting-HTTPS-Interception.pdf" target="_blank">Monsters in the Middleboxes - Building Tools for Detecting HTTPS Interception</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Valenta-Monsters-In-The-Middleboxes-Building-Tools-For-Detecting-HTTPS-Interception.pdf">Monsters in the Middleboxes - Building Tools for Detecting HTTPS Interception</a></li>
 </ul>
-
 <p>在服务端检测 HTTPS 中间人，提供了一个 golang 库可以直接用。感觉使用场景有限。</p>
-
-<p><img src="media/15653591872010/15655963959679.jpg" alt="-w300" /><img src="media/15653591872010/15655965035419.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655963959679.jpg" alt="-w300"><img src="media/15653591872010/15655965035419.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Vanhoef-Dragonblood-Attacking-The-Dragonfly-Handshake-Of-WPA3.pdf" target="_blank">Dragonblood: Attacking the Dragonﬂy Handshake of WPA3</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Vanhoef-Dragonblood-Attacking-The-Dragonfly-Handshake-Of-WPA3.pdf">Dragonblood: Attacking the Dragonﬂy Handshake of WPA3</a></li>
 </ul>
-
 <p>如何攻击 WPA3 的密码学相关介绍。看样子 WPA3 不足够安全，可能会要搞 3.1 。</p>
-
-<p><img src="media/15653591872010/15656186846664.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15656186846664.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Tsai-Infiltrating-Corporate-Intranet-Like-NSA.pdf" target="_blank">Infiltrating Corporate Intranet Like NSA - Pre-auth RCE on Leading SSL VPNs</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Tsai-Infiltrating-Corporate-Intranet-Like-NSA.pdf">Infiltrating Corporate Intranet Like NSA - Pre-auth RCE on Leading SSL VPNs</a></li>
 </ul>
-
 <p>Fortinet、Pulse Secure、Palo Alto 等多个厂商的 SSL VPN 无需身份认证的远程利用漏洞。用自己发现的漏洞搞定了 Twitter 双因素认证的 SSL VPN 。估计参加国内群体性红蓝对抗大赛的朋友们对这个方法并不陌生。</p>
-
-<p><img src="media/15653591872010/15655944794980.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655944794980.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Matula-APICs-Adventures-In-Wonderland.pdf" target="_blank">Attacking &amp; Defending the Microsoft Cloud (Azure AD &amp; Office 365)</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Matula-APICs-Adventures-In-Wonderland.pdf">Attacking &amp; Defending the Microsoft Cloud (Azure AD &amp; Office 365)</a></li>
 </ul>
-
 <p>关于 Azure AD 和 Office 365 攻防的介绍。值得看一下。</p>
-
-<p><img src="media/15653591872010/15655382671068.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655382671068.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Santamarta-Arm-IDA-And-Cross-Check-Reversing-The-787-Core-Network.pdf" target="_blank">Arm IDA and Cross Check: Reversing the 787’s Core Network</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Santamarta-Arm-IDA-And-Cross-Check-Reversing-The-787-Core-Network.pdf">Arm IDA and Cross Check: Reversing the 787’s Core Network</a></li>
 </ul>
-
 <p>通过泄漏的文档、二进制代码分析得出波音 787 有可能被攻击者入侵。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Simakov-Finding-A-Needle-In-An-Encrypted-Haystack-Leveraging-Cryptographic-Abilities-To-Detect-The-Most-Prevalent-Attacks-On-Active-Directory.pdf" target="_blank">Finding a Needle In An Encrypted Haystack: Leveraging Cryptographic Abilities To Detect The Most Prevalent Attacks On Active Directory</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Simakov-Finding-A-Needle-In-An-Encrypted-Haystack-Leveraging-Cryptographic-Abilities-To-Detect-The-Most-Prevalent-Attacks-On-Active-Directory.pdf">Finding a Needle In An Encrypted Haystack: Leveraging Cryptographic Abilities To Detect The Most Prevalent Attacks On Active Directory</a></li>
 </ul>
-
 <p>介绍微软 AD 的攻防，在原有 AD 攻防的基础上重点讲了好三类新的攻击方式和检测、防护建议。值得阅读。</p>
-
-<p><img src="media/15653591872010/15655858192352.jpg" alt="-w300" /><img src="media/15653591872010/15655861266518.jpg" alt="-w300" /><img src="media/15653591872010/15655863704137.jpg" alt="-w300" /><img src="media/15653591872010/15655872215074.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655858192352.jpg" alt="-w300"><img src="media/15653591872010/15655861266518.jpg" alt="-w300"><img src="media/15653591872010/15655863704137.jpg" alt="-w300"><img src="media/15653591872010/15655872215074.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Munoz-SSO-Wars-The-Token-Menace.pdf" target="_blank">SSO Wars: The Token Menace</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Munoz-SSO-Wars-The-Token-Menace.pdf">SSO Wars: The Token Menace</a></li>
 </ul>
-
 <p>主要是介绍 SSO 特别是微软系列产品的 SSO 相关的漏洞。</p>
-
-<p><img src="media/15653591872010/15655392088036.jpg" alt="-w300" /><img src="media/15653591872010/15655392391103.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655392088036.jpg" alt="-w300"><img src="media/15653591872010/15655392391103.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Shwartz-Selling-0-Days-To-Governments-And-Offensive-Security-Companies.pdf" target="_blank">Look, No Hands! The Remote, Interaction-less Attack Surface of the iPhone</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Shwartz-Selling-0-Days-To-Governments-And-Offensive-Security-Companies.pdf">Look, No Hands! The Remote, Interaction-less Attack Surface of the iPhone</a></li>
 </ul>
-
 <p>iOS 的远程利用攻击面分析并结合了一些漏洞的实际例子。估计是准备发布一个 iOS 的研究工具来预热的。</p>
-
-<p><img src="media/15653591872010/15655842488260.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655842488260.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Shupeng-All-The-4G-Modules-Could-Be-Hacked.pdf" target="_blank">All the 4G Modules Cloud be Hacked</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Shupeng-All-The-4G-Modules-Could-Be-Hacked.pdf">All the 4G Modules Cloud be Hacked</a></li>
 </ul>
-
 <p>百度安全实验室出品。如何搞定广泛使用的 4G 模块。可以看到一堆的硬编码的密码，考虑到 4g 模块的出货量，个人觉得还是非常好利用的。感受下 ……</p>
-
-<p><img src="media/15653591872010/15655832995147.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655832995147.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Seri-Critical-Zero-Days-Remotely-Compromise-The-Most-Popular-Real-Time-OS.pdf" target="_blank">Critical vulnerabilities to remotely compromise VxWorks, the most popular RTOS</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Seri-Critical-Zero-Days-Remotely-Compromise-The-Most-Popular-Real-Time-OS.pdf">Critical vulnerabilities to remotely compromise VxWorks, the most popular RTOS</a></li>
 </ul>
-
 <p>发现了 11 个 VxWorks TCP/IP 协议栈 IPnet 的高危漏洞，其中 6 个可以导致远程执行。这个协议栈由 WindRiver 维护，在多个实时操作系统中使用。</p>
-
-<p><img src="media/15653591872010/15655766782957.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655766782957.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Shaik-New-Vulnerabilities-In-5G-Networks.pdf" target="_blank">New Vulnerabilities in 5G Networks</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Shaik-New-Vulnerabilities-In-5G-Networks.pdf">New Vulnerabilities in 5G Networks</a></li>
 </ul>
-
 <p>5G 网络的漏洞挖掘，有点软。</p>
-
-<p><img src="media/15653591872010/15655785306772.jpg" alt="-w500" /></p>
-
-<h3 id="威胁跟踪与防护">威胁跟踪与防护</h3>
-
+<p><img src="media/15653591872010/15655785306772.jpg" alt="-w500"></p>
+<h3 id="heading1">威胁跟踪与防护</h3>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Franceschi-Bicchierai-The-Discovery-Of-A-Government-Malware-And-An-Unexpected-Spy-Scandal.pdf" target="_blank">The Discovery of a Government Malware and an Unexpected Spy Scandal</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Franceschi-Bicchierai-The-Discovery-Of-A-Government-Malware-And-An-Unexpected-Spy-Scandal.pdf">The Discovery of a Government Malware and an Unexpected Spy Scandal</a></li>
 </ul>
-
 <p>标题就看出来了 …… 意大利某“违法”监听调查分析</p>
-
-<p><img src="media/15653591872010/15654110727921.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654110727921.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Hoelzel-How-To-Detect-That-Your-Domains-Are-Being-Abused-For-Phishing-By-Using-DNS.pdf" target="_blank">How to detect that your domains are being abused for phishing attacks by using DNS</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Hoelzel-How-To-Detect-That-Your-Domains-Are-Being-Abused-For-Phishing-By-Using-DNS.pdf">How to detect that your domains are being abused for phishing attacks by using DNS</a></li>
 </ul>
-
 <p>主要讲了一下在 DNS 层面可以做哪些事情来避免自己邮件域不会被用于钓鱼。</p>
-
-<p><img src="media/15653591872010/15654218119402.jpg" alt="-w300" /><img src="media/15653591872010/15654217902153.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654218119402.jpg" alt="-w300"><img src="media/15653591872010/15654217902153.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Carcano-The-Future-Of-Securing-IED-Using-The-IEC62351-7-Standard-For-Monitoring.pdf" target="_blank">The Future of Securing Intelligent Electronic Devices Using the IEC 62351-7 Standard for Monitoring</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Carcano-The-Future-Of-Securing-IED-Using-The-IEC62351-7-Standard-For-Monitoring.pdf">The Future of Securing Intelligent Electronic Devices Using the IEC 62351-7 Standard for Monitoring</a></li>
 </ul>
-
 <p>主要是介绍了一下电网安全的 IEC 62351-7 标准、以及电网的安全环境和挑战、以及几个场景的 DEMO</p>
-
-<p><img src="media/15653591872010/15653678486345.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15653678486345.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf" target="_blank">The Future of Account Takeover</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf">The Future of Account Takeover</a></li>
 </ul>
-
 <p>币圈的 coinbase 讲了一下账号窃取的一些事情。换卡、账号找回的滥用、钓鱼、撞库、社会工程、恶意代码、以及利用 SEO 冒充官方技术支持等一些攻击技巧。…… 等等，这些怎么在国内好像都看过呢？！😓</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Pavur-GDPArrrrr-Using-Privacy-Laws-To-Steal-Identities.pdf" target="_blank">GDPArrrrr: Using Privacy Laws to Steal Identities</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Pavur-GDPArrrrr-Using-Privacy-Laws-To-Steal-Identities.pdf">GDPArrrrr: Using Privacy Laws to Steal Identities</a></li>
 </ul>
-
 <p>在 GPDR 法案颁布以后，演讲者利用隐私保护法案来盗取身份信息，按照 Kill-Chain 的思路把整个过程讲了一遍。整个过程的核心是 GPDR 中要求：服务商必须对外公布联系方式，通过这个联系方式，用户可以申请自己所有的个人信息，而服务商需要在一个自然月以内向用户提供可机读的个人信息。个人觉得国内这么搞一下，然后出国去讲，很可能被请喝茶。</p>
-
-<p><img src="media/15653591872010/15654341433711.jpg" alt="-w300" /><img src="media/15653591872010/15654340825160.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15654358926051.jpg" alt="-w300" /><img src="media/15653591872010/15654359442090.jpg" alt="-w300" /><img src="media/15653591872010/15654360197728.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15654360478216.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15654360638454.jpg" alt="-w300" /><img src="media/15653591872010/15654361042671.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15654361565895.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15654362245877.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15654363276071.jpg" alt="-w300" /><img src="media/15653591872010/15654366981174.jpg" alt="-w300" /><img src="media/15653591872010/15654367222044.jpg" alt="-w300" /><img src="media/15653591872010/15654367582753.jpg" alt="-w300" /><img src="media/15653591872010/15654367742188.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654341433711.jpg" alt="-w300"><img src="media/15653591872010/15654340825160.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15654358926051.jpg" alt="-w300"><img src="media/15653591872010/15654359442090.jpg" alt="-w300"><img src="media/15653591872010/15654360197728.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15654360478216.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15654360638454.jpg" alt="-w300"><img src="media/15653591872010/15654361042671.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15654361565895.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15654362245877.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15654363276071.jpg" alt="-w300"><img src="media/15653591872010/15654366981174.jpg" alt="-w300"><img src="media/15653591872010/15654367222044.jpg" alt="-w300"><img src="media/15653591872010/15654367582753.jpg" alt="-w300"><img src="media/15653591872010/15654367742188.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Perlman-Hacking-Ten-Million-Useful-Idiots-Online-Propaganda-As-A-Socio-Technical-Security-Project.pdf" target="_blank">Hacking Ten Million Useful Idiots: Online Propaganda as a Socio-Technical Security Project</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Perlman-Hacking-Ten-Million-Useful-Idiots-Online-Propaganda-As-A-Socio-Technical-Security-Project.pdf">Hacking Ten Million Useful Idiots: Online Propaganda as a Socio-Technical Security Project</a></li>
 </ul>
-
 <p>错误信息是一个社会层面的安全问题，会带来各种物理、经济方面的影响。还提出了一个 AMITT 的框架。算是社会学范安全的领域吧。</p>
-
-<p><img src="media/15653591872010/15654390376717.jpg" alt="-w300" /><img src="media/15653591872010/15654390870350.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654390376717.jpg" alt="-w300"><img src="media/15653591872010/15654390870350.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Price-Playing-Offense-And-Defense-With-Deepfakes.pdf" target="_blank">Playing Offense and Defense with Deepfakes</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Price-Playing-Offense-And-Defense-With-Deepfakes.pdf">Playing Offense and Defense with Deepfakes</a></li>
 </ul>
-
-<p>介绍了 deepfake 的历史，认为现在 deepfake 类产生的恶意视频人类靠肉眼已经很难辨认。因此开发了一套新的名为 <a href="https://github.com/zerofox-oss/deepstar" target="_blank">deepstar</a> 检测方法（还没有开源）。</p>
-
-<p><img src="media/15653591872010/15654420971329.jpg" alt="-w300" /><img src="media/15653591872010/15654425397013.jpg" alt="-w300" /><img src="media/15653591872010/15654425651801.jpg" alt="-w300" /></p>
-
+<p>介绍了 deepfake 的历史，认为现在 deepfake 类产生的恶意视频人类靠肉眼已经很难辨认。因此开发了一套新的名为 <a href="https://github.com/zerofox-oss/deepstar">deepstar</a> 检测方法（还没有开源）。</p>
+<p><img src="media/15653591872010/15654420971329.jpg" alt="-w300"><img src="media/15653591872010/15654425397013.jpg" alt="-w300"><img src="media/15653591872010/15654425651801.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Amini-Worm-Charming-Harvesting-Malware-Lures-For-Fun-And-Profit.pdf" target="_blank">Worm Charming - Harvesting Malware Lures for Fun and Profit</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Amini-Worm-Charming-Harvesting-Malware-Lures-For-Fun-And-Profit.pdf">Worm Charming - Harvesting Malware Lures for Fun and Profit</a></li>
 </ul>
-
-<p>从开源情报源和 VirusTotal 情报源获取非可执行文件的威胁情报并进行分析，发现了不少的真实世界中传播的样本。并发布了 <a href="https://labs.inquest.net" target="_blank">labs.inquest.net</a> 这个集成工具。</p>
-
-<p><img src="media/15653591872010/15655062817028.jpg" alt="-w300" /><img src="media/15653591872010/15655063401266.jpg" alt="-w300" /><img src="media/15653591872010/15655061425594.jpg" alt="-w300" /></p>
-
+<p>从开源情报源和 VirusTotal 情报源获取非可执行文件的威胁情报并进行分析，发现了不少的真实世界中传播的样本。并发布了 <a href="https://labs.inquest.net">labs.inquest.net</a> 这个集成工具。</p>
+<p><img src="media/15653591872010/15655062817028.jpg" alt="-w300"><img src="media/15653591872010/15655063401266.jpg" alt="-w300"><img src="media/15653591872010/15655061425594.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Baril-He-Said-She-Said-Poisoned-RDP-Offense-And-Defense.pdf" target="_blank">Poisoned RDP - He Said, She Said - Poisoned RDP Offense and Defense</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Baril-He-Said-She-Said-Poisoned-RDP-Offense-And-Defense.pdf">Poisoned RDP - He Said, She Said - Poisoned RDP Offense and Defense</a></li>
 </ul>
-
-<p>通过 RDP 服务搞客户端。和 BlueKeep:CVE-2019-0708 不同的一个攻击向量。这里面提到了 <a href="https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization" target="_blank">Windows Telemetry</a> 的数据，这些数据看起来是会上报给微软的，需要谨慎一些。</p>
-
+<p>通过 RDP 服务搞客户端。和 BlueKeep:CVE-2019-0708 不同的一个攻击向量。这里面提到了 <a href="https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization">Windows Telemetry</a> 的数据，这些数据看起来是会上报给微软的，需要谨慎一些。</p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Bernal-Detecting-Malicious-Files-With-YARA-Rules-As-They-Traverse-The-Network.pdf" target="_blank">Detecting malicious files with YARA rules as they traverse the network</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Bernal-Detecting-Malicious-Files-With-YARA-Rules-As-They-Traverse-The-Network.pdf">Detecting malicious files with YARA rules as they traverse the network</a></li>
 </ul>
-
 <p>利用 YARA + Zeek 的组合来做流量中的文件检查。提供了一些开源工具。</p>
-
-<p><img src="media/15653591872010/15655090614752.jpg" alt="-w300" /><img src="media/15653591872010/15655090946261.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655090614752.jpg" alt="-w300"><img src="media/15653591872010/15655090946261.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Burke-ClickOnce-And-Youre-In-When-Appref-Ms-Abuse-Is-Operating-As-Intended.pdf" target="_blank">CLICKONCE AND YOU’RE IN: When .appref-ms abuse is operating as intended</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Burke-ClickOnce-And-Youre-In-When-Appref-Ms-Abuse-Is-Operating-As-Intended.pdf">CLICKONCE AND YOU’RE IN: When .appref-ms abuse is operating as intended</a></li>
 </ul>
-
-<p><a href="https://www.dhs.gov/CISA" target="_blank">DHS:CISA</a> 发布的一个利用微软 .appref-ms 做钓鱼和持久化的方法。核心是 .appref-ms 不但可以远程安装程序，还会确保被安装的程序是最新的。</p>
-
+<p><a href="https://www.dhs.gov/CISA">DHS:CISA</a> 发布的一个利用微软 .appref-ms 做钓鱼和持久化的方法。核心是 .appref-ms 不但可以远程安装程序，还会确保被安装的程序是最新的。</p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Landers-Flying-A-False-Flag-Advanced-C2-Trust-Conflicts-And-Domain-Takeover.pdf" target="_blank">Flying A False Flag - Advanced C2, Trust Conflicts, and Domain Takeover</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Landers-Flying-A-False-Flag-Advanced-C2-Trust-Conflicts-And-Domain-Takeover.pdf">Flying A False Flag - Advanced C2, Trust Conflicts, and Domain Takeover</a></li>
 </ul>
-
 <p>对 C2 的全貌做了个介绍，讲了很多的 C2 套路，顺便把很多资源系统的梳理了一遍，值得看一下。</p>
-
-<p><img src="media/15653591872010/15655360691708.jpg" alt="-w300" /><img src="media/15653591872010/15655360846226.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655360691708.jpg" alt="-w300"><img src="media/15653591872010/15655360846226.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Metzman-Going-Beyond-Coverage-Guided-Fuzzing-With-Structured-Fuzzing.pdf" target="_blank">Going Beyond Coverage-Guided Fuzzing with Structured Fuzzing</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Metzman-Going-Beyond-Coverage-Guided-Fuzzing-With-Structured-Fuzzing.pdf">Going Beyond Coverage-Guided Fuzzing with Structured Fuzzing</a></li>
 </ul>
-
-<p>结构化的 Fuzzing 技术介绍（结合 <a href="https://github.com/google/clusterfuzz" target="_blank">ClusterFuzz</a> ）。</p>
-
-<p><img src="media/15653591872010/15655383781270.jpg" alt="-w300" /></p>
-
+<p>结构化的 Fuzzing 技术介绍（结合 <a href="https://github.com/google/clusterfuzz">ClusterFuzz</a> ）。</p>
+<p><img src="media/15653591872010/15655383781270.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Mulliner-Come-Join-The-CAFSA-Continuous-Automated-Firmware-Security-Analysis.pdf" target="_blank">Come Join the [CAFSA] Continuous Automated Firmware Security Analysis</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Mulliner-Come-Join-The-CAFSA-Continuous-Automated-Firmware-Security-Analysis.pdf">Come Join the [CAFSA] Continuous Automated Firmware Security Analysis</a></li>
 </ul>
-
-<p>介绍一个自动化分析文件镜像的工具 <a href="http://www.github.com/cruise-automation/fwanalyzer" target="_blank">FwAnalyzer</a> 。主要是做一些镜像基线检查（比如：不包含调试工具、开启 SELinux、……），而不是做漏洞检查。</p>
-
+<p>介绍一个自动化分析文件镜像的工具 <a href="http://www.github.com/cruise-automation/fwanalyzer">FwAnalyzer</a> 。主要是做一些镜像基线检查（比如：不包含调试工具、开启 SELinux、……），而不是做漏洞检查。</p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Wixey-Im-Unique-Just-Like-You-Human-Side-Channels-And-Their-Implications-For-Security-And-Privacy.pdf" target="_blank">I’m unique, just like you - Human side-channels and their implications for security and privacy</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Wixey-Im-Unique-Just-Like-You-Human-Side-Channels-And-Their-Implications-For-Security-And-Privacy.pdf">I’m unique, just like you - Human side-channels and their implications for security and privacy</a></li>
 </ul>
-
 <p>人的行为某种意义上来说也是一种可用于检测的“侧信道”。作者举了不少例子。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Williams-Detecting-Deep-Fakes-With-Mice.pdf" target="_blank">Detecting Deep Fakes With Mice</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Williams-Detecting-Deep-Fakes-With-Mice.pdf">Detecting Deep Fakes With Mice</a></li>
 </ul>
-
 <p>训练老鼠来检测 Deep Fakes ，其实主要是说 deepfake 这类可以怎么检测。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Zheng-All-Your-Apple-Are-Belong-To-Us-Unique-Identification-And-Cross-Device-Tracking-Of-Apple-Devices.pdf" target="_blank">All Your Apple Are Belong To Us: Unique Identification and Cross-device Tracking of Apple Devices</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Zheng-All-Your-Apple-Are-Belong-To-Us-Unique-Identification-And-Cross-Device-Tracking-Of-Apple-Devices.pdf">All Your Apple Are Belong To Us: Unique Identification and Cross-device Tracking of Apple Devices</a></li>
 </ul>
-
 <p>阿里安全出品。将如何跨设备跟踪用户。主要思路就是：1. 通过 Device ID 唯一的标记和跟踪每台设别；2. 把属于同一个 User ID 的 Device ID 都找出来。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Smith-Fantastic-Red-Team-Attacks-And-How-To-Find-Them.pdf" target="_blank">Fantastic Red Team Attacks - And How to Find Them</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Smith-Fantastic-Red-Team-Attacks-And-How-To-Find-Them.pdf">Fantastic Red Team Attacks - And How to Find Them</a></li>
 </ul>
-
 <p>介绍和推广 Atomic Red Team、EQL 这两个围绕 ATT&amp;CK 的工具。</p>
-
-<p><img src="media/15653591872010/15655878703875.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655878703875.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Snezhkov-Zombie-Ant-Farming-Practical-Tips-For-Playing-Hide-And-Seek-With-Linux-EDRs.pdf" target="_blank">Zombie Ant Farm: Practical Tips for Playing Hide and Seek with Linux EDRs</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Snezhkov-Zombie-Ant-Farming-Practical-Tips-For-Playing-Hide-And-Seek-With-Linux-EDRs.pdf">Zombie Ant Farm: Practical Tips for Playing Hide and Seek with Linux EDRs</a></li>
 </ul>
-
 <p>绕过 Linux EDR 的方法。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Tyagi-Defense-Against-Rapidly-Morphing-DDOS.pdf" target="_blank">Defense against Rapidly Morphing DDOS</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Tyagi-Defense-Against-Rapidly-Morphing-DDOS.pdf">Defense against Rapidly Morphing DDOS</a></li>
 </ul>
-
-<p>少见的抗 DDoS 的议题。感觉主要是推广 <a href="https://github.com/464d41/soda" target="_blank">SODA</a> 这个项目。</p>
-
+<p>少见的抗 DDoS 的议题。感觉主要是推广 <a href="https://github.com/464d41/soda">SODA</a> 这个项目。</p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Soman-Death-To-The-IOC-Whats-Next-In-Threat-Intelligence.pdf" target="_blank">Death of IOC - What&rsquo;s next in Threat Intelligence</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Soman-Death-To-The-IOC-Whats-Next-In-Threat-Intelligence.pdf">Death of IOC - What's next in Threat Intelligence</a></li>
 </ul>
-
 <p>机器学习的威胁情报抽取，比如：实体抽取之类的。</p>
-
-<p><img src="media/15653591872010/15655905080740.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655905080740.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Sandin-PicoDMA-DMA-Attacks-At-Your-Fingertips.pdf" target="_blank">PICODMA: DMA ATTACKS AT YOUR FINGERTIPS</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Sandin-PicoDMA-DMA-Attacks-At-Your-Fingertips.pdf">PICODMA: DMA ATTACKS AT YOUR FINGERTIPS</a></li>
 </ul>
-
 <p>造了一个指尖大小利用 DMA 绕过系统访问控制直接获取敏感信息的硬件工具。可以像 rekall 和 Volatility 那样调查取证。</p>
-
-<p><img src="media/15653591872010/15655748697795.jpg" alt="-w300" /></p>
-
-<h3 id="安全体系和实践">安全体系和实践</h3>
-
+<p><img src="media/15653591872010/15655748697795.jpg" alt="-w300"></p>
+<h3 id="heading2">安全体系和实践</h3>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Almubayed-Practical-Approach-To-Automate-The-Discovery-And-Eradication-Of-Open-Source-Software-Vulnerabilities-At-Scale.pdf" target="_blank">Practical Approach to Automate the Discovery and Eradication of Open-Source Software Vulnerabilities at Scale</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Almubayed-Practical-Approach-To-Automate-The-Discovery-And-Eradication-Of-Open-Source-Software-Vulnerabilities-At-Scale.pdf">Practical Approach to Automate the Discovery and Eradication of Open-Source Software Vulnerabilities at Scale</a></li>
 </ul>
-
 <p>国内国外都一样，安全管理员觉得最坑的场景之一就是某一天又爆发一个不得不补的远程执行漏洞。现在的软件生态包依赖关系非常复杂，软件供应链安全也非常复杂。演讲者认为需要遵循这几个原则：可扩展、自动化、高研发效率、关注兼容性。对漏洞的维度进行排序，分清主次才能进行有效的修复。一方面要从多个数据源（开源或商业化）收集漏洞、威胁相关的信息；另一方面，也需要通过自动化构建过程对自己的 IT 环境有足够的了解。</p>
-
-<p><img src="media/15653591872010/15653598646612.jpg" alt="-w800" /></p>
-
-<p><img src="media/15653591872010/15653605758169.jpg" alt="-w800" /></p>
-
-<p><img src="media/15653591872010/15653614862053.jpg" alt="-w300" /><img src="media/15653591872010/15653609908146.jpg" alt="-w300" /><img src="media/15653591872010/15653617912984.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15653598646612.jpg" alt="-w800"></p>
+<p><img src="media/15653591872010/15653605758169.jpg" alt="-w800"></p>
+<p><img src="media/15653591872010/15653614862053.jpg" alt="-w300"><img src="media/15653591872010/15653609908146.jpg" alt="-w300"><img src="media/15653591872010/15653617912984.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Brand-WebAuthn-101-Demystifying-WebAuthn.pdf" target="_blank">WebAuthn 101 - Demystifying WebAuthn</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Brand-WebAuthn-101-Demystifying-WebAuthn.pdf">WebAuthn 101 - Demystifying WebAuthn</a></li>
 </ul>
-
 <p>主要是介绍 WebAuthn 和 FIDO2 的好处。我对这种既改善用户体验、又增强安全性的方案是非常期望看到的。现在各方力量都在联合推动无密码认证的实现，DISA 下一步的现代化计划中也增加了改善用户认证，实现无密码认证的目标。目前，国民电子也在国内推 FIDO2 的相关方案。</p>
-
 <p>除此之外，这里面有不少统计数据是值得看的：</p>
-
 <ul>
 <li>91% 的信息安全事件和钓鱼有关</li>
 <li>80% 的针对商业机构的攻击行动中使用了钓鱼</li>
@@ -1105,279 +902,180 @@
 <li>一个设计良好的钓鱼页面有 43% 的成功率</li>
 <li>使用生物特征进行重新验证，98% 的用户可以在 38 秒内完成，而使用用户名密码进行重新验证，98% 的用户要花 150 秒</li>
 </ul>
-
-<p><img src="media/15653591872010/15653653084670.jpg" alt="-w300" /><img src="media/15653591872010/15653653413046.jpg" alt="-w300" />
-<img src="media/15653591872010/15653653801597.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15653655934548.jpg" alt="-w300" /><img src="media/15653591872010/15653655326116.jpg" alt="-w300" />
-<img src="media/15653591872010/15653655558021.jpg" alt="-w300" /><img src="media/15653591872010/15653659341541.jpg" alt="-w300" /><img src="media/15653591872010/15653659750166.jpg" alt="-w300" /><img src="media/15653591872010/15653660101127.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15653653084670.jpg" alt="-w300"><img src="media/15653591872010/15653653413046.jpg" alt="-w300">
+<img src="media/15653591872010/15653653801597.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15653655934548.jpg" alt="-w300"><img src="media/15653591872010/15653655326116.jpg" alt="-w300">
+<img src="media/15653591872010/15653655558021.jpg" alt="-w300"><img src="media/15653591872010/15653659341541.jpg" alt="-w300"><img src="media/15653591872010/15653659750166.jpg" alt="-w300"><img src="media/15653591872010/15653660101127.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Howes-Securing-Apps-In-The-Open-By-Default-Cloud.pdf" target="_blank">Securing Apps in the Open-By-Default Cloud</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Howes-Securing-Apps-In-The-Open-By-Default-Cloud.pdf">Securing Apps in the Open-By-Default Cloud</a></li>
 </ul>
-
 <p>snapchat 在公有云基础上应用安全的实践。snapchat 大量使用了AWS/GCP，在公有云上有一些限制，例如：没有办法获得一个仅为内部使用的网络基础设施、AWS/GCP 提供的控制点选项并不多、像 AppEngine 这样的服务必须直接暴露在互联网上、缺乏集中的 CI/CD 管道、使用大量技术带来技术栈复杂度高。</p>
-
 <p>snapchat 在软件生命周期中把所有的服务分成 UnManaged 和 Managed 两个阶段。在 UnManaged 阶段，主要是防火墙和无状态的认证（AuthN）和授权（AuthZ）代理，而在 Managed 阶段，主要是通过服务网格以及其 API Gateway 来进行管理。对于比较老的应用，则应该及时关注其状态和安全告警。</p>
-
-<p><img src="media/15653591872010/15654244942637.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15654250820930.jpg" alt="-w300" /><img src="media/15653591872010/15654256831681.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15654251304249.jpg" alt="-w300" /><img src="media/15653591872010/15654255470708.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654244942637.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15654250820930.jpg" alt="-w300"><img src="media/15653591872010/15654256831681.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15654251304249.jpg" alt="-w300"><img src="media/15653591872010/15654255470708.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Davidov-Inside-The-Apple-T2.pdf" target="_blank">Inside The Apple T2</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Davidov-Inside-The-Apple-T2.pdf">Inside The Apple T2</a></li>
 </ul>
-
 <p>苹果设备中有一块 T2 的芯片，这块芯片夹在 CPU 和硬件设备之间，增加了额外的安全保障和控制。这篇主要是对其软硬件工作机制进行了分析。</p>
-
-<p><img src="media/15653591872010/15653699445151.jpg" alt="-w300" /><img src="media/15653591872010/15653700955524.jpg" alt="-w300" /><img src="media/15653591872010/15653701581991.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15653699445151.jpg" alt="-w300"><img src="media/15653591872010/15653700955524.jpg" alt="-w300"><img src="media/15653591872010/15653701581991.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Doerr-The-Enemy-Within-Modern-Supply-Chain-Attacks.pdf" target="_blank">The Enemy Within Modern Supply Chain Attacks</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Doerr-The-Enemy-Within-Modern-Supply-Chain-Attacks.pdf">The Enemy Within Modern Supply Chain Attacks</a></li>
 </ul>
-
 <p>微软内部安全团队认为要从硬件、软件、服务、人这四个维度考虑供应链安全，每个部分都举了一个例子。</p>
-
-<p><img src="media/15653591872010/15653705673135.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15653705673135.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Matrosov-Breaking-Through-Another-Side-Bypassing-Firmware-Security-Boundaries-From-Embedded-Controller.pdf" target="_blank">Breaking Through Another Side - Bypassing Firmware Security Boundaries from Embedded Controller</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Matrosov-Breaking-Through-Another-Side-Bypassing-Firmware-Security-Boundaries-From-Embedded-Controller.pdf">Breaking Through Another Side - Bypassing Firmware Security Boundaries from Embedded Controller</a></li>
 </ul>
-
-<p>硬核的 x86 平台硬件/固件安全。这个架构和《<a href="http://i.blackhat.com/USA-19/Thursday/us-19-Davidov-Inside-The-Apple-T2.pdf" target="_blank">Inside The Apple T2</a>》这篇文章中苹果的架构一起对比来看，非常有意思。</p>
-
-<p><img src="media/15653591872010/15654328401505.jpg" alt="-w300" /><img src="media/15653591872010/15654328816020.jpg" alt="-w300" /><img src="media/15653591872010/15654330383563.jpg" alt="-w300" /></p>
-
+<p>硬核的 x86 平台硬件/固件安全。这个架构和《<a href="http://i.blackhat.com/USA-19/Thursday/us-19-Davidov-Inside-The-Apple-T2.pdf">Inside The Apple T2</a>》这篇文章中苹果的架构一起对比来看，非常有意思。</p>
+<p><img src="media/15653591872010/15654328401505.jpg" alt="-w300"><img src="media/15653591872010/15654328816020.jpg" alt="-w300"><img src="media/15653591872010/15654330383563.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Hasarfaty-Behind-The-Scenes-Of-Intel-Security-And-Manageability-Engine.pdf" target="_blank">Behind the Scenes of Intel Security and Manageability Engine</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Hasarfaty-Behind-The-Scenes-Of-Intel-Security-And-Manageability-Engine.pdf">Behind the Scenes of Intel Security and Manageability Engine</a></li>
 </ul>
-
 <p>介绍 Intel 第 8 代和第 9 代处理器所使用的 CSME 12 固件和硬件。感觉 Intel 的做法是在 x86/x64 大楼的地下室又修了一个大楼。</p>
-
-<p><img src="media/15653591872010/15655141040988.jpg" alt="-w300" /><img src="media/15653591872010/15655146694157.jpg" alt="-w300" /><img src="media/15653591872010/15655143309341.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655141040988.jpg" alt="-w300"><img src="media/15653591872010/15655146694157.jpg" alt="-w300"><img src="media/15653591872010/15655143309341.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Roytman-Jacobs-Predictive-Vulnerability-Scoring-System.pdf" target="_blank">Exploit Prediction Scoring System (EPSS)</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Roytman-Jacobs-Predictive-Vulnerability-Scoring-System.pdf">Exploit Prediction Scoring System (EPSS)</a></li>
 </ul>
-
 <p>个人非常喜欢的一篇。简单来说，和我观点一致 —— 现在漏洞管理的问题是发现的漏洞太多了，管理层面需要分清楚轻重缓急，区分对待。最好需要确保最后能修复掉。这个和当年恶意代码太多，防病毒厂商不睡觉来分析、加特征码都搞不过来，最后只能换个思路来搞定一样。</p>
-
-<p>他们的工作更进一步，提出了一个新的 EPSS 模型（个人感觉还需要继续改进）。可惜作者提供的评分系统还不能正常访问： <a href="http://kennaresearch.com/tools/epss-calculator" target="_blank">http://kennaresearch.com/tools/epss-calculator</a></p>
-
-<p><img src="media/15653591872010/15655732839315.jpg" alt="-w600" /></p>
-
-<p><img src="media/15653591872010/15655734182663.jpg" alt="-w300" /><img src="media/15653591872010/15655734426956.jpg" alt="-w300" /><img src="media/15653591872010/15655738409553.jpg" alt="-w300" /><img src="media/15653591872010/15655738746291.jpg" alt="-w300" /></p>
-
+<p>他们的工作更进一步，提出了一个新的 EPSS 模型（个人感觉还需要继续改进）。可惜作者提供的评分系统还不能正常访问： <a href="http://kennaresearch.com/tools/epss-calculator"><a href="http://kennaresearch.com/tools/epss-calculator">http://kennaresearch.com/tools/epss-calculator</a></a></p>
+<p><img src="media/15653591872010/15655732839315.jpg" alt="-w600"></p>
+<p><img src="media/15653591872010/15655734182663.jpg" alt="-w300"><img src="media/15653591872010/15655734426956.jpg" alt="-w300"><img src="media/15653591872010/15655738409553.jpg" alt="-w300"><img src="media/15653591872010/15655738746291.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Stone-Securing-The-System-A-Deep-Dive-Into-Reversing-Android-Preinstalled-Apps.pdf" target="_blank">Securing the System: A Deep Dive into Reversing Android Pre-Installed Apps</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Stone-Securing-The-System-A-Deep-Dive-Into-Reversing-Android-Preinstalled-Apps.pdf">Securing the System: A Deep Dive into Reversing Android Pre-Installed Apps</a></li>
 </ul>
-
 <p>介绍 Android 平台下的逆向分析实例，主要是保持曝光。从里面可以看到 Google 认为有些 OEM/ODM 会植入恶意代码。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Stanislav-Shifting-Knowledge-Left-Keeping-Up-With-Modern-Application-Security.pdf" target="_blank">Shifting Knowledge Left - Keeping Up With Modern Application Security</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Stanislav-Shifting-Knowledge-Left-Keeping-Up-With-Modern-Application-Security.pdf">Shifting Knowledge Left - Keeping Up With Modern Application Security</a></li>
 </ul>
-
 <p>主要讲的是如何提升开发人员安全意识和能力，也提到了研发、安全之间更好的关系应该是合作而不是摩擦。</p>
-
-<p><img src="media/15653591872010/15655919233771.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655919233771.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Vessels-Cybersecurity-Risk-Assessment-For-Safety-Critical-Systems.pdf" target="_blank">CYBERSECURITY RISK ASSESSMENT FOR SAFETY-CRITICAL SYSTEMS</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Vessels-Cybersecurity-Risk-Assessment-For-Safety-Critical-Systems.pdf">CYBERSECURITY RISK ASSESSMENT FOR SAFETY-CRITICAL SYSTEMS</a></li>
 </ul>
-
 <p>介绍 Honeywell 的系统风险评估方法。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Nickels-MITRE-ATTACK-The-Play-At-Home-Edition.pdf" target="_blank">MITRE ATT&amp;CK: The Play at Home Edition</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Nickels-MITRE-ATTACK-The-Play-At-Home-Edition.pdf">MITRE ATT&amp;CK: The Play at Home Edition</a></li>
 </ul>
-
 <p>用讲故事的方式说明了 ATT&amp;CK 可以怎么用，以及为什么不能生搬硬套。除此之外还介绍了不少关于 ATT&amp;CK 的相关资源（值得再看一次）。其实这方面国内外遇到的挑战和国内的安全团队非常类似。</p>
-
-<p><img src="media/15653591872010/15655400241054.jpg" alt="-w300" /><img src="media/15653591872010/15655400449695.jpg" alt="-w300" />
-<img src="media/15653591872010/15655400659203.jpg" alt="-w300" /><img src="media/15653591872010/15655400857835.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15655399693002.jpg" alt="-w600" /></p>
-
+<p><img src="media/15653591872010/15655400241054.jpg" alt="-w300"><img src="media/15653591872010/15655400449695.jpg" alt="-w300">
+<img src="media/15653591872010/15655400659203.jpg" alt="-w300"><img src="media/15653591872010/15655400857835.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15655399693002.jpg" alt="-w600"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Sedova-Know-How-Data-Can-Shape-Security-Engagement.pdf" target="_blank">It&rsquo;s Not What You Know, It&rsquo;s What You Do: How Data Can Shape Security Engagement</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Sedova-Know-How-Data-Can-Shape-Security-Engagement.pdf">It's Not What You Know, It's What You Do: How Data Can Shape Security Engagement</a></li>
 </ul>
-
 <p>安全意识教育。</p>
-
-<p><img src="media/15653591872010/15655760933755.jpg" alt="-w300" /><img src="media/15653591872010/15655761205733.jpg" alt="-w300" /><img src="media/15653591872010/15655761852178.jpg" alt="-w300" /><img src="media/15653591872010/15655762281694.jpg" alt="-w300" /><img src="media/15653591872010/15655762555435.jpg" alt="-w300" /><img src="media/15653591872010/15655764170330.jpg" alt="-w300" /><img src="media/15653591872010/15655764841559.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655760933755.jpg" alt="-w300"><img src="media/15653591872010/15655761205733.jpg" alt="-w300"><img src="media/15653591872010/15655761852178.jpg" alt="-w300"><img src="media/15653591872010/15655762281694.jpg" alt="-w300"><img src="media/15653591872010/15655762555435.jpg" alt="-w300"><img src="media/15653591872010/15655764170330.jpg" alt="-w300"><img src="media/15653591872010/15655764841559.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Shortridge-Controlled-Chaos-The-Inevitable-Marriage-Of-DevOps-And-Security.pdf" target="_blank">Controlled Chaos - The Inevitable Marriage of DevOps &amp; Security</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Shortridge-Controlled-Chaos-The-Inevitable-Marriage-Of-DevOps-And-Security.pdf">Controlled Chaos - The Inevitable Marriage of DevOps &amp; Security</a></li>
 </ul>
-
 <p>主要是讲理念性质的东西，比如：如何应该如何驾驭与 DevOps 的关系，比如认为混乱工程和弹性才是安全的未来。</p>
-
-<p><img src="media/15653591872010/15655790053963.jpg" alt="-w300" /><img src="media/15653591872010/15655795021093.jpg" alt="-w300" /><img src="media/15653591872010/15655801524951.jpg" alt="-w300" /><img src="media/15653591872010/15655801767728.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655790053963.jpg" alt="-w300"><img src="media/15653591872010/15655795021093.jpg" alt="-w300"><img src="media/15653591872010/15655801524951.jpg" alt="-w300"><img src="media/15653591872010/15655801767728.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Shrivastava-DevSecOps-What-Why-And-How.pdf" target="_blank">DevSecOps What Why and How?</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Shrivastava-DevSecOps-What-Why-And-How.pdf">DevSecOps What Why and How?</a></li>
 </ul>
-
 <p>DevSecOps 应该争取 “Secure by Default”，而默认安全由三个层次来决定：a) 通过工具实现内嵌安全；b）创建安全即代码的文化；c）鼓励跨界。本质上是在工具链和流程中融入安全因素，让自动化成为组织内广泛的文化认同。这篇值得再看下。</p>
-
-<p><img src="media/15653591872010/15655804489602.jpg" alt="-w300" /><img src="media/15653591872010/15655807799561.jpg" alt="-w300" /></p>
-
-<p><img src="media/15653591872010/15655819512424.jpg" alt="-w300" /><img src="media/15653591872010/15655821490964.jpg" alt="-w300" /><img src="media/15653591872010/15655823066943.jpg" alt="-w300" /></p>
-
-<h3 id="密码学和其应用">密码学和其应用</h3>
-
+<p><img src="media/15653591872010/15655804489602.jpg" alt="-w300"><img src="media/15653591872010/15655807799561.jpg" alt="-w300"></p>
+<p><img src="media/15653591872010/15655819512424.jpg" alt="-w300"><img src="media/15653591872010/15655821490964.jpg" alt="-w300"><img src="media/15653591872010/15655823066943.jpg" alt="-w300"></p>
+<h3 id="heading3">密码学和其应用</h3>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Aumasson-Lessons-From-Two-Years-Of-Crypto-Audits.pdf" target="_blank">Lessons from 3 years of crypto and blockchain security audits</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Aumasson-Lessons-From-Two-Years-Of-Crypto-Audits.pdf">Lessons from 3 years of crypto and blockchain security audits</a></li>
 </ul>
-
 <p>可以理解为密码学相关的代码审计。举例都是区块链生态里的实际案例。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Chau-A-Decade-After-Bleichenbacher-06-RSA-Signature-Forgery-Still-Works.pdf" target="_blank">A Decade After Bleichenbacher &lsquo;06, RSA Signature Forgery Still Works</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Chau-A-Decade-After-Bleichenbacher-06-RSA-Signature-Forgery-Still-Works.pdf">A Decade After Bleichenbacher &lsquo;06, RSA Signature Forgery Still Works</a></li>
 </ul>
-
 <p>又是一片硬核密码学的文章。简单来说就是 SSH、IPSec、DNSSEC 的一些实现会受 Bleichenbacher &lsquo;06 发布的 RSA 伪造签名漏洞的攻击。</p>
-
-<p><img src="media/15653591872010/15655107552313.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655107552313.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Robert-Messaging-Layer-Security-Towards-A-New-Era-Of-Secure-Group-Messaging.pdf" target="_blank">Messaging Layer Security Towards a new era of secure messaging&hellip;</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Robert-Messaging-Layer-Security-Towards-A-New-Era-Of-Secure-Group-Messaging.pdf">Messaging Layer Security Towards a new era of secure messaging&hellip;</a></li>
 </ul>
-
 <p>一个用于即时通讯场景的加密方案，工作于 TLS 之上，特别适用于有群聊的场景。已经在工业界、学术界内讨论过。</p>
-
-<p><img src="media/15653591872010/15655724069362.jpg" alt="-w300" /><img src="media/15653591872010/15655725793737.jpg" alt="-w300" /><img src="media/15653591872010/15655725967011.jpg" alt="-w300" /><img src="media/15653591872010/15655725015641.jpg" alt="-w300" /><img src="media/15653591872010/15655725505946.jpg" alt="-w300" /></p>
-
-<h3 id="杂项">杂项</h3>
-
+<p><img src="media/15653591872010/15655724069362.jpg" alt="-w300"><img src="media/15653591872010/15655725793737.jpg" alt="-w300"><img src="media/15653591872010/15655725967011.jpg" alt="-w300"><img src="media/15653591872010/15655725015641.jpg" alt="-w300"><img src="media/15653591872010/15655725505946.jpg" alt="-w300"></p>
+<h3 id="heading4">杂项</h3>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Conti-Operational-Templates-for-State-Level-Attack-and-Collective-Defense-of-Countries.pdf" target="_blank">Operational Templates for State-Level Attack and Collective Defense of Countries</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Conti-Operational-Templates-for-State-Level-Attack-and-Collective-Defense-of-Countries.pdf">Operational Templates for State-Level Attack and Collective Defense of Countries</a></li>
 </ul>
-
 <p>面对国家攻击的时候应该采用集体防御的方法，根据不同级别的安全威胁应该有不同级别的安全事件响应机制。各个层面都会有自己各自的脆弱性，在国家级的对抗中，攻击者不会放过任何一个可以利用的脆弱性。目前 Known/Knowing 的问题解决方法基本都有了，需要自动化来提高效率、改善体验、释放“资源”（这里的“资源“是指广义的资源，甚至包括产业界的关注度），并获得更多的资源投入到需要 “Behavioral Analytics + Hunting” 的范围内。</p>
-
 <p>除此之外，我觉得可能还给网络安全执法提供了合法性相关的思路：</p>
-
 <pre><code>* 为了减少火灾，会进行相关的防火教育和检查，并有严格的合规要求
 * 如果发现你家着火，为了确保公众安全，公众的消防力量有主动进行灭火的义务和权力
 * 发生火灾给第三方造成损失的，会有民事责任、刑事责任
 </code></pre>
-
-<p><img src="media/15653591872010/15654191308613.jpg" alt="-w300" /><img src="media/15653591872010/15653687430843.jpg" alt="-w300" />
-<img src="media/15653591872010/15653686514831.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654191308613.jpg" alt="-w300"><img src="media/15653591872010/15653687430843.jpg" alt="-w300">
+<img src="media/15653591872010/15653686514831.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Hawkes-Project-Zero-Five-Years-Of-Make-0day-Hard.pdf" target="_blank">Google Project Zero</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Hawkes-Project-Zero-Five-Years-Of-Make-0day-Hard.pdf">Google Project Zero</a></li>
 </ul>
-
 <p>Google 这篇主要是介绍了 Project Zero 的一些数据来佐证观点。干货不多感觉主要是保持曝光。</p>
-
-<p><img src="media/15653591872010/15654171165908.jpg" alt="-w300" /><img src="media/15653591872010/15654171367327.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654171165908.jpg" alt="-w300"><img src="media/15653591872010/15654171367327.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Nakajima-Women-In-Security-Building-A-Female-InfoSec-Community-In-Korea-Japan-And-Taiwan.pdf" target="_blank">Building a Female InfoSec Community in Korea, Japan, and Taiwan</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Nakajima-Women-In-Security-Building-A-Female-InfoSec-Community-In-Korea-Japan-And-Taiwan.pdf">Building a Female InfoSec Community in Korea, Japan, and Taiwan</a></li>
 </ul>
-
 <p>如何让信息安全不再是男人统治的领域。加油！</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Farshchi-On-Trust-Stories-From-The-Front-Lines.pdf" target="_blank">ON TRUST - Stories from the Front Lines</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Farshchi-On-Trust-Stories-From-The-Front-Lines.pdf">ON TRUST - Stories from the Front Lines</a></li>
 </ul>
-
 <p>最最最水</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Healey-Rough-and-Ready-Frameworks-To-Measure-Persistent-Engagment-and-Deterrence.pdf" target="_blank">Rough and Ready: Frameworks to Measure Persistent Engagement and Deterrence</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Healey-Rough-and-Ready-Frameworks-To-Measure-Persistent-Engagment-and-Deterrence.pdf">Rough and Ready: Frameworks to Measure Persistent Engagement and Deterrence</a></li>
 </ul>
-
 <p>讲了一堆对持续威胁进行度量的意义、为什么要有度量，提出了一个三万英尺的框架。以及一堆未来的工作。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf" target="_blank">Woke Hiring Won&rsquo;t Save Us: An Actionable Approach to Diversity Hiring and Retention</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf">Woke Hiring Won't Save Us: An Actionable Approach to Diversity Hiring and Retention</a></li>
 </ul>
-
 <p>主要是说女性在 IT 行业招聘和保留的问题。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf" target="_blank">API-Induced SSRF - How Apple Pay Scattered Vulnerabilities Across the Web</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Thursday/us-19-Lynch-Woke-Hhiring-Wont-Save-Us-An-Actionable-Approach-To-Diversity-Hiring-And-Retention.pdf">API-Induced SSRF - How Apple Pay Scattered Vulnerabilities Across the Web</a></li>
 </ul>
-
 <p>主要是苹果公司在 Apple Pay 上一个漏洞响应措施比较让人不满意。这个作者喷了一通，并且提出了一个有意思的观点：有缺陷的设计模式导致了有缺陷的实现，有缺陷的实现导致了有缺陷的部署。</p>
-
-<p><img src="media/15653591872010/15654298293684.jpg" alt="-w300" /><img src="media/15653591872010/15654293378265.jpg" alt="-w300" /><img src="media/15653591872010/15654293633681.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15654298293684.jpg" alt="-w300"><img src="media/15653591872010/15654293378265.jpg" alt="-w300"><img src="media/15653591872010/15654293633681.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Hypponen-Responding-To-A-Cyber-Attack-With-Missiles.pdf" target="_blank">Responding To A Cyber Attack With Missiles</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Hypponen-Responding-To-A-Cyber-Attack-With-Missiles.pdf">Responding To A Cyber Attack With Missiles</a></li>
 </ul>
-
 <p>名字很大，slides 没啥，不知道现场如何。主要是展望用导弹干掉攻击源的必要性、可能性之类的。非战时我感觉可能性不大。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Zenz-Infighting-Among-Russian-Security-Services-in-the-Cyber-Sphere.pdf" target="_blank">Infighting Among Russian Security Services in the Cyber Sphere</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Zenz-Infighting-Among-Russian-Security-Services-in-the-Cyber-Sphere.pdf">Infighting Among Russian Security Services in the Cyber Sphere</a></li>
 </ul>
-
 <p>内斗八卦也能上 blackhat</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Wilkin-Testing-Your-Organizations-Social-Media-Awareness.pdf" target="_blank">Testing Your Organization&rsquo;s Social Media Awareness</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Wilkin-Testing-Your-Organizations-Social-Media-Awareness.pdf">Testing Your Organization's Social Media Awareness</a></li>
 </ul>
-
 <p>貌似是利用社交网站钓鱼。但真心没什么实际内容。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Smith-Cyber-Insurance-101-For-CISOs.pdf" target="_blank">Cyber Insurance 101 For CISOs</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Smith-Cyber-Insurance-101-For-CISOs.pdf">Cyber Insurance 101 For CISOs</a></li>
 </ul>
-
 <p>卖保险的来啦， CISO 们。不过从议题名字就可以看出来，普及性的内容。</p>
-
-<p><img src="media/15653591872010/15655874512560.jpg" alt="-w300" /><img src="media/15653591872010/15655874792368.jpg" alt="-w300" /><img src="media/15653591872010/15655875167327.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655874512560.jpg" alt="-w300"><img src="media/15653591872010/15655874792368.jpg" alt="-w300"><img src="media/15653591872010/15655875167327.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Westelius-Attack-Surface-As-A-Service.pdf" target="_blank">Attack Surface As Service</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Westelius-Attack-Surface-As-A-Service.pdf">Attack Surface As Service</a></li>
 </ul>
-
 <p>就是说以前的安全产品都比较不好，而改进型的方案给用户增加了不少使用上、体验上的负担。与其花很多精力去检测用户行为是不是正常，还不如告诉用户什么行为是好的。说实话，这 PPT 为了搞艺术，意思都看不清楚了 ……</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Ochoa-Sensor-And-Process-Fingerprinting-In-ICS.pdf" target="_blank">Sensor and Process Fingerprinting in Industrial Control Systems</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Ochoa-Sensor-And-Process-Fingerprinting-In-ICS.pdf">Sensor and Process Fingerprinting in Industrial Control Systems</a></li>
 </ul>
-
 <p>用 ICS 的传感器的噪音来给传感器生成指纹。</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Prevost-How-Insurers-View-The-World.pdf" target="_blank">How Do Cyber Insurers View the World</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Prevost-How-Insurers-View-The-World.pdf">How Do Cyber Insurers View the World</a></li>
 </ul>
-
 <p>卖保险的来了 ……</p>
-
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Shwartz-Selling-0-Days-To-Governments-And-Offensive-Security-Companies.pdf" target="_blank">Selling 0-days to governments and offensive security companies</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Shwartz-Selling-0-Days-To-Governments-And-Offensive-Security-Companies.pdf">Selling 0-days to governments and offensive security companies</a></li>
 </ul>
-
 <p>军火商来介绍经验了。想做军火生意的可以看。</p>
-
-<p><img src="media/15653591872010/15655835760942.jpg" alt="-w300" />
-<img src="media/15653591872010/15655835984799.jpg" alt="-w300" />
-<img src="media/15653591872010/15655836199189.jpg" alt="-w300" />
-<img src="media/15653591872010/15655835582124.jpg" alt="-w300" /><img src="media/15653591872010/15655836502294.jpg" alt="-w300" /><img src="media/15653591872010/15655836668468.jpg" alt="-w300" /><img src="media/15653591872010/15655838065619.jpg" alt="-w300" /><img src="media/15653591872010/15655838703837.jpg" alt="-w300" /></p>
-
+<p><img src="media/15653591872010/15655835760942.jpg" alt="-w300">
+<img src="media/15653591872010/15655835984799.jpg" alt="-w300">
+<img src="media/15653591872010/15655836199189.jpg" alt="-w300">
+<img src="media/15653591872010/15655835582124.jpg" alt="-w300"><img src="media/15653591872010/15655836502294.jpg" alt="-w300"><img src="media/15653591872010/15655836668468.jpg" alt="-w300"><img src="media/15653591872010/15655838065619.jpg" alt="-w300"><img src="media/15653591872010/15655838703837.jpg" alt="-w300"></p>
 <ul>
-<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Sardar-Paging-All-Windows-Geeks-Finding-Evil-In-Windows-10-Compressed-Memory.pdf" target="_blank">Extracting Compressed Pages from the Windows 10 Virtual Store</a></li>
+<li><a href="http://i.blackhat.com/USA-19/Wednesday/us-19-Sardar-Paging-All-Windows-Geeks-Finding-Evil-In-Windows-10-Compressed-Memory.pdf">Extracting Compressed Pages from the Windows 10 Virtual Store</a></li>
 </ul>
-
 <p>如何访问 Windows 10 的压缩内存，并且进行自动化分析（包括和 rekall 和 Volatility 的集成）。FireEye 出品。</p>
-
-<h2 id="相关资源的下载">相关资源的下载</h2>
-
+<h2 id="heading5">相关资源的下载</h2>
 <p>一句话下载 BlackHat US19 资料（需要 jq ）</p>
-
-<pre><code class="language-bash">#!/bin/bash
-curl &quot;https://www.blackhat.com/us-19/briefings/schedule/sessions.json&quot; | jq &quot;.sessions[].bh_files[].url&quot; -r | sort | grep -v github | xargs -n1 -I {} wget -c &quot;{}&quot;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>curl <span style="color:#e6db74">&#34;https://www.blackhat.com/us-19/briefings/schedule/sessions.json&#34;</span> | jq <span style="color:#e6db74">&#34;.sessions[].bh_files[].url&#34;</span> -r | sort | grep -v github | xargs -n1 -I <span style="color:#f92672">{</span><span style="color:#f92672">}</span> wget -c <span style="color:#e6db74">&#34;{}&#34;</span>
+</code></pre></div>
     </div>
 
     
@@ -1661,7 +1359,7 @@ curl &quot;https://www.blackhat.com/us-19/briefings/schedule/sessions.json&quot;
   
 
   <p class="powered-by">
-    2019 &copy; &middot; 
+    2019 © &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

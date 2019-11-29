@@ -5,12 +5,76 @@
     <link>https://sbilly.github.io/tags/</link>
       <atom:link href="https://sbilly.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Sat, 31 Aug 2019 12:48:13 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Fri, 29 Nov 2019 12:03:12 +0800</lastBuildDate>
     <image>
       <url>https://sbilly.github.io/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://sbilly.github.io/tags/</link>
     </image>
+    
+    <item>
+      <title>Cybersecurity</title>
+      <link>https://sbilly.github.io/tags/cybersecurity/</link>
+      <pubDate>Fri, 29 Nov 2019 12:03:12 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/cybersecurity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DoD</title>
+      <link>https://sbilly.github.io/tags/dod/</link>
+      <pubDate>Fri, 29 Nov 2019 12:03:12 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/dod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IAM</title>
+      <link>https://sbilly.github.io/tags/iam/</link>
+      <pubDate>Fri, 29 Nov 2019 12:03:12 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/iam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IdAM</title>
+      <link>https://sbilly.github.io/tags/idam/</link>
+      <pubDate>Fri, 29 Nov 2019 12:03:12 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/idam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JIE</title>
+      <link>https://sbilly.github.io/tags/jie/</link>
+      <pubDate>Fri, 29 Nov 2019 12:03:12 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/jie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Joint Information Environment</title>
+      <link>https://sbilly.github.io/tags/joint-information-environment/</link>
+      <pubDate>Fri, 29 Nov 2019 12:03:12 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/joint-information-environment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zero Trust Model</title>
+      <link>https://sbilly.github.io/tags/zero-trust-model/</link>
+      <pubDate>Fri, 29 Nov 2019 12:03:12 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/zero-trust-model/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>美军</title>
+      <link>https://sbilly.github.io/tags/%E7%BE%8E%E5%86%9B/</link>
+      <pubDate>Fri, 29 Nov 2019 12:03:12 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/%E7%BE%8E%E5%86%9B/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>cybersecurity workforce framework</title>
@@ -113,70 +177,6 @@
       <link>https://sbilly.github.io/tags/%E8%83%BD%E5%8A%9B/</link>
       <pubDate>Sat, 31 Aug 2019 12:48:13 +0800</pubDate>
       <guid>https://sbilly.github.io/tags/%E8%83%BD%E5%8A%9B/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cybersecurity</title>
-      <link>https://sbilly.github.io/tags/cybersecurity/</link>
-      <pubDate>Tue, 27 Aug 2019 18:54:52 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/cybersecurity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DoD</title>
-      <link>https://sbilly.github.io/tags/dod/</link>
-      <pubDate>Tue, 27 Aug 2019 18:54:52 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/dod/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IAM</title>
-      <link>https://sbilly.github.io/tags/iam/</link>
-      <pubDate>Tue, 27 Aug 2019 18:54:52 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/iam/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IdAM</title>
-      <link>https://sbilly.github.io/tags/idam/</link>
-      <pubDate>Tue, 27 Aug 2019 18:54:52 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/idam/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JIE</title>
-      <link>https://sbilly.github.io/tags/jie/</link>
-      <pubDate>Tue, 27 Aug 2019 18:54:52 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/jie/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Joint Information Environment</title>
-      <link>https://sbilly.github.io/tags/joint-information-environment/</link>
-      <pubDate>Tue, 27 Aug 2019 18:54:52 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/joint-information-environment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Zero Trust Model</title>
-      <link>https://sbilly.github.io/tags/zero-trust-model/</link>
-      <pubDate>Tue, 27 Aug 2019 18:54:52 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/zero-trust-model/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>美军</title>
-      <link>https://sbilly.github.io/tags/%E7%BE%8E%E5%86%9B/</link>
-      <pubDate>Tue, 27 Aug 2019 18:54:52 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/%E7%BE%8E%E5%86%9B/</guid>
       <description></description>
     </item>
     
