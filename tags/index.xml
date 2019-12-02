@@ -5,12 +5,60 @@
     <link>https://sbilly.github.io/tags/</link>
       <atom:link href="https://sbilly.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Fri, 29 Nov 2019 12:03:12 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh</language><copyright>2019 ©</copyright><lastBuildDate>Mon, 02 Dec 2019 18:15:50 +0800</lastBuildDate>
     <image>
       <url>https://sbilly.github.io/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://sbilly.github.io/tags/</link>
     </image>
+    
+    <item>
+      <title>Qualys</title>
+      <link>https://sbilly.github.io/tags/qualys/</link>
+      <pubDate>Mon, 02 Dec 2019 18:15:50 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/qualys/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security Architecture</title>
+      <link>https://sbilly.github.io/tags/security-architecture/</link>
+      <pubDate>Mon, 02 Dec 2019 18:15:50 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/security-architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>安全会议</title>
+      <link>https://sbilly.github.io/tags/%E5%AE%89%E5%85%A8%E4%BC%9A%E8%AE%AE/</link>
+      <pubDate>Mon, 02 Dec 2019 18:15:50 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/%E5%AE%89%E5%85%A8%E4%BC%9A%E8%AE%AE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>攻击路径管理</title>
+      <link>https://sbilly.github.io/tags/%E6%94%BB%E5%87%BB%E8%B7%AF%E5%BE%84%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Mon, 02 Dec 2019 18:15:50 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/%E6%94%BB%E5%87%BB%E8%B7%AF%E5%BE%84%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>暴露面管理</title>
+      <link>https://sbilly.github.io/tags/%E6%9A%B4%E9%9C%B2%E9%9D%A2%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Mon, 02 Dec 2019 18:15:50 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/%E6%9A%B4%E9%9C%B2%E9%9D%A2%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>脆弱性管理</title>
+      <link>https://sbilly.github.io/tags/%E8%84%86%E5%BC%B1%E6%80%A7%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Mon, 02 Dec 2019 18:15:50 +0800</pubDate>
+      <guid>https://sbilly.github.io/tags/%E8%84%86%E5%BC%B1%E6%80%A7%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Cybersecurity</title>
@@ -329,14 +377,6 @@
       <link>https://sbilly.github.io/tags/jrss/</link>
       <pubDate>Wed, 31 Jul 2019 14:39:45 +0800</pubDate>
       <guid>https://sbilly.github.io/tags/jrss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Security Architecture</title>
-      <link>https://sbilly.github.io/tags/security-architecture/</link>
-      <pubDate>Wed, 31 Jul 2019 12:01:02 +0800</pubDate>
-      <guid>https://sbilly.github.io/tags/security-architecture/</guid>
       <description></description>
     </item>
     
